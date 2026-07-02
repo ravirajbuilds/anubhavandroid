@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.anubhavlifecare.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_book_test"
+        android:name="com.example.anubhavlifecare.ui.customer.CustomerPrebookFragment"
+        android:label="@string/menu_book_test"
+        tools:layout="@layout/fragment_customer_prebook" />
+
+    <fragment
+        android:id="@+id/nav_my_bookings"
+        android:name="com.example.anubhavlifecare.ui.customer.MyBookingsFragment"
+        android:label="@string/menu_my_bookings"
+        tools:layout="@layout/fragment_customer_list" />
+
+    <fragment
+        android:id="@+id/nav_my_reports"
+        android:name="com.example.anubhavlifecare.ui.customer.MyReportsFragment"
+        android:label="@string/menu_my_reports"
+        tools:layout="@layout/fragment_customer_list" />
+
+    <fragment
+        android:id="@+id/nav_pending_payments"
+        android:name="com.example.anubhavlifecare.ui.customer.PendingPaymentsFragment"
+        android:label="@string/pending_payments_title"
+        tools:layout="@layout/fragment_pending_payments" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.anubhavlifecare.ui.home.HomeFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_home" />
+</navigation>

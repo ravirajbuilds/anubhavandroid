@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.AktivAdmin.AppBarOverlay"
+        app:elevation="8dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/gradient_primary"
+            android:elevation="4dp"
+            app:popupTheme="@style/Theme.AktivAdmin.PopupOverlay"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/text_white"
+            app:navigationIconTint="@color/text_white">
+
+            <!-- Language Toggle Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/language_toggle_btn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/language_toggle_bg"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/language_bengali"
+                android:textColor="@color/brand_dark_blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="24dp"
+                android:gravity="center"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <!-- Booking FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="88dp"
+        app:srcCompat="@drawable/ic_medical_cross"
+        app:backgroundTint="@color/brand_yellow"
+        app:tint="@color/brand_dark_blue"
+        app:elevation="8dp"
+        app:borderWidth="0dp"
+        android:contentDescription="@string/book_appointment" />
+
+    <!-- WhatsApp FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/whatsapp_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/ic_whatsapp"
+        app:backgroundTint="#25D366"
+        app:tint="@color/text_white"
+        app:elevation="8dp"
+        app:borderWidth="0dp"
+        android:contentDescription="WhatsApp Support" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,35 @@
+# Build outputs
+/build/
+app/build/
+.gradle/
+*.apk
+*.aab
+
+# Local env / secrets
+env
+.env
+etl/.env
+dashboard/.env.local
+*.log
+etl.log
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.Python
+
+# Android
+local.properties
+.cxx/
+captures/
+.externalNativeBuild/
+
+# Keystores
+*.jks
+*.keystore
