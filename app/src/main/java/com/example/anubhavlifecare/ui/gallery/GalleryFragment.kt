@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.anubhavlifecare.R
 import com.example.anubhavlifecare.databinding.FragmentGalleryBinding
 import com.example.anubhavlifecare.utils.LanguageManager
+import com.example.anubhavlifecare.utils.localized
 
 class GalleryFragment : Fragment() {
 
@@ -81,44 +82,20 @@ class GalleryFragment : Fragment() {
             card.setOnClickListener {
                 when (index) {
                     0 -> {
-                        val testName = if (languageManager.isBengali()) {
-                            getString(R.string.cbc_test_bn)
-                        } else {
-                            getString(R.string.cbc_test)
-                        }
-                        val preparation = if (languageManager.isBengali()) {
-                            getString(R.string.cbc_preparation_bn)
-                        } else {
-                            getString(R.string.cbc_preparation)
-                        }
+                        val testName = getString(R.string.cbc_test)
+                        val preparation = localized(R.string.cbc_preparation)
                         showTestDetails(testName, "₹300", preparation)
                     }
 
                     1 -> {
-                        val testName = if (languageManager.isBengali()) {
-                            getString(R.string.lipid_test_bn)
-                        } else {
-                            getString(R.string.lipid_test)
-                        }
-                        val preparation = if (languageManager.isBengali()) {
-                            getString(R.string.lipid_preparation_bn)
-                        } else {
-                            getString(R.string.lipid_preparation)
-                        }
+                        val testName = getString(R.string.lipid_test)
+                        val preparation = localized(R.string.lipid_preparation)
                         showTestDetails(testName, "₹800", preparation)
                     }
 
                     2 -> {
-                        val testName = if (languageManager.isBengali()) {
-                            getString(R.string.thyroid_test_bn)
-                        } else {
-                            getString(R.string.thyroid_test)
-                        }
-                        val preparation = if (languageManager.isBengali()) {
-                            getString(R.string.thyroid_preparation_bn)
-                        } else {
-                            getString(R.string.thyroid_preparation)
-                        }
+                        val testName = getString(R.string.thyroid_test)
+                        val preparation = localized(R.string.thyroid_preparation)
                         showTestDetails(testName, "₹600", preparation)
                     }
 

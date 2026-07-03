@@ -15,6 +15,9 @@ class LanguageManager(private val context: Context) {
     private val sharedPrefs: SharedPreferences =
         context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
+    fun hasSelectedLanguage(): Boolean =
+        sharedPrefs.contains(KEY_LANGUAGE)
+
     fun getCurrentLanguage(): String {
         return sharedPrefs.getString(KEY_LANGUAGE, LANGUAGE_ENGLISH) ?: LANGUAGE_ENGLISH
     }

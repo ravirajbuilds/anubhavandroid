@@ -12,6 +12,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/tvPrebookTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -46,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Age (years)">
+            android:hint="@string/patient_age">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAgeYear"
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Sex">
+            android:hint="@string/patient_sex">
 
             <AutoCompleteTextView
                 android:id="@+id/spinnerSex"

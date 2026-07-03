@@ -54,6 +54,7 @@ android {
     }
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -118,10 +119,13 @@ dependencies {
     // Razorpay
     implementation("com.razorpay:checkout:1.6.38")
 
-    // Firebase Auth (phone OTP + email link — Play Store compliant with SHA fingerprints)
+    // Firebase Auth (Google, Facebook, email)
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
+
+    // Facebook Login
+    implementation("com.facebook.android:facebook-login:17.0.2")
     
     // Image Loading
     implementation("com.github.bumptech.glide:glide:4.16.0")
@@ -161,4 +165,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

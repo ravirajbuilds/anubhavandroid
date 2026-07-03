@@ -15,6 +15,7 @@ import com.example.anubhavlifecare.R
 import com.example.anubhavlifecare.data.model.CustomerReport
 import com.example.anubhavlifecare.data.repository.CustomerRepository
 import com.example.anubhavlifecare.utils.CustomerSessionManager
+import com.example.anubhavlifecare.utils.localized
 import kotlinx.coroutines.launch
 
 class MyReportsFragment : Fragment() {
@@ -31,9 +32,14 @@ class MyReportsFragment : Fragment() {
         val rv = view.findViewById<RecyclerView>(R.id.rvItems)
         val progress = view.findViewById<ProgressBar>(R.id.progressBar)
         val tvEmpty = view.findViewById<TextView>(R.id.tvEmpty)
-        view.findViewById<TextView>(R.id.tvTitle).text = getString(R.string.menu_my_reports)
+        view.findViewById<TextView>(R.id.tvTitle).text = localized(R.string.menu_my_reports)
 
-        val phone = CustomerSessionManager.getPhone(requireContext()) ?: return
+        val phone = CustomerSessionManager.getPhone(requireContext())
+        if (phone.isNullOrBlank()) {
+            tvEmpty.visibility = View.VISIBLE
+            tvEmpty.text = localized(R.string.phone_required)
+            return
+        }
 
         rv.layoutManager = LinearLayoutManager(requireContext())
         viewLifecycleOwner.lifecycleScope.launch {
@@ -41,11 +47,17 @@ class MyReportsFragment : Fragment() {
             repo.getReports(phone).fold(
                 onSuccess = { reports ->
                     progress.visibility = View.GONE
-                    if (reports.isEmpty()) tvEmpty.visibility = View.VISIBLE
-                    else rv.adapter = ReportAdapter(reports)
+                    if (reports.isEmpty()) {
+                        tvEmpty.visibility = View.VISIBLE
+                        tvEmpty.text = localized(R.string.no_reports_hint)
+                    } else {
+                        rv.adapter = ReportAdapter(reports)
+                    }
                 },
                 onFailure = {
                     progress.visibility = View.GONE
+                    tvEmpty.visibility = View.VISIBLE
+                    tvEmpty.text = localized(R.string.network_error)
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                 },
             )
@@ -62,7 +74,8 @@ private class ReportAdapter(private val items: List<CustomerReport>) :
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val r = items[position]
-        holder.text.text = "${r.testName} (${r.billNo}) — ${r.status}\nReport: ${r.reportingDate ?: "—"}"
+        // Test names kept as returned from AKTIV (English)
+        holder.text.text = "${r.testName} (${r.billNo}) — ${r.status}\n${r.reportingDate ?: "—"}"
     }
 
     override fun getItemCount() = items.size

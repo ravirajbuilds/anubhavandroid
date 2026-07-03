@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="AKTIV"
+                android:text="ALC"
                 android:textColor="@color/brand_dark_blue"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -42,6 +42,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
+        android:id="@+id/navHeaderTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -53,6 +54,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/navHeaderSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -86,10 +88,11 @@
             android:fontFamily="sans-serif-medium"
             android:paddingHorizontal="14dp"
             android:paddingVertical="8dp"
-            android:text="AKTIV Bills"
+            android:text="@string/menu_book_test"
             android:textColor="@color/brand_yellow"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/reportsLabel"
@@ -100,10 +103,11 @@
             android:fontFamily="sans-serif-medium"
             android:paddingHorizontal="14dp"
             android:paddingVertical="8dp"
-            android:text="Test Mode"
+            android:text="@string/menu_my_reports"
             android:textColor="@color/brand_dark_blue"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
     </LinearLayout>
 

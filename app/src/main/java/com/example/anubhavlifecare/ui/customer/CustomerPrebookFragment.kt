@@ -24,6 +24,7 @@ import com.example.anubhavlifecare.data.repository.CustomerRepository
 import com.example.anubhavlifecare.ui.booking.AktivTestAdapter
 import com.example.anubhavlifecare.utils.CustomerSessionManager
 import com.example.anubhavlifecare.utils.PaymentManager
+import com.example.anubhavlifecare.utils.localized
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.razorpay.PaymentResultListener
@@ -40,7 +41,6 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     private var selectedDate: String? = null
     private var selectedSlot: String? = null
     private lateinit var testAdapter: AktivTestAdapter
-
     private var testAdapterItems: List<AktivTest> = emptyList()
 
     override fun onCreateView(
@@ -52,6 +52,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? MainActivity)?.setPaymentListener(this)
+        view.findViewById<TextView>(R.id.tvPrebookTitle).text = localized(R.string.prebook_time_slot)
 
         val etName = view.findViewById<TextInputEditText>(R.id.etPatientName)
         val etAge = view.findViewById<TextInputEditText>(R.id.etAgeYear)
@@ -70,14 +71,16 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         CustomerSessionManager.getName(requireContext())?.let { etName.setText(it) }
 
         spinnerSex.setAdapter(
-            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, listOf("MALE", "FEMALE")),
+            ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                listOf(getString(R.string.sex_male), getString(R.string.sex_female)),
+            ),
         )
-        spinnerSex.setText("MALE", false)
+        spinnerSex.setText(getString(R.string.sex_male), false)
 
-        tvPolicy.text = getString(
-            R.string.prebook_policy,
-            getString(R.string.reschedule_phone),
-        )
+        tvPolicy.text = localized(R.string.prebook_policy, getString(R.string.reschedule_phone))
+        btnPay.text = localized(R.string.pay_advance)
 
         testAdapter = AktivTestAdapter { test ->
             if (selectedTests.containsKey(test.testKey)) {
@@ -100,6 +103,8 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                     aktivRepo.searchTests(s?.toString().orEmpty()).onSuccess {
                         testAdapterItems = it
                         testAdapter.submit(it, selectedTests.values.toList())
+                    }.onFailure {
+                        Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -117,7 +122,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                     selectedDate = cal.dates[pos].date
                     val slotLabels = cal.dates[pos].slots
                         .filter { it.available }
-                        .map { "${it.label} (${it.remaining} left)" }
+                        .map { localized(R.string.slots_remaining, it.label, it.remaining) }
                     spinnerSlot.setAdapter(
                         ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, slotLabels),
                     )
@@ -126,6 +131,8 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                         selectedSlot = available[slotPos].timeSlot
                     }
                 }
+            }.onFailure {
+                Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_LONG).show()
             }
             aktivRepo.searchTests("").onSuccess {
                 testAdapterItems = it
@@ -137,12 +144,13 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         btnPay.setOnClickListener {
             val phone = CustomerSessionManager.getPhone(requireContext())
             if (phone.isNullOrBlank()) {
-                Toast.makeText(requireContext(), R.string.phone_required, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), localized(R.string.phone_required), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             val name = etName.text?.toString()?.trim().orEmpty()
-            if (name.isBlank() || selectedTests.isEmpty() || selectedDate == null || selectedSlot == null) {
-                Toast.makeText(requireContext(), R.string.fill_all_fields, Toast.LENGTH_SHORT).show()
+            val age = etAge.text?.toString()?.trim().orEmpty()
+            if (name.isBlank() || age.isBlank() || selectedTests.isEmpty() || selectedDate == null || selectedSlot == null) {
+                Toast.makeText(requireContext(), localized(R.string.fill_all_fields), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             val total = selectedTests.values.sumOf { it.rate }
@@ -152,7 +160,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 name = name,
                 email = CustomerSessionManager.getEmail(requireContext()).orEmpty(),
                 phone = phone,
-                description = "50% prebook advance (non-refundable)",
+                description = localized(R.string.payment_description_prebook),
                 orderNote = "PREBOOK $selectedDate $selectedSlot",
             )
         }
@@ -161,9 +169,9 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     private fun updateTotals(tvSelected: TextView, tvTotal: TextView, tvAdvance: TextView) {
         val names = selectedTests.values.joinToString(", ") { it.testName }
         val total = selectedTests.values.sumOf { it.rate }
-        tvSelected.text = names.ifBlank { getString(R.string.no_tests_selected) }
-        tvTotal.text = getString(R.string.total_amount_value, total)
-        tvAdvance.text = getString(R.string.advance_amount_value, total * 0.5)
+        tvSelected.text = names.ifBlank { localized(R.string.no_tests_selected) }
+        tvTotal.text = localized(R.string.total_amount_value, total)
+        tvAdvance.text = localized(R.string.advance_amount_value, total * 0.5)
     }
 
     override fun onPaymentSuccess(razorpayPaymentId: String?) {
@@ -179,7 +187,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
             val request = CustomerPrebookRequest(
                 patientName = etName.text?.toString()?.trim().orEmpty(),
                 phone = phone,
-                sex = spinnerSex.text?.toString() ?: "MALE",
+                sex = spinnerSex.text?.toString() ?: getString(R.string.sex_male),
                 ageYear = etAge.text?.toString()?.toIntOrNull(),
                 testKeys = selectedTests.keys.toList(),
                 slotDate = selectedDate!!,
@@ -193,14 +201,18 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                     progress.visibility = View.GONE
                     Toast.makeText(
                         requireContext(),
-                        getString(R.string.prebook_success, resp.alcCode, resp.reschedulePhone),
+                        localized(R.string.prebook_success, resp.alcCode, resp.reschedulePhone),
                         Toast.LENGTH_LONG,
                     ).show()
                     selectedTests.clear()
                 },
                 onFailure = { e ->
                     progress.visibility = View.GONE
-                    Toast.makeText(requireContext(), e.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        e.message ?: localized(R.string.something_went_wrong),
+                        Toast.LENGTH_LONG,
+                    ).show()
                 },
             )
         }
@@ -212,6 +224,10 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     }
 
     override fun onPaymentError(code: Int, description: String?) {
-        Toast.makeText(requireContext(), description ?: getString(R.string.payment_failed), Toast.LENGTH_LONG).show()
+        Toast.makeText(
+            requireContext(),
+            description ?: localized(R.string.payment_failed),
+            Toast.LENGTH_LONG,
+        ).show()
     }
 }

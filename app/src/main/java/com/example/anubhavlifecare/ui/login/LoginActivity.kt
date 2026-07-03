@@ -1,40 +1,80 @@
 package com.example.anubhavlifecare.ui.login
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.ProgressBar
-import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.anubhavlifecare.MainActivity
 import com.example.anubhavlifecare.R
 import com.example.anubhavlifecare.data.repository.CustomerRepository
 import com.example.anubhavlifecare.utils.CustomerSessionManager
+import com.example.anubhavlifecare.utils.LanguageManager
+import com.example.anubhavlifecare.utils.localized
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.FirebaseException
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
-import java.util.concurrent.TimeUnit
 
-/**
- * Customer login via Firebase Phone OTP or Email.
- * Phone OTP is verified client-side by Firebase SDK (Play Integrity / SHA hash in Firebase console).
- */
 class LoginActivity : AppCompatActivity() {
+
     private val auth = FirebaseAuth.getInstance()
     private val customerRepo = CustomerRepository()
-    private var verificationId: String? = null
-    private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
-    private var loginMode = MODE_PHONE
+    private lateinit var languageManager: LanguageManager
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private val facebookCallbackManager = CallbackManager.Factory.create()
+
+    private var isSignUpMode = false
+    private var pendingLanguage: String? = null
+
+    private lateinit var layoutLanguage: LinearLayout
+    private lateinit var layoutLogin: View
+    private lateinit var tvLoginError: TextView
+    private lateinit var progressLogin: ProgressBar
+    private lateinit var btnEmailAuth: MaterialButton
+    private lateinit var etEmail: TextInputEditText
+    private lateinit var etPassword: TextInputEditText
+
+    private val googleLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+    ) { result ->
+        setLoading(false)
+        val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+        try {
+            val account = task.getResult(ApiException::class.java)
+            val idToken = account.idToken
+            if (idToken.isNullOrBlank()) {
+                showInlineError(localized(R.string.login_failed))
+                return@registerForActivityResult
+            }
+            signInWithGoogleToken(idToken)
+        } catch (e: ApiException) {
+            if (e.statusCode != 12501) {
+                showInlineError(e.localizedMessage ?: localized(R.string.login_failed))
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,231 +84,303 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
+        languageManager = LanguageManager(this)
         setContentView(R.layout.activity_login)
+        bindViews()
+        setupGoogleSignIn()
+        setupFacebookLogin()
+        setupLanguageSelection()
+        setupLoginUi()
 
-        val radioLoginMode = findViewById<RadioGroup>(R.id.radioLoginMode)
-        val layoutPhone = findViewById<TextInputLayout>(R.id.layoutPhone)
-        val layoutEmail = findViewById<TextInputLayout>(R.id.layoutEmail)
-        val layoutOtp = findViewById<TextInputLayout>(R.id.layoutOtp)
-        val etPhone = findViewById<TextInputEditText>(R.id.etPhone)
-        val etEmail = findViewById<TextInputEditText>(R.id.etEmail)
-        val etOtp = findViewById<TextInputEditText>(R.id.etOtp)
-        val btnAction = findViewById<MaterialButton>(R.id.btnLogin)
-        val progress = findViewById<ProgressBar>(R.id.progressLogin)
-        val tvHint = findViewById<TextView>(R.id.tvLoginHint)
-
-        fun updateMode() {
-            val isPhone = loginMode == MODE_PHONE
-            layoutPhone.visibility = if (isPhone) View.VISIBLE else View.GONE
-            layoutEmail.visibility = if (isPhone) View.GONE else View.VISIBLE
-            layoutOtp.visibility = if (isPhone && verificationId != null) View.VISIBLE else View.GONE
-            btnAction.text = when {
-                isPhone && verificationId == null -> getString(R.string.send_otp)
-                isPhone -> getString(R.string.verify_otp)
-                else -> getString(R.string.login_with_email)
-            }
-            tvHint.text = if (isPhone) {
-                getString(R.string.login_phone_hint)
-            } else {
-                getString(R.string.login_email_hint)
-            }
+        if (languageManager.hasSelectedLanguage()) {
+            showLoginScreen()
+        } else {
+            showLanguageScreen()
         }
-
-        radioLoginMode.setOnCheckedChangeListener { _, checkedId ->
-            loginMode = if (checkedId == R.id.radioPhone) MODE_PHONE else MODE_EMAIL
-            verificationId = null
-            layoutOtp.visibility = View.GONE
-            updateMode()
-        }
-
-        btnAction.setOnClickListener {
-            progress.visibility = View.VISIBLE
-            btnAction.isEnabled = false
-
-            if (loginMode == MODE_PHONE) {
-                if (verificationId == null) {
-                    val phone = etPhone.text?.toString()?.trim().orEmpty()
-                    if (phone.length < 10) {
-                        showError(getString(R.string.invalid_phone))
-                        progress.visibility = View.GONE
-                        btnAction.isEnabled = true
-                        return@setOnClickListener
-                    }
-                    sendPhoneOtp("+91$phone", progress, btnAction) { updateMode() }
-                } else {
-                    val otp = etOtp.text?.toString()?.trim().orEmpty()
-                    if (otp.length < 6) {
-                        showError(getString(R.string.invalid_otp))
-                        progress.visibility = View.GONE
-                        btnAction.isEnabled = true
-                        return@setOnClickListener
-                    }
-                    verifyPhoneOtp(otp, etPhone.text?.toString()?.trim().orEmpty(), progress, btnAction)
-                }
-            } else {
-                val email = etEmail.text?.toString()?.trim().orEmpty()
-                if (!email.contains("@")) {
-                    showError(getString(R.string.invalid_email))
-                    progress.visibility = View.GONE
-                    btnAction.isEnabled = true
-                    return@setOnClickListener
-                }
-                loginWithEmail(email, progress, btnAction)
-            }
-        }
-
-        updateMode()
-        handleEmailLink(intent)
     }
 
-    private fun sendPhoneOtp(
-        phoneE164: String,
-        progress: ProgressBar,
-        btn: MaterialButton,
-        onSent: () -> Unit,
-    ) {
-        val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                progress.visibility = View.GONE
-                btn.isEnabled = true
-                signInWithPhoneCredential(credential, phoneE164.removePrefix("+91"))
-            }
+    private fun bindViews() {
+        layoutLanguage = findViewById(R.id.layoutLanguage)
+        layoutLogin = findViewById(R.id.layoutLogin)
+        tvLoginError = findViewById(R.id.tvLoginError)
+        progressLogin = findViewById(R.id.progressLogin)
+        btnEmailAuth = findViewById(R.id.btnEmailAuth)
+        etEmail = findViewById(R.id.etEmail)
+        etPassword = findViewById(R.id.etPassword)
+    }
 
-            override fun onVerificationFailed(e: FirebaseException) {
-                progress.visibility = View.GONE
-                btn.isEnabled = true
-                showError(e.message ?: getString(R.string.login_failed))
-            }
-
-            override fun onCodeSent(
-                id: String,
-                token: PhoneAuthProvider.ForceResendingToken,
-            ) {
-                verificationId = id
-                resendToken = token
-                progress.visibility = View.GONE
-                btn.isEnabled = true
-                Toast.makeText(this@LoginActivity, R.string.otp_sent, Toast.LENGTH_SHORT).show()
-                onSent()
-            }
-        }
-
-        val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(phoneE164)
-            .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(this)
-            .setCallbacks(callbacks)
+    private fun setupGoogleSignIn() {
+        val webClientId = getString(R.string.default_web_client_id)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(webClientId)
+            .requestEmail()
             .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
     }
 
-    private fun verifyPhoneOtp(
-        otp: String,
-        phone: String,
-        progress: ProgressBar,
-        btn: MaterialButton,
-    ) {
-        val id = verificationId
-        if (id == null) {
-            progress.visibility = View.GONE
-            btn.isEnabled = true
+    private fun setupFacebookLogin() {
+        LoginManager.getInstance().registerCallback(
+            facebookCallbackManager,
+            object : FacebookCallback<LoginResult> {
+                override fun onSuccess(result: LoginResult) {
+                    signInWithFacebookToken(result.accessToken.token)
+                }
+
+                override fun onCancel() {
+                    setLoading(false)
+                }
+
+                override fun onError(error: FacebookException) {
+                    setLoading(false)
+                    showInlineError(error.localizedMessage ?: localized(R.string.login_failed))
+                }
+            },
+        )
+    }
+
+    private fun setupLanguageSelection() {
+        val cardEnglish = findViewById<MaterialCardView>(R.id.cardEnglish)
+        val cardBengali = findViewById<MaterialCardView>(R.id.cardBengali)
+        val ivEnglishCheck = findViewById<ImageView>(R.id.ivEnglishCheck)
+        val ivBengaliCheck = findViewById<ImageView>(R.id.ivBengaliCheck)
+        val btnContinue = findViewById<MaterialButton>(R.id.btnContinueLanguage)
+
+        fun updateLanguageCards() {
+            val englishSelected = pendingLanguage == LanguageManager.LANGUAGE_ENGLISH
+            val bengaliSelected = pendingLanguage == LanguageManager.LANGUAGE_BENGALI
+            cardEnglish.strokeWidth = if (englishSelected) 3 else 0
+            cardBengali.strokeWidth = if (bengaliSelected) 3 else 0
+            ivEnglishCheck.visibility = if (englishSelected) View.VISIBLE else View.GONE
+            ivBengaliCheck.visibility = if (bengaliSelected) View.VISIBLE else View.GONE
+            btnContinue.isEnabled = pendingLanguage != null
+        }
+
+        cardEnglish.setOnClickListener {
+            pendingLanguage = LanguageManager.LANGUAGE_ENGLISH
+            updateLanguageCards()
+        }
+        cardBengali.setOnClickListener {
+            pendingLanguage = LanguageManager.LANGUAGE_BENGALI
+            updateLanguageCards()
+        }
+        btnContinue.setOnClickListener {
+            pendingLanguage?.let { languageManager.setLanguage(it) }
+            showLoginScreen()
+        }
+
+        updateLanguageCards()
+        refreshLanguageScreenTexts()
+    }
+
+    private fun setupLoginUi() {
+        findViewById<MaterialButton>(R.id.btnGoogle).setOnClickListener {
+            setLoading(true)
+            hideInlineError()
+            googleLauncher.launch(googleSignInClient.signInIntent)
+        }
+
+        findViewById<MaterialButton>(R.id.btnFacebook).setOnClickListener {
+            setLoading(true)
+            hideInlineError()
+            LoginManager.getInstance().logInWithReadPermissions(
+                this,
+                facebookCallbackManager,
+                listOf("email", "public_profile"),
+            )
+        }
+
+        btnEmailAuth.setOnClickListener { handleEmailAuth() }
+
+        findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
+            val email = etEmail.text?.toString()?.trim().orEmpty()
+            if (!email.contains("@")) {
+                showInlineError(localized(R.string.invalid_email))
+                return@setOnClickListener
+            }
+            setLoading(true)
+            auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener { task ->
+                    setLoading(false)
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, localized(R.string.password_reset_sent), Toast.LENGTH_LONG).show()
+                    } else {
+                        showInlineError(task.exception?.localizedMessage ?: localized(R.string.something_went_wrong))
+                    }
+                }
+        }
+
+        findViewById<TextView>(R.id.tvToggleAuthMode).setOnClickListener {
+            isSignUpMode = !isSignUpMode
+            refreshLoginTexts()
+            hideInlineError()
+        }
+
+        findViewById<TextView>(R.id.tvChangeLanguage).setOnClickListener {
+            showLanguageScreen()
+        }
+    }
+
+    private fun handleEmailAuth() {
+        hideInlineError()
+        val email = etEmail.text?.toString()?.trim().orEmpty()
+        val password = etPassword.text?.toString().orEmpty()
+
+        if (!email.contains("@")) {
+            showInlineError(localized(R.string.invalid_email))
             return
         }
-        val credential = PhoneAuthProvider.getCredential(id, otp)
-        signInWithPhoneCredential(credential, phone)
-        progress.visibility = View.GONE
-        btn.isEnabled = true
-    }
+        if (password.length < 6) {
+            showInlineError(localized(R.string.invalid_password))
+            return
+        }
 
-    private fun signInWithPhoneCredential(credential: PhoneAuthCredential, phone: String) {
+        setLoading(true)
         lifecycleScope.launch {
             try {
+                val result = if (isSignUpMode) {
+                    auth.createUserWithEmailAndPassword(email, password).await()
+                } else {
+                    auth.signInWithEmailAndPassword(email, password).await()
+                }
+                completeFirebaseLogin(result.user?.email, result.user?.displayName, result.user?.uid ?: "")
+            } catch (e: Exception) {
+                setLoading(false)
+                showInlineError(e.localizedMessage ?: localized(if (isSignUpMode) R.string.sign_up_failed else R.string.login_failed))
+            }
+        }
+    }
+
+    private fun signInWithGoogleToken(idToken: String) {
+        setLoading(true)
+        lifecycleScope.launch {
+            try {
+                val credential = GoogleAuthProvider.getCredential(idToken, null)
                 val result = auth.signInWithCredential(credential).await()
-                val user = result.user ?: throw IllegalStateException("No user")
-                val profile = customerRepo.getProfile(phone = phone, email = user.email).getOrNull()
-                CustomerSessionManager.save(
-                    this@LoginActivity,
-                    phone = phone,
-                    email = user.email,
-                    name = profile?.patientName,
-                    firebaseUid = user.uid,
-                )
-                openMain()
+                completeFirebaseLogin(result.user?.email, result.user?.displayName, result.user?.uid ?: "")
             } catch (e: Exception) {
-                showError(e.message ?: getString(R.string.login_failed))
+                setLoading(false)
+                showInlineError(e.localizedMessage ?: localized(R.string.login_failed))
             }
         }
     }
 
-    private fun loginWithEmail(
-        email: String,
-        progress: ProgressBar,
-        btn: MaterialButton,
-    ) {
+    private fun signInWithFacebookToken(token: String) {
+        setLoading(true)
         lifecycleScope.launch {
             try {
-                // Passwordless email: send 6-digit style via email link; for app UX use email+temp password flow
-                // Using Firebase email link — user gets email, returns via same device browser session
-                val actionCodeSettings = com.google.firebase.auth.ActionCodeSettings.newBuilder()
-                    .setUrl("https://anubhavlifecare.in/finishSignIn?email=$email")
-                    .setHandleCodeInApp(true)
-                    .setAndroidPackageName(packageName, true, null)
-                    .build()
-
-                auth.sendSignInLinkToEmail(email, actionCodeSettings).await()
-                getSharedPreferences("email_login", MODE_PRIVATE)
-                    .edit()
-                    .putString("pending_email", email)
-                    .apply()
-
-                progress.visibility = View.GONE
-                btn.isEnabled = true
-                Toast.makeText(
-                    this@LoginActivity,
-                    R.string.email_link_sent,
-                    Toast.LENGTH_LONG,
-                ).show()
+                val credential = FacebookAuthProvider.getCredential(token)
+                val result = auth.signInWithCredential(credential).await()
+                completeFirebaseLogin(result.user?.email, result.user?.displayName, result.user?.uid ?: "")
             } catch (e: Exception) {
-                progress.visibility = View.GONE
-                btn.isEnabled = true
-                showError(e.message ?: getString(R.string.login_failed))
+                setLoading(false)
+                showInlineError(e.localizedMessage ?: localized(R.string.login_failed))
             }
         }
     }
 
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-        handleEmailLink(intent)
+    private suspend fun completeFirebaseLogin(email: String?, displayName: String?, firebaseUid: String) {
+        try {
+            val profile = customerRepo.getProfile(phone = null, email = email).getOrNull()
+            if (profile == null && email.isNullOrBlank()) {
+                setLoading(false)
+                showProfileNotFoundDialog()
+                auth.signOut()
+                return
+            }
+            CustomerSessionManager.save(
+                this,
+                phone = profile?.phone,
+                email = email ?: profile?.email,
+                name = profile?.patientName ?: displayName,
+                firebaseUid = firebaseUid,
+            )
+            setLoading(false)
+            openMain()
+        } catch (e: Exception) {
+            setLoading(false)
+            // Allow login even if AKTIV lookup fails — user can still browse
+            CustomerSessionManager.save(
+                this,
+                phone = null,
+                email = email,
+                name = displayName,
+                firebaseUid = firebaseUid,
+            )
+            openMain()
+        }
     }
 
-    private fun handleEmailLink(intent: Intent?) {
-        val link = intent?.data?.toString() ?: return
-        if (!auth.isSignInWithEmailLink(link)) return
-
-        val email = getSharedPreferences("email_login", MODE_PRIVATE)
-            .getString("pending_email", null) ?: return
-
-        lifecycleScope.launch {
-            try {
-                val result = auth.signInWithEmailLink(email, link).await()
-                val user = result.user ?: return@launch
-                val profile = customerRepo.getProfile(phone = null, email = email).getOrNull()
-                CustomerSessionManager.save(
-                    this@LoginActivity,
-                    phone = profile?.phone,
-                    email = email,
-                    name = profile?.patientName,
-                    firebaseUid = user.uid,
+    private fun showProfileNotFoundDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(localized(R.string.profile_not_found_title))
+            .setMessage(localized(R.string.profile_not_found_message))
+            .setPositiveButton(localized(R.string.contact_clinic)) { _, _ ->
+                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919230755875")))
+            }
+            .setNeutralButton(localized(R.string.whatsapp_support)) { _, _ ->
+                val msg = localized(R.string.whatsapp_booking_message)
+                startActivity(
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/919230755876?text=${Uri.encode(msg)}")),
                 )
-                openMain()
-            } catch (e: Exception) {
-                showError(e.message ?: getString(R.string.login_failed))
             }
-        }
+            .setNegativeButton(localized(R.string.cancel), null)
+            .show()
     }
 
-    private fun showError(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    private fun showLanguageScreen() {
+        layoutLanguage.visibility = View.VISIBLE
+        layoutLogin.visibility = View.GONE
+        pendingLanguage = languageManager.getCurrentLanguage()
+        refreshLanguageScreenTexts()
+    }
+
+    private fun showLoginScreen() {
+        layoutLanguage.visibility = View.GONE
+        layoutLogin.visibility = View.VISIBLE
+        refreshLoginTexts()
+    }
+
+    private fun refreshLanguageScreenTexts() {
+        findViewById<TextView>(R.id.tvChooseLanguageTitle).text = localized(R.string.choose_language_title)
+        findViewById<TextView>(R.id.tvChooseLanguageSubtitle).text = localized(R.string.choose_language_subtitle)
+        findViewById<MaterialButton>(R.id.btnContinueLanguage).text = localized(R.string.continue_btn)
+    }
+
+    private fun refreshLoginTexts() {
+        findViewById<TextView>(R.id.tvLoginWelcome).text = localized(R.string.login_welcome)
+        findViewById<TextView>(R.id.tvLoginSubtitle).text = localized(
+            if (isSignUpMode) R.string.sign_up_subtitle else R.string.login_subtitle,
+        )
+        findViewById<TextView>(R.id.tvOrContinue).text = localized(R.string.or_continue_with)
+        findViewById<MaterialButton>(R.id.btnGoogle).text = localized(R.string.login_with_google)
+        findViewById<MaterialButton>(R.id.btnFacebook).text = localized(R.string.login_with_facebook)
+        btnEmailAuth.text = localized(if (isSignUpMode) R.string.sign_up_with_email else R.string.login_with_email)
+        findViewById<TextView>(R.id.tvForgotPassword).text = localized(R.string.forgot_password)
+        findViewById<TextView>(R.id.tvToggleAuthMode).text = localized(
+            if (isSignUpMode) R.string.already_have_account else R.string.dont_have_account,
+        )
+        findViewById<TextView>(R.id.tvChangeLanguage).text =
+            "${localized(R.string.action_settings)} · ${localized(R.string.settings_language_title)}"
+        findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.layoutEmail).hint =
+            localized(R.string.email)
+        findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.layoutPassword).hint =
+            localized(R.string.password)
+    }
+
+    private fun setLoading(loading: Boolean) {
+        progressLogin.visibility = if (loading) View.VISIBLE else View.GONE
+        btnEmailAuth.isEnabled = !loading
+        findViewById<MaterialButton>(R.id.btnGoogle).isEnabled = !loading
+        findViewById<MaterialButton>(R.id.btnFacebook).isEnabled = !loading
+    }
+
+    private fun showInlineError(message: String) {
+        tvLoginError.text = message
+        tvLoginError.visibility = View.VISIBLE
+    }
+
+    private fun hideInlineError() {
+        tvLoginError.visibility = View.GONE
     }
 
     private fun openMain() {
@@ -276,8 +388,9 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    companion object {
-        private const val MODE_PHONE = 0
-        private const val MODE_EMAIL = 1
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        facebookCallbackManager.onActivityResult(requestCode, resultCode, data)
     }
 }

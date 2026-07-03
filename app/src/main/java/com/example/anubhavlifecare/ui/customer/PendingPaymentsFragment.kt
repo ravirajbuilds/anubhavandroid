@@ -18,6 +18,7 @@ import com.example.anubhavlifecare.data.model.CustomerPaymentRequest
 import com.example.anubhavlifecare.data.repository.CustomerRepository
 import com.example.anubhavlifecare.utils.CustomerSessionManager
 import com.example.anubhavlifecare.utils.PaymentManager
+import com.example.anubhavlifecare.utils.localized
 import com.google.android.material.button.MaterialButton
 import com.razorpay.PaymentResultListener
 import kotlinx.coroutines.launch
@@ -40,7 +41,16 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
         val tvEmpty = view.findViewById<TextView>(R.id.tvEmpty)
         val btnRefresh = view.findViewById<MaterialButton>(R.id.btnRefresh)
 
-        val phone = CustomerSessionManager.getPhone(requireContext()) ?: return
+        view.findViewById<TextView>(R.id.tvPendingTitle)?.let { it.text = localized(R.string.pending_payments_title) }
+        btnRefresh.text = localized(R.string.refresh_from_aktiv)
+        tvEmpty.text = localized(R.string.no_pending)
+
+        val phone = CustomerSessionManager.getPhone(requireContext())
+        if (phone.isNullOrBlank()) {
+            tvEmpty.visibility = View.VISIBLE
+            tvEmpty.text = localized(R.string.phone_required)
+            return
+        }
 
         fun load() {
             viewLifecycleOwner.lifecycleScope.launch {
@@ -50,7 +60,7 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
                         progress.visibility = View.GONE
                         tvEmpty.visibility = if (bills.isEmpty()) View.VISIBLE else View.GONE
                         rv.layoutManager = LinearLayoutManager(requireContext())
-                        rv.adapter = PendingAdapter(bills) { bill ->
+                        rv.adapter = PendingAdapter(bills, requireContext()) { bill ->
                             pendingBill = bill
                             PaymentManager(requireActivity(), this@PendingPaymentsFragment)
                                 .startPayment(
@@ -58,12 +68,14 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
                                     name = bill.patientName.orEmpty(),
                                     email = CustomerSessionManager.getEmail(requireContext()).orEmpty(),
                                     phone = phone,
-                                    description = "Pending bill ${bill.billNo}",
+                                    description = localized(R.string.payment_description_pending, bill.billNo ?: "—"),
                                 )
                         }
                     },
                     onFailure = {
                         progress.visibility = View.GONE
+                        tvEmpty.visibility = View.VISIBLE
+                        tvEmpty.text = localized(R.string.network_error)
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                     },
                 )
@@ -87,12 +99,16 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
                 ),
             ).fold(
                 onSuccess = {
-                    Toast.makeText(requireContext(), R.string.payment_success, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), localized(R.string.payment_success), Toast.LENGTH_LONG).show()
                     parentFragmentManager.beginTransaction().detach(this@PendingPaymentsFragment).commit()
                     parentFragmentManager.beginTransaction().attach(this@PendingPaymentsFragment).commit()
                 },
                 onFailure = {
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        it.message ?: localized(R.string.something_went_wrong),
+                        Toast.LENGTH_LONG,
+                    ).show()
                 },
             )
         }
@@ -104,12 +120,17 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
     }
 
     override fun onPaymentError(code: Int, description: String?) {
-        Toast.makeText(requireContext(), description, Toast.LENGTH_LONG).show()
+        Toast.makeText(
+            requireContext(),
+            description ?: localized(R.string.payment_failed),
+            Toast.LENGTH_LONG,
+        ).show()
     }
 }
 
 private class PendingAdapter(
     private val items: List<CustomerBill>,
+    private val context: android.content.Context,
     private val onPay: (CustomerBill) -> Unit,
 ) : RecyclerView.Adapter<PendingAdapter.VH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -124,7 +145,7 @@ private class PendingAdapter(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val b = items[position]
-        holder.button.text = "${b.billNo} — Pay ₹${b.pendingAmount}"
+        holder.button.text = context.localized(R.string.pay_bill, b.billNo ?: "—", b.pendingAmount)
         holder.button.setOnClickListener { onPay(b) }
     }
 

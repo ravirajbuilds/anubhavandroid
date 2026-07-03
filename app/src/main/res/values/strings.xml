@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">Book tests, view reports &amp; pay online</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="account_section">Account</string>
 
     <!-- Menu Items -->
     <string name="menu_home">Home</string>
@@ -15,51 +16,88 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_contact">Contact Us</string>
     <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
 
-    <string name="login_username">AKTIV Username</string>
-    <string name="login_password">Password</string>
-    <string name="login_required">Enter username and password</string>
-    <string name="login_failed">Login failed</string>
-    <string name="login_hint">Use your AKTIV desktop login (same as reception PC)</string>
     <string name="logout">Logout</string>
     <string name="logged_in_as">Logged in as %1$s</string>
 
     <!-- Authentication -->
-    <string name="login">Login</string>
+    <string name="login">Sign In</string>
+    <string name="sign_up">Sign Up</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="phone">Phone Number</string>
     <string name="name">Name</string>
-    <string name="otp">OTP</string>
-    <string name="login_with_email">Login with Email</string>
-    <string name="login_with_phone">Login with Phone</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="dont_have_account">Don\'t have an account?</string>
-    <string name="already_have_account">Already have an account?</string>
+    <string name="login_with_google">Continue with Google</string>
+    <string name="login_with_facebook">Continue with Facebook</string>
+    <string name="login_with_email">Sign in with Email</string>
+    <string name="sign_up_with_email">Create account with Email</string>
+    <string name="or_continue_with">or continue with email</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="already_have_account">Already have an account? Sign in</string>
+    <string name="login_failed">Sign in failed. Please try again.</string>
+    <string name="sign_up_failed">Could not create account. Please try again.</string>
+    <string name="invalid_email">Enter a valid email address</string>
+    <string name="invalid_password">Password must be at least 6 characters</string>
+    <string name="password_reset_sent">Password reset link sent to your email</string>
+    <string name="auth_cancelled">Sign in was cancelled</string>
+    <string name="profile_not_found_title">Profile not found</string>
+    <string name="profile_not_found_message">We could not find your records at Anubhav Life Care. Please visit the clinic or call us to register your mobile number, then sign in again.</string>
+    <string name="contact_clinic">Call clinic</string>
+    <string name="whatsapp_support">WhatsApp support</string>
+    <string name="default_web_client_id">REPLACE_WITH_FIREBASE_WEB_CLIENT_ID</string>
+    <string name="facebook_app_id">REPLACE_WITH_FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fbREPLACE_WITH_FACEBOOK_APP_ID</string>
+    <string name="facebook_client_token">REPLACE_WITH_FACEBOOK_CLIENT_TOKEN</string>
+
+    <!-- Language selection -->
+    <string name="choose_language_title">Choose your language</string>
+    <string name="choose_language_subtitle">Pick how you want to use the app. You can change this anytime in Settings.</string>
+    <string name="language_english_full">English</string>
+    <string name="language_bengali_full">বাংলা (Bengali)</string>
+    <string name="continue_btn">Continue</string>
+    <string name="language_english">A</string>
+    <string name="language_bengali">অ</string>
+    <string name="switch_to_english">Switch to English</string>
+    <string name="switch_to_bengali">Switch to Bengali</string>
+    <string name="settings_language_title">App language</string>
+    <string name="settings_language_hint">Changes apply immediately across the app.</string>
+    <string name="settings_account_title">Your account</string>
+    <string name="settings_saved">Settings saved</string>
 
     <!-- Booking -->
     <string name="book_appointment">Book Appointment</string>
     <string name="select_tests">Select Tests</string>
-    <string name="search_tests">Search tests...</string>
+    <string name="search_tests">Search tests…</string>
     <string name="preferred_date">Preferred Date</string>
     <string name="preferred_time">Preferred Time</string>
     <string name="booking_type">Booking Type</string>
     <string name="regular_booking">Regular Booking</string>
-    <string name="prebook_time_slot">Prebook Time Slot</string>
+    <string name="prebook_time_slot">Book Your Test</string>
     <string name="prebook_doctor">Prebook Doctor</string>
     <string name="total_amount">Total Amount</string>
     <string name="advance_payment">Advance Payment</string>
-    <string name="pay_advance">Pay Advance</string>
+    <string name="pay_advance">Pay 50%% Advance</string>
     <string name="book_now">Book Now</string>
+    <string name="patient_age">Age (years)</string>
+    <string name="patient_sex">Sex</string>
+    <string name="sex_male">MALE</string>
+    <string name="sex_female">FEMALE</string>
+    <string name="slots_remaining">%1$s (%2$d left)</string>
 
     <!-- Home Screen -->
-    <string name="welcome_title">Anubhav Life Care</string>
-    <string name="welcome_subtitle">Book tests, view reports &amp; pay pending bills</string>
+    <string name="welcome_title">Welcome to Anubhav</string>
+    <string name="welcome_subtitle">Your trusted diagnostic partner</string>
     <string name="quick_actions">Quick Actions</string>
     <string name="book_test_title">Book Test</string>
     <string name="book_test_subtitle">Schedule Appointment</string>
+    <string name="view_reports_title">View Reports</string>
+    <string name="view_reports_subtitle">Download results</string>
     <string name="my_bookings_title">My Bookings</string>
     <string name="my_bookings_subtitle">Track Status</string>
+    <string name="home_collection_title">Home Collection</string>
+    <string name="home_collection_subtitle">Free pickup</string>
     <string name="popular_tests">Popular Tests</string>
     <string name="view_all">View All</string>
     <string name="why_choose_us">Why Choose Us</string>
@@ -71,6 +109,7 @@
     <string name="call_label">Call: +91-9230755875</string>
     <string name="whatsapp_label">WhatsApp: +91-9230755876</string>
     <string name="email_label">Email: contact.anubhavlife@gmail.com</string>
+    <string name="home_collection_info">Free home collection available!\nCall +91-9230755876 or use WhatsApp</string>
 
     <!-- Booking Screen -->
     <string name="book_test_header">Book Your Test Online</string>
@@ -79,7 +118,7 @@
     <string name="features_list">• Home sample collection available\n• Same day reports for most tests\n• Secure online payments with Razorpay\n• Email notifications and WhatsApp support\n• Time slot booking with advance payment\n• 24/7 customer support available</string>
     <string name="start_booking">Start Booking Process</string>
 
-    <!-- Test Details -->
+    <!-- Test Details (names kept in English in both languages) -->
     <string name="cbc_test">Complete Blood Count (CBC)</string>
     <string name="cbc_description">Comprehensive blood analysis including RBC, WBC, platelets</string>
     <string name="cbc_preparation">12 hours fasting required</string>
@@ -104,41 +143,47 @@
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="error">Error</string>
     <string name="success">Success</string>
     <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="network_error">Could not connect. Check your internet and try again.</string>
+    <string name="something_went_wrong">Something went wrong. Please try again.</string>
 
     <string name="time_slot_morning">8 AM – 12 PM</string>
     <string name="time_slot_afternoon">12 PM – 4 PM</string>
     <string name="time_slot_evening">4 PM – 7 PM</string>
 
-    <!-- Customer login -->
-    <string name="send_otp">Send OTP</string>
-    <string name="verify_otp">Verify OTP</string>
-    <string name="login_phone_hint">Free OTP via Firebase. Add your app SHA-256 fingerprint in Firebase Console for Play Store.</string>
-    <string name="login_email_hint">We will email you a secure sign-in link (passwordless).</string>
-    <string name="invalid_phone">Enter a valid 10-digit mobile number</string>
-    <string name="invalid_email">Enter a valid email address</string>
-    <string name="invalid_otp">Enter the 6-digit OTP</string>
-    <string name="otp_sent">OTP sent to your phone</string>
-    <string name="email_link_sent">Check your email and tap the sign-in link</string>
-    <string name="reschedule_phone">9230755876</string>
+    <!-- Customer flows -->
     <string name="prebook_date_hint">Date (10th, 20th or 30th only)</string>
     <string name="prebook_policy">50%% advance is non-refundable. Reschedule only by calling %1$s.</string>
-    <string name="no_tests_selected">No tests selected</string>
+    <string name="no_tests_selected">No tests selected — search and tap tests above</string>
     <string name="total_amount_value">Total: ₹%1$.0f</string>
     <string name="advance_amount_value">50%% advance (non-refundable): ₹%1$.0f</string>
     <string name="prebook_success">Booked! ALC %1$s. To reschedule call %2$s.</string>
-    <string name="phone_required">Phone login required for AKTIV lookup</string>
-    <string name="fill_all_fields">Fill all fields and select tests, date &amp; slot</string>
-    <string name="payment_failed">Payment failed</string>
-    <string name="payment_success">Payment recorded in AKTIV</string>
+    <string name="phone_required_title">Mobile number needed</string>
+    <string name="phone_required">Your account is not linked to a mobile number yet. Bookings and bills use your registered phone at the clinic. Please call or WhatsApp us to link your number.</string>
+    <string name="fill_all_fields">Please fill name, age, sex, date, time slot, and select at least one test.</string>
+    <string name="payment_failed">Payment failed. No amount was charged.</string>
+    <string name="payment_success">Payment recorded successfully</string>
     <string name="pending_payments_title">Pay Pending</string>
-    <string name="refresh_from_aktiv">Refresh from AKTIV</string>
-    <string name="no_pending">No pending payments</string>
-    <string name="no_data">No records found</string>
+    <string name="refresh_from_aktiv">Refresh</string>
+    <string name="no_pending">No pending payments — you\'re all caught up!</string>
+    <string name="no_data">No records found yet</string>
+    <string name="no_bookings_hint">Your bookings will appear here after you book a test.</string>
+    <string name="no_reports_hint">Your reports will appear here once they are ready.</string>
+    <string name="book_a_test">Book a test</string>
     <string name="whatsapp_booking_message">Hello, I want to book a test at Anubhav Life Care.</string>
+    <string name="pay_bill">%1$s — Pay ₹%2$.0f</string>
+    <string name="bill_summary">%1$s — %2$s\n₹%3$.0f paid ₹%4$.0f pending ₹%5$.0f</string>
+    <string name="reschedule_phone">9230755876</string>
+    <string name="payment_description_prebook">50%% prebook advance (non-refundable)</string>
+    <string name="payment_description_pending">Pending bill %1$s</string>
+    <string name="complete_profile_banner">Add your clinic-registered mobile number to book tests and pay bills online.</string>
+    <string name="login_welcome">Welcome back</string>
+    <string name="login_subtitle">Sign in to book tests, view reports, and pay bills</string>
+    <string name="sign_up_subtitle">Create an account with your email</string>
 
     <!-- Time Slots (legacy) -->
     <string name="time_slot_7_10">7 AM - 10 AM</string>
@@ -146,56 +191,19 @@
     <string name="time_slot_1_4">1 PM - 4 PM</string>
     <string name="time_slot_2_5">2 PM - 5 PM</string>
 
-    <!-- Language Toggle -->
-    <string name="language_english">A</string>
-    <string name="language_bengali">অ</string>
-    <string name="switch_to_english">Switch to English</string>
-    <string name="switch_to_bengali">Switch to Bengali</string>
-
-    <!-- Bengali Translations -->
-    <!-- Home Screen Bengali -->
-    <string name="welcome_title_bn">অনুভব লাইফ কেয়ারে স্বাগতম</string>
-    <string name="welcome_subtitle_bn">ডায়াগনস্টিক এক্সিলেন্সের জন্য আপনার বিশ্বস্ত অংশীদার</string>
-    <string name="quick_actions_bn">দ্রুত অ্যাকশন</string>
-    <string name="book_test_title_bn">টেস্ট বুক করুন</string>
-    <string name="book_test_subtitle_bn">অ্যাপয়েন্টমেন্ট নির্ধারণ করুন</string>
-    <string name="my_bookings_title_bn">আমার বুকিং</string>
-    <string name="my_bookings_subtitle_bn">স্ট্যাটাস ট্র্যাক করুন</string>
-    <string name="popular_tests_bn">জনপ্রিয় টেস্ট</string>
-    <string name="view_all_bn">সব দেখুন</string>
-    <string name="why_choose_us_bn">কেন আমাদের বেছে নিবেন</string>
-    <string name="feature_home_collection_bn">বাড়িতে নমুনা সংগ্রহ উপলব্ধ</string>
-    <string name="feature_same_day_bn">বেশিরভাগ টেস্টের জন্য একই দিনে রিপোর্ট</string>
-    <string name="feature_secure_payment_bn">রেজারপে দিয়ে নিরাপদ অনলাইন পেমেন্ট</string>
-    <string name="feature_notifications_bn">ইমেইল নোটিফিকেশন এবং হোয়াটসঅ্যাপ সাপোর্ট</string>
-    <string name="contact_us_title_bn">সাহায্য প্রয়োজন? আমাদের সাথে যোগাযোগ করুন</string>
-    <string name="call_label_bn">কল: +৯১-৯২৩০৭৫৫৮৭৫</string>
-    <string name="whatsapp_label_bn">হোয়াটসঅ্যাপ: +৯১-৯২৩০৭৫৫৮৭৬</string>
-    <string name="email_label_bn">ইমেইল: contact.anubhavlife@gmail.com</string>
-
-    <!-- Booking Screen Bengali -->
-    <string name="book_test_header_bn">অনলাইনে আপনার টেস্ট বুক করুন</string>
-    <string name="book_test_description_bn">বাড়িতে নমুনা সংগ্রহ সহ ১৫০০+ টেস্ট থেকে বেছে নিন</string>
-    <string name="key_features_bn">মূল বৈশিষ্ট্য</string>
-    <string name="features_list_bn">• বাড়িতে নমুনা সংগ্রহ উপলব্ধ\n• বেশিরভাগ টেস্টের জন্য একই দিনে রিপোর্ট\n• রেজারপে দিয়ে নিরাপদ অনলাইন পেমেন্ট\n• ইমেইল নোটিফিকেশন এবং হোয়াটসঅ্যাপ সাপোর্ট\n• অগ্রিম পেমেন্ট দিয়ে টাইম স্লট বুকিং\n• ২৪/৭ গ্রাহক সেবা উপলব্ধ</string>
-    <string name="start_booking_bn">বুকিং প্রক্রিয়া শুরু করুন</string>
-
-    <!-- Test Details Bengali -->
-    <string name="cbc_test_bn">সম্পূর্ণ রক্ত গণনা (সিবিসি)</string>
-    <string name="cbc_description_bn">লোহিত রক্তকণিকা, শ্বেত রক্তকণিকা, প্লেটলেট সহ বিস্তৃত রক্ত বিশ্লেষণ</string>
     <string name="cbc_preparation_bn">১২ ঘন্টা উপবাস প্রয়োজন</string>
-    <string name="lipid_test_bn">লিপিড প্রোফাইল</string>
-    <string name="lipid_description_bn">হৃদযন্ত্রের স্বাস্থ্যের জন্য কোলেস্টেরল এবং ট্রাইগ্লিসারাইড বিশ্লেষণ</string>
     <string name="lipid_preparation_bn">১২-১৪ ঘন্টা উপবাস প্রয়োজন</string>
-    <string name="thyroid_test_bn">থাইরয়েড ফাংশন টেস্ট (টি৩, টি৪, টিএসএইচ)</string>
-    <string name="thyroid_description_bn">সম্পূর্ণ থাইরয়েড ফাংশন মূল্যায়ন</string>
     <string name="thyroid_preparation_bn">কোন বিশেষ প্রস্তুতি নেই</string>
-    <string name="same_day_bn">একই দিন</string>
-    <string name="next_day_bn">পরের দিন</string>
-    <string name="popular_bn">জনপ্রিয়</string>
-    <string name="fasting_bn">উপবাস</string>
 
-    <!-- Menu Items Bengali -->
+    <!-- Bengali translations -->
+    <string name="app_name_bn">অনুভব লাইফ কেয়ার</string>
+    <string name="navigation_drawer_open_bn">নেভিগেশন ড্রয়ার খুলুন</string>
+    <string name="navigation_drawer_close_bn">নেভিগেশন ড্রয়ার বন্ধ করুন</string>
+    <string name="nav_header_title_bn">অনুভব লাইফ কেয়ার</string>
+    <string name="nav_header_subtitle_bn">টেস্ট বুক করুন, রিপোর্ট দেখুন ও অনলাইনে পেমেন্ট করুন</string>
+    <string name="action_settings_bn">সেটিংস</string>
+    <string name="account_section_bn">অ্যাকাউন্ট</string>
+
     <string name="menu_home_bn">হোম</string>
     <string name="menu_book_test_bn">টেস্ট বুক করুন</string>
     <string name="menu_my_bookings_bn">আমার বুকিং</string>
@@ -203,17 +211,129 @@
     <string name="menu_profile_bn">প্রোফাইল</string>
     <string name="menu_contact_bn">যোগাযোগ</string>
     <string name="menu_about_bn">সম্পর্কে</string>
+    <string name="menu_settings_bn">সেটিংস</string>
 
-    <!-- Navigation Header Bengali -->
-    <string name="nav_header_title_bn">AKTIV Admin</string>
-    <string name="nav_header_subtitle_bn">ক্লিনিক বিলিং ও অ্যাপয়েন্টমেন্ট</string>
+    <string name="logout_bn">লগ আউট</string>
+    <string name="logged_in_as_bn">লগ ইন: %1$s</string>
 
-    <!-- Common Actions Bengali -->
+    <string name="login_bn">সাইন ইন</string>
+    <string name="sign_up_bn">সাইন আপ</string>
+    <string name="email_bn">ইমেইল</string>
+    <string name="password_bn">পাসওয়ার্ড</string>
+    <string name="phone_bn">মোবাইল নম্বর</string>
+    <string name="name_bn">নাম</string>
+    <string name="login_with_google_bn">Google দিয়ে চালিয়ে যান</string>
+    <string name="login_with_facebook_bn">Facebook দিয়ে চালিয়ে যান</string>
+    <string name="login_with_email_bn">ইমেইল দিয়ে সাইন ইন</string>
+    <string name="sign_up_with_email_bn">ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন</string>
+    <string name="or_continue_with_bn">অথবা ইমেইল দিয়ে চালিয়ে যান</string>
+    <string name="forgot_password_bn">পাসওয়ার্ড ভুলে গেছেন?</string>
+    <string name="dont_have_account_bn">অ্যাকাউন্ট নেই? সাইন আপ করুন</string>
+    <string name="already_have_account_bn">ইতিমধ্যে অ্যাকাউন্ট আছে? সাইন ইন করুন</string>
+    <string name="login_failed_bn">সাইন ইন ব্যর্থ। আবার চেষ্টা করুন।</string>
+    <string name="sign_up_failed_bn">অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।</string>
+    <string name="invalid_email_bn">সঠিক ইমেইল ঠিকানা লিখুন</string>
+    <string name="invalid_password_bn">পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে</string>
+    <string name="password_reset_sent_bn">পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে</string>
+    <string name="auth_cancelled_bn">সাইন ইন বাতিল করা হয়েছে</string>
+    <string name="profile_not_found_title_bn">প্রোফাইল পাওয়া যায়নি</string>
+    <string name="profile_not_found_message_bn">অনুভব লাইফ কেয়ারে আপনার রেকর্ড পাওয়া যায়নি। ক্লিনিকে যান বা কল করে মোবাইল নম্বর রেজিস্টার করুন, তারপর আবার সাইন ইন করুন।</string>
+    <string name="contact_clinic_bn">ক্লিনিকে কল করুন</string>
+    <string name="whatsapp_support_bn">হোয়াটসঅ্যাপ সাপোর্ট</string>
+
+    <string name="choose_language_title_bn">আপনার ভাষা বেছে নিন</string>
+    <string name="choose_language_subtitle_bn">অ্যাপ কীভাবে ব্যবহার করবেন তা বেছে নিন। সেটিংস থেকে যেকোনো সময় পরিবর্তন করতে পারবেন।</string>
+    <string name="language_english_full_bn">English</string>
+    <string name="language_bengali_full_bn">বাংলা (Bengali)</string>
+    <string name="continue_btn_bn">চালিয়ে যান</string>
+    <string name="settings_language_title_bn">অ্যাপের ভাষা</string>
+    <string name="settings_language_hint_bn">পরিবর্তন সঙ্গে সঙ্গে পুরো অ্যাপে প্রয়োগ হবে।</string>
+    <string name="settings_account_title_bn">আপনার অ্যাকাউন্ট</string>
+    <string name="settings_saved_bn">সেটিংস সংরক্ষিত</string>
+
+    <string name="book_appointment_bn">অ্যাপয়েন্টমেন্ট বুক করুন</string>
+    <string name="select_tests_bn">টেস্ট বেছে নিন</string>
+    <string name="search_tests_bn">টেস্ট খুঁজুন…</string>
+    <string name="preferred_date_bn">পছন্দের তারিখ</string>
+    <string name="preferred_time_bn">পছন্দের সময়</string>
+    <string name="prebook_time_slot_bn">আপনার টেস্ট বুক করুন</string>
+    <string name="total_amount_bn">মোট পরিমাণ</string>
+    <string name="pay_advance_bn">৫০%% অগ্রিম দিন</string>
+    <string name="patient_age_bn">বয়স (বছর)</string>
+    <string name="patient_sex_bn">লিঙ্গ</string>
+    <string name="slots_remaining_bn">%1$s (%2$dটি বাকি)</string>
+
+    <string name="welcome_title_bn">অনুভবে স্বাগতম</string>
+    <string name="welcome_subtitle_bn">আপনার বিশ্বস্ত ডায়াগনস্টিক অংশীদার</string>
+    <string name="quick_actions_bn">দ্রুত অ্যাকশন</string>
+    <string name="book_test_title_bn">টেস্ট বুক করুন</string>
+    <string name="book_test_subtitle_bn">অ্যাপয়েন্টমেন্ট নিন</string>
+    <string name="view_reports_title_bn">রিপোর্ট দেখুন</string>
+    <string name="view_reports_subtitle_bn">ফলাফল ডাউনলোড</string>
+    <string name="my_bookings_title_bn">আমার বুকিং</string>
+    <string name="my_bookings_subtitle_bn">স্ট্যাটাস দেখুন</string>
+    <string name="home_collection_title_bn">হোম কালেকশন</string>
+    <string name="home_collection_subtitle_bn">বিনামূল্যে পিকআপ</string>
+    <string name="popular_tests_bn">জনপ্রিয় টেস্ট</string>
+    <string name="view_all_bn">সব দেখুন</string>
+    <string name="why_choose_us_bn">কেন আমাদের বেছে নিবেন</string>
+    <string name="feature_home_collection_bn">বাড়িতে নমুনা সংগ্রহ উপলব্ধ</string>
+    <string name="feature_same_day_bn">বেশিরভাগ টেস্টের জন্য একই দিনে রিপোর্ট</string>
+    <string name="feature_secure_payment_bn">রেজারপে দিয়ে নিরাপদ অনলাইন পেমেন্ট</string>
+    <string name="feature_notifications_bn">ইমেইল নোটিফিকেশন এবং হোয়াটসঅ্যাপ সাপোর্ট</string>
+    <string name="contact_us_title_bn">সাহায্য প্রয়োজন? যোগাযোগ করুন</string>
+    <string name="call_label_bn">কল: +91-9230755875</string>
+    <string name="whatsapp_label_bn">হোয়াটসঅ্যাপ: +91-9230755876</string>
+    <string name="email_label_bn">ইমেইল: contact.anubhavlife@gmail.com</string>
+    <string name="home_collection_info_bn">বিনামূল্যে হোম কালেকশন!\n+91-9230755876 এ কল করুন বা হোয়াটসঅ্যাপ করুন</string>
+
+    <string name="book_test_header_bn">অনলাইনে আপনার টেস্ট বুক করুন</string>
+    <string name="book_test_description_bn">বাড়িতে নমুনা সংগ্রহ সহ ১৫০০+ টেস্ট থেকে বেছে নিন</string>
+    <string name="key_features_bn">মূল বৈশিষ্ট্য</string>
+    <string name="features_list_bn">• বাড়িতে নমুনা সংগ্রহ\n• বেশিরভাগ টেস্টে একই দিনে রিপোর্ট\n• রেজারপে দিয়ে নিরাপদ পেমেন্ট\n• ইমেইল ও হোয়াটসঅ্যাপ সাপোর্ট\n• অগ্রিম পেমেন্টে টাইম স্লট বুকিং\n• ২৪/৭ গ্রাহক সেবা</string>
+    <string name="start_booking_bn">বুকিং শুরু করুন</string>
+
+    <string name="same_day_bn">একই দিন</string>
+    <string name="next_day_bn">পরের দিন</string>
+    <string name="popular_bn">জনপ্রিয়</string>
+    <string name="fasting_bn">উপবাস</string>
+
     <string name="submit_bn">জমা দিন</string>
     <string name="cancel_bn">বাতিল</string>
-    <string name="save_bn">সংরক্ষণ করুন</string>
-    <string name="loading_bn">লোড হচ্ছে...</string>
+    <string name="save_bn">সংরক্ষণ</string>
+    <string name="loading_bn">লোড হচ্ছে…</string>
     <string name="error_bn">ত্রুটি</string>
     <string name="success_bn">সফল</string>
-    <string name="retry_bn">পুনরায় চেষ্টা করুন</string>
+    <string name="retry_bn">আবার চেষ্টা</string>
+    <string name="ok_bn">ঠিক আছে</string>
+    <string name="network_error_bn">সংযোগ হয়নি। ইন্টারনেট চেক করে আবার চেষ্টা করুন।</string>
+    <string name="something_went_wrong_bn">কিছু ভুল হয়েছে। আবার চেষ্টা করুন।</string>
+
+    <string name="prebook_date_hint_bn">তারিখ (শুধু ১০, ২০ বা ৩০ তারিখ)</string>
+    <string name="prebook_policy_bn">৫০%% অগ্রিম ফেরতযোগ্য নয়। পুনঃনির্ধারণ শুধু %1$s এ কল করে।</string>
+    <string name="no_tests_selected_bn">কোনো টেস্ট বেছে নেননি — উপরে খুঁজে ট্যাপ করুন</string>
+    <string name="total_amount_value_bn">মোট: ₹%1$.0f</string>
+    <string name="advance_amount_value_bn">৫০%% অগ্রিম (ফেরতযোগ্য নয়): ₹%1$.0f</string>
+    <string name="prebook_success_bn">বুক হয়েছে! ALC %1$s। পুনঃনির্ধারণে কল করুন %2$s।</string>
+    <string name="phone_required_title_bn">মোবাইল নম্বর প্রয়োজন</string>
+    <string name="phone_required_bn">আপনার অ্যাকাউন্ট এখনও ক্লিনিকের মোবাইল নম্বরের সাথে যুক্ত নয়। বুকিং ও বিলের জন্য রেজিস্টার্ড নম্বর লাগে। কল বা হোয়াটসঅ্যাপ করে নম্বর যুক্ত করুন।</string>
+    <string name="fill_all_fields_bn">নাম, বয়স, লিঙ্গ, তারিখ, সময় ও কমপক্ষে একটি টেস্ট পূরণ করুন।</string>
+    <string name="payment_failed_bn">পেমেন্ট ব্যর্থ। কোনো টাকা কাটা হয়নি।</string>
+    <string name="payment_success_bn">পেমেন্ট সফলভাবে রেকর্ড হয়েছে</string>
+    <string name="pending_payments_title_bn">বকেয়া পরিশোধ</string>
+    <string name="refresh_from_aktiv_bn">রিফ্রেশ</string>
+    <string name="no_pending_bn">কোনো বকেয়া নেই — সব আপডেট!</string>
+    <string name="no_data_bn">এখনও কোনো রেকর্ড নেই</string>
+    <string name="no_bookings_hint_bn">টেস্ট বুক করলে এখানে বুকিং দেখা যাবে।</string>
+    <string name="no_reports_hint_bn">রিপোর্ট প্রস্তুত হলে এখানে দেখা যাবে।</string>
+    <string name="book_a_test_bn">টেস্ট বুক করুন</string>
+    <string name="whatsapp_booking_message_bn">নমস্কার, অনুভব লাইফ কেয়ারে টেস্ট বুক করতে চাই।</string>
+    <string name="pay_bill_bn">%1$s — ₹%2$.0f পরিশোধ</string>
+    <string name="bill_summary_bn">%1$s — %2$s\n₹%3$.0f পরিশোধ ₹%4$.0f বকেয়া ₹%5$.0f</string>
+    <string name="payment_description_prebook_bn">৫০%% প্রিবুক অগ্রিম (ফেরতযোগ্য নয়)</string>
+    <string name="payment_description_pending_bn">বকেয়া বিল %1$s</string>
+    <string name="complete_profile_banner_bn">টেস্ট বুক ও বিল পরিশোধের জন্য ক্লিনিকে রেজিস্টার্ড মোবাইল নম্বর যুক্ত করুন।</string>
+    <string name="login_welcome_bn">আবার স্বাগতম</string>
+    <string name="login_subtitle_bn">টেস্ট বুক, রিপোর্ট দেখা ও বিল পরিশোধের জন্য সাইন ইন করুন</string>
+    <string name="sign_up_subtitle_bn">ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন</string>
 </resources>
