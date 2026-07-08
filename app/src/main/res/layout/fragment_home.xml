@@ -144,7 +144,7 @@
                     android:textColor="@color/text_white"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/accent_dark"
+                    app:backgroundTint="@color/medical_teal"
                     app:cornerRadius="12dp"
                     app:elevation="2dp" />
 
@@ -542,7 +542,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/card_background_alt"
+            app:cardBackgroundColor="@color/card_background"
             app:cardCornerRadius="14dp"
             app:cardElevation="2dp"
             app:rippleColor="@color/stroke_soft"

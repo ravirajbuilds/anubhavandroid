@@ -14,6 +14,6 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">false</item>
         <!-- Accent color -->
-        <item name="colorAccent">@color/brand_yellow</item>
+        <item name="colorAccent">@color/secondary</item>
     </style>
 </resources>

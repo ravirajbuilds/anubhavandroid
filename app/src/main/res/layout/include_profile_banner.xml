@@ -9,7 +9,7 @@
     app:cardBackgroundColor="@color/card_background_alt"
     app:cardCornerRadius="12dp"
     app:cardElevation="0dp"
-    app:strokeColor="@color/accent_light"
+    app:strokeColor="@color/stroke_soft"
     app:strokeWidth="1dp">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/phone_required_title"
-            android:textColor="#E65100"
+            android:textColor="@color/status_warning"
             android:textStyle="bold" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/complete_profile_banner"
-            android:textColor="#BF360C"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp" />
 
         <com.google.android.material.button.MaterialButton
@@ -42,6 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:text="@string/whatsapp_support"
-            android:textColor="#E65100" />
+            android:textColor="@color/brand_blue" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

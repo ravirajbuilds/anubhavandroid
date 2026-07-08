@@ -17,7 +17,7 @@
         <item name="colorSurface">@color/card_background</item>
         <item name="colorOnSurface">@color/text_primary</item>
         <!-- Accent color -->
-        <item name="colorAccent">@color/brand_yellow</item>
+        <item name="colorAccent">@color/secondary</item>
         <!-- Typography -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.AktivAdmin.Headline1</item>
         <item name="textAppearanceHeadline6">@style/TextAppearance.AktivAdmin.Headline6</item>
@@ -131,8 +131,9 @@
     <!-- Navigation Drawer Style -->
     <style name="Widget.AktivAdmin.NavigationView" parent="Widget.Material3.NavigationView">
         <item name="android:background">@color/background_light</item>
-        <item name="itemTextColor">@color/text_primary</item>
-        <item name="itemIconTint">@color/medical_blue</item>
+        <item name="itemTextColor">@color/nav_item_text</item>
+        <item name="itemIconTint">@color/nav_item_tint</item>
+        <item name="itemBackground">@drawable/nav_item_background</item>
         <item name="itemTextAppearance">@style/TextAppearance.AktivAdmin.NavigationItem</item>
         <item name="itemIconSize">28dp</item>
         <item name="itemHorizontalPadding">20dp</item>

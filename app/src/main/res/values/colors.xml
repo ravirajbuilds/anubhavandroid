@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Brand Colors -->
-    <color name="brand_dark_blue">#073763</color>
-    <color name="brand_blue">#1768AC</color>
-    <color name="brand_yellow">#FFB803</color>
-    <color name="brand_red">#D32F2F</color>
-    <color name="homepage_button_green">#1E9D7B</color>
+    <color name="brand_dark_blue">#0B2F44</color>
+    <color name="brand_blue">#146C94</color>
+    <color name="brand_yellow">#9A741F</color>
+    <color name="brand_red">#A33A2C</color>
+    <color name="homepage_button_green">#247C6D</color>
 
     <!-- Primary Colors - Updated to use brand colors -->
     <color name="primary">@color/brand_blue</color>
     <color name="primary_dark">@color/brand_dark_blue</color>
-    <color name="primary_light">#8EC5DF</color>
+    <color name="primary_light">#B9D7E6</color>
 
     <!-- Secondary Colors -->
-    <color name="secondary">#1E9D7B</color>
-    <color name="secondary_dark">#11745D</color>
-    <color name="secondary_light">#D8F0E8</color>
+    <color name="secondary">#247C6D</color>
+    <color name="secondary_dark">#155E55</color>
+    <color name="secondary_light">#DDEEEA</color>
 
     <!-- Accent Colors - Updated to use brand colors -->
     <color name="accent">@color/brand_yellow</color>
-    <color name="accent_dark">#D89000</color>
-    <color name="accent_light">#FFE7A6</color>
+    <color name="accent_dark">#9A741F</color>
+    <color name="accent_light">#E8D6AA</color>
 
     <!-- Background Colors -->
-    <color name="background_light">#EEF6F3</color>
-    <color name="background_white">#F8FBF7</color>
-    <color name="card_background">#F7FBF6</color>
-    <color name="card_background_alt">#FFF7DA</color>
-    <color name="input_background">#F3F8F6</color>
-    <color name="stroke_soft">#CFE2D9</color>
+    <color name="background_light">#F4F7F8</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_background_alt">#F1F5F6</color>
+    <color name="input_background">#F8FAFB</color>
+    <color name="stroke_soft">#D6E1E7</color>
+    <color name="nav_selected_background">#DCECF4</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#1D2B2A</color>
-    <color name="text_secondary">#5E716C</color>
+    <color name="text_primary">#17272F</color>
+    <color name="text_secondary">#5C6E78</color>
     <color name="text_hint">#BDBDBD</color>
     <color name="text_white">#FFFFFF</color>
 
     <!-- Status Colors - Updated with brand red -->
-    <color name="status_success">#4CAF50</color>
-    <color name="status_warning">@color/brand_yellow</color>
+    <color name="status_success">#247C6D</color>
+    <color name="status_warning">#7A5B13</color>
     <color name="status_error">@color/brand_red</color>
     <color name="status_pending">@color/brand_blue</color>
 
     <!-- Healthcare Theme Colors - Updated to use brand colors -->
     <color name="medical_blue">@color/brand_blue</color>
-    <color name="medical_green">#1E9D7B</color>
-    <color name="medical_teal">#16A4A6</color>
+    <color name="medical_green">#247C6D</color>
+    <color name="medical_teal">#2A8792</color>
     <color name="clinic_primary">@color/brand_dark_blue</color>
     <color name="clinic_secondary">@color/brand_blue</color>
 
@@ -54,11 +55,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Missing colors for night theme compatibility -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="purple_200">#B9D7E6</color>
+    <color name="purple_500">#146C94</color>
+    <color name="purple_700">#0B2F44</color>
+    <color name="teal_200">#DDEEEA</color>
+    <color name="teal_700">#247C6D</color>
 
     <!-- Gradient Colors - Updated to use brand colors -->
     <color name="gradient_start">@color/brand_blue</color>
@@ -66,5 +67,5 @@
 
     <!-- Button gradient colors -->
     <color name="button_gradient_start">@color/brand_blue</color>
-    <color name="button_gradient_end">#0D4C83</color>
+    <color name="button_gradient_end">#0E536C</color>
 </resources>
