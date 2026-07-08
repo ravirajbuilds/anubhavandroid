@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
@@ -130,7 +130,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/whatsapp_support"
             android:textColor="@color/brand_dark_blue"
-            app:cornerRadius="12dp"
+            app:cornerRadius="10dp"
             app:strokeColor="@color/stroke_soft" />
     </LinearLayout>
 </ScrollView>

@@ -144,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pay_advance"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="10dp" />
 
         <ProgressBar
             android:id="@+id/progressBar"

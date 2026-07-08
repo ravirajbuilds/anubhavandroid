@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:clipToPadding="false"
     android:background="@drawable/app_background"
     tools:context=".ui.home.HomeFragment">
 
@@ -15,23 +16,23 @@
         android:paddingStart="20dp"
         android:paddingTop="20dp"
         android:paddingEnd="20dp"
-        android:paddingBottom="24dp">
+        android:paddingBottom="112dp">
 
         <!-- Hero Section -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="156dp"
             android:background="@drawable/hero_health_gradient"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="24dp">
+            android:padding="20dp">
 
             <FrameLayout
-                android:layout_width="82dp"
-                android:layout_height="82dp"
-                android:layout_marginEnd="18dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/logo_halo"
-                android:padding="9dp">
+                android:padding="8dp">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -53,7 +54,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Welcome to Anubhav"
                     android:textColor="@color/text_white"
-                    android:textSize="26sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -62,7 +63,7 @@
                     android:layout_marginTop="8dp"
                     android:text="Diagnostics, home collection, reports"
                     android:textColor="@color/text_white"
-                    android:textSize="15sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -72,9 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="18dp"
             android:layout_marginBottom="24dp">
 
             <!-- First Row of Buttons -->
@@ -87,7 +86,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnBookTest"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="72dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
                     android:text="Book Test"
@@ -95,13 +94,13 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/brand_blue"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="10dp"
                     app:elevation="2dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnViewReports"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="72dp"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
                     android:text="View Reports"
@@ -109,7 +108,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/medical_green"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="10dp"
                     app:elevation="2dp" />
 
             </LinearLayout>
@@ -123,7 +122,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnMyBookings"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="72dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
                     android:text="My Bookings"
@@ -131,21 +130,21 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/brand_dark_blue"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="10dp"
                     app:elevation="2dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnHomeCollection"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="72dp"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
                     android:text="Home Collection"
                     android:textColor="@color/text_white"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/medical_teal"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="10dp"
                     app:elevation="2dp" />
 
             </LinearLayout>
@@ -167,7 +166,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Popular Tests"
                 android:textColor="@color/text_primary"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -179,7 +178,7 @@
                 android:paddingVertical="8dp"
                 android:text="View All"
                 android:textColor="@color/brand_dark_blue"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:clickable="true"
                 android:focusable="true" />
@@ -204,7 +203,7 @@
                     android:layout_marginEnd="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="14dp"
+                    app:cardCornerRadius="10dp"
                     app:cardBackgroundColor="@color/card_background"
                     app:cardElevation="2dp"
                     app:strokeWidth="1dp"
@@ -273,7 +272,7 @@
                     android:layout_marginEnd="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="14dp"
+                    app:cardCornerRadius="10dp"
                     app:cardBackgroundColor="@color/card_background"
                     app:cardElevation="2dp"
                     app:strokeWidth="1dp"
@@ -341,7 +340,7 @@
                     android:layout_height="140dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="14dp"
+                    app:cardCornerRadius="10dp"
                     app:cardBackgroundColor="@color/card_background"
                     app:cardElevation="2dp"
                     app:strokeWidth="1dp"
@@ -416,7 +415,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Why Choose Us"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
@@ -424,7 +423,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/stroke_soft">
@@ -433,7 +432,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="18dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -455,7 +454,7 @@
                         android:fontFamily="sans-serif"
                         android:text="Home sample collection available"
                         android:textColor="@color/text_primary"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -479,7 +478,7 @@
                         android:fontFamily="sans-serif"
                         android:text="Same day reports for most tests"
                         android:textColor="@color/text_primary"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -503,7 +502,7 @@
                         android:fontFamily="sans-serif"
                         android:text="Secure online payments with Razorpay"
                         android:textColor="@color/text_primary"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -526,7 +525,7 @@
                         android:fontFamily="sans-serif"
                         android:text="Email notifications and WhatsApp support"
                         android:textColor="@color/text_primary"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -543,17 +542,17 @@
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             app:rippleColor="@color/stroke_soft"
             app:strokeWidth="1dp"
-            app:strokeColor="@color/accent_light">
+            app:strokeColor="@color/stroke_soft">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="18dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -563,7 +562,7 @@
                     android:gravity="center"
                     android:text="Need Help? Contact Us"
                     android:textColor="@color/medical_blue"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -579,7 +578,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Call: +91-9230755875"
                         android:textColor="@color/text_primary"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -589,7 +588,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="WhatsApp: +91-9230755876"
                         android:textColor="@color/medical_green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:clipToPadding="false"
     android:background="@drawable/app_background"
     tools:context=".ui.gallery.GalleryFragment">
 
@@ -12,15 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="112dp">
 
         <!-- Header Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
+            android:layout_marginBottom="22dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
             app:strokeWidth="0dp">
 
             <LinearLayout
@@ -28,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/hero_health_gradient"
                 android:orientation="vertical"
-                android:padding="28dp">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -37,7 +41,7 @@
                     android:gravity="center"
                     android:text="Book Your Test Online"
                     android:textColor="@color/text_white"
-                    android:textSize="26sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     android:lineSpacingExtra="4dp" />
 
@@ -49,7 +53,7 @@
                     android:gravity="center"
                     android:text="Choose from 1500+ tests with home sample collection"
                     android:textColor="@color/text_white"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:alpha="0.95"
                     android:lineSpacingExtra="2dp" />
 
@@ -65,7 +69,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Popular Tests"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -81,16 +85,16 @@
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="@color/medical_blue">
+                app:strokeColor="@color/stroke_soft">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -104,7 +108,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Complete Blood Count (CBC)"
                             android:textColor="@color/text_primary"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
                             android:lineSpacingExtra="2dp" />
 
@@ -115,7 +119,7 @@
                             android:fontFamily="sans-serif"
                             android:text="Comprehensive blood analysis including RBC, WBC, platelets"
                             android:textColor="@color/text_secondary"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -138,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|end"
                         android:orientation="vertical"
-                        android:layout_marginStart="20dp">
+                            android:layout_marginStart="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -146,7 +150,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="₹300"
                             android:textColor="@color/medical_green"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -174,16 +178,16 @@
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="@color/medical_green">
+                app:strokeColor="@color/stroke_soft">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -197,7 +201,7 @@
                             android:fontFamily="sans-serif-medium"
                             android:text="Lipid Profile"
                             android:textColor="@color/text_primary"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
                             android:lineSpacingExtra="2dp" />
 
@@ -208,19 +212,19 @@
                             android:fontFamily="sans-serif"
                             android:text="Cholesterol and triglycerides analysis for heart health"
                             android:textColor="@color/text_secondary"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-android:background="@drawable/chip_accent_bg"
+                            android:background="@drawable/chip_accent_bg"
                             android:fontFamily="sans-serif-medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="6dp"
                             android:text="12-14 hours fasting required"
-android:textColor="@color/brand_dark_blue"
+                            android:textColor="@color/brand_dark_blue"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
@@ -231,7 +235,7 @@ android:textColor="@color/brand_dark_blue"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|end"
                         android:orientation="vertical"
-                        android:layout_marginStart="20dp">
+                            android:layout_marginStart="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -239,7 +243,7 @@ android:textColor="@color/brand_dark_blue"
                             android:fontFamily="sans-serif-medium"
                             android:text="₹800"
                             android:textColor="@color/medical_green"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -267,16 +271,16 @@ android:textColor="@color/brand_dark_blue"
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp"
                 app:strokeWidth="1dp"
-                app:strokeColor="@color/medical_teal">
+                app:strokeColor="@color/stroke_soft">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -290,7 +294,7 @@ android:textColor="@color/brand_dark_blue"
                             android:fontFamily="sans-serif-medium"
                             android:text="Thyroid Function Test (T3, T4, TSH)"
                             android:textColor="@color/text_primary"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
                             android:lineSpacingExtra="2dp" />
 
@@ -301,7 +305,7 @@ android:textColor="@color/brand_dark_blue"
                             android:fontFamily="sans-serif"
                             android:text="Complete thyroid function assessment"
                             android:textColor="@color/text_secondary"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -324,7 +328,7 @@ android:textColor="@color/brand_dark_blue"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|end"
                         android:orientation="vertical"
-                        android:layout_marginStart="20dp">
+                            android:layout_marginStart="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -332,7 +336,7 @@ android:textColor="@color/brand_dark_blue"
                             android:fontFamily="sans-serif-medium"
                             android:text="₹600"
                             android:textColor="@color/medical_green"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -363,15 +367,15 @@ android:textColor="@color/brand_dark_blue"
             android:fontFamily="sans-serif-medium"
             android:text="Key Features"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/stroke_soft">
 
@@ -379,7 +383,7 @@ android:textColor="@color/brand_dark_blue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="18dp">
 
                 <TextView
                     android:id="@+id/text_gallery"
@@ -389,7 +393,7 @@ android:textColor="@color/brand_dark_blue"
                     android:lineSpacingExtra="6dp"
                     android:text="• Home sample collection available\n• Same day reports for most tests\n• Secure online payments with Razorpay\n• Email notifications and WhatsApp support\n• Time slot booking with advance payment\n• 24/7 customer support available"
                     android:textColor="@color/text_primary"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -399,16 +403,16 @@ android:textColor="@color/brand_dark_blue"
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
             app:strokeWidth="1dp"
-            app:strokeColor="@color/medical_blue">
+            app:strokeColor="@color/stroke_soft">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="18dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -418,7 +422,7 @@ android:textColor="@color/brand_dark_blue"
                     android:gravity="center"
                     android:text="Need Help? Contact Us"
                     android:textColor="@color/medical_blue"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -435,7 +439,7 @@ android:textColor="@color/brand_dark_blue"
                         android:fontFamily="sans-serif-medium"
                         android:text="Call: +91-9230755875"
                         android:textColor="@color/text_primary"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -444,21 +448,21 @@ android:textColor="@color/brand_dark_blue"
                         android:fontFamily="sans-serif-medium"
                         android:text="WhatsApp: +91-9230755876"
                         android:textColor="@color/medical_green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
-                    android:layout_height="64dp"
+                    android:layout_height="56dp"
                     android:backgroundTint="@color/medical_green"
                     android:fontFamily="sans-serif-medium"
                     android:text="Start Booking Process"
                     android:textColor="@color/text_white"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
-                    app:cornerRadius="12dp"
+                    app:cornerRadius="10dp"
                     app:icon="@drawable/ic_medical_cross"
                     app:iconGravity="textStart"
                     app:iconPadding="16dp"
@@ -473,14 +477,14 @@ android:textColor="@color/brand_dark_blue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            app:cardElevation="2dp"
-            app:cardCornerRadius="14dp">
+app:cardElevation="1dp"
+app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="18dp">
 
                 <TextView
                     android:layout_width="wrap_content"

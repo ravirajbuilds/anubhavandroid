@@ -17,11 +17,11 @@
         android:visibility="gone">
 
         <FrameLayout
-            android:layout_width="112dp"
-            android:layout_height="112dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/logo_halo"
-            android:padding="14dp">
+            android:padding="12dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:gravity="center"
             android:text="@string/choose_language_title"
             android:textColor="@color/brand_dark_blue"
-            android:textSize="26sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -61,7 +61,7 @@
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="1dp"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
@@ -100,7 +100,7 @@
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="14dp"
+            app:cardCornerRadius="10dp"
             app:cardElevation="1dp"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:text="@string/continue_btn"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
     <!-- Login -->
@@ -157,11 +157,11 @@
             android:padding="24dp">
 
             <FrameLayout
-                android:layout_width="118dp"
-                android:layout_height="118dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/logo_halo"
-                android:padding="12dp">
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -178,7 +178,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Anubhav"
                 android:textColor="@color/brand_dark_blue"
-                android:textSize="34sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -188,13 +188,14 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/login_welcome"
                 android:textColor="@color/brand_dark_blue"
-                android:textSize="22sp"
+                android:textSize="19sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvLoginSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="@string/login_subtitle"
@@ -205,8 +206,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/card_background"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp"
                 app:strokeColor="@color/stroke_soft"
                 app:strokeWidth="1dp">
 
@@ -214,7 +215,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnGoogle"
@@ -225,7 +226,7 @@
                         android:text="@string/login_with_google"
                         android:textColor="@color/brand_dark_blue"
                         app:strokeColor="@color/stroke_soft"
-                        app:cornerRadius="12dp" />
+                        app:cornerRadius="10dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnFacebook"
@@ -236,7 +237,7 @@
                         android:text="@string/login_with_facebook"
                         android:textColor="@color/brand_dark_blue"
                         app:strokeColor="@color/stroke_soft"
-                        app:cornerRadius="12dp" />
+                        app:cornerRadius="10dp" />
 
                     <TextView
                         android:id="@+id/tvOrContinue"
@@ -298,7 +299,7 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/error_panel_bg"
                         android:padding="10dp"
-                        android:textColor="#B71C1C"
+                        android:textColor="@color/status_error"
                         android:textSize="13sp"
                         android:visibility="gone" />
 
@@ -307,7 +308,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/login_with_email"
-                        app:cornerRadius="12dp" />
+                        app:cornerRadius="10dp" />
 
                     <ProgressBar
                         android:id="@+id/progressLogin"

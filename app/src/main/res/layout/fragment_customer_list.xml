@@ -43,7 +43,7 @@
         android:text="@string/book_a_test"
         android:textColor="@color/brand_dark_blue"
         android:visibility="gone"
-        app:cornerRadius="12dp"
+        app:cornerRadius="10dp"
         app:strokeColor="@color/stroke_soft" />
 
     <ProgressBar

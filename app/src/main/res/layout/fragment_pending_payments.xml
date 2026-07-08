@@ -23,7 +23,7 @@
         android:layout_marginBottom="12dp"
         android:text="@string/refresh_from_aktiv"
         android:textColor="@color/brand_dark_blue"
-        app:cornerRadius="12dp"
+        app:cornerRadius="10dp"
         app:strokeColor="@color/stroke_soft" />
 
     <androidx.recyclerview.widget.RecyclerView
