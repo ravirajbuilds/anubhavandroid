@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="112dp">
 
         <TextView
             android:id="@+id/tvPrebookTitle"
@@ -18,7 +22,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="@string/prebook_time_slot"
-            android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle" />
+            android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle"
+            android:maxLines="1"
+            android:ellipsize="end" />
 
         <TextView
             android:id="@+id/tvPrebookPolicy"
@@ -122,14 +128,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end" />
 
         <TextView
             android:id="@+id/tvTotalAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
 
         <TextView
             android:id="@+id/tvAdvanceAmount"
@@ -137,13 +147,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:textColor="@color/brand_dark_blue"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPayAdvance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pay_advance"
+            android:maxLines="1"
+            android:ellipsize="end"
             app:cornerRadius="10dp" />
 
         <ProgressBar

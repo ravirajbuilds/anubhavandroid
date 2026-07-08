@@ -4,15 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
+    android:clipToPadding="false"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="96dp">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle" />
+        android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle"
+        android:maxLines="1"
+        android:ellipsize="end" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
@@ -43,6 +49,8 @@
         android:text="@string/book_a_test"
         android:textColor="@color/brand_dark_blue"
         android:visibility="gone"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:cornerRadius="10dp"
         app:strokeColor="@color/stroke_soft" />
 

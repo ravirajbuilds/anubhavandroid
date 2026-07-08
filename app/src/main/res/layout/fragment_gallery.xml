@@ -43,6 +43,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end"
                     android:lineSpacingExtra="4dp" />
 
                 <TextView
@@ -55,6 +57,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="15sp"
                     android:alpha="0.95"
+                    android:maxLines="2"
+                    android:ellipsize="end"
                     android:lineSpacingExtra="2dp" />
 
             </LinearLayout>
@@ -110,6 +114,8 @@
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
                             android:textStyle="bold"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -120,6 +126,8 @@
                             android:text="Comprehensive blood analysis including RBC, WBC, platelets"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -203,6 +211,8 @@
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
                             android:textStyle="bold"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -213,6 +223,8 @@
                             android:text="Cholesterol and triglycerides analysis for heart health"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -296,6 +308,8 @@
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
                             android:textStyle="bold"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -306,6 +320,8 @@
                             android:text="Complete thyroid function assessment"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
                             android:lineSpacingExtra="2dp" />
 
                         <TextView
@@ -423,7 +439,9 @@
                     android:text="Need Help? Contact Us"
                     android:textColor="@color/medical_blue"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -440,7 +458,9 @@
                         android:text="Call: +91-9230755875"
                         android:textColor="@color/text_primary"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -449,7 +469,9 @@
                         android:text="WhatsApp: +91-9230755876"
                         android:textColor="@color/medical_green"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
 
                 </LinearLayout>
 
@@ -462,6 +484,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:cornerRadius="10dp"
                     app:icon="@drawable/ic_medical_cross"
                     app:iconGravity="textStart"

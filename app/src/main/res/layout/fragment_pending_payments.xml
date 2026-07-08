@@ -4,8 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
+    android:clipToPadding="false"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="96dp">
 
     <TextView
         android:id="@+id/tvPendingTitle"
@@ -13,7 +17,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="@string/pending_payments_title"
-        android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle" />
+        android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle"
+        android:maxLines="1"
+        android:ellipsize="end" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRefresh"
@@ -23,6 +29,8 @@
         android:layout_marginBottom="12dp"
         android:text="@string/refresh_from_aktiv"
         android:textColor="@color/brand_dark_blue"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:cornerRadius="10dp"
         app:strokeColor="@color/stroke_soft" />
 

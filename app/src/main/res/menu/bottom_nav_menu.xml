@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/ic_home"
         android:title="Home" />
     <item
         android:id="@+id/nav_services"
-        android:icon="@drawable/ic_menu_gallery"
+        android:icon="@drawable/ic_lab_test"
         android:title="Services" />
     <item
         android:id="@+id/nav_appointments"
-        android:icon="@drawable/ic_medical_cross"
+        android:icon="@drawable/ic_calendar_check"
         android:title="Appointments" />
     <item
         android:id="@+id/nav_reports"
@@ -18,6 +18,6 @@
         android:title="Reports" />
     <item
         android:id="@+id/nav_account"
-        android:icon="@drawable/ic_menu_slideshow"
+        android:icon="@drawable/ic_account"
         android:title="Account" />
 </menu>

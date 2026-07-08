@@ -55,7 +55,9 @@
                     android:text="Welcome to Anubhav"
                     android:textColor="@color/text_white"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,7 +65,9 @@
                     android:layout_marginTop="8dp"
                     android:text="Diagnostics, home collection, reports"
                     android:textColor="@color/text_white"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
             </LinearLayout>
 
         </LinearLayout>
@@ -93,6 +97,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:backgroundTint="@color/brand_blue"
                     app:cornerRadius="10dp"
                     app:elevation="2dp" />
@@ -107,6 +113,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:backgroundTint="@color/medical_green"
                     app:cornerRadius="10dp"
                     app:elevation="2dp" />
@@ -129,6 +137,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:backgroundTint="@color/brand_dark_blue"
                     app:cornerRadius="10dp"
                     app:elevation="2dp" />
@@ -143,6 +153,8 @@
                     android:textColor="@color/text_white"
                     android:textSize="13sp"
                     android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     app:backgroundTint="@color/medical_teal"
                     app:cornerRadius="10dp"
                     app:elevation="2dp" />
@@ -597,7 +609,9 @@
                         android:fontFamily="sans-serif"
                         android:text="Email: contact.anubhavlife@gmail.com"
                         android:textColor="@color/text_secondary"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
 
                 </LinearLayout>
 
