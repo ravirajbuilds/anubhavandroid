@@ -9,7 +9,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
@@ -74,21 +75,21 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_settings) {
-            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_settings)
+            navController().navigate(R.id.nav_settings)
             return true
         }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = navController()
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     private fun setupNavigation() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = navController()
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -145,7 +146,7 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, localized(R.string.book_test_subtitle), Snackbar.LENGTH_LONG)
                 .setAction(localized(R.string.menu_book_test)) {
-                    findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_book_test)
+                    navController().navigate(R.id.nav_book_test)
                 }
                 .setAnchorView(R.id.fab)
                 .show()
@@ -171,6 +172,12 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
             } else {
                 getString(R.string.language_bengali)
             }
+    }
+
+    private fun navController(): NavController {
+        val navHost = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        return navHost.navController
     }
 
     private fun updateNavigationHeader() {
