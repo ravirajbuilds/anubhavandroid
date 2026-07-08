@@ -52,16 +52,16 @@ The app uses the following configuration:
 
 ```kotlin
 // Supabase Configuration
-SUPABASE_URL = "https://frkttphmaxuafxulvrkc.supabase.co"
+SUPABASE_URL = "your_supabase_url"
 SUPABASE_ANON_KEY = "your_supabase_anon_key"
 
-// Razorpay Configuration  
-RAZORPAY_KEY_ID = "rzp_live_RFl7SbGT4LwcLq"
+// Razorpay Configuration
+RAZORPAY_KEY_ID = "your_razorpay_key_id"
 RAZORPAY_KEY_SECRET = "your_razorpay_secret"
 
 // Email Configuration
-EMAIL_USER = "contact.anubhavlife@gmail.com"
-EMAIL_PASS = "bzzvtfogvirfujoc"
+EMAIL_USER = "your_email_user"
+EMAIL_PASS = "your_email_app_password"
 ```
 
 ### Contact Information
@@ -75,7 +75,7 @@ EMAIL_PASS = "bzzvtfogvirfujoc"
 
 ```
 app/
-├── src/main/java/com/example/anubhavlifecare/
+├── src/main/java/com/anubhav/app/
 │   ├── data/
 │   │   ├── model/          # Data classes (User, Test, Booking)
 │   │   ├── remote/         # API services (Supabase client)

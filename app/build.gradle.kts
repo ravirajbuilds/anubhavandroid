@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,18 +10,38 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+val localConfig = Properties().apply {
+    val localProperties = rootProject.file("local.properties")
+    if (localProperties.exists()) {
+        localProperties.inputStream().use(::load)
+    }
+}
+
+fun appConfig(name: String, defaultValue: String = ""): String =
+    providers.gradleProperty(name)
+        .orElse(providers.environmentVariable(name))
+        .orElse(localConfig.getProperty(name) ?: defaultValue)
+        .get()
+
+fun quoted(value: String): String =
+    "\"${value.replace("\\", "\\\\").replace("\"", "\\\"")}\""
+
 android {
-    namespace = "com.example.anubhavlifecare"
+    namespace = "com.anubhav.app"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.anubhavlifecare"
+        applicationId = "com.anubhav.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "AKTIV_API_URL", quoted(appConfig("AKTIV_API_URL", "http://10.0.2.2:8080/")))
+        buildConfigField("String", "RAZORPAY_KEY_ID", quoted(appConfig("RAZORPAY_KEY_ID")))
+        buildConfigField("String", "SUPABASE_URL", quoted(appConfig("SUPABASE_URL")))
+        buildConfigField("String", "SUPABASE_ANON_KEY", quoted(appConfig("SUPABASE_ANON_KEY")))
     }
 
     buildTypes {
@@ -29,14 +51,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "AKTIV_API_URL", "\"http://192.168.29.157:8080/\"")
-            buildConfigField("String", "RAZORPAY_KEY_ID", "\"rzp_live_RFl7SbGT4LwcLq\"")
         }
         debug {
-            buildConfigField("String", "SUPABASE_URL", "\"https://frkttphmaxuafxulvrkc.supabase.co\"")
-            buildConfigField("String", "SUPABASE_ANON_KEY", "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZya3R0cGhtYXh1YWZ4dWx2cmtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0NzY1MTAsImV4cCI6MjA3MzA1MjUxMH0.enRId4aQazHLOWZKyqT84jAic5F4JnxGOwZWRqAiMQU\"")
-            buildConfigField("String", "RAZORPAY_KEY_ID", "\"rzp_live_RFl7SbGT4LwcLq\"")
-            buildConfigField("String", "AKTIV_API_URL", "\"http://192.168.29.157:8080/\"")
         }
     }
 
@@ -123,6 +139,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.google.mlkit:text-recognition:16.0.1")
 
     // Facebook Login
     implementation("com.facebook.android:facebook-login:17.0.2")

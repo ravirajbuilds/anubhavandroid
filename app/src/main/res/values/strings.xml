@@ -37,6 +37,7 @@
     <string name="dont_have_account">Don\'t have an account? Sign up</string>
     <string name="already_have_account">Already have an account? Sign in</string>
     <string name="login_failed">Sign in failed. Please try again.</string>
+    <string name="facebook_login_not_configured">Facebook sign in is not configured yet. Please use Google or email sign in.</string>
     <string name="sign_up_failed">Could not create account. Please try again.</string>
     <string name="invalid_email">Enter a valid email address</string>
     <string name="invalid_password">Password must be at least 6 characters</string>
@@ -46,9 +47,8 @@
     <string name="profile_not_found_message">We could not find your records at Anubhav Life Care. Please visit the clinic or call us to register your mobile number, then sign in again.</string>
     <string name="contact_clinic">Call clinic</string>
     <string name="whatsapp_support">WhatsApp support</string>
-    <string name="default_web_client_id">REPLACE_WITH_FIREBASE_WEB_CLIENT_ID</string>
     <string name="facebook_app_id">REPLACE_WITH_FACEBOOK_APP_ID</string>
-    <string name="fb_login_protocol_scheme">fbREPLACE_WITH_FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fbreplace_with_facebook_app_id</string>
     <string name="facebook_client_token">REPLACE_WITH_FACEBOOK_CLIENT_TOKEN</string>
 
     <!-- Language selection -->
@@ -175,6 +175,7 @@
     <string name="no_reports_hint">Your reports will appear here once they are ready.</string>
     <string name="book_a_test">Book a test</string>
     <string name="whatsapp_booking_message">Hello, I want to book a test at Anubhav Life Care.</string>
+    <string name="whatsapp_not_available">WhatsApp is not available on this device.</string>
     <string name="pay_bill">%1$s — Pay ₹%2$.0f</string>
     <string name="bill_summary">%1$s — %2$s\n₹%3$.0f paid ₹%4$.0f pending ₹%5$.0f</string>
     <string name="reschedule_phone">9230755876</string>
@@ -328,6 +329,7 @@
     <string name="no_reports_hint_bn">রিপোর্ট প্রস্তুত হলে এখানে দেখা যাবে।</string>
     <string name="book_a_test_bn">টেস্ট বুক করুন</string>
     <string name="whatsapp_booking_message_bn">নমস্কার, অনুভব লাইফ কেয়ারে টেস্ট বুক করতে চাই।</string>
+    <string name="whatsapp_not_available_bn">এই ডিভাইসে হোয়াটসঅ্যাপ পাওয়া যায়নি।</string>
     <string name="pay_bill_bn">%1$s — ₹%2$.0f পরিশোধ</string>
     <string name="bill_summary_bn">%1$s — %2$s\n₹%3$.0f পরিশোধ ₹%4$.0f বকেয়া ₹%5$.0f</string>
     <string name="payment_description_prebook_bn">৫০%% প্রিবুক অগ্রিম (ফেরতযোগ্য নয়)</string>

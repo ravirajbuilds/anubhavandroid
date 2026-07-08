@@ -7,43 +7,43 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.anubhavlifecare.ui.home.HomeFragment"
+        android:name="com.anubhav.app.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_book_test"
-        android:name="com.example.anubhavlifecare.ui.customer.CustomerPrebookFragment"
+        android:name="com.anubhav.app.ui.customer.CustomerPrebookFragment"
         android:label="@string/menu_book_test"
         tools:layout="@layout/fragment_customer_prebook" />
 
     <fragment
         android:id="@+id/nav_my_bookings"
-        android:name="com.example.anubhavlifecare.ui.customer.MyBookingsFragment"
+        android:name="com.anubhav.app.ui.customer.MyBookingsFragment"
         android:label="@string/menu_my_bookings"
         tools:layout="@layout/fragment_customer_list" />
 
     <fragment
         android:id="@+id/nav_my_reports"
-        android:name="com.example.anubhavlifecare.ui.customer.MyReportsFragment"
+        android:name="com.anubhav.app.ui.customer.MyReportsFragment"
         android:label="@string/menu_my_reports"
         tools:layout="@layout/fragment_customer_list" />
 
     <fragment
         android:id="@+id/nav_pending_payments"
-        android:name="com.example.anubhavlifecare.ui.customer.PendingPaymentsFragment"
+        android:name="com.anubhav.app.ui.customer.PendingPaymentsFragment"
         android:label="@string/pending_payments_title"
         tools:layout="@layout/fragment_pending_payments" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.anubhavlifecare.ui.home.HomeFragment"
+        android:name="com.anubhav.app.ui.home.HomeFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.anubhavlifecare.ui.settings.SettingsFragment"
+        android:name="com.anubhav.app.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

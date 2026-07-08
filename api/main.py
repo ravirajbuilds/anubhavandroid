@@ -1,6 +1,7 @@
 """REST API for Anubhav Life Care Android app ↔ AKTIV."""
 from __future__ import annotations
 
+import logging
 from datetime import date
 from typing import Optional
 
@@ -31,6 +32,12 @@ from customer_portal import (
 )
 
 app = FastAPI(title="Anubhav Life Care API", version="2.0.0")
+logger = logging.getLogger(__name__)
+
+
+def internal_error(exc: Exception) -> HTTPException:
+    logger.exception("Unhandled API error")
+    return HTTPException(status_code=500, detail="Internal server error")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -75,7 +82,7 @@ def api_login(body: LoginRequest):
     except ValueError as exc:
         raise HTTPException(status_code=401, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
     return {
         "success": True,
@@ -99,30 +106,45 @@ def health():
 @app.get("/api/users")
 def api_users():
     """Receptionist logins — bills are stamped with sys_insert_user_key."""
-    return list_reception_users()
+    try:
+        return list_reception_users()
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/tests")
 def api_tests(q: str = "", limit: int = 50):
-    return search_tests(q, limit=min(limit, 100))
+    try:
+        return search_tests(q, limit=min(limit, 100))
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/doctors")
 def api_doctors(q: str = "", limit: int = 50):
-    return search_doctors(q, limit=min(limit, 100))
+    try:
+        return search_doctors(q, limit=min(limit, 100))
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/collection-centres")
 def api_collection_centres(q: str = ""):
-    return list_collection_centres(q)
+    try:
+        return list_collection_centres(q)
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/next-bill-number")
 def api_next_bill_number(bill_date: Optional[date] = None, test_mode: Optional[bool] = None):
-    settings = aktiv_settings()
-    is_test = test_mode if test_mode is not None else not settings["allow_live_bookings"]
-    effective_date = settings["test_bill_date"] if is_test else (bill_date or date.today())
-    return next_bill_number(effective_date)
+    try:
+        settings = aktiv_settings()
+        is_test = test_mode if test_mode is not None else not settings["allow_live_bookings"]
+        effective_date = settings["test_bill_date"] if is_test else (bill_date or date.today())
+        return next_bill_number(effective_date)
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.post("/api/bookings")
@@ -150,7 +172,7 @@ def api_create_booking(body: BookingRequest):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
     settings = aktiv_settings()
     is_test = body.test_mode if body.test_mode is not None else not settings["allow_live_bookings"]
@@ -177,7 +199,7 @@ def api_cancel_booking(bill_key: int, body: CancelRequest = CancelRequest()):
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 # --- Customer portal ---
@@ -210,7 +232,7 @@ def api_customer_profile(phone: Optional[str] = None, email: Optional[str] = Non
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/customer/bills")
@@ -220,7 +242,7 @@ def api_customer_bills(phone: str, limit: int = 50):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/customer/reports")
@@ -230,7 +252,7 @@ def api_customer_reports(phone: str, limit: int = 50):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/customer/pending-payments")
@@ -240,7 +262,7 @@ def api_customer_pending(phone: str):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/customer/prebook/calendar")
@@ -266,7 +288,7 @@ def api_customer_prebook(body: CustomerPrebookRequest):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc
 
 
 @app.post("/api/customer/payments")
@@ -281,4 +303,4 @@ def api_customer_payment(body: CustomerPaymentRequest):
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise internal_error(exc) from exc

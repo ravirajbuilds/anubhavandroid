@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light">
+    android:background="@drawable/app_background">
 
     <!-- Language selection (first launch) -->
     <LinearLayout
@@ -12,14 +12,30 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:background="@drawable/app_background"
         android:padding="24dp"
         android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/logo_halo"
+            android:padding="14dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@drawable/anubhav_shell_logo" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvChooseLanguageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="@string/choose_language_title"
             android:textColor="@color/brand_dark_blue"
@@ -44,10 +60,11 @@
             android:layout_marginBottom="12dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:strokeColor="@color/brand_dark_blue"
-            app:strokeWidth="0dp">
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/stroke_soft"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,10 +99,11 @@
             android:layout_marginBottom="24dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:strokeColor="@color/brand_dark_blue"
-            app:strokeWidth="0dp">
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/stroke_soft"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -124,11 +142,12 @@
 
     <!-- Login -->
     <ScrollView
-        android:id="@+id/layoutLogin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:visibility="gone">
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/app_background"
+            android:fillViewport="true"
+            android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,14 +156,29 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <FrameLayout
+                android:layout_width="118dp"
+                android:layout_height="118dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/logo_halo"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/anubhav_shell_logo" />
+            </FrameLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="18dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Anubhav"
                 android:textColor="@color/brand_dark_blue"
-                android:textSize="36sp"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -170,8 +204,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/stroke_soft"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -186,6 +223,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:text="@string/login_with_google"
+                        android:textColor="@color/brand_dark_blue"
+                        app:strokeColor="@color/stroke_soft"
                         app:cornerRadius="12dp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -195,6 +234,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:text="@string/login_with_facebook"
+                        android:textColor="@color/brand_dark_blue"
+                        app:strokeColor="@color/stroke_soft"
                         app:cornerRadius="12dp" />
 
                     <TextView
@@ -213,7 +254,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="@string/email">
+                        android:hint="@string/email"
+                        app:boxBackgroundColor="@color/input_background">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etEmail"
@@ -229,6 +271,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:hint="@string/password"
+                        app:boxBackgroundColor="@color/input_background"
                         app:endIconMode="password_toggle">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -253,7 +296,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:background="#1AD32F2F"
+                        android:background="@drawable/error_panel_bg"
                         android:padding="10dp"
                         android:textColor="#B71C1C"
                         android:textSize="13sp"

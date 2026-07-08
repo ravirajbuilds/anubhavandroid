@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "anubhav-life-care",
-    "storage_bucket": "anubhav-life-care.appspot.com"
+    "project_number": "312393156482",
+    "project_id": "anubhav-android",
+    "storage_bucket": "anubhav-android.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "mobilesdk_app_id": "1:312393156482:android:0f210ba0a585eaa53fb19b",
         "android_client_info": {
-          "package_name": "com.example.anubhavlifecare"
+          "package_name": "com.anubhav.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "312393156482-pc65k719jtfdutq8qcr7e4hgp99s1qu0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "REPLACE_WITH_FIREBASE_ANDROID_API_KEY"
+          "current_key": "AIzaSyB27bmeoxUcZxYqXYwk4cBFWZYXTTtB26s"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312393156482-pc65k719jtfdutq8qcr7e4hgp99s1qu0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
