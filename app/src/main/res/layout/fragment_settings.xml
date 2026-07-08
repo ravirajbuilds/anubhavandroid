@@ -17,9 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/settings_language_title"
-            android:textColor="@color/brand_dark_blue"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle" />
 
         <TextView
             android:id="@+id/tvSettingsLanguageHint"
@@ -35,8 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/stroke_soft"
+            app:strokeWidth="1dp">
 
             <RadioGroup
                 android:id="@+id/radioLanguage"
@@ -66,16 +67,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/settings_account_title"
-            android:textColor="@color/brand_dark_blue"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/stroke_soft"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,8 +114,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:background="#1AFF9800"
-                    android:padding="10dp"
+                    android:background="@drawable/warning_panel_bg"
+                    android:padding="12dp"
                     android:textColor="#E65100"
                     android:textSize="13sp"
                     android:visibility="gone" />
@@ -127,6 +129,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/whatsapp_support"
-            app:cornerRadius="12dp" />
+            android:textColor="@color/brand_dark_blue"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/stroke_soft" />
     </LinearLayout>
 </ScrollView>

@@ -250,7 +250,7 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/layoutEmail"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.Anubhav.TextInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -266,7 +266,7 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/layoutPassword"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.Anubhav.TextInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
