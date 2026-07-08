@@ -1,6 +1,7 @@
 """AKTIV desktop login — validates against SYS_MAST_USERS."""
 from __future__ import annotations
 
+import hmac
 from dataclasses import dataclass
 
 from db import mssql_conn
@@ -35,7 +36,7 @@ def authenticate(userid: str, password: str) -> AuthUser:
 
     user_key, db_userid, username, db_password = row
     stored = "" if db_password is None else str(db_password)
-    if stored != password:
+    if not hmac.compare_digest(stored, password):
         raise ValueError("Invalid username or password")
 
     return AuthUser(
