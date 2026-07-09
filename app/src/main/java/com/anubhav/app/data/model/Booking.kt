@@ -17,26 +17,11 @@ data class Booking(
     val razorpayOrderId: String = "",
     val status: BookingStatus = BookingStatus.PENDING,
     val createdAt: String = "",
-    val updatedAt: String = ""
+    val updatedAt: String = "",
 )
 
-enum class BookingType {
-    REGULAR,
-    TIME_SLOT_PREBOOK,
-    DOCTOR_PREBOOK
-}
+enum class BookingType { REGULAR, TIME_SLOT_PREBOOK, DOCTOR_PREBOOK }
 
-enum class PaymentStatus {
-    PENDING,
-    PAID,
-    FAILED,
-    REFUNDED
-}
+enum class PaymentStatus { PENDING, PAID, FAILED, REFUNDED }
 
-enum class BookingStatus {
-    PENDING,
-    CONFIRMED,
-    IN_PROGRESS,
-    COMPLETED,
-    CANCELLED
-}
+enum class BookingStatus { PENDING, CONFIRMED, IN_PROGRESS, COMPLETED, CANCELLED }

@@ -10,6 +10,7 @@ env
 .env
 etl/.env
 dashboard/.env.local
+release-signing-reference.txt
 *.log
 etl.log
 
@@ -26,6 +27,7 @@ __pycache__/
 
 # Android
 local.properties
+keystore.properties
 .cxx/
 captures/
 .externalNativeBuild/

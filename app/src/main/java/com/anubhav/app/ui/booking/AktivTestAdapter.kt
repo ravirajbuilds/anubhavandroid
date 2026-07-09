@@ -32,11 +32,8 @@ class AktivTestAdapter(
             layoutParams = ViewGroup.MarginLayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
-            ).apply {
-                setMargins(0, 0, 0, resources.getDimensionPixelSize(R.dimen.list_item_gap))
-            }
+            ).apply { setMargins(0, 0, 0, resources.getDimensionPixelSize(R.dimen.list_item_gap)) }
         }
-
         val text = TextView(parent.context).apply {
             setPadding(18.dp(), 14.dp(), 18.dp(), 14.dp())
             textSize = 14f
@@ -48,26 +45,32 @@ class AktivTestAdapter(
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val test = items[position]
-        val checked = selected.contains(test.testKey)
-        holder.text.text = "${test.testCode} - ${test.testName}\nRs ${test.rate}"
-        holder.text.alpha = if (checked) 1f else 0.9f
+        val item = items[position]
+        val context = holder.card.context
+        val isSelected = selected.contains(item.testKey)
+        holder.text.text = buildString {
+            append(item.testName)
+            append('\n')
+            append(item.testCode)
+            append("  Rs ")
+            append("%.2f".format(item.rate))
+        }
+        holder.card.strokeColor = ContextCompat.getColor(
+            context,
+            if (isSelected) R.color.accent else R.color.stroke_soft,
+        )
         holder.card.setCardBackgroundColor(
             ContextCompat.getColor(
-                holder.card.context,
-                if (checked) R.color.secondary_light else R.color.card_background,
+                context,
+                if (isSelected) R.color.accent_light else R.color.card_background,
             ),
         )
-        holder.card.strokeColor = ContextCompat.getColor(
-            holder.card.context,
-            if (checked) R.color.medical_green else R.color.stroke_soft,
-        )
-        holder.card.setOnClickListener { onToggle(test) }
+        holder.card.setOnClickListener { onToggle(item) }
     }
 
     override fun getItemCount(): Int = items.size
 
     class VH(val card: MaterialCardView, val text: TextView) : RecyclerView.ViewHolder(card)
-
-    private fun Int.dp(): Int = (this * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
 }
+
+private fun Int.dp(): Int = (this * android.content.res.Resources.getSystem().displayMetrics.density).toInt()

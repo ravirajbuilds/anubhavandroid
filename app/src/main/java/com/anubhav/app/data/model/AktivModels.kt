@@ -12,6 +12,8 @@ data class AktivLoginResponse(
     @SerializedName("user_key") val userKey: Int,
     val userid: String,
     val username: String,
+    val role: String = "staff",
+    @SerializedName("collector_key") val collectorKey: Int? = null,
 )
 
 data class AktivTest(
@@ -54,16 +56,10 @@ data class AktivReceptionUser(
 }
 
 data class AktivBillNumber(
-    @SerializedName("bill_prefix1") val billPrefix1: String,
-    @SerializedName("bill_prefix2") val billPrefix2: String,
-    @SerializedName("bill_number") val billNumber: String,
     @SerializedName("bill_no") val billNo: String,
+    @SerializedName("bill_number") val billNumber: String,
 )
 
-/**
- * Payload for pushing a booked patient into AKTIV.
- * Yellow fields from the Bill screen are the manual inputs here.
- */
 data class AktivBookingRequest(
     @SerializedName("patient_name") val patientName: String,
     val phone: String,

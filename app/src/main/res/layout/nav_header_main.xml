@@ -7,7 +7,7 @@
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="52dp"
+    android:paddingTop="36dp"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="20dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -15,7 +15,7 @@
     <FrameLayout
         android:layout_width="76dp"
         android:layout_height="76dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/logo_halo"
         android:padding="8dp">
 
@@ -33,7 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:paddingTop="8dp"
+        android:includeFontPadding="true"
+        android:maxLines="2"
         android:text="@string/nav_header_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/text_white"
@@ -42,10 +43,12 @@
 
     <TextView
         android:id="@+id/navHeaderSubtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="4dp"
+        android:includeFontPadding="true"
         android:fontFamily="sans-serif"
+        android:maxLines="2"
         android:text="@string/nav_header_subtitle"
         android:textColor="@color/text_white"
         android:textSize="15sp"
@@ -53,10 +56,12 @@
 
     <TextView
         android:id="@+id/navHeaderUser"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:includeFontPadding="true"
         android:fontFamily="sans-serif"
+        android:maxLines="2"
         android:textColor="@color/text_white"
         android:textSize="14sp"
         android:alpha="0.9" />

@@ -17,6 +17,13 @@ val localConfig = Properties().apply {
     }
 }
 
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use(::load)
+    }
+}
+
 fun appConfig(name: String, defaultValue: String = ""): String =
     providers.gradleProperty(name)
         .orElse(providers.environmentVariable(name))
@@ -34,19 +41,33 @@ android {
         applicationId = "com.anubhav.app"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "AKTIV_API_URL", quoted(appConfig("AKTIV_API_URL", "http://10.0.2.2:8080/")))
+        buildConfigField("String", "AKTIV_API_URL", quoted(appConfig("AKTIV_API_URL", "http://192.168.29.157:8080/")))
         buildConfigField("String", "RAZORPAY_KEY_ID", quoted(appConfig("RAZORPAY_KEY_ID")))
         buildConfigField("String", "SUPABASE_URL", quoted(appConfig("SUPABASE_URL")))
         buildConfigField("String", "SUPABASE_ANON_KEY", quoted(appConfig("SUPABASE_ANON_KEY")))
     }
 
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

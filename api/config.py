@@ -38,11 +38,11 @@ def neon_url() -> str:
 
 
 def aktiv_settings() -> dict:
-    """AKTIV write behaviour — receptionist user, test vs live bookings."""
+    """AKTIV write behaviour — receptionist user, live bookings by default."""
     load_env()
     from datetime import date
 
-    allow_live = os.environ.get("AKTIV_ALLOW_LIVE_BOOKINGS", "false").lower() in (
+    allow_live = os.environ.get("AKTIV_ALLOW_LIVE_BOOKINGS", "true").lower() in (
         "1",
         "true",
         "yes",

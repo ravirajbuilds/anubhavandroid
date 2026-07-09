@@ -1,12 +1,12 @@
 package com.anubhav.app.data.remote
 
-import com.anubhav.app.data.model.AktivLoginRequest
-import com.anubhav.app.data.model.AktivLoginResponse
 import com.anubhav.app.data.model.AktivBillNumber
 import com.anubhav.app.data.model.AktivBookingRequest
 import com.anubhav.app.data.model.AktivBookingResponse
 import com.anubhav.app.data.model.AktivCollectionCentre
 import com.anubhav.app.data.model.AktivDoctor
+import com.anubhav.app.data.model.AktivLoginRequest
+import com.anubhav.app.data.model.AktivLoginResponse
 import com.anubhav.app.data.model.AktivReceptionUser
 import com.anubhav.app.data.model.AktivTest
 import retrofit2.http.Body

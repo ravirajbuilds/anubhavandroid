@@ -30,6 +30,12 @@
         tools:layout="@layout/fragment_customer_list" />
 
     <fragment
+        android:id="@+id/nav_collector"
+        android:name="com.anubhav.app.ui.customer.CollectorDashboardFragment"
+        android:label="@string/menu_collector"
+        tools:layout="@layout/fragment_collector_dashboard" />
+
+    <fragment
         android:id="@+id/nav_pending_payments"
         android:name="com.anubhav.app.ui.customer.PendingPaymentsFragment"
         android:label="@string/pending_payments_title"

@@ -23,7 +23,7 @@
             android:layout_marginBottom="8dp"
             android:text="@string/prebook_time_slot"
             android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle"
-            android:maxLines="1"
+            android:maxLines="2"
             android:ellipsize="end" />
 
         <TextView

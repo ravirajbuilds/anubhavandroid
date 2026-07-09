@@ -8,6 +8,8 @@ object CustomerSessionManager {
     private const val KEY_EMAIL = "email"
     private const val KEY_NAME = "name"
     private const val KEY_FIREBASE_UID = "firebase_uid"
+    private const val KEY_ROLE = "role"
+    private const val KEY_COLLECTOR_KEY = "collector_key"
 
     fun save(
         context: Context,
@@ -15,6 +17,7 @@ object CustomerSessionManager {
         email: String?,
         name: String?,
         firebaseUid: String,
+        role: String = "customer",
     ) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit()
@@ -22,27 +25,51 @@ object CustomerSessionManager {
             .putString(KEY_EMAIL, email)
             .putString(KEY_NAME, name)
             .putString(KEY_FIREBASE_UID, firebaseUid)
+            .putString(KEY_ROLE, role)
             .apply()
     }
 
-    fun isLoggedIn(context: Context): Boolean =
-        !getFirebaseUid(context).isNullOrBlank()
+    fun isLoggedIn(context: Context): Boolean = !getFirebaseUid(context).isNullOrBlank()
 
     fun getPhone(context: Context): String? =
-        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            .getString(KEY_PHONE, null)
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY_PHONE, null)
 
     fun getEmail(context: Context): String? =
-        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            .getString(KEY_EMAIL, null)
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY_EMAIL, null)
 
     fun getName(context: Context): String? =
-        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            .getString(KEY_NAME, null)
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY_NAME, null)
 
     fun getFirebaseUid(context: Context): String? =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY_FIREBASE_UID, null)
+
+    fun getRole(context: Context): String =
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            .getString(KEY_FIREBASE_UID, null)
+            .getString(KEY_ROLE, "customer")
+            .orEmpty()
+
+    fun getCollectorKey(context: Context): Int? {
+        val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        return if (prefs.contains(KEY_COLLECTOR_KEY)) {
+            prefs.getInt(KEY_COLLECTOR_KEY, -1).takeIf { it > 0 }
+        } else {
+            null
+        }
+    }
+
+    fun saveCollectorKey(context: Context, collectorKey: Int?) {
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit()
+            .apply {
+                if (collectorKey != null && collectorKey > 0) {
+                    putInt(KEY_COLLECTOR_KEY, collectorKey)
+                    putString(KEY_ROLE, "collector")
+                } else {
+                    remove(KEY_COLLECTOR_KEY)
+                }
+            }
+            .apply()
+    }
 
     fun clear(context: Context) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().clear().apply()

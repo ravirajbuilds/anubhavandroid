@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.anubhav.app.BuildConfig
 import com.anubhav.app.data.model.AktivBillNumber
 import com.anubhav.app.data.model.AktivBookingResponse
 import com.anubhav.app.data.model.AktivCollectionCentre
@@ -20,8 +19,8 @@ import java.time.LocalDate
 
 data class BookTestUiState(
     val billNumber: AktivBillNumber? = null,
-    val billDate: LocalDate = TEST_BILL_DATE,
-    val testMode: Boolean = BuildConfig.DEBUG,
+    val billDate: LocalDate = LocalDate.now(),
+    val testMode: Boolean = false,
     val loggedInUser: String = "",
     val tests: List<AktivTest> = emptyList(),
     val doctors: List<AktivDoctor> = emptyList(),
@@ -32,11 +31,7 @@ data class BookTestUiState(
     val isLoading: Boolean = false,
     val error: String? = null,
     val success: AktivBookingResponse? = null,
-) {
-    companion object {
-        val TEST_BILL_DATE: LocalDate = LocalDate.of(2025, 7, 2)
-    }
-}
+)
 
 class BookTestViewModel(
     application: Application,
@@ -44,7 +39,6 @@ class BookTestViewModel(
 ) : AndroidViewModel(application) {
     private val _state = MutableLiveData(BookTestUiState())
     val state: LiveData<BookTestUiState> = _state
-
     private var doctorSearchJob: Job? = null
     private var testSearchJob: Job? = null
 
@@ -52,29 +46,25 @@ class BookTestViewModel(
         loadMasters()
     }
 
-    private fun sysUserKey(): Int? = SessionManager.getUserKey(getApplication())
-
-    fun loadMasters() {
+    fun loadMasters(
+        billDate: LocalDate = _state.value?.billDate ?: LocalDate.now(),
+        testMode: Boolean = _state.value?.testMode ?: false,
+    ) {
+        _state.value = _state.value?.copy(isLoading = true, billDate = billDate, testMode = testMode)
         viewModelScope.launch {
-            val current = _state.value ?: BookTestUiState()
-            _state.value = current.copy(isLoading = true, error = null)
-
-            val testMode = current.testMode
-            val billDate = if (testMode) BookTestUiState.TEST_BILL_DATE else current.billDate
-            val bill = aktivRepository.getNextBillNumber(billDate, testMode).getOrNull()
-            val centres = aktivRepository.listCollectionCentres().getOrElse { emptyList() }
-            val defaultCentre = centres.firstOrNull { it.collcentreName == "ANUBHAV LIFE CARE" }
-                ?: centres.firstOrNull()
-            val loggedIn = SessionManager.getUsername(getApplication())
-                ?: SessionManager.getUserid(getApplication()).orEmpty()
-
-            _state.value = current.copy(
-                isLoading = false,
-                billDate = billDate,
+            val user = SessionManager.getUsername(getApplication()).orEmpty()
+            val bill = aktivRepository.nextBillNumber(billDate, testMode).getOrNull()
+            val tests = aktivRepository.searchTests("").getOrElse { emptyList() }
+            val doctors = aktivRepository.searchDoctors("").getOrElse { emptyList() }
+            val centres = aktivRepository.listCollectionCentres("").getOrElse { emptyList() }
+            _state.value = _state.value?.copy(
                 billNumber = bill,
+                loggedInUser = user,
+                tests = tests,
+                doctors = doctors,
                 collectionCentres = centres,
-                selectedCentre = defaultCentre,
-                loggedInUser = loggedIn,
+                selectedCentre = _state.value?.selectedCentre ?: centres.firstOrNull(),
+                isLoading = false,
             )
         }
     }
@@ -142,12 +132,12 @@ class BookTestViewModel(
             return
         }
 
+        val billDate = current.billDate
+        val billNumber = current.billNumber?.billNumber
         val isTest = current.testMode
-        val upiCheque = if (receiptMode.equals("UPI", ignoreCase = true)) chequeNo else null
-        val paid = if (isTest) 0.0 else (amountPaid ?: current.selectedTests.sumOf { it.rate })
-
+        val upiCheque = chequeNo?.takeIf { it.isNotBlank() }
+        _state.value = current.copy(isLoading = true, error = null, success = null)
         viewModelScope.launch {
-            _state.value = current.copy(isLoading = true, error = null, success = null)
             val result = aktivRepository.pushBookingToAktiv(
                 patientName = patientName.trim(),
                 phone = phone.trim(),
@@ -158,9 +148,9 @@ class BookTestViewModel(
                 refrdoctorKey = current.selectedDoctor?.refrdoctorKey,
                 collcentreKey = current.selectedCentre?.collcentreKey ?: 1,
                 testKeys = current.selectedTests.map { it.testKey },
-                billDate = current.billDate,
-                billNumber = current.billNumber?.billNumber,
-                amountPaid = paid,
+                billDate = billDate,
+                billNumber = billNumber,
+                amountPaid = amountPaid,
                 receiptMode = receiptMode,
                 chequeNo = upiCheque,
                 remarks = remarks,
@@ -185,4 +175,6 @@ class BookTestViewModel(
     fun clearMessages() {
         _state.value = _state.value?.copy(error = null, success = null)
     }
+
+    private fun sysUserKey(): Int? = SessionManager.getUserKey(getApplication())
 }

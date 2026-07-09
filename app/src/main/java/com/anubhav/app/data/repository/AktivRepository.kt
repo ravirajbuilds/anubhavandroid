@@ -1,15 +1,17 @@
 package com.anubhav.app.data.repository
 
-import com.anubhav.app.data.model.AktivLoginRequest
-import com.anubhav.app.data.model.AktivLoginResponse
+import android.content.Context
 import com.anubhav.app.data.model.AktivBillNumber
 import com.anubhav.app.data.model.AktivBookingRequest
 import com.anubhav.app.data.model.AktivBookingResponse
 import com.anubhav.app.data.model.AktivCollectionCentre
 import com.anubhav.app.data.model.AktivDoctor
+import com.anubhav.app.data.model.AktivLoginRequest
+import com.anubhav.app.data.model.AktivLoginResponse
 import com.anubhav.app.data.model.AktivReceptionUser
 import com.anubhav.app.data.model.AktivTest
 import com.anubhav.app.data.remote.AktivApiClient
+import com.anubhav.app.utils.AktivDataCache
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -17,85 +19,114 @@ class AktivRepository(
     private val api: com.anubhav.app.data.remote.AktivApi = AktivApiClient.api,
 ) {
     suspend fun login(userid: String, password: String): Result<AktivLoginResponse> =
+        runCatching { api.login(AktivLoginRequest(userid, password)) }
+
+    suspend fun listReceptionUsers(): Result<List<AktivReceptionUser>> =
+        runCatching { api.listUsers() }
+
+    suspend fun searchTests(query: String): Result<List<AktivTest>> =
+        runCatching { api.searchTests(query = query, limit = 50) }
+
+    suspend fun searchTestsCached(context: Context, query: String): Result<List<AktivTest>> =
         runCatching {
-            api.login(AktivLoginRequest(userid, password))
+            val trimmed = query.trim()
+            val cacheKey = "tests_$trimmed"
+            AktivDataCache.readTests(context, cacheKey)?.let { return@runCatching it }
+            runCatching { api.searchTests(query = trimmed, limit = 50) }
+                .onSuccess {
+                    AktivDataCache.writeTests(context, cacheKey, it)
+                    if (trimmed.isEmpty()) AktivDataCache.writeTests(context, "tests_catalog", it)
+                }
+                .getOrElse { error ->
+                    filterCachedCatalog(context, trimmed).takeIf { it.isNotEmpty() } ?: throw error
+                }
         }
 
-    suspend fun listReceptionUsers(): Result<List<AktivReceptionUser>> = runCatching {
-        api.listUsers()
-    }
+    suspend fun refreshTests(context: Context): Result<List<AktivTest>> =
+        runCatching {
+            api.searchTests(query = "", limit = 500).also {
+                AktivDataCache.writeTests(context, "tests_", it)
+                AktivDataCache.writeTests(context, "tests_catalog", it)
+            }
+        }
 
-    suspend fun searchTests(query: String): Result<List<AktivTest>> = runCatching {
-        api.searchTests(query = query, limit = 50)
-    }
-
-    suspend fun searchDoctors(query: String): Result<List<AktivDoctor>> = runCatching {
-        api.searchDoctors(query = query, limit = 50)
-    }
+    suspend fun searchDoctors(query: String): Result<List<AktivDoctor>> =
+        runCatching { api.searchDoctors(query = query, limit = 50) }
 
     suspend fun listCollectionCentres(query: String = ""): Result<List<AktivCollectionCentre>> =
-        runCatching {
-            api.listCollectionCentres(query)
-        }
+        runCatching { api.listCollectionCentres(query = query) }
 
-    suspend fun getNextBillNumber(
+    suspend fun nextBillNumber(
         billDate: LocalDate? = null,
         testMode: Boolean? = null,
-    ): Result<AktivBillNumber> = runCatching {
-        val dateStr = billDate?.format(DateTimeFormatter.ISO_LOCAL_DATE)
-        api.nextBillNumber(billDate = dateStr, testMode = testMode)
-    }
-
-    suspend fun pushBookingToAktiv(request: AktivBookingRequest): Result<AktivBookingResponse> =
+    ): Result<AktivBillNumber> =
         runCatching {
-            api.pushBooking(request)
+            api.nextBillNumber(
+                billDate = billDate?.format(DateTimeFormatter.ISO_LOCAL_DATE),
+                testMode = testMode,
+            )
         }
+
+    suspend fun pushBooking(request: AktivBookingRequest): Result<AktivBookingResponse> =
+        runCatching { api.pushBooking(request) }
 
     suspend fun pushBookingToAktiv(
         patientName: String,
         phone: String,
         sex: String,
         ageYear: Int?,
-        ageMonth: Int? = null,
-        ageDay: Int? = null,
+        ageMonth: Int?,
+        ageDay: Int?,
         refrdoctorKey: Int?,
-        collcentreKey: Int = 1,
+        collcentreKey: Int,
         testKeys: List<Int>,
-        billDate: LocalDate? = null,
-        billNumber: String? = null,
-        amountPaid: Double? = null,
-        receiptMode: String = "CASH",
-        chequeNo: String? = null,
-        remarks: String? = null,
-        testMode: Boolean? = null,
-        sysUserKey: Int? = null,
-    ): Result<AktivBookingResponse> = pushBookingToAktiv(
-        AktivBookingRequest(
-            patientName = patientName,
-            phone = phone,
-            sex = sex,
-            ageYear = ageYear,
-            ageMonth = ageMonth,
-            ageDay = ageDay,
-            refrdoctorKey = refrdoctorKey,
-            collcentreKey = collcentreKey,
-            testKeys = testKeys,
-            billDate = billDate?.format(DateTimeFormatter.ISO_LOCAL_DATE),
-            billNumber = billNumber,
-            amountPaid = amountPaid,
-            receiptMode = receiptMode,
-            chequeNo = chequeNo,
-            remarks = remarks,
-            testMode = testMode,
-            sysUserKey = sysUserKey,
-        ),
-    )
+        billDate: LocalDate?,
+        billNumber: String?,
+        amountPaid: Double?,
+        receiptMode: String,
+        chequeNo: String?,
+        remarks: String?,
+        testMode: Boolean?,
+        sysUserKey: Int?,
+    ): Result<AktivBookingResponse> =
+        pushBooking(
+            AktivBookingRequest(
+                patientName = patientName,
+                phone = phone,
+                sex = sex,
+                ageYear = ageYear,
+                ageMonth = ageMonth,
+                ageDay = ageDay,
+                refrdoctorKey = refrdoctorKey,
+                collcentreKey = collcentreKey,
+                testKeys = testKeys,
+                billDate = billDate?.format(DateTimeFormatter.ISO_LOCAL_DATE),
+                billNumber = billNumber,
+                amountPaid = amountPaid,
+                receiptMode = receiptMode,
+                chequeNo = chequeNo,
+                remarks = remarks,
+                testMode = testMode,
+                sysUserKey = sysUserKey,
+            ),
+        )
 
-    /** Void receipt only — never deletes the AKTIV bill row. */
-    suspend fun cancelBooking(billKey: Int, sysUserKey: Int? = null): Result<Boolean> =
+    suspend fun cancelBooking(billKey: Int): Result<Boolean> =
         runCatching {
-            val body = if (sysUserKey != null) mapOf("sys_user_key" to sysUserKey) else emptyMap()
-            api.cancelBooking(billKey, body)
+            api.cancelBooking(billKey)
             true
         }
+
+    private fun filterCachedCatalog(context: Context, query: String): List<AktivTest> {
+        val catalog = AktivDataCache.readTests(context, "tests_catalog")
+            ?: AktivDataCache.readTests(context, "tests_")
+            ?: emptyList()
+        if (query.isBlank()) return catalog
+        val needle = query.lowercase()
+        return catalog.filter {
+            it.testName.lowercase().contains(needle) ||
+                it.testCode.lowercase().contains(needle) ||
+                it.categoryName.orEmpty().lowercase().contains(needle)
+        }
+    }
 }

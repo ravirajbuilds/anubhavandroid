@@ -13,7 +13,7 @@ object AktivApiClient {
      * Clinic LAN API — run `uvicorn main:app --host 0.0.0.0 --port 8080` in api/.
      * Override in build.gradle: buildConfigField("String", "AKTIV_API_URL", "\"http://...\"")
      */
-    const val DEFAULT_BASE_URL = "http://10.0.2.2:8080/"
+    const val DEFAULT_BASE_URL = "http://192.168.29.157:8080/"
 
     private val gson = GsonBuilder().setLenient().create()
 

@@ -314,6 +314,8 @@ def create_customer_prebooking(
 
     settings = aktiv_settings()
     is_live = settings["allow_live_bookings"]
+    if not is_live:
+        raise ValueError("Live AKTIV booking is disabled on server")
 
     result = push_booking(
         patient_name=patient_name,
@@ -321,13 +323,13 @@ def create_customer_prebooking(
         sex=sex,
         age_year=age_year,
         test_keys=test_keys,
-        bill_date=slot_date if is_live else None,
-        apnt_date=slot_date if is_live else None,
-        amount_paid=amount_paid if is_live else 0.0,
+        bill_date=slot_date,
+        apnt_date=slot_date,
+        amount_paid=amount_paid,
         receipt_mode="UPI",
         cheque_no=payment_id,
         remarks=remarks,
-        test_mode=not is_live,
+        test_mode=False,
     )
 
     _record_slot_booking(

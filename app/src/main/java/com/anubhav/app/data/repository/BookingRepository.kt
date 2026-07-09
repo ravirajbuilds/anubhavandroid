@@ -12,8 +12,7 @@ class BookingRepository(
     suspend fun createBooking(booking: Booking): Result<Booking> = runCatching {
         val testKeys = booking.selectedTests.mapNotNull { it.id.toIntOrNull() }
         require(testKeys.isNotEmpty()) { "No valid AKTIV tests selected" }
-
-        val response = aktivRepository.pushBookingToAktiv(
+        val response = aktivRepository.pushBooking(
             AktivBookingRequest(
                 patientName = booking.userName,
                 phone = booking.userPhone,
@@ -28,7 +27,6 @@ class BookingRepository(
                 chequeNo = booking.razorpayPaymentId.ifBlank { null },
             ),
         ).getOrThrow()
-
         booking.copy(
             id = response.billNo,
             status = BookingStatus.CONFIRMED,
@@ -37,9 +35,8 @@ class BookingRepository(
         )
     }
 
-    suspend fun updateBooking(booking: Booking): Result<Booking> = runCatching {
-        booking.copy(updatedAt = System.currentTimeMillis().toString())
-    }
+    suspend fun updateBooking(booking: Booking): Result<Booking> =
+        runCatching { booking.copy(updatedAt = System.currentTimeMillis().toString()) }
 
     suspend fun getUserBookings(userId: String): Result<List<Booking>> =
         Result.success(emptyList())
@@ -48,7 +45,6 @@ class BookingRepository(
         Result.success(null)
 
     suspend fun cancelBooking(bookingId: String): Result<Boolean> =
-        bookingId.toIntOrNull()?.let { billKey ->
-            aktivRepository.cancelBooking(billKey)
-        } ?: Result.success(true)
+        bookingId.toIntOrNull()?.let { aktivRepository.cancelBooking(it) }
+            ?: Result.failure(IllegalArgumentException("Invalid booking id"))
 }

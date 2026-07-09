@@ -1,5 +1,7 @@
 package com.anubhav.app.data.remote
 
+import com.anubhav.app.data.model.CollectorPatient
+import com.anubhav.app.data.model.CollectorPatientRequest
 import com.anubhav.app.data.model.CustomerBill
 import com.anubhav.app.data.model.CustomerPaymentRequest
 import com.anubhav.app.data.model.CustomerPaymentResponse
@@ -33,7 +35,9 @@ interface CustomerApi {
     ): List<CustomerReport>
 
     @GET("api/customer/pending-payments")
-    suspend fun getPendingPayments(@Query("phone") phone: String): List<CustomerBill>
+    suspend fun getPendingPayments(
+        @Query("phone") phone: String,
+    ): List<CustomerBill>
 
     @GET("api/customer/prebook/calendar")
     suspend fun getPrebookCalendar(
@@ -45,4 +49,19 @@ interface CustomerApi {
 
     @POST("api/customer/payments")
     suspend fun payPending(@Body request: CustomerPaymentRequest): CustomerPaymentResponse
+
+    @GET("api/collector/patients")
+    suspend fun getCollectorPatients(
+        @Query("collector_user_key") collectorUserKey: Int,
+        @Query("limit") limit: Int = 100,
+    ): List<CollectorPatient>
+
+    @POST("api/collector/patients")
+    suspend fun createCollectorPatient(@Body request: CollectorPatientRequest): CollectorPatient
+
+    @GET("api/collector/reports")
+    suspend fun getCollectorReports(
+        @Query("collector_user_key") collectorUserKey: Int,
+        @Query("limit") limit: Int = 100,
+    ): List<CustomerReport>
 }

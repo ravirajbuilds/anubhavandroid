@@ -250,6 +250,45 @@
                         android:textSize="13sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutClinicPhone"
+                        style="@style/Widget.Anubhav.TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="@string/clinic_registered_phone"
+                        app:boxBackgroundColor="@color/input_background">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etClinicPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789 +()-"
+                            android:inputType="phone"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/clinic_phone_hint"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPhoneAuth"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@string/continue_with_phone"
+                        android:textColor="@color/brand_dark_blue"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/stroke_soft" />
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/layoutEmail"
                         style="@style/Widget.Anubhav.TextInput"
                         android:layout_width="match_parent"

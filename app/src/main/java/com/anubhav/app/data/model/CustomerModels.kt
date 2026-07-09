@@ -30,10 +30,48 @@ data class CustomerReport(
     @SerializedName("bill_key") val billKey: Int,
     @SerializedName("bill_no") val billNo: String?,
     @SerializedName("billdate") val billDate: String?,
+    @SerializedName("patientname") val patientName: String? = null,
     @SerializedName("testname") val testName: String?,
     @SerializedName("testcode") val testCode: String?,
     @SerializedName("reportingdate") val reportingDate: String?,
     val status: String?,
+    @SerializedName("pending_amount") val pendingAmount: Double = 0.0,
+    @SerializedName("status_message") val statusMessage: String? = null,
+    @SerializedName("can_share") val canShare: Boolean? = null,
+) {
+    val isReady: Boolean
+        get() = status.equals("READY", ignoreCase = true) && !reportingDate.isNullOrBlank()
+
+    val isBillDueBlocked: Boolean
+        get() = pendingAmount > 0.01
+
+    val isShareable: Boolean
+        get() = canShare ?: (isReady && !isBillDueBlocked)
+}
+
+data class CollectorPatient(
+    val id: Int? = null,
+    @SerializedName("collector_user_key") val collectorUserKey: Int,
+    @SerializedName("patient_name") val patientName: String,
+    val phone: String,
+    @SerializedName("age_year") val ageYear: Int? = null,
+    val sex: String? = null,
+@SerializedName("referred_by") val referredBy: String? = null,
+val notes: String? = null,
+@SerializedName("followup_status") val followupStatus: String? = null,
+@SerializedName("created_at") val createdAt: String? = null,
+@SerializedName("updated_at") val updatedAt: String? = null,
+)
+
+data class CollectorPatientRequest(
+    @SerializedName("collector_user_key") val collectorUserKey: Int,
+    @SerializedName("patient_name") val patientName: String,
+    val phone: String,
+    @SerializedName("age_year") val ageYear: Int? = null,
+    val sex: String? = null,
+@SerializedName("referred_by") val referredBy: String? = null,
+val notes: String? = null,
+@SerializedName("followup_status") val followupStatus: String? = null,
 )
 
 data class PrebookSlotInfo(

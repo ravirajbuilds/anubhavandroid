@@ -30,6 +30,11 @@ from customer_portal import (
     list_pending_payments,
     record_pending_payment,
 )
+from collector_portal import (
+    create_collector_patient,
+    list_collector_patients,
+    list_collector_reports,
+)
 
 app = FastAPI(title="Anubhav Life Care API", version="2.0.0")
 logger = logging.getLogger(__name__)
@@ -89,6 +94,8 @@ def api_login(body: LoginRequest):
         "user_key": user.user_key,
         "userid": user.userid,
         "username": user.username,
+        "role": user.role,
+        "collector_key": user.collector_key,
     }
 
 
@@ -225,6 +232,17 @@ class CustomerPaymentRequest(BaseModel):
     payment_id: str = Field(..., min_length=1)
 
 
+class CollectorPatientRequest(BaseModel):
+    collector_user_key: int = Field(..., gt=0)
+    patient_name: str = Field(..., min_length=1)
+    phone: str = Field(..., min_length=10)
+    age_year: Optional[int] = None
+    sex: Optional[str] = None
+    referred_by: Optional[str] = None
+    notes: Optional[str] = None
+    followup_status: Optional[str] = None
+
+
 @app.get("/api/customer/profile")
 def api_customer_profile(phone: Optional[str] = None, email: Optional[str] = None):
     try:
@@ -249,6 +267,51 @@ def api_customer_bills(phone: str, limit: int = 50):
 def api_customer_reports(phone: str, limit: int = 50):
     try:
         return list_customer_reports(phone=phone, limit=limit)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:
+        raise internal_error(exc) from exc
+
+
+@app.get("/api/collector/patients")
+def api_collector_patients(collector_user_key: int, limit: int = 100):
+    try:
+        return list_collector_patients(
+            collector_user_key=collector_user_key,
+            limit=limit,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:
+        raise internal_error(exc) from exc
+
+
+@app.post("/api/collector/patients")
+def api_collector_create_patient(body: CollectorPatientRequest):
+    try:
+        return create_collector_patient(
+            collector_user_key=body.collector_user_key,
+            patient_name=body.patient_name,
+            phone=body.phone,
+            age_year=body.age_year,
+            sex=body.sex,
+            referred_by=body.referred_by,
+            notes=body.notes,
+            followup_status=body.followup_status,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:
+        raise internal_error(exc) from exc
+
+
+@app.get("/api/collector/reports")
+def api_collector_reports(collector_user_key: int, limit: int = 100):
+    try:
+        return list_collector_reports(
+            collector_user_key=collector_user_key,
+            limit=limit,
+        )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:

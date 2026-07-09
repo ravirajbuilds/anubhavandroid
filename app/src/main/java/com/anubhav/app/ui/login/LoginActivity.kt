@@ -53,8 +53,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var tvLoginError: TextView
     private lateinit var progressLogin: ProgressBar
     private lateinit var btnEmailAuth: MaterialButton
+    private lateinit var btnPhoneAuth: MaterialButton
     private lateinit var etEmail: TextInputEditText
     private lateinit var etPassword: TextInputEditText
+    private lateinit var etClinicPhone: TextInputEditText
 
     private val googleLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
@@ -105,8 +107,10 @@ class LoginActivity : AppCompatActivity() {
         tvLoginError = findViewById(R.id.tvLoginError)
         progressLogin = findViewById(R.id.progressLogin)
         btnEmailAuth = findViewById(R.id.btnEmailAuth)
+        btnPhoneAuth = findViewById(R.id.btnPhoneAuth)
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
+        etClinicPhone = findViewById(R.id.etClinicPhone)
     }
 
     private fun setupGoogleSignIn() {
@@ -195,6 +199,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnEmailAuth.setOnClickListener { handleEmailAuth() }
+        btnPhoneAuth.setOnClickListener { handlePhoneAuth() }
 
         findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
             val email = etEmail.text?.toString()?.trim().orEmpty()
@@ -225,6 +230,41 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun handlePhoneAuth() {
+        hideInlineError()
+        val phone = etClinicPhone.text?.toString()?.filter { it.isDigit() }.orEmpty().takeLast(10)
+        if (phone.length != 10) {
+            showInlineError(localized(R.string.invalid_phone))
+            return
+        }
+
+        setLoading(true)
+        lifecycleScope.launch {
+            customerRepo.getProfile(phone = phone, email = null).fold(
+                onSuccess = { profile ->
+                    if (!profile.found) {
+                        setLoading(false)
+                        showInlineError(localized(R.string.profile_not_found_message))
+                        return@fold
+                    }
+                    CustomerSessionManager.save(
+                        this@LoginActivity,
+                        phone = profile.phone?.filter { it.isDigit() }?.takeLast(10) ?: phone,
+                        email = profile.email,
+                        name = profile.patientName,
+                        firebaseUid = "clinic-phone-$phone",
+                    )
+                    setLoading(false)
+                    openMain()
+                },
+                onFailure = { error ->
+                    setLoading(false)
+                    showInlineError(error.localizedMessage ?: localized(R.string.network_error))
+                },
+            )
+        }
+    }
+
     private fun handleEmailAuth() {
         hideInlineError()
         val email = etEmail.text?.toString()?.trim().orEmpty()
@@ -234,13 +274,13 @@ class LoginActivity : AppCompatActivity() {
             showInlineError(localized(R.string.invalid_email))
             return
         }
-        if (password.length < 6) {
-            showInlineError(localized(R.string.invalid_password))
-            return
-        }
+    if (password.length < 6) {
+        showInlineError(localized(R.string.invalid_password))
+        return
+    }
 
-        setLoading(true)
-        lifecycleScope.launch {
+    setLoading(true)
+    lifecycleScope.launch {
             try {
                 val result = if (isSignUpMode) {
                     auth.createUserWithEmailAndPassword(email, password).await()
@@ -252,7 +292,7 @@ class LoginActivity : AppCompatActivity() {
                 setLoading(false)
                 showInlineError(e.localizedMessage ?: localized(if (isSignUpMode) R.string.sign_up_failed else R.string.login_failed))
             }
-        }
+    }
     }
 
     private fun signInWithGoogleToken(idToken: String) {
@@ -367,6 +407,7 @@ class LoginActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvOrContinue).text = localized(R.string.or_continue_with)
         findViewById<MaterialButton>(R.id.btnGoogle).text = localized(R.string.login_with_google)
         findViewById<MaterialButton>(R.id.btnFacebook).text = localized(R.string.login_with_facebook)
+        btnPhoneAuth.text = localized(R.string.continue_with_phone)
         btnEmailAuth.text = localized(if (isSignUpMode) R.string.sign_up_with_email else R.string.login_with_email)
         findViewById<TextView>(R.id.tvForgotPassword).text = localized(R.string.forgot_password)
         findViewById<TextView>(R.id.tvToggleAuthMode).text = localized(
@@ -383,6 +424,7 @@ class LoginActivity : AppCompatActivity() {
     private fun setLoading(loading: Boolean) {
         progressLogin.visibility = if (loading) View.VISIBLE else View.GONE
         btnEmailAuth.isEnabled = !loading
+        btnPhoneAuth.isEnabled = !loading
         findViewById<MaterialButton>(R.id.btnGoogle).isEnabled = !loading
         findViewById<MaterialButton>(R.id.btnFacebook).isEnabled = !loading
     }

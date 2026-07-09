@@ -12,6 +12,17 @@ class AuthUser:
     user_key: int
     userid: str
     username: str | None
+    role: str = "staff"
+    collector_key: int | None = None
+
+
+def _user_role(userid: str, username: str | None) -> str:
+    source = f"{userid} {username or ''}".lower()
+    if any(token in source for token in ("collector", "collection", "agent")):
+        return "collector"
+    if any(token in source for token in ("admin", "manager", "owner")):
+        return "admin"
+    return "staff"
 
 
 def authenticate(userid: str, password: str) -> AuthUser:
@@ -39,8 +50,11 @@ def authenticate(userid: str, password: str) -> AuthUser:
     if not hmac.compare_digest(stored, password):
         raise ValueError("Invalid username or password")
 
+    role = _user_role(str(db_userid or login_id), str(username) if username else None)
     return AuthUser(
         user_key=int(user_key),
         userid=str(db_userid or login_id),
         username=str(username) if username else str(db_userid or login_id),
+        role=role,
+        collector_key=int(user_key) if role in ("collector", "admin") else None,
     )

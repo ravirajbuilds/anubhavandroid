@@ -19,6 +19,7 @@ import com.anubhav.app.MainActivity
 import com.anubhav.app.R
 import com.anubhav.app.data.model.AktivTest
 import com.anubhav.app.data.model.CustomerPrebookRequest
+import com.anubhav.app.data.model.PrebookCalendar
 import com.anubhav.app.data.repository.AktivRepository
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.ui.booking.AktivTestAdapter
@@ -52,14 +53,12 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? MainActivity)?.setPaymentListener(this)
-        view.findViewById<TextView>(R.id.tvPrebookTitle).text = localized(R.string.prebook_time_slot)
-
         val etName = view.findViewById<TextInputEditText>(R.id.etPatientName)
         val etAge = view.findViewById<TextInputEditText>(R.id.etAgeYear)
         val spinnerSex = view.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
         val spinnerDate = view.findViewById<AutoCompleteTextView>(R.id.spinnerDate)
         val spinnerSlot = view.findViewById<AutoCompleteTextView>(R.id.spinnerSlot)
-        val etTestSearch = view.findViewById<TextInputEditText>(R.id.etTestSearch)
+        val etSearch = view.findViewById<TextInputEditText>(R.id.etTestSearch)
         val rvTests = view.findViewById<RecyclerView>(R.id.rvTests)
         val tvSelected = view.findViewById<TextView>(R.id.tvSelectedTests)
         val tvTotal = view.findViewById<TextView>(R.id.tvTotalAmount)
@@ -68,19 +67,17 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         val btnPay = view.findViewById<MaterialButton>(R.id.btnPayAdvance)
         val progress = view.findViewById<ProgressBar>(R.id.progressBar)
 
-        CustomerSessionManager.getName(requireContext())?.let { etName.setText(it) }
-
+        view.findViewById<TextView>(R.id.tvPrebookTitle).text = localized(R.string.prebook_time_slot)
+        tvPolicy.text = localized(R.string.prebook_policy, getString(R.string.reschedule_phone))
+        btnPay.text = localized(R.string.pay_advance)
         spinnerSex.setAdapter(
             ArrayAdapter(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
-                listOf(getString(R.string.sex_male), getString(R.string.sex_female)),
+                listOf(localized(R.string.sex_male), localized(R.string.sex_female)),
             ),
         )
-        spinnerSex.setText(getString(R.string.sex_male), false)
-
-        tvPolicy.text = localized(R.string.prebook_policy, getString(R.string.reschedule_phone))
-        btnPay.text = localized(R.string.pay_advance)
+        spinnerSex.setText(localized(R.string.sex_male), false)
 
         testAdapter = AktivTestAdapter { test ->
             if (selectedTests.containsKey(test.testKey)) {
@@ -93,53 +90,24 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
         rvTests.layoutManager = LinearLayoutManager(requireContext())
         rvTests.adapter = testAdapter
+        updateTotals(tvSelected, tvTotal, tvAdvance)
+        loadCalendar(progress, spinnerDate, spinnerSlot, tvPolicy)
+        searchTests("", progress)
 
-        etTestSearch.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                searchJob?.cancel()
-                searchJob = viewLifecycleOwner.lifecycleScope.launch {
-                    delay(300)
-                    aktivRepo.searchTests(s?.toString().orEmpty()).onSuccess {
-                        testAdapterItems = it
-                        testAdapter.submit(it, selectedTests.values.toList())
-                    }.onFailure {
-                        Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_SHORT).show()
+        etSearch.addTextChangedListener(
+            object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    searchJob?.cancel()
+                    searchJob = viewLifecycleOwner.lifecycleScope.launch {
+                        delay(250)
+                        searchTests(s?.toString().orEmpty(), progress)
                     }
                 }
-            }
-            override fun afterTextChanged(s: Editable?) = Unit
-        })
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            progress.visibility = View.VISIBLE
-            customerRepo.getPrebookCalendar().onSuccess { cal ->
-                val dateLabels = cal.dates.map { it.date }
-                spinnerDate.setAdapter(
-                    ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, dateLabels),
-                )
-                spinnerDate.setOnItemClickListener { _, _, pos, _ ->
-                    selectedDate = cal.dates[pos].date
-                    val slotLabels = cal.dates[pos].slots
-                        .filter { it.available }
-                        .map { localized(R.string.slots_remaining, it.label, it.remaining) }
-                    spinnerSlot.setAdapter(
-                        ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, slotLabels),
-                    )
-                    spinnerSlot.setOnItemClickListener { _, _, slotPos, _ ->
-                        val available = cal.dates[pos].slots.filter { it.available }
-                        selectedSlot = available[slotPos].timeSlot
-                    }
-                }
-            }.onFailure {
-                Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_LONG).show()
-            }
-            aktivRepo.searchTests("").onSuccess {
-                testAdapterItems = it
-                testAdapter.submit(it, selectedTests.values.toList())
-            }
-            progress.visibility = View.GONE
-        }
+                override fun afterTextChanged(s: Editable?) = Unit
+            },
+        )
 
         btnPay.setOnClickListener {
             val phone = CustomerSessionManager.getPhone(requireContext())
@@ -166,22 +134,90 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
     }
 
+    private fun loadCalendar(
+        progress: ProgressBar,
+        spinnerDate: AutoCompleteTextView,
+        spinnerSlot: AutoCompleteTextView,
+        tvPolicy: TextView,
+    ) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            progress.visibility = View.VISIBLE
+            customerRepo.getPrebookCalendar().fold(
+                onSuccess = { calendar ->
+                    tvPolicy.text = localized(R.string.prebook_policy, calendar.reschedulePhone)
+                    bindCalendar(calendar, spinnerDate, spinnerSlot)
+                    progress.visibility = View.GONE
+                },
+                onFailure = {
+                    progress.visibility = View.GONE
+                    Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_LONG).show()
+                },
+            )
+        }
+    }
+
+    private fun bindCalendar(
+        calendar: PrebookCalendar,
+        spinnerDate: AutoCompleteTextView,
+        spinnerSlot: AutoCompleteTextView,
+    ) {
+        val dateLabels = calendar.dates.map { it.date }
+        spinnerDate.setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, dateLabels),
+        )
+        spinnerDate.setOnItemClickListener { _, _, pos, _ ->
+            val date = calendar.dates[pos]
+            selectedDate = date.date
+            selectedSlot = null
+            spinnerSlot.setText("", false)
+            val available = date.slots.filter { it.available }
+            val labels = available.map { localized(R.string.slots_remaining, it.label, it.remaining) }
+            spinnerSlot.setAdapter(
+                ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, labels),
+            )
+            spinnerSlot.setOnItemClickListener { _, _, slotPos, _ ->
+                selectedSlot = available[slotPos].timeSlot
+            }
+        }
+    }
+
+    private fun searchTests(query: String, progress: ProgressBar) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            progress.visibility = View.VISIBLE
+            aktivRepo.searchTestsCached(requireContext(), query).fold(
+                onSuccess = {
+                    testAdapterItems = it
+                    testAdapter.submit(it, selectedTests.values.toList())
+                    progress.visibility = View.GONE
+                },
+                onFailure = {
+                    progress.visibility = View.GONE
+                    Toast.makeText(requireContext(), localized(R.string.network_error), Toast.LENGTH_SHORT).show()
+                },
+            )
+        }
+    }
+
     private fun updateTotals(tvSelected: TextView, tvTotal: TextView, tvAdvance: TextView) {
         val names = selectedTests.values.joinToString(", ") { it.testName }
         val total = selectedTests.values.sumOf { it.rate }
-        tvSelected.text = names.ifBlank { localized(R.string.no_tests_selected) }
+        tvSelected.text = names.ifBlank { localized(R.string.search_tests) }
         tvTotal.text = localized(R.string.total_amount_value, total)
         tvAdvance.text = localized(R.string.advance_amount_value, total * 0.5)
     }
 
     override fun onPaymentSuccess(razorpayPaymentId: String?) {
+        val paymentId = razorpayPaymentId?.takeIf { it.isNotBlank() }
+        if (paymentId == null) {
+            Toast.makeText(requireContext(), localized(R.string.payment_failed), Toast.LENGTH_LONG).show()
+            return
+        }
+        val root = view ?: return
         val phone = CustomerSessionManager.getPhone(requireContext()) ?: return
-        val view = requireView()
-        val etName = view.findViewById<TextInputEditText>(R.id.etPatientName)
-        val etAge = view.findViewById<TextInputEditText>(R.id.etAgeYear)
-        val spinnerSex = view.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
-        val progress = view.findViewById<ProgressBar>(R.id.progressBar)
-
+        val etName = root.findViewById<TextInputEditText>(R.id.etPatientName)
+        val etAge = root.findViewById<TextInputEditText>(R.id.etAgeYear)
+        val spinnerSex = root.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
+        val progress = root.findViewById<ProgressBar>(R.id.progressBar)
         viewLifecycleOwner.lifecycleScope.launch {
             progress.visibility = View.VISIBLE
             val request = CustomerPrebookRequest(
@@ -190,37 +226,32 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 sex = spinnerSex.text?.toString() ?: getString(R.string.sex_male),
                 ageYear = etAge.text?.toString()?.toIntOrNull(),
                 testKeys = selectedTests.keys.toList(),
-                slotDate = selectedDate!!,
-                timeSlot = selectedSlot!!,
-                paymentId = razorpayPaymentId ?: "unknown",
+                slotDate = selectedDate.orEmpty(),
+                timeSlot = selectedSlot.orEmpty(),
+                paymentId = paymentId,
                 amountPaid = pendingAdvance,
                 email = CustomerSessionManager.getEmail(requireContext()),
             )
             customerRepo.createPrebook(request).fold(
-                onSuccess = { resp ->
+                onSuccess = { response ->
                     progress.visibility = View.GONE
                     Toast.makeText(
                         requireContext(),
-                        localized(R.string.prebook_success, resp.alcCode, resp.reschedulePhone),
+                        localized(R.string.prebook_success, response.alcCode, response.reschedulePhone),
                         Toast.LENGTH_LONG,
                     ).show()
                     selectedTests.clear()
                 },
-                onFailure = { e ->
+                onFailure = { error ->
                     progress.visibility = View.GONE
                     Toast.makeText(
                         requireContext(),
-                        e.message ?: localized(R.string.something_went_wrong),
+                        error.message ?: localized(R.string.something_went_wrong),
                         Toast.LENGTH_LONG,
                     ).show()
                 },
             )
         }
-    }
-
-    override fun onDestroyView() {
-        (activity as? MainActivity)?.setPaymentListener(null)
-        super.onDestroyView()
     }
 
     override fun onPaymentError(code: Int, description: String?) {
@@ -229,5 +260,11 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
             description ?: localized(R.string.payment_failed),
             Toast.LENGTH_LONG,
         ).show()
+    }
+
+    override fun onDestroyView() {
+        (activity as? MainActivity)?.setPaymentListener(null)
+        searchJob?.cancel()
+        super.onDestroyView()
     }
 }

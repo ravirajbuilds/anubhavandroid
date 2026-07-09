@@ -23,7 +23,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Book Test"
             android:textAppearance="@style/TextAppearance.Anubhav.ScreenTitle"
-            android:maxLines="1"
+            android:maxLines="2"
             android:ellipsize="end" />
 
         <TextView
@@ -44,6 +44,7 @@
             android:text="TEST MODE: bills on 02/07/2025, discount applied (₹0 receipt)"
             android:textColor="@color/status_warning"
             android:textSize="13sp"
+            android:maxLines="3"
             android:visibility="gone" />
 
         <com.google.android.material.textfield.TextInputLayout
