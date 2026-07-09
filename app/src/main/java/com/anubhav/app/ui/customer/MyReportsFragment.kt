@@ -1,312 +1,241 @@
 package com.anubhav.app.ui.customer
 
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
+import android.app.DatePickerDialog
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextUtils
-import android.text.TextWatcher
+import android.text.InputType
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.anubhav.app.R
-import com.anubhav.app.data.model.CustomerReport
+import com.anubhav.app.data.model.CustomerVisit
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.utils.CustomerSessionManager
-import com.anubhav.app.utils.ReportPdfSharer
-import com.anubhav.app.utils.localized
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import kotlinx.coroutines.Dispatchers
+import com.anubhav.app.utils.ReportFetcher
 import kotlinx.coroutines.launch
+import java.util.Calendar
+import java.util.Locale
 
+/**
+ * My Reports — when logged in, lists EVERY AKTIV visit under the patient's phone
+ * (names may differ: relatives share a number) from the static all-history DB.
+ * PDFs are fetched (collated into one) + cached only when "View Report" is tapped.
+ * A "Fetch another report" option below covers reports under a different number/bill.
+ */
 class MyReportsFragment : Fragment() {
     private val repo = CustomerRepository()
-    private lateinit var adapter: ReportAdapter
+    private lateinit var root: LinearLayout
+    private lateinit var listContainer: LinearLayout
+    private lateinit var statusView: TextView
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View = inflater.inflate(R.layout.fragment_customer_list, container, false)
+    private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val rv = view.findViewById<RecyclerView>(R.id.rvItems)
-        val progress = view.findViewById<View>(R.id.progressBar)
-        val tvEmpty = view.findViewById<TextView>(R.id.tvEmpty)
-        val btnRefresh = view.findViewById<MaterialButton>(R.id.btnEmptyAction)
-        val searchLayout = view.findViewById<TextInputLayout>(R.id.layoutListSearch)
-        val search = view.findViewById<TextInputEditText>(R.id.etListSearch)
-        val summary = view.findViewById<TextView>(R.id.tvListSummary)
-
-        view.findViewById<TextView>(R.id.tvTitle).text = localized(R.string.menu_my_reports)
-        searchLayout.visibility = View.VISIBLE
-        searchLayout.hint = localized(R.string.search_reports)
-        summary.visibility = View.GONE
-        btnRefresh.text = localized(R.string.refresh_from_aktiv)
-        btnRefresh.visibility = View.VISIBLE
-
-        adapter = ReportAdapter(
-            onShare = { ReportPdfSharer.shareToWhatsApp(requireContext(), it) },
-            onPayDue = { openPendingPayments() },
-            onSupport = { openReportSupport(it) },
-            onVisibleChanged = { reports -> bindSummary(summary, reports) },
-        )
-        rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.adapter = adapter
-
-        search.addSearchWatcher { adapter.filter(it) }
-        btnRefresh.setOnClickListener { loadReports(progress, tvEmpty, forceRefresh = true) }
-        loadReports(progress, tvEmpty, forceRefresh = false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View {
+        val scroll = ScrollView(requireContext()).apply { setBackgroundColor(0xFFF9FAFB.toInt()) }
+        root = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(16), dp(16), dp(16), dp(24))
+        }
+        scroll.addView(root, ViewGroup.LayoutParams(MATCH, WRAP))
+        return scroll
     }
 
-    private fun loadReports(progress: View, tvEmpty: TextView, forceRefresh: Boolean) {
+    override fun onViewCreated(view: View, s: Bundle?) {
+        super.onViewCreated(view, s)
+        root.addView(TextView(requireContext()).apply {
+            text = "My Reports"; textSize = 20f; setTextColor(0xFF0D9488.toInt())
+            setTypeface(typeface, Typeface.BOLD)
+        })
+        statusView = TextView(requireContext()).apply {
+            setTextColor(0xFF6B7280.toInt()); textSize = 13f; setPadding(0, dp(6), 0, dp(6))
+        }
+        root.addView(statusView)
+        listContainer = LinearLayout(requireContext()).apply { orientation = LinearLayout.VERTICAL }
+        root.addView(listContainer)
+
         val phone = CustomerSessionManager.getPhone(requireContext()).orEmpty()
         if (phone.isBlank()) {
-            progress.visibility = View.GONE
-            tvEmpty.visibility = View.VISIBLE
-            tvEmpty.text = localized(R.string.phone_required)
-            return
+            statusView.text = "Please log in to see your reports."
+            addFetchOtherButton()
+        } else {
+            loadHistory(phone)
         }
+    }
+
+    private fun loadHistory(phone: String) {
+        statusView.text = "Loading your reports…"
+        listContainer.removeAllViews()
         viewLifecycleOwner.lifecycleScope.launch {
-            progress.visibility = View.VISIBLE
-            repo.getReportsCached(requireContext(), phone, forceRefresh).fold(
-                onSuccess = { reports ->
-                    progress.visibility = View.GONE
-                    tvEmpty.visibility = if (reports.isEmpty()) View.VISIBLE else View.GONE
-                    tvEmpty.text = localized(R.string.no_reports_hint)
-                    adapter.submit(reports)
-                    preSaveReadyReports(reports)
+            repo.getHistory(phone).fold(
+                onSuccess = { res ->
+                    listContainer.removeAllViews()
+                    if (res.visits.isEmpty()) {
+                        statusView.text = "No reports found for this number."
+                    } else {
+                        statusView.text = "${res.visits.size} visit(s) linked to your number"
+                        res.visits.forEach { listContainer.addView(visitCard(it)) }
+                    }
+                    addFetchOtherButton()
                 },
                 onFailure = {
-                    progress.visibility = View.GONE
-                    tvEmpty.visibility = View.VISIBLE
-                    tvEmpty.text = localized(R.string.network_error)
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                    statusView.text = "Reports are temporarily unavailable (offline 1–6 AM). Please try again."
+                    addFetchOtherButton()
                 },
             )
         }
     }
 
-    private fun bindSummary(summary: TextView, reports: List<CustomerReport>) {
-        if (reports.isEmpty()) {
-            summary.visibility = View.GONE
+    /** One visit row: PATIENT NAME (left) — Date (right); below: ALC + tests; right: View Report. */
+    private fun visitCard(v: CustomerVisit): View {
+        val card = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(14), dp(12), dp(14), dp(12))
+            setBackgroundColor(Color.WHITE)
+            layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(10) }
+        }
+        // top row: name (left) + date (right)
+        val topRow = LinearLayout(requireContext()).apply { orientation = LinearLayout.HORIZONTAL }
+        topRow.addView(TextView(requireContext()).apply {
+            text = (v.patientName ?: "").trim().ifBlank { "Patient" }
+            setTextColor(0xFF111111.toInt()); textSize = 15f; setTypeface(typeface, Typeface.BOLD)
+            layoutParams = LinearLayout.LayoutParams(0, WRAP, 1f)
+        })
+        topRow.addView(TextView(requireContext()).apply {
+            text = v.billDate ?: ""; setTextColor(0xFF6B7280.toInt()); textSize = 13f
+        })
+        card.addView(topRow)
+
+        // bottom row: ALC + tests (small black) on left, View Report on right
+        val botRow = LinearLayout(requireContext()).apply {
+            orientation = LinearLayout.HORIZONTAL; gravity = Gravity.CENTER_VERTICAL
+            setPadding(0, dp(6), 0, 0)
+        }
+        val info = TextView(requireContext()).apply {
+            val alc = v.billNo ?: ""
+            val tests = v.tests ?: ""
+            text = if (tests.isBlank()) alc else "$alc\n$tests"
+            setTextColor(Color.BLACK); textSize = 12f
+            layoutParams = LinearLayout.LayoutParams(0, WRAP, 1f)
+        }
+        botRow.addView(info)
+
+        val viewBtn = Button(requireContext()).apply {
+            text = "View Report"; isAllCaps = false
+            setOnClickListener { onViewReport(v, this) }
+            isEnabled = v.hasViewLink
+            alpha = if (v.hasViewLink) 1f else 0.5f
+        }
+        botRow.addView(viewBtn)
+        card.addView(botRow)
+        if (!v.hasViewLink) {
+            card.addView(TextView(requireContext()).apply {
+                text = "Report not ready / awaiting authorisation"
+                setTextColor(0xFFB45309.toInt()); textSize = 11f; setPadding(0, dp(4), 0, 0)
+            })
+        }
+        return card
+    }
+
+    private fun onViewReport(v: CustomerVisit, btn: Button) {
+        val link = v.viewLink
+        if (link.isNullOrBlank()) {
+            Toast.makeText(requireContext(), "This report isn't ready yet.", Toast.LENGTH_SHORT).show()
             return
         }
-        val ready = reports.count { it.isShareable }
-        val due = reports.count { it.isBillDueBlocked }
-        val pending = (reports.size - ready - due).coerceAtLeast(0)
-        summary.visibility = View.VISIBLE
-        summary.text = localized(R.string.report_summary, ready, pending, due)
-    }
-
-    private fun preSaveReadyReports(reports: List<CustomerReport>) {
-        val appContext = requireContext().applicationContext
-        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
-            reports.filter { it.isShareable }.forEach {
-                runCatching { ReportPdfSharer.ensureSaved(appContext, it) }
-            }
+        btn.isEnabled = false
+        val original = btn.text
+        btn.text = if (ReportFetcher.isCached(requireContext(), v.billKey)) "Opening…" else "Fetching…"
+        viewLifecycleOwner.lifecycleScope.launch {
+            runCatching { ReportFetcher.download(requireContext(), v.billKey, link) }
+                .onSuccess { file ->
+                    btn.isEnabled = true; btn.text = original
+                    runCatching { ReportFetcher.open(requireContext(), file) }
+                        .onFailure { Toast.makeText(requireContext(), "No PDF viewer found.", Toast.LENGTH_LONG).show() }
+                }
+                .onFailure {
+                    btn.isEnabled = true; btn.text = original
+                    Toast.makeText(requireContext(), "Couldn't fetch the report. Try again (server is offline 1–6 AM).", Toast.LENGTH_LONG).show()
+                }
         }
     }
 
-    private fun openPendingPayments() {
-        runCatching { findNavController().navigate(R.id.nav_pending_payments) }
-            .onFailure {
-                Toast.makeText(requireContext(), localized(R.string.pending_payments_title), Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    private fun openReportSupport(report: CustomerReport) {
-        val message = localized(
-            R.string.report_support_message,
-            report.billNo ?: report.billKey.toString(),
-            report.testName ?: report.testCode ?: localized(R.string.report_fallback),
-        )
-        val uri = Uri.parse("https://wa.me/919230755876?text=${Uri.encode(message)}")
-        runCatching { startActivity(Intent(Intent.ACTION_VIEW, uri)) }
-            .onFailure {
-                Toast.makeText(requireContext(), localized(R.string.whatsapp_not_available), Toast.LENGTH_SHORT).show()
-            }
-    }
-}
-
-private class ReportAdapter(
-    private val onShare: (CustomerReport) -> Unit,
-    private val onPayDue: (CustomerReport) -> Unit,
-    private val onSupport: (CustomerReport) -> Unit,
-    private val onVisibleChanged: (List<CustomerReport>) -> Unit,
-) : RecyclerView.Adapter<ReportAdapter.VH>() {
-    private var allItems: List<CustomerReport> = emptyList()
-    private var items: List<CustomerReport> = emptyList()
-    private var query: String = ""
-
-    fun submit(newItems: List<CustomerReport>) {
-        allItems = newItems
-        applyFilter()
-    }
-
-    fun filter(newQuery: String) {
-        query = newQuery
-        applyFilter()
-    }
-
-    private fun applyFilter() {
-        val needle = query.trim().lowercase()
-        items = if (needle.isBlank()) {
-            allItems
-        } else {
-            allItems.filter {
-                listOf(
-                    it.patientName,
-                    it.billNo,
-                    it.billDate,
-                    it.testName,
-                    it.testCode,
-                    it.reportingDate,
-                    it.status,
-                    it.statusMessage,
-                ).joinToString(" ").lowercase().contains(needle)
-            }
-        }
-        notifyDataSetChanged()
-        onVisibleChanged(items)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val context = parent.context
-        val row = LinearLayout(context).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(24, 18, 24, 18)
-            background = ContextCompat.getDrawable(context, R.drawable.list_item_background)
-            layoutParams = RecyclerView.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-            ).apply { setMargins(0, 0, 0, 10) }
-        }
-        val title = TextView(context).apply {
-            setTextColor(ContextCompat.getColor(context, R.color.text_primary))
-            textSize = 15f
-            setTypeface(typeface, android.graphics.Typeface.BOLD)
-            maxLines = 2
-            ellipsize = TextUtils.TruncateAt.END
-        }
-        val meta = TextView(context).apply {
-            setTextColor(ContextCompat.getColor(context, R.color.text_secondary))
-            textSize = 13f
-            setLineSpacing(2f, 1f)
-        }
-        val status = TextView(context).apply {
-            setTextColor(ContextCompat.getColor(context, R.color.text_primary))
-            textSize = 12f
-            setPadding(14, 8, 14, 8)
-            maxLines = 2
-            ellipsize = TextUtils.TruncateAt.END
-        }
-        val actions = LinearLayout(context).apply {
-            orientation = LinearLayout.VERTICAL
-            isBaselineAligned = false
-        }
-        val share = actionButton(context, R.string.share_pdf_whatsapp, R.drawable.ic_whatsapp)
-        val secondary = actionButton(context, R.string.whatsapp_support, R.drawable.ic_whatsapp)
-        actions.addView(share, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-            setMargins(0, 10, 0, 0)
+    private fun addFetchOtherButton() {
+        listContainer.addView(Button(requireContext()).apply {
+            text = "Fetch another report"; isAllCaps = false
+            layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(18) }
+            setOnClickListener { showFetchOtherDialog() }
         })
-        actions.addView(secondary, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-            setMargins(0, 8, 0, 0)
-        })
-        row.addView(title)
-        row.addView(meta)
-        row.addView(status, LinearLayout.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-        ).apply { setMargins(0, 10, 0, 0) })
-        row.addView(actions)
-        return VH(row, title, meta, status, share, secondary)
     }
 
-    override fun onBindViewHolder(holder: VH, position: Int) {
-        val report = items[position]
-        val context = holder.itemView.context
-        holder.title.text = report.testName ?: report.testCode ?: context.localized(R.string.menu_my_reports)
-        holder.meta.text = buildString {
-            report.patientName?.takeIf { it.isNotBlank() }?.let { append(it).append('\n') }
-            append(report.billNo ?: context.localized(R.string.bill_key_value, report.billKey))
-            report.reportingDate?.takeIf { it.isNotBlank() }?.let { append(" | ").append(it) }
-            report.billDate?.takeIf { it.isNotBlank() }?.let { append('\n').append(it) }
-        }
-        holder.status.text = report.availabilityText(context)
-        holder.status.background = ContextCompat.getDrawable(context, report.statusBackground())
-
-        holder.share.isEnabled = report.isShareable
-        holder.share.alpha = if (report.isShareable) 1f else 0.45f
-        holder.share.setOnClickListener { if (report.isShareable) onShare(report) }
-
-        if (report.isBillDueBlocked) {
-            holder.secondary.text = context.localized(R.string.pay_pending_bill)
-            holder.secondary.setIconResource(R.drawable.ic_payments)
-            holder.secondary.setOnClickListener { onPayDue(report) }
-        } else {
-            holder.secondary.text = context.localized(R.string.whatsapp_support)
-            holder.secondary.setIconResource(R.drawable.ic_whatsapp)
-            holder.secondary.setOnClickListener { onSupport(report) }
-        }
-    }
-
-    override fun getItemCount(): Int = items.size
-
-    class VH(
-        itemView: View,
-        val title: TextView,
-        val meta: TextView,
-        val status: TextView,
-        val share: MaterialButton,
-        val secondary: MaterialButton,
-    ) : RecyclerView.ViewHolder(itemView)
-}
-
-private fun actionButton(context: Context, textRes: Int, iconRes: Int): MaterialButton =
-    MaterialButton(context).apply {
-        text = context.localized(textRes)
-        setIconResource(iconRes)
-        maxLines = 2
-        ellipsize = TextUtils.TruncateAt.END
-        iconPadding = 6
-        minHeight = 48
-    }
-
-private fun CustomerReport.availabilityText(context: Context): String =
-    statusMessage ?: when {
-        isBillDueBlocked -> context.localized(R.string.report_blocked_due)
-        isShareable -> context.localized(R.string.report_ready_to_share)
-        else -> context.localized(R.string.report_not_ready)
-    }
-
-private fun CustomerReport.statusBackground(): Int = when {
-    isBillDueBlocked -> R.drawable.chip_error_bg
-    isShareable -> R.drawable.chip_success_soft_bg
-    else -> R.drawable.chip_warning_bg
-}
-
-private fun TextInputEditText.addSearchWatcher(onQueryChanged: (String) -> Unit) {
-    addTextChangedListener(
-        object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                onQueryChanged(s?.toString().orEmpty())
+    /** 2-of-3 verification for a report under a DIFFERENT number/bill (relative etc.). */
+    private fun showFetchOtherDialog() {
+        val ctx = requireContext()
+        val box = LinearLayout(ctx).apply { orientation = LinearLayout.VERTICAL; setPadding(dp(20), dp(8), dp(20), 0) }
+        val etName = EditText(ctx).apply { hint = "Patient name"; inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS or InputType.TYPE_CLASS_TEXT }
+        val etPhone = EditText(ctx).apply { hint = "Phone number"; inputType = InputType.TYPE_CLASS_PHONE }
+        val etBill = EditText(ctx).apply { hint = "Bill number (after YYMM/ALC/)"; inputType = InputType.TYPE_CLASS_NUMBER }
+        var billDateIso: String? = null
+        val dateBtn = Button(ctx).apply {
+            text = "Pick bill date"; isAllCaps = false
+            setOnClickListener {
+                val c = Calendar.getInstance()
+                DatePickerDialog(ctx, { _, y, m, d ->
+                    billDateIso = String.format(Locale.US, "%04d-%02d-%02d", y, m + 1, d)
+                    text = String.format(Locale.US, "Bill date: %02d/%02d/%04d", d, m + 1, y)
+                }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
             }
-            override fun afterTextChanged(s: Editable?) = Unit
-        },
-    )
+        }
+        box.addView(etName); box.addView(etPhone)
+        box.addView(TextView(ctx).apply { text = "Bill number"; setPadding(0, dp(8), 0, 0) })
+        box.addView(etBill)
+        box.addView(TextView(ctx).apply { text = "— OR —"; gravity = Gravity.CENTER; setPadding(0, dp(6), 0, dp(6)) })
+        box.addView(dateBtn)
+
+        val dialog = AlertDialog.Builder(ctx)
+            .setTitle("Fetch another report")
+            .setMessage("Enter any two of: name, bill number/date, phone.")
+            .setView(box)
+            .setPositiveButton("Find reports", null)
+            .setNegativeButton("Cancel", null)
+            .create()
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val name = etName.text.toString().trim()
+                val phone = etPhone.text.toString().trim()
+                val bill = etBill.text.toString().trim()
+                val provided = listOf(name.isNotEmpty(), bill.isNotEmpty() || billDateIso != null, phone.isNotEmpty()).count { it }
+                if (provided < 2) { Toast.makeText(ctx, "Fill at least two fields.", Toast.LENGTH_SHORT).show(); return@setOnClickListener }
+                viewLifecycleOwner.lifecycleScope.launch {
+                    repo.verify(name, phone, bill, billDateIso).fold(
+                        onSuccess = { r ->
+                            if (r.matched && r.phone.isNotBlank()) {
+                                dialog.dismiss()
+                                Toast.makeText(ctx, "Showing reports for ${r.patientName}", Toast.LENGTH_SHORT).show()
+                                loadHistory(r.phone)   // show that person's full history
+                            } else {
+                                Toast.makeText(ctx, "Details didn't match. Check name, bill no/date and phone.", Toast.LENGTH_LONG).show()
+                            }
+                        },
+                        onFailure = { Toast.makeText(ctx, "Service unavailable, try again.", Toast.LENGTH_LONG).show() },
+                    )
+                }
+            }
+        }
+        dialog.show()
+    }
+
+    private companion object {
+        const val MATCH = ViewGroup.LayoutParams.MATCH_PARENT
+        const val WRAP = ViewGroup.LayoutParams.WRAP_CONTENT
+    }
 }

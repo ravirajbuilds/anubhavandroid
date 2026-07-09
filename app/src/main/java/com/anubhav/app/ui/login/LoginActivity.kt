@@ -1,14 +1,20 @@
 package com.anubhav.app.ui.login
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.InputType
+import android.view.Gravity
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import java.util.Calendar
+import java.util.Locale
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -232,37 +238,99 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handlePhoneAuth() {
         hideInlineError()
-        val phone = etClinicPhone.text?.toString()?.filter { it.isDigit() }.orEmpty().takeLast(10)
-        if (phone.length != 10) {
-            showInlineError(localized(R.string.invalid_phone))
-            return
-        }
+        val prefill = etClinicPhone.text?.toString()?.filter { it.isDigit() }.orEmpty().takeLast(10)
+        showClinicVerifyDialog(prefill)
+    }
 
-        setLoading(true)
-        lifecycleScope.launch {
-            customerRepo.getProfile(phone = phone, email = null).fold(
-                onSuccess = { profile ->
-                    if (!profile.found) {
-                        setLoading(false)
-                        showInlineError(localized(R.string.profile_not_found_message))
-                        return@fold
-                    }
-                    CustomerSessionManager.save(
-                        this@LoginActivity,
-                        phone = profile.phone?.filter { it.isDigit() }?.takeLast(10) ?: phone,
-                        email = profile.email,
-                        name = profile.patientName,
-                        firebaseUid = "clinic-phone-$phone",
-                    )
-                    setLoading(false)
-                    openMain()
-                },
-                onFailure = { error ->
-                    setLoading(false)
-                    showInlineError(error.localizedMessage ?: localized(R.string.network_error))
-                },
-            )
+    /**
+     * AKTIV 2-of-3 verification (no OTP): patient enters Name, Bill No OR Bill Date, Phone.
+     * Any two matching a bill logs them in — so a wrong phone still works via name + bill.
+     * More secure than phone-only (a phone number alone shouldn't unlock someone's reports).
+     */
+    private fun showClinicVerifyDialog(prefillPhone: String) {
+        val d = (resources.displayMetrics.density)
+        fun px(v: Int) = (v * d).toInt()
+        val container = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(px(20), px(8), px(20), 0)
         }
+        val etName = EditText(this).apply {
+            hint = "Patient name"
+            inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS or InputType.TYPE_CLASS_TEXT
+        }
+        val etPhone = EditText(this).apply {
+            hint = "Phone number"; inputType = InputType.TYPE_CLASS_PHONE; setText(prefillPhone)
+        }
+        val etBill = EditText(this).apply {
+            hint = "Bill number (the part after YYMM/ALC/)"; inputType = InputType.TYPE_CLASS_NUMBER
+        }
+        var billDateIso: String? = null
+        val dateBtn = com.google.android.material.button.MaterialButton(this).apply {
+            text = "Pick bill date"
+            setOnClickListener {
+                val c = Calendar.getInstance()
+                DatePickerDialog(this@LoginActivity, { _, y, m, day ->
+                    billDateIso = String.format(Locale.US, "%04d-%02d-%02d", y, m + 1, day)
+                    text = String.format(Locale.US, "Bill date: %02d/%02d/%04d", day, m + 1, y)
+                }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
+            }
+        }
+        container.addView(etName)
+        container.addView(etPhone)
+        container.addView(TextView(this).apply { text = "Bill number"; setPadding(0, px(8), 0, 0) })
+        container.addView(etBill)
+        container.addView(TextView(this).apply { text = "— OR —"; gravity = Gravity.CENTER; setPadding(0, px(6), 0, px(6)) })
+        container.addView(dateBtn)
+
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("View your reports")
+            .setMessage("Enter any two of: name, bill number/date, phone.")
+            .setView(container)
+            .setPositiveButton("View reports", null)
+            .setNegativeButton(localized(R.string.cancel), null)
+            .create()
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val name = etName.text.toString().trim()
+                val phone = etPhone.text.toString().trim()
+                val bill = etBill.text.toString().trim()
+                val provided = listOf(name.isNotEmpty(), bill.isNotEmpty() || billDateIso != null, phone.isNotEmpty()).count { it }
+                if (provided < 2) {
+                    Toast.makeText(this, "Please fill at least two fields.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                setLoading(true)
+                lifecycleScope.launch {
+                    customerRepo.verify(name, phone, bill, billDateIso).fold(
+                        onSuccess = { r ->
+                            setLoading(false)
+                            if (r.matched && r.phone.isNotBlank()) {
+                                CustomerSessionManager.save(
+                                    this@LoginActivity,
+                                    phone = r.phone,
+                                    email = null,
+                                    name = r.patientName,
+                                    firebaseUid = "clinic-verify-${r.phone}",
+                                )
+                                dialog.dismiss()
+                                openMain()
+                            } else {
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    "Details didn't match. Check your name, bill number/date and phone.",
+                                    Toast.LENGTH_LONG,
+                                ).show()
+                            }
+                        },
+                        onFailure = { err ->
+                            setLoading(false)
+                            Toast.makeText(this@LoginActivity, err.localizedMessage ?: localized(R.string.network_error), Toast.LENGTH_LONG).show()
+                        },
+                    )
+                }
+            }
+        }
+        dialog.show()
     }
 
     private fun handleEmailAuth() {

@@ -10,10 +10,11 @@ import java.util.concurrent.TimeUnit
 
 object AktivApiClient {
     /**
-     * Clinic LAN API — run `uvicorn main:app --host 0.0.0.0 --port 8080` in api/.
-     * Override in build.gradle: buildConfigField("String", "AKTIV_API_URL", "\"http://...\"")
+     * Public API via the Cloudflare tunnel (works off-LAN). Overridden by the
+     * BuildConfig.AKTIV_API_URL field; set AKTIV_API_URL=http://192.168.29.157:8080/
+     * in local.properties for on-LAN development.
      */
-    const val DEFAULT_BASE_URL = "http://192.168.29.157:8080/"
+    const val DEFAULT_BASE_URL = "https://api.anubhavlifecare.in/"
 
     private val gson = GsonBuilder().setLenient().create()
 

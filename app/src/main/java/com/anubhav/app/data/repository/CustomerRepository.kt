@@ -10,6 +10,8 @@ import com.anubhav.app.data.model.CustomerPrebookRequest
 import com.anubhav.app.data.model.CustomerPrebookResponse
 import com.anubhav.app.data.model.CustomerProfile
 import com.anubhav.app.data.model.CustomerReport
+import com.anubhav.app.data.model.CustomerVerifyRequest
+import com.anubhav.app.data.model.CustomerVerifyResponse
 import com.anubhav.app.data.model.PrebookCalendar
 import com.anubhav.app.data.remote.AktivApiClient
 import com.anubhav.app.utils.ReportCache
@@ -17,6 +19,20 @@ import com.anubhav.app.utils.ReportCache
 class CustomerRepository(
     private val api: com.anubhav.app.data.remote.CustomerApi = AktivApiClient.customerApi,
 ) {
+    /** Guest/patient 2-of-3 fuzzy login. Returns the matched patient + canonical phone. */
+    suspend fun verify(
+        name: String,
+        phone: String,
+        billNo: String = "",
+        billDate: String? = null,
+    ): Result<CustomerVerifyResponse> = runCatching {
+        api.verify(CustomerVerifyRequest(name.trim(), phone.trim(), billNo.trim(), billDate))
+    }
+
+    /** All visits (bills) under a phone since 2022, from the static all-history DB. */
+    suspend fun getHistory(phone: String): Result<com.anubhav.app.data.model.CustomerHistoryResponse> =
+        runCatching { api.getHistory(phone.trim()) }
+
     suspend fun getProfile(phone: String?, email: String?): Result<CustomerProfile> =
         runCatching { api.getProfile(phone = phone, email = email) }
 

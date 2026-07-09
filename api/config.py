@@ -54,7 +54,9 @@ def aktiv_settings() -> dict:
         test_bill_date = date(2025, 7, 2)
 
     return {
-        "sys_user_key": int(os.environ.get("AKTIV_SYS_USER_KEY", "10")),
+        # 103 = the ONLINE AKTIV account — app/online bills must be stamped to it,
+        # not a real staff login (10 was SUBHASHIS).
+        "sys_user_key": int(os.environ.get("AKTIV_SYS_USER_KEY", "103")),
         "sys_machine_key": int(os.environ.get("AKTIV_SYS_MACHINE_KEY", "27")),
         "allow_live_bookings": allow_live,
         "test_bill_date": test_bill_date,

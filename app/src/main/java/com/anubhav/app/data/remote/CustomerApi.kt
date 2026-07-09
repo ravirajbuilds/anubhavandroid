@@ -7,8 +7,11 @@ import com.anubhav.app.data.model.CustomerPaymentRequest
 import com.anubhav.app.data.model.CustomerPaymentResponse
 import com.anubhav.app.data.model.CustomerPrebookRequest
 import com.anubhav.app.data.model.CustomerPrebookResponse
+import com.anubhav.app.data.model.CustomerHistoryResponse
 import com.anubhav.app.data.model.CustomerProfile
 import com.anubhav.app.data.model.CustomerReport
+import com.anubhav.app.data.model.CustomerVerifyRequest
+import com.anubhav.app.data.model.CustomerVerifyResponse
 import com.anubhav.app.data.model.PrebookCalendar
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -16,6 +19,14 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface CustomerApi {
+    /** 2-of-3 fuzzy login (name, bill no OR date, phone). */
+    @POST("api/customer/verify")
+    suspend fun verify(@Body request: CustomerVerifyRequest): CustomerVerifyResponse
+
+    /** All visits under a phone since 2022 (static all-history DB) — the My Reports list. */
+    @GET("api/customer/history")
+    suspend fun getHistory(@Query("phone") phone: String): CustomerHistoryResponse
+
     @GET("api/customer/profile")
     suspend fun getProfile(
         @Query("phone") phone: String? = null,

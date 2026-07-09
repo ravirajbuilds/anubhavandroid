@@ -8,6 +8,7 @@ from typing import Any
 from aktiv_booking import _next_key, push_booking, search_tests
 from config import aktiv_settings
 from db import fetch_all, mssql_conn, neon_conn
+from patient_match import build_view_link
 
 PREBOOK_DAYS = (10, 20, 30)
 TIME_SLOTS = {
@@ -183,10 +184,14 @@ def list_customer_bills(*, phone: str, limit: int = 50) -> list[dict[str, Any]]:
                 b.bill_key, b.bill_no, b.billdate, b.patientname, b.phone,
                 b.billamount, b.netamount, b.receivedamount,
                 (b.netamount - ISNULL(b.receivedamount, 0)) AS pending_amount,
-                b.remarks, a.apnt_key, a.apntdate, a.apnt_no
+                b.remarks, a.apnt_key, a.apntdate, a.apnt_no,
+                (SELECT COUNT(DISTINCT d.report_key) FROM BILL_TEST_DTLS d
+                    WHERE d.bill_key = b.bill_key AND ISNULL(d.report_key, 0) > 0) AS report_count,
+                (SELECT COUNT(DISTINCT d.report_key) FROM BILL_TEST_DTLS d
+                    WHERE d.bill_key = b.bill_key AND CONVERT(varchar(4), d.confirm_report) = '1') AS ready_count
             FROM BILL_HEAD b
             LEFT JOIN APNT_HEAD a ON a.bill_key = b.bill_key
-            WHERE {_phone_clause()}
+            WHERE REPLACE(REPLACE(REPLACE(REPLACE(b.phone, ' ', ''), '-', ''), '+91', ''), '+', '') LIKE %s
             ORDER BY b.billdate DESC, b.bill_key DESC
             """,
             (f"%{phone_norm}",),
@@ -216,11 +221,12 @@ def list_customer_reports(*, phone: str, limit: int = 50) -> list[dict[str, Any]
             SELECT TOP {min(limit, 100)}
                 b.bill_key, b.bill_no, b.billdate, b.patientname,
                 t.testname, t.testcode, d.reportingdate,
-                CASE WHEN d.reportingdate IS NOT NULL THEN 'READY' ELSE 'PENDING' END AS status
+                d.category_key, d.report_key, d.confirm_report,
+                CASE WHEN CONVERT(varchar(4), d.confirm_report) = '1' THEN 'READY' ELSE 'PENDING' END AS status
             FROM BILL_HEAD b
             INNER JOIN BILL_TEST_DTLS d ON d.bill_key = b.bill_key
             LEFT JOIN MAST_TEST t ON t.test_key = d.test_key
-            WHERE {_phone_clause()}
+            WHERE {_phone_clause()} AND ISNULL(d.report_key, 0) > 0
             ORDER BY b.billdate DESC, d.reportingdate DESC
             """,
             (f"%{phone_norm}",),
@@ -229,6 +235,16 @@ def list_customer_reports(*, phone: str, limit: int = 50) -> list[dict[str, Any]
         row["billdate"] = row["billdate"].isoformat() if row.get("billdate") else None
         row["reportingdate"] = (
             row["reportingdate"].isoformat() if row.get("reportingdate") else None
+        )
+        # A report is viewable only once authorised (CONFIRM_REPORT=1). The link renders
+        # the same PDF the clinic prints, for ALL categories (pathology, USG, radiology…).
+        row["ready"] = str(row.get("confirm_report")).strip() in ("1", "True", "true")
+        row["view_link"] = (
+            build_view_link(
+                row.get("patientname"), row["bill_key"],
+                row.get("category_key"), row.get("report_key"), row.get("bill_no"),
+            )
+            if row["ready"] else None
         )
     return rows
 

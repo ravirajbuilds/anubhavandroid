@@ -35,6 +35,7 @@ from collector_portal import (
     list_collector_patients,
     list_collector_reports,
 )
+from patient_match import customer_history, verify_customer
 
 app = FastAPI(title="Anubhav Life Care API", version="2.0.0")
 logger = logging.getLogger(__name__)
@@ -241,6 +242,36 @@ class CollectorPatientRequest(BaseModel):
     referred_by: Optional[str] = None
     notes: Optional[str] = None
     followup_status: Optional[str] = None
+
+
+class CustomerVerifyRequest(BaseModel):
+    """Guest/patient login: 2 of 3 must match — name, (bill_no OR bill_date), phone."""
+    name: str = ""
+    phone: str = ""
+    bill_no: str = ""
+    bill_date: Optional[str] = None
+
+
+@app.post("/api/customer/verify")
+def api_customer_verify(body: CustomerVerifyRequest):
+    provided = sum(bool(x) for x in (body.name.strip(), (body.bill_no.strip() or body.bill_date), body.phone.strip()))
+    if provided < 2:
+        raise HTTPException(status_code=400, detail="Provide at least two of: name, bill no/date, phone")
+    try:
+        return verify_customer(body.name, body.phone, body.bill_no, body.bill_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:
+        raise internal_error(exc) from exc
+
+
+@app.get("/api/customer/history")
+def api_customer_history(phone: str):
+    """All visits under a phone since 2022 (static Neon mirror) — the My Reports list."""
+    try:
+        return customer_history(phone)
+    except Exception as exc:
+        raise internal_error(exc) from exc
 
 
 @app.get("/api/customer/profile")

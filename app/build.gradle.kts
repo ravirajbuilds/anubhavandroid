@@ -45,7 +45,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "AKTIV_API_URL", quoted(appConfig("AKTIV_API_URL", "http://192.168.29.157:8080/")))
+        // Public API via the Cloudflare tunnel. Override with -PAKTIV_API_URL=... or
+        // local.properties (AKTIV_API_URL=http://192.168.29.157:8080/) for on-LAN dev.
+        buildConfigField("String", "AKTIV_API_URL", quoted(appConfig("AKTIV_API_URL", "https://api.anubhavlifecare.in/")))
         buildConfigField("String", "RAZORPAY_KEY_ID", quoted(appConfig("RAZORPAY_KEY_ID")))
         buildConfigField("String", "SUPABASE_URL", quoted(appConfig("SUPABASE_URL")))
         buildConfigField("String", "SUPABASE_ANON_KEY", quoted(appConfig("SUPABASE_ANON_KEY")))
