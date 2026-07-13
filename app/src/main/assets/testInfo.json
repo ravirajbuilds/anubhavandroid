@@ -3,102 +3,103 @@
  "generic": {
   "X-Ray": {
    "category": "X-Ray",
-   "what_en": "An X-ray is a quick, painless imaging test that uses a small amount of radiation to create pictures of the bones and certain structures inside your body. It helps doctors see areas that cannot be examined from the outside.",
+   "what_en": "An X-ray is a quick, painless imaging test that uses a very small amount of radiation to create pictures of the bones and certain structures inside your body. It lets doctors see internal areas that cannot be examined from the outside.",
    "what_bn": "এক্স-রে হল একটি দ্রুত ও ব্যথাহীন ইমেজিং পরীক্ষা, যেখানে খুব অল্প পরিমাণ রেডিয়েশন ব্যবহার করে শরীরের ভেতরের হাড় ও কিছু অংশের ছবি তোলা হয়। এটি চিকিৎসককে শরীরের ভেতরের এমন জায়গা দেখতে সাহায্য করে যা বাইরে থেকে পরীক্ষা করা যায় না।",
-   "why_en": "Doctors usually order an X-ray to check for fractures, infections, joint problems, lung conditions, or to look at the position of bones and organs. It is often used when you have pain, injury, swelling, or breathing difficulty.",
-   "why_bn": "চিকিৎসকেরা সাধারণত হাড় ভাঙা, সংক্রমণ, গাঁটের সমস্যা, ফুসফুসের অবস্থা দেখতে অথবা হাড় ও অঙ্গের অবস্থান বোঝার জন্য এক্স-রে করাতে বলেন। ব্যথা, আঘাত, ফোলাভাব বা শ্বাসকষ্ট থাকলে প্রায়ই এটি করা হয়।",
-   "improve_en": "Usually no special preparation is needed, but wear loose, comfortable clothing and remove any jewellery or metal objects from the area being scanned. Tell the staff if you are or may be pregnant before the scan.",
-   "improve_bn": "সাধারণত বিশেষ কোনো প্রস্তুতির দরকার হয় না, তবে ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং যে অংশের ছবি তোলা হবে সেখান থেকে গয়না বা ধাতব জিনিস খুলে রাখুন। আপনি গর্ভবতী হলে বা হওয়ার সম্ভাবনা থাকলে পরীক্ষার আগে কর্মীদের জানান।",
-   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an ultrasound, CT scan, or MRI, or blood tests for a clearer picture. Always discuss your X-ray report with your doctor for the right next steps.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক আরও পরিষ্কার ছবির জন্য আল্ট্রাসাউন্ড, সিটি স্ক্যান, এমআরআই বা রক্ত পরীক্ষার পরামর্শ দিতে পারেন। সঠিক পরবর্তী পদক্ষেপের জন্য সবসময় আপনার এক্স-রে রিপোর্ট চিকিৎসকের সঙ্গে আলোচনা করুন।"
+   "why_en": "Doctors usually order an X-ray to check for fractures, infections, joint or bone problems, and lung or chest conditions, or to see the position of bones and organs. It is often advised when you have pain, injury, swelling, or breathing difficulty.",
+   "why_bn": "চিকিৎসকেরা সাধারণত হাড় ভাঙা, সংক্রমণ, গাঁট বা হাড়ের সমস্যা, এবং ফুসফুস বা বুকের অবস্থা দেখতে অথবা হাড় ও অঙ্গের অবস্থান বোঝার জন্য এক্স-রে করাতে বলেন। ব্যথা, আঘাত, ফোলাভাব বা শ্বাসকষ্ট থাকলে প্রায়ই এটি করার পরামর্শ দেওয়া হয়।",
+   "improve_en": "Usually no special preparation is needed, but wear loose, comfortable clothing and remove any jewellery or metal objects from the area being scanned. Tell the staff before the scan if you are pregnant or might be pregnant.",
+   "improve_bn": "সাধারণত বিশেষ কোনো প্রস্তুতির দরকার হয় না, তবে ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং যে অংশের ছবি তোলা হবে সেখান থেকে গয়না বা ধাতব জিনিস খুলে রাখুন। আপনি গর্ভবতী হলে বা হওয়ার সম্ভাবনা থাকলে পরীক্ষার আগে অবশ্যই কর্মীদের জানান।",
+   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an ultrasound, CT scan, or MRI, or relevant blood tests for a clearer picture. Always discuss your X-ray report with your doctor to decide the right next steps.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক আরও পরিষ্কার ছবির জন্য আল্ট্রাসাউন্ড, সিটি স্ক্যান, এমআরআই বা প্রয়োজনীয় রক্ত পরীক্ষার পরামর্শ দিতে পারেন। সঠিক পরবর্তী পদক্ষেপ ঠিক করতে সবসময় আপনার এক্স-রে রিপোর্ট চিকিৎসকের সঙ্গে আলোচনা করুন।"
   },
   "Pathology": {
    "category": "Pathology",
-   "what_en": "A pathology test analyses a sample from your body such as blood, urine, stool or tissue in the laboratory to measure specific components and detect signs of disease. The results give your doctor objective information about how your organs and body systems are working.",
-   "what_bn": "প্যাথলজি পরীক্ষায় আপনার শরীরের নমুনা যেমন রক্ত, প্রস্রাব, মল বা টিস্যু ল্যাবরেটরিতে বিশ্লেষণ করে নির্দিষ্ট উপাদান পরিমাপ করা হয় এবং রোগের লক্ষণ শনাক্ত করা হয়। এর ফলাফল আপনার শরীরের বিভিন্ন অঙ্গ ও তন্ত্র কেমন কাজ করছে সে সম্পর্কে ডাক্তারকে সঠিক তথ্য দেয়।",
-   "why_en": "Doctors order pathology tests to screen for illness, confirm a diagnosis, find the cause of symptoms, and monitor an existing condition or the effect of ongoing treatment. They are also used in routine health check-ups even when you feel well.",
-   "why_bn": "রোগ আছে কিনা তা যাচাই করতে, রোগ নিশ্চিত করতে, উপসর্গের কারণ খুঁজে বের করতে এবং কোনো চলমান রোগ বা চিকিৎসার প্রভাব পর্যবেক্ষণ করতে ডাক্তার প্যাথলজি পরীক্ষা দেন। ভালো থাকলেও নিয়মিত স্বাস্থ্য পরীক্ষায় এগুলো ব্যবহার করা হয়।",
-   "improve_en": "Follow any instructions given for the test, such as fasting for a set number of hours or collecting the sample at a particular time, as this affects accuracy. Carry your prescription and previous reports, stay well hydrated unless told otherwise, and inform the lab about any medicines you take.",
-   "improve_bn": "পরীক্ষার জন্য দেওয়া নির্দেশনা মেনে চলুন, যেমন নির্দিষ্ট সময় খালি পেটে থাকা বা নির্দিষ্ট সময়ে নমুনা সংগ্রহ করা, কারণ এতে ফলাফলের নির্ভুলতা নির্ভর করে। আপনার প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন, অন্যথায় না বললে পর্যাপ্ত পানি পান করুন এবং আপনি যে ওষুধ খান তা ল্যাবকে জানান।",
-   "more_en": "Depending on the results, your doctor may repeat the test after some time or advise related blood, urine or imaging tests to look further into the finding. Always discuss your reports with your doctor, who will interpret them along with your symptoms and history.",
-   "more_bn": "ফলাফলের ওপর নির্ভর করে ডাক্তার কিছু সময় পর পরীক্ষাটি আবার করতে বা বিষয়টি আরও ভালোভাবে দেখতে সংশ্লিষ্ট রক্ত, প্রস্রাব বা ইমেজিং পরীক্ষা করাতে বলতে পারেন। রিপোর্ট সবসময় ডাক্তারের সঙ্গে আলোচনা করুন, যিনি আপনার উপসর্গ ও ইতিহাসের সঙ্গে মিলিয়ে তা ব্যাখ্যা করবেন।"
+   "what_en": "A diagnostic test or scan measures or examines part of your body to give your doctor objective information about your health. The specific type and method depend on what your doctor needs to check.",
+   "what_bn": "একটি ডায়াগনস্টিক পরীক্ষা বা স্ক্যান আপনার শরীরের কোনো অংশ পরিমাপ বা পরীক্ষা করে ডাক্তারকে আপনার স্বাস্থ্য সম্পর্কে বস্তুনিষ্ঠ তথ্য দেয়। ঠিক কোন ধরন ও পদ্ধতি ব্যবহার হবে তা ডাক্তার কী দেখতে চান তার উপর নির্ভর করে।",
+   "why_en": "Doctors order such tests to screen for disease, find the cause of symptoms, or keep track of a known condition or treatment. Results guide accurate diagnosis and the right next steps in care.",
+   "why_bn": "রোগ আগে থেকে শনাক্ত করতে, উপসর্গের কারণ খুঁজতে, অথবা পরিচিত কোনো রোগ বা চিকিৎসা পর্যবেক্ষণ করতে ডাক্তাররা এমন পরীক্ষা দেন। ফলাফল সঠিক রোগ নির্ণয় ও পরবর্তী চিকিৎসার সঠিক পদক্ষেপ নিতে সাহায্য করে।",
+   "improve_en": "Follow any preparation instructions given by the lab, such as fasting or timing, and stay hydrated unless advised otherwise. Bring your prescription and previous reports, and go over the results with your doctor.",
+   "improve_bn": "গবেষণাগারের দেওয়া প্রস্তুতির নির্দেশ, যেমন খালি পেটে থাকা বা সময় মেনে চলা, অনুসরণ করুন এবং অন্য পরামর্শ না থাকলে পর্যাপ্ত পানি পান করুন। আপনার প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে আনুন এবং ফলাফল ডাক্তারের সঙ্গে আলোচনা করুন।",
+   "more_en": "Based on the results, your doctor may recommend repeat or additional tests, imaging, or a referral to a specialist. Follow-up depends on your symptoms and overall health.",
+   "more_bn": "ফলাফলের ভিত্তিতে ডাক্তার পুনরায় বা অতিরিক্ত পরীক্ষা, ইমেজিং, অথবা বিশেষজ্ঞের কাছে রেফার করার পরামর্শ দিতে পারেন। পরবর্তী পদক্ষেপ আপনার উপসর্গ ও সার্বিক স্বাস্থ্যের উপর নির্ভর করে।"
   },
   "USG": {
    "category": "USG",
-   "what_en": "An ultrasound (USG) scan is a painless, radiation-free test that uses high-frequency sound waves to create live images of the organs, tissues, and blood flow inside your body. A trained technician moves a small probe over the skin (or, for some studies, internally) to view areas such as the abdomen, pelvis, or a pregnancy.",
-   "what_bn": "আল্ট্রাসাউন্ড (USG) হল একটি ব্যথাহীন ও বিকিরণমুক্ত পরীক্ষা, যা উচ্চ-কম্পাঙ্কের শব্দতরঙ্গ ব্যবহার করে শরীরের ভিতরের অঙ্গ, কলা ও রক্তপ্রবাহের সরাসরি ছবি তৈরি করে। একজন প্রশিক্ষিত টেকনিশিয়ান ত্বকের উপর (বা কিছু পরীক্ষার ক্ষেত্রে ভিতর দিয়ে) একটি ছোট প্রোব চালিয়ে পেট, তলপেট বা গর্ভাবস্থার মতো অংশ দেখেন।",
-   "why_en": "Doctors order an ultrasound to check the size, shape, and condition of internal organs and to look for causes of pain, swelling, cysts, stones, or other changes. It is also widely used to monitor pregnancy and to guide certain procedures safely.",
-   "why_bn": "ভিতরের অঙ্গের আকার, গঠন ও অবস্থা দেখতে এবং ব্যথা, ফোলাভাব, সিস্ট, পাথর বা অন্যান্য পরিবর্তনের কারণ খুঁজতে চিকিৎসক আল্ট্রাসাউন্ড করাতে বলেন। গর্ভাবস্থা পর্যবেক্ষণ এবং কিছু চিকিৎসা-পদ্ধতি নিরাপদে পরিচালনার জন্যও এটি ব্যাপকভাবে ব্যবহৃত হয়।",
-   "improve_en": "Follow the preparation for your specific scan: abdominal studies often need 6-8 hours of fasting, while pelvic or pregnancy scans may require a full bladder, so drink water and avoid urinating beforehand as advised. Wear loose, comfortable clothing and carry any previous scans or reports.",
-   "improve_bn": "আপনার নির্দিষ্ট স্ক্যানের নির্দেশনা মেনে চলুন: পেটের পরীক্ষার জন্য প্রায়ই ৬-৮ ঘণ্টা খালি পেটে থাকতে হয়, আবার তলপেট বা গর্ভাবস্থার স্ক্যানে মূত্রথলি ভরা থাকা প্রয়োজন হতে পারে, তাই পরামর্শ অনুযায়ী জল পান করুন ও আগে থেকে প্রস্রাব করবেন না। ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং আগের কোনো স্ক্যান বা রিপোর্ট সঙ্গে আনুন।",
-   "more_en": "Depending on the findings, your doctor may suggest blood tests, a repeat or more detailed scan (such as Doppler, CT, or MRI), or a specialist referral. Always review the report with your doctor to decide the next step.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক রক্ত পরীক্ষা, পুনরায় বা আরও বিশদ স্ক্যান (যেমন ডপলার, সিটি বা এমআরআই), অথবা বিশেষজ্ঞের কাছে রেফারেল করতে বলতে পারেন। পরবর্তী পদক্ষেপ ঠিক করতে সবসময় চিকিৎসকের সঙ্গে রিপোর্ট নিয়ে আলোচনা করুন।"
+   "what_en": "An ultrasound (USG) scan uses safe, painless sound waves to create real-time images of the organs, tissues, and blood flow inside your body. It involves no radiation and a technician moves a small probe over the skin after applying a gel.",
+   "what_bn": "আল্ট্রাসাউন্ড (USG) স্ক্যানে নিরাপদ ও ব্যথাহীন শব্দতরঙ্গ ব্যবহার করে শরীরের ভেতরের অঙ্গ, কলা ও রক্তপ্রবাহের সরাসরি ছবি তোলা হয়। এতে কোনো রেডিয়েশন থাকে না এবং ত্বকে জেল লাগিয়ে একটি ছোট প্রোব বুলিয়ে পরীক্ষা করা হয়।",
+   "why_en": "Doctors order an ultrasound to check the size, shape, and condition of internal organs, or to investigate pain, swelling, lumps, or abnormal findings. It is also widely used to monitor pregnancy and to guide certain procedures.",
+   "why_bn": "অভ্যন্তরীণ অঙ্গের আকার, গঠন ও অবস্থা দেখতে, অথবা ব্যথা, ফোলাভাব, চাকা বা অস্বাভাবিক কোনো লক্ষণ পরীক্ষা করতে চিকিৎসক আল্ট্রাসাউন্ড করাতে বলেন। গর্ভাবস্থা পর্যবেক্ষণ ও কিছু চিকিৎসা প্রক্রিয়ায় সহায়তা করতেও এটি বহুল ব্যবহৃত হয়।",
+   "improve_en": "Follow the specific instructions given for your scan, as some require a full bladder (drink water and avoid urinating) while others need fasting for a few hours. Wear loose clothing and carry any earlier reports or prescriptions for the radiologist.",
+   "improve_bn": "আপনার স্ক্যানের জন্য দেওয়া নির্দিষ্ট নির্দেশ মেনে চলুন, কারণ কিছু পরীক্ষায় ভরা মূত্রথলি প্রয়োজন হয় (জল খেয়ে প্রস্রাব চেপে রাখতে হয়) আবার কিছুতে কয়েক ঘণ্টা খালি পেটে থাকতে হয়। ঢিলেঢালা পোশাক পরুন এবং আগের কোনো রিপোর্ট বা প্রেসক্রিপশন সঙ্গে নিয়ে আসুন।",
+   "more_en": "Depending on the findings, your doctor may advise blood tests, a repeat or more detailed ultrasound, or advanced imaging such as a CT or MRI scan. Sometimes a specialist referral or a follow-up scan after a few weeks is suggested.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক রক্ত পরীক্ষা, পুনরায় বা আরও বিস্তারিত আল্ট্রাসাউন্ড, কিংবা সিটি বা এমআরআই-এর মতো উন্নত ইমেজিং করাতে পরামর্শ দিতে পারেন। কখনো কখনো বিশেষজ্ঞের কাছে পাঠানো বা কয়েক সপ্তাহ পর ফলো-আপ স্ক্যানের পরামর্শও দেওয়া হয়।"
   },
   "CT Scan": {
    "category": "CT Scan",
-   "what_en": "A CT (Computed Tomography) scan uses X-rays taken from many angles to build detailed cross-sectional images of bones, organs, blood vessels and soft tissues inside the body. Sometimes a contrast dye is given by mouth or injection to make certain structures show up more clearly.",
-   "what_bn": "সিটি (কম্পিউটেড টোমোগ্রাফি) স্ক্যানে বিভিন্ন কোণ থেকে এক্স-রে নিয়ে শরীরের ভিতরের হাড়, অঙ্গ, রক্তনালী ও নরম টিস্যুর বিস্তারিত ক্রস-সেকশনাল ছবি তৈরি করা হয়। কখনও কখনও নির্দিষ্ট অংশ স্পষ্টভাবে দেখার জন্য মুখে খাওয়ানো বা ইনজেকশনের মাধ্যমে কনট্রাস্ট ডাই দেওয়া হয়।",
-   "why_en": "Doctors order a CT scan to look for problems that plain X-rays cannot show clearly, such as internal injuries, infections, bleeding, tumours, stones or blockages. The detailed images help pinpoint the exact location and extent of a suspected condition.",
-   "why_bn": "সাধারণ এক্স-রেতে স্পষ্টভাবে ধরা পড়ে না এমন সমস্যা—যেমন ভিতরের আঘাত, সংক্রমণ, রক্তক্ষরণ, টিউমার, পাথর বা বাধা—খুঁজে দেখতে ডাক্তার সিটি স্ক্যান করাতে বলেন। বিস্তারিত ছবি সন্দেহজনক সমস্যার সঠিক অবস্থান ও পরিমাণ নির্ণয়ে সাহায্য করে।",
-   "improve_en": "Follow the lab's instructions on fasting and drinking water beforehand, and inform the staff if you are pregnant, have kidney problems, diabetes or any allergy, especially to contrast dye. Wear loose clothing and remove metal objects such as jewellery, and share the report with your doctor for the next steps.",
-   "improve_bn": "স্ক্যানের আগে খালি পেটে থাকা ও জল খাওয়ার বিষয়ে ল্যাবের নির্দেশ মেনে চলুন, এবং গর্ভবতী হলে, কিডনির সমস্যা, ডায়াবেটিস বা কোনও অ্যালার্জি—বিশেষত কনট্রাস্ট ডাইয়ের—থাকলে কর্মীদের জানান। ঢিলেঢালা পোশাক পরুন, গয়নার মতো ধাতব জিনিস খুলে রাখুন এবং পরবর্তী পদক্ষেপের জন্য রিপোর্টটি আপনার ডাক্তারকে দেখান।",
-   "more_en": "Depending on the findings, your doctor may suggest blood tests, an ultrasound or MRI, or a contrast-enhanced scan for a closer look. In some cases a biopsy or specialist referral may be advised to confirm the diagnosis.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার রক্ত পরীক্ষা, আল্ট্রাসাউন্ড বা এমআরআই, অথবা আরও ভালোভাবে দেখার জন্য কনট্রাস্ট-সহ স্ক্যান করাতে বলতে পারেন। কিছু ক্ষেত্রে রোগ নিশ্চিত করতে বায়োপসি বা বিশেষজ্ঞের পরামর্শ নেওয়ার কথাও বলা হতে পারে।"
+   "what_en": "A CT (computed tomography) scan uses X-rays taken from many angles to build detailed cross-sectional images of your bones, organs, blood vessels and soft tissues. It shows more detail than a plain X-ray and can reveal problems that ordinary imaging may miss.",
+   "what_bn": "সিটি (কম্পিউটেড টমোগ্রাফি) স্ক্যান বিভিন্ন কোণ থেকে এক্স-রে নিয়ে আপনার হাড়, অঙ্গ-প্রত্যঙ্গ, রক্তনালী ও নরম কোষের বিস্তারিত ক্রস-সেকশনাল ছবি তৈরি করে। এটি সাধারণ এক্স-রে-র চেয়ে অনেক বেশি স্পষ্ট ছবি দেয় এবং এমন সমস্যা ধরতে পারে যা সাধারণ ছবিতে ধরা পড়ে না।",
+   "why_en": "Doctors order a CT scan to look for the cause of symptoms such as pain, injury, swelling or persistent complaints, and to check for problems like infections, stones, blockages, growths or bleeding. It also helps confirm a diagnosis and guide further treatment or surgery.",
+   "why_bn": "ব্যথা, আঘাত, ফোলা বা দীর্ঘস্থায়ী কোনো সমস্যার কারণ খুঁজতে এবং সংক্রমণ, পাথর, বাধা, টিউমার বা রক্তক্ষরণ আছে কিনা তা দেখতে চিকিৎসকরা সিটি স্ক্যান করাতে বলেন। এটি রোগ নিশ্চিত করতে এবং পরবর্তী চিকিৎসা বা অস্ত্রোপচারের পরিকল্পনা করতেও সাহায্য করে।",
+   "improve_en": "Wear loose, comfortable clothes and remove metal items like jewellery, and tell the staff if you are or may be pregnant; some scans need you to fast for a few hours or drink a contrast liquid beforehand. Carry your prescription and any previous scans, and follow the fasting or contrast instructions given by the lab.",
+   "improve_bn": "ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং গয়নার মতো ধাতব জিনিস খুলে রাখুন; আপনি গর্ভবতী হলে বা সেই সম্ভাবনা থাকলে কর্মীদের জানান। কিছু স্ক্যানে আগে কয়েক ঘণ্টা খালি পেটে থাকতে বা কনট্রাস্ট তরল পান করতে হয়, তাই ল্যাবের দেওয়া নির্দেশ মেনে চলুন এবং প্রেসক্রিপশন ও আগের স্ক্যান সঙ্গে আনুন।",
+   "more_en": "Depending on what the scan shows, your doctor may advise blood tests, an ultrasound or MRI, or a repeat CT scan later to track any change. In some cases a specialist referral or a biopsy may be suggested for a clearer picture.",
+   "more_bn": "স্ক্যানে কী পাওয়া যায় তার উপর নির্ভর করে চিকিৎসক রক্ত পরীক্ষা, আল্ট্রাসাউন্ড বা এমআরআই, অথবা পরিবর্তন লক্ষ্য করার জন্য পরে আবার সিটি স্ক্যান করাতে বলতে পারেন। প্রয়োজনে স্পষ্ট ধারণা পেতে বিশেষজ্ঞের পরামর্শ বা বায়োপসিও করাতে বলা হতে পারে।",
+   "what_en_ignore": "placeholder"
   },
   "Neurology": {
    "category": "Neurology",
-   "what_en": "A neurology test or scan examines the brain, spinal cord, and nerves to check how well the nervous system is working. It may record the brain's electrical activity, measure nerve and muscle signals, or produce detailed images of nerve structures.",
-   "what_bn": "নিউরোলজি পরীক্ষা বা স্ক্যানের মাধ্যমে মস্তিষ্ক, সুষুম্নাকাণ্ড এবং স্নায়ু ঠিকভাবে কাজ করছে কিনা তা দেখা হয়। এতে মস্তিষ্কের বৈদ্যুতিক কার্যকলাপ, স্নায়ু ও পেশির সংকেত পরিমাপ করা হতে পারে অথবা স্নায়ুর বিস্তারিত ছবি তোলা হতে পারে।",
-   "why_en": "Doctors order these tests to find the cause of symptoms such as headaches, seizures, dizziness, numbness, weakness, or memory problems. They help detect and monitor conditions affecting the brain and nervous system.",
-   "why_bn": "মাথাব্যথা, খিঁচুনি, মাথা ঘোরা, অসাড়তা, দুর্বলতা বা স্মৃতি সমস্যার মতো উপসর্গের কারণ খুঁজে বের করতে চিকিৎসকরা এই পরীক্ষাগুলি করান। এগুলি মস্তিষ্ক ও স্নায়ুতন্ত্রের রোগ শনাক্ত ও পর্যবেক্ষণে সাহায্য করে।",
-   "improve_en": "Follow any instructions from the lab, such as washing your hair without oil or gel before certain scans and getting proper rest the night before. Carry previous reports and prescriptions, and tell the technician about any implants or metal in your body.",
-   "improve_bn": "ল্যাবের নির্দেশনা মেনে চলুন, যেমন কিছু স্ক্যানের আগে তেল বা জেল ছাড়া চুল ধুয়ে রাখা এবং আগের রাতে পর্যাপ্ত বিশ্রাম নেওয়া। আগের রিপোর্ট ও প্রেসক্রিপশন সঙ্গে আনুন এবং শরীরে কোনো ইমপ্ল্যান্ট বা ধাতু থাকলে টেকনিশিয়ানকে জানান।",
-   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an MRI or CT scan, blood tests, or a referral to a neurologist. Repeat tests may be advised to monitor how your condition changes over time.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক এমআরআই বা সিটি স্ক্যানের মতো আরও ছবি পরীক্ষা, রক্ত পরীক্ষা অথবা স্নায়ুরোগ বিশেষজ্ঞের কাছে পাঠানোর পরামর্শ দিতে পারেন। অবস্থার পরিবর্তন পর্যবেক্ষণে পুনরায় পরীক্ষার পরামর্শও দেওয়া হতে পারে।"
+   "what_en": "Neurology tests and scans examine the brain, spinal cord, and nerves using imaging such as MRI or CT, or electrical recordings like EEG and nerve studies. They help create detailed pictures of nervous-system structures or measure how nerves and brain activity are working.",
+   "what_bn": "নিউরোলজি পরীক্ষা ও স্ক্যান MRI বা CT-এর মতো ইমেজিং, অথবা EEG ও স্নায়ু পরীক্ষার মতো বৈদ্যুতিক রেকর্ডিং ব্যবহার করে মস্তিষ্ক, মেরুদণ্ড ও স্নায়ু পরীক্ষা করে। এগুলি স্নায়ুতন্ত্রের গঠনের বিস্তারিত ছবি তৈরি করতে বা স্নায়ু ও মস্তিষ্কের কার্যকলাপ কেমন চলছে তা মাপতে সাহায্য করে।",
+   "why_en": "A doctor generally orders these tests to investigate symptoms like persistent headaches, dizziness, seizures, numbness, weakness, or memory problems. They help find the cause and guide the right treatment plan.",
+   "why_bn": "ক্রমাগত মাথাব্যথা, মাথা ঘোরা, খিঁচুনি, অসাড়তা, দুর্বলতা বা স্মৃতির সমস্যার মতো উপসর্গ খতিয়ে দেখতে ডাক্তার সাধারণত এই পরীক্ষাগুলি করাতে বলেন। এগুলি কারণ খুঁজে বের করতে ও সঠিক চিকিৎসার পরিকল্পনা করতে সাহায্য করে।",
+   "improve_en": "Follow any instructions from the lab, such as fasting if advised, and remove metal objects, jewellery, or electronic items before an MRI or CT scan. Tell the staff about any implants, pregnancy, or claustrophobia, and bring your prescription and earlier scan reports.",
+   "improve_bn": "ল্যাবের নির্দেশ অনুসরণ করুন, যেমন বলা হলে খালি পেটে থাকা, এবং MRI বা CT স্ক্যানের আগে ধাতব জিনিস, গয়না বা ইলেকট্রনিক জিনিস খুলে রাখুন। কোনো ইমপ্লান্ট, গর্ভাবস্থা বা বদ্ধ জায়গায় ভয় থাকলে কর্মীদের জানান এবং প্রেসক্রিপশন ও আগের স্ক্যানের রিপোর্ট সঙ্গে আনুন।",
+   "more_en": "Depending on the findings, your doctor may suggest further imaging, EEG or nerve conduction studies, blood tests, or a referral to a neurologist. Follow-up scans may also be advised to track any change over time.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার আরও ইমেজিং, EEG বা স্নায়ু পরীক্ষা, রক্ত পরীক্ষা, অথবা নিউরোলজিস্টের কাছে পাঠানোর পরামর্শ দিতে পারেন। সময়ের সঙ্গে পরিবর্তন লক্ষ্য করতে ফলো-আপ স্ক্যানও করাতে বলা হতে পারে।"
   },
   "OtherRadio": {
    "category": "OtherRadio",
-   "what_en": "This is a radiology or imaging test that uses methods such as X-rays, sound waves, or scanning equipment to create pictures of the inside of your body. It helps the doctor look at organs, bones, or tissues that cannot be seen from the outside.",
-   "what_bn": "এটি একটি রেডিওলজি বা ইমেজিং পরীক্ষা, যেখানে এক্স-রে, শব্দতরঙ্গ বা স্ক্যানিং যন্ত্রের সাহায্যে শরীরের ভেতরের ছবি তোলা হয়। এর মাধ্যমে ডাক্তার এমন অঙ্গ, হাড় বা কলা দেখতে পারেন যা বাইরে থেকে দেখা যায় না।",
-   "why_en": "A doctor usually orders this scan to find the cause of your symptoms, confirm a diagnosis, or check how well an organ or body part is working. It also helps monitor an existing condition or plan and review treatment.",
-   "why_bn": "সাধারণত ডাক্তার আপনার উপসর্গের কারণ খুঁজতে, রোগ নিশ্চিত করতে, বা কোনো অঙ্গ বা শরীরের অংশ কেমন কাজ করছে তা দেখতে এই স্ক্যান করাতে বলেন। এটি চলমান কোনো রোগ পর্যবেক্ষণ করতে এবং চিকিৎসার পরিকল্পনা ও পর্যালোচনা করতেও সাহায্য করে।",
-   "improve_en": "Follow any instructions the lab gives you, such as fasting, drinking water, or wearing loose clothing, and remove metal items like jewellery before the scan. Tell the staff if you are pregnant or may be pregnant, and carry your prescription and any earlier reports.",
-   "improve_bn": "ল্যাব থেকে দেওয়া নির্দেশনা মেনে চলুন, যেমন খালি পেটে থাকা, জল পান করা বা ঢিলেঢালা পোশাক পরা, এবং স্ক্যানের আগে গয়নার মতো ধাতব জিনিস খুলে রাখুন। আপনি গর্ভবতী হলে বা গর্ভবতী হওয়ার সম্ভাবনা থাকলে কর্মীদের জানান, এবং আপনার প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন।",
-   "more_en": "Depending on the findings, the doctor may suggest another imaging test such as an ultrasound, X-ray, or CT scan, or some blood tests for a clearer picture. Always discuss the report with your doctor, who will decide on the right follow-up for you.",
-   "more_bn": "রিপোর্টের ফলাফলের উপর নির্ভর করে ডাক্তার আরও পরিষ্কার ধারণা পেতে অন্য কোনো ইমেজিং পরীক্ষা যেমন আল্ট্রাসাউন্ড, এক্স-রে বা সিটি স্ক্যান, অথবা কিছু রক্ত পরীক্ষা করাতে বলতে পারেন। রিপোর্ট সবসময় আপনার ডাক্তারের সঙ্গে আলোচনা করুন, তিনিই আপনার জন্য সঠিক পরবর্তী পদক্ষেপ ঠিক করবেন।"
+   "what_en": "This is a radiology or imaging test that uses specialised equipment to create detailed pictures of the inside of your body, such as bones, organs, or soft tissues. It helps your doctor see areas that cannot be checked by a physical examination alone.",
+   "what_bn": "এটি একটি রেডিওলজি বা ইমেজিং পরীক্ষা, যেখানে বিশেষ যন্ত্রের সাহায্যে আপনার শরীরের ভিতরের অংশ—যেমন হাড়, অঙ্গ বা নরম কলার বিস্তারিত ছবি তোলা হয়। শুধু বাইরে থেকে দেখে যে অংশ পরীক্ষা করা যায় না, তা দেখতে এটি চিকিৎসককে সাহায্য করে।",
+   "why_en": "Doctors order these scans to find the cause of symptoms like pain, swelling, or injury, to detect problems early, or to check how an organ or a known condition is doing. The images guide diagnosis and help plan the right treatment.",
+   "why_bn": "ব্যথা, ফোলা বা আঘাতের মতো উপসর্গের কারণ খুঁজে বের করতে, সমস্যা আগেভাগে ধরতে, অথবা কোনো অঙ্গ বা পরিচিত রোগের অবস্থা দেখতে চিকিৎসকরা এই ধরনের স্ক্যান করান। এই ছবিগুলো রোগ নির্ণয়ে এবং সঠিক চিকিৎসা পরিকল্পনা করতে সাহায্য করে।",
+   "improve_en": "Follow the specific instructions given for your scan, which may include fasting for a few hours, drinking water, or arriving a little early. Wear loose, comfortable clothing, remove metal items or jewellery, and tell the staff if you are pregnant or may be pregnant before the scan.",
+   "improve_bn": "আপনার স্ক্যানের জন্য দেওয়া নির্দিষ্ট নির্দেশনা মেনে চলুন—যেমন কয়েক ঘণ্টা খালি পেটে থাকা, জল পান করা বা একটু আগে পৌঁছানো লাগতে পারে। ঢিলেঢালা আরামদায়ক পোশাক পরুন, ধাতব জিনিস ও গয়না খুলে রাখুন এবং আপনি গর্ভবতী হলে বা গর্ভবতী হওয়ার সম্ভাবনা থাকলে স্ক্যানের আগে কর্মীদের জানান।",
+   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an ultrasound, X-ray, CT or MRI, or relevant blood tests for a clearer picture. Sometimes a repeat scan after some time or a specialist consultation is advised to confirm the diagnosis.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক আরও ইমেজিং—যেমন আল্ট্রাসাউন্ড, এক্স-রে, সিটি বা এমআরআই, অথবা প্রয়োজনীয় রক্ত পরীক্ষার পরামর্শ দিতে পারেন যাতে বিষয়টি আরও স্পষ্ট হয়। কখনও কখনও কিছুদিন পর আবার স্ক্যান করা বা বিশেষজ্ঞের পরামর্শ নেওয়ার কথাও বলা হয়, যাতে রোগ নির্ণয় নিশ্চিত করা যায়।"
   },
   "Gastroenterology": {
    "category": "Gastroenterology",
-   "what_en": "Gastroenterology tests examine your digestive system, including the stomach, intestines, liver, and related organs, using blood samples, stool tests, or scans. They help assess how well your digestive tract is working and detect signs of infection, inflammation, or other conditions.",
-   "what_bn": "গ্যাস্ট্রোএন্টেরোলজি পরীক্ষা আপনার পরিপাকতন্ত্র, অর্থাৎ পাকস্থলী, অন্ত্র, যকৃত ও সম্পর্কিত অঙ্গ পরীক্ষা করে, যার জন্য রক্ত, মল বা স্ক্যান ব্যবহার করা হয়। এই পরীক্ষা আপনার হজম প্রক্রিয়া কেমন কাজ করছে তা বোঝায় এবং সংক্রমণ, প্রদাহ বা অন্যান্য সমস্যার লক্ষণ শনাক্ত করতে সাহায্য করে।",
-   "why_en": "A doctor may order these tests when you have symptoms such as abdominal pain, indigestion, acidity, diarrhea, constipation, blood in stool, or unexplained weight loss. They also help monitor known digestive or liver conditions and check how well treatment is working.",
-   "why_bn": "পেটব্যথা, বদহজম, অম্বল, পাতলা পায়খানা, কোষ্ঠকাঠিন্য, মলে রক্ত বা অকারণে ওজন কমার মতো উপসর্গ থাকলে ডাক্তার এই পরীক্ষাগুলি করাতে বলতে পারেন। পরিচিত পরিপাক বা যকৃতের সমস্যার উপর নজর রাখতে এবং চিকিৎসা কতটা কাজ করছে তা যাচাই করতেও এগুলি সাহায্য করে।",
-   "improve_en": "Follow any fasting or dietary instructions given for your test, and mention any current medicines or supplements to the lab and your doctor. Drink adequate water unless told otherwise, and share the reports with your doctor to understand the results and next steps.",
-   "improve_bn": "পরীক্ষার জন্য দেওয়া উপবাস বা খাদ্য সংক্রান্ত নির্দেশ মেনে চলুন এবং আপনি যে ওষুধ বা সাপ্লিমেন্ট নিচ্ছেন তা ল্যাব ও ডাক্তারকে জানান। অন্য নির্দেশ না থাকলে পর্যাপ্ত জল পান করুন এবং ফলাফল ও পরবর্তী পদক্ষেপ বুঝতে রিপোর্ট ডাক্তারকে দেখান।",
-   "more_en": "Depending on the results, your doctor may suggest additional blood or stool tests, liver function tests, an abdominal ultrasound, or an endoscopy. Follow-up tests may be advised to confirm a diagnosis or to track your condition over time.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার আরও রক্ত বা মল পরীক্ষা, যকৃতের কার্যকারিতা পরীক্ষা, পেটের আলট্রাসাউন্ড বা এন্ডোস্কোপি করাতে বলতে পারেন। রোগ নিশ্চিত করতে বা সময়ের সাথে অবস্থার উপর নজর রাখতে ফলো-আপ পরীক্ষার পরামর্শ দেওয়া হতে পারে।"
+   "what_en": "A gastroenterology test examines your digestive system - including the stomach, intestines, liver, pancreas and gall bladder - using blood, stool or other samples to check how well these organs are working. It helps detect infection, inflammation, digestion problems or other conditions affecting the gut and liver.",
+   "what_bn": "গ্যাস্ট্রোএন্টারোলজি পরীক্ষায় রক্ত, মল বা অন্যান্য নমুনার মাধ্যমে আপনার পরিপাকতন্ত্র - অর্থাৎ পাকস্থলী, অন্ত্র, যকৃত, অগ্ন্যাশয় ও পিত্তথলি - কেমন কাজ করছে তা দেখা হয়। এটি সংক্রমণ, প্রদাহ, হজমের সমস্যা বা পেট ও যকৃতের অন্যান্য রোগ শনাক্ত করতে সাহায্য করে।",
+   "why_en": "Doctors usually order these tests when you have symptoms like stomach pain, acidity, indigestion, bloating, diarrhoea, constipation, jaundice or blood in the stool. They also help monitor known digestive or liver conditions and check the effect of ongoing treatment.",
+   "why_bn": "পেট ব্যথা, অম্লতা, বদহজম, পেট ফাঁপা, পাতলা পায়খানা, কোষ্ঠকাঠিন্য, জন্ডিস বা পায়খানার সঙ্গে রক্ত পড়ার মতো উপসর্গ থাকলে চিকিৎসক সাধারণত এই পরীক্ষাগুলো দিয়ে থাকেন। জানা পেট বা যকৃতের রোগ পর্যবেক্ষণ এবং চলমান চিকিৎসার ফল যাচাই করতেও এগুলো সাহায্য করে।",
+   "improve_en": "Some tests may require fasting (usually 8-12 hours) or a fresh stool sample, so follow the instructions given with your test and ask the lab if you are unsure. Drink normal water unless told otherwise, and inform the lab of any medicines you take regularly.",
+   "improve_bn": "কিছু পরীক্ষায় খালি পেটে থাকা (সাধারণত ৮-১২ ঘণ্টা) বা টাটকা মলের নমুনা প্রয়োজন হতে পারে, তাই পরীক্ষার সঙ্গে দেওয়া নির্দেশ মেনে চলুন এবং সন্দেহ থাকলে ল্যাবে জিজ্ঞাসা করুন। অন্য নির্দেশ না থাকলে স্বাভাবিকভাবে জল পান করুন এবং নিয়মিত কোনো ওষুধ খেলে তা ল্যাবকে জানান।",
+   "more_en": "Depending on the results, your doctor may suggest liver or pancreas function tests, stool tests, an abdominal ultrasound, or an endoscopy/colonoscopy for a closer look. Always discuss your reports with your doctor before starting or changing any treatment.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক যকৃত বা অগ্ন্যাশয়ের কার্যক্ষমতা পরীক্ষা, মল পরীক্ষা, পেটের আল্ট্রাসাউন্ড, অথবা আরও ভালোভাবে দেখার জন্য এন্ডোস্কোপি/কোলনোস্কোপি করার পরামর্শ দিতে পারেন। কোনো চিকিৎসা শুরু বা পরিবর্তনের আগে সবসময় আপনার রিপোর্ট চিকিৎসকের সঙ্গে আলোচনা করুন।"
   },
   "Urology/Nephrology": {
    "category": "Urology/Nephrology",
-   "what_en": "Urology and nephrology tests check how well your kidneys, bladder, and urinary tract are working, usually through blood tests, urine samples, or imaging. They measure things like waste levels in the blood and signs of infection, protein, or blood in the urine.",
-   "what_bn": "ইউরোলজি ও নেফ্রোলজি পরীক্ষায় আপনার কিডনি, মূত্রথলি ও মূত্রনালী কতটা ভালোভাবে কাজ করছে তা দেখা হয়, সাধারণত রক্ত পরীক্ষা, প্রস্রাব পরীক্ষা বা ইমেজিংয়ের মাধ্যমে। এতে রক্তে বর্জ্যের মাত্রা এবং প্রস্রাবে সংক্রমণ, প্রোটিন বা রক্তের লক্ষণ পরিমাপ করা হয়।",
-   "why_en": "A doctor may order these tests to find the cause of symptoms like burning urination, back or side pain, swelling, or changes in how often or how much you urinate. They also help monitor kidney health in people with diabetes, high blood pressure, or a family history of kidney problems.",
-   "why_bn": "প্রস্রাবে জ্বালাপোড়া, পিঠ বা কোমরে ব্যথা, শরীর ফুলে যাওয়া, অথবা প্রস্রাবের পরিমাণ বা বারবার প্রস্রাবের পরিবর্তনের কারণ খুঁজে বের করতে ডাক্তার এই পরীক্ষাগুলো দিতে পারেন। ডায়াবেটিস, উচ্চ রক্তচাপ বা পরিবারে কিডনি রোগের ইতিহাস থাকলে কিডনির অবস্থা পর্যবেক্ষণেও এগুলো সাহায্য করে।",
-   "improve_en": "Follow any fasting or water-intake instructions given for your test, and for a urine test collect a clean mid-stream sample as advised. Stay well hydrated unless told otherwise, and share your full symptom and medication history with your doctor when reviewing the results.",
-   "improve_bn": "আপনার পরীক্ষার জন্য দেওয়া উপবাস বা পানি পানের নির্দেশনা মেনে চলুন, এবং প্রস্রাব পরীক্ষার জন্য পরামর্শ অনুযায়ী পরিষ্কার মিড-স্ট্রিম নমুনা সংগ্রহ করুন। বিশেষ নিষেধ না থাকলে পর্যাপ্ত পানি পান করুন, এবং রিপোর্ট দেখানোর সময় আপনার সব লক্ষণ ও ওষুধের তথ্য ডাক্তারকে জানান।",
-   "more_en": "Depending on the results, your doctor may suggest follow-up tests such as a urine culture, kidney function blood tests, or an ultrasound of the kidneys and bladder. In some cases a specialist referral or repeat testing after a few weeks may be recommended.",
-   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার প্রস্রাবের কালচার, কিডনির কার্যকারিতার রক্ত পরীক্ষা, অথবা কিডনি ও মূত্রথলির আল্ট্রাসাউন্ডের মতো অতিরিক্ত পরীক্ষার পরামর্শ দিতে পারেন। কিছু ক্ষেত্রে বিশেষজ্ঞের পরামর্শ নেওয়া বা কয়েক সপ্তাহ পর পুনরায় পরীক্ষার সুপারিশ করা হতে পারে।"
+   "what_en": "Urology and nephrology tests examine the health and function of your kidneys, bladder, urinary tract, and (in men) the prostate, usually through urine samples, blood markers, or imaging. They help measure how well your kidneys filter waste and whether the urinary system is working normally.",
+   "what_bn": "ইউরোলজি ও নেফ্রোলজি পরীক্ষাগুলি আপনার কিডনি, মূত্রথলি, মূত্রনালী এবং (পুরুষদের ক্ষেত্রে) প্রোস্টেটের স্বাস্থ্য ও কার্যক্ষমতা যাচাই করে, সাধারণত প্রস্রাবের নমুনা, রক্তের মার্কার বা ইমেজিং-এর মাধ্যমে। এগুলি দেখায় কিডনি কতটা ভালোভাবে বর্জ্য ছেঁকে বের করছে এবং মূত্রতন্ত্র স্বাভাবিকভাবে কাজ করছে কিনা।",
+   "why_en": "A doctor may order these tests to investigate symptoms like burning or frequent urination, blood in the urine, swelling, back or flank pain, or to monitor conditions such as diabetes, high blood pressure, kidney stones, or infections. They also help track kidney function over time.",
+   "why_bn": "প্রস্রাবে জ্বালাপোড়া বা ঘন ঘন প্রস্রাব, প্রস্রাবে রক্ত, শরীরে ফোলাভাব, কোমর বা পাশে ব্যথা—এমন উপসর্গের কারণ খুঁজতে, অথবা ডায়াবেটিস, উচ্চ রক্তচাপ, কিডনির পাথর বা সংক্রমণের মতো সমস্যা নজরে রাখতে চিকিৎসক এই পরীক্ষাগুলি দিতে পারেন। সময়ের সাথে কিডনির কার্যক্ষমতার পরিবর্তন বুঝতেও এগুলি সাহায্য করে।",
+   "improve_en": "Follow any fasting or timing instructions given for your test, and for urine tests collect a clean mid-stream sample in the container provided. Stay normally hydrated unless told otherwise, mention any current medicines to your doctor, and share your reports with them for the correct interpretation.",
+   "improve_bn": "আপনার পরীক্ষার জন্য দেওয়া উপবাস বা সময়ের নির্দেশনা মেনে চলুন, এবং প্রস্রাব পরীক্ষার ক্ষেত্রে দেওয়া পাত্রে পরিষ্কারভাবে মাঝের ধারার নমুনা সংগ্রহ করুন। আলাদা নির্দেশ না থাকলে স্বাভাবিকভাবে পর্যাপ্ত জল পান করুন, বর্তমানে চলা যেকোনো ওষুধের কথা চিকিৎসককে জানান এবং সঠিক ব্যাখ্যার জন্য রিপোর্ট তাঁকে দেখান।",
+   "more_en": "Depending on the findings, your doctor may suggest follow-up tests such as a urine culture, kidney function blood panel, an ultrasound of the kidneys and bladder, or a specialist referral to a urologist or nephrologist. Repeat testing may be advised to confirm results or watch for changes.",
+   "more_bn": "ফলাফলের ভিত্তিতে আপনার চিকিৎসক ইউরিন কালচার, কিডনি ফাংশন রক্ত পরীক্ষা, কিডনি ও মূত্রথলির আলট্রাসাউন্ড, অথবা ইউরোলজিস্ট বা নেফ্রোলজিস্টের কাছে রেফারেলের পরামর্শ দিতে পারেন। ফলাফল নিশ্চিত করতে বা পরিবর্তন লক্ষ্য রাখতে পুনরায় পরীক্ষারও পরামর্শ দেওয়া হতে পারে।"
   },
   "default": {
    "category": "default",
-   "what_en": "This is a medical test that examines a sample from your body (such as blood or urine) or produces images of your internal organs to give your doctor objective information about your health. It measures specific markers or structures that cannot be assessed by a physical examination alone.",
-   "what_bn": "এটি একটি মেডিকেল পরীক্ষা যা আপনার শরীর থেকে নেওয়া নমুনা (যেমন রক্ত বা মূত্র) পরীক্ষা করে অথবা আপনার ভেতরের অঙ্গের ছবি তৈরি করে ডাক্তারকে আপনার স্বাস্থ্য সম্পর্কে সঠিক তথ্য দেয়। এটি এমন কিছু নির্দিষ্ট বিষয় পরিমাপ করে যা শুধু শারীরিক পরীক্ষা দিয়ে জানা যায় না।",
-   "why_en": "Doctors order such tests to confirm or rule out a suspected condition, to find the cause of your symptoms, or to check how well your body is functioning. They are also used for routine health check-ups and to monitor an existing condition or ongoing treatment.",
-   "why_bn": "রোগ নির্ণয় নিশ্চিত করতে বা বাদ দিতে, আপনার উপসর্গের কারণ খুঁজে বের করতে, অথবা শরীরের অঙ্গগুলি কতটা ভালোভাবে কাজ করছে তা দেখতে ডাক্তার এই ধরনের পরীক্ষা দেন। এছাড়া নিয়মিত স্বাস্থ্য পরীক্ষা এবং কোনো রোগ বা চলমান চিকিৎসার অগ্রগতি পর্যবেক্ষণেও এগুলি ব্যবহৃত হয়।",
-   "improve_en": "Follow any instructions given by the lab, such as whether fasting is required or what to bring, and carry your prescription and previous reports. Wear comfortable clothing, stay hydrated unless told otherwise, and inform the staff about any current medicines or health conditions before the test.",
-   "improve_bn": "ল্যাব থেকে দেওয়া নির্দেশ মেনে চলুন, যেমন খালি পেটে আসতে হবে কিনা বা কী সঙ্গে আনতে হবে, এবং প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন। আরামদায়ক পোশাক পরুন, নিষেধ না থাকলে পর্যাপ্ত পানি পান করুন, এবং পরীক্ষার আগে আপনার চলতি ওষুধ বা শারীরিক অবস্থার কথা কর্মীদের জানান।",
-   "more_en": "Depending on the result, your doctor may suggest repeating the test, additional blood tests, or an imaging scan to look further into the cause. Always discuss your report with your doctor, who will decide the right next step for your situation.",
-   "more_bn": "ফলাফলের উপর ভিত্তি করে ডাক্তার পরীক্ষাটি আবার করতে, অতিরিক্ত রক্ত পরীক্ষা করতে, অথবা কারণ আরও ভালোভাবে বুঝতে কোনো ইমেজিং স্ক্যান করতে বলতে পারেন। রিপোর্ট নিয়ে সবসময় ডাক্তারের সঙ্গে আলোচনা করুন, তিনিই আপনার অবস্থার জন্য সঠিক পরবর্তী পদক্ষেপ ঠিক করবেন।"
+   "what_en": "This is a routine diagnostic test that measures specific markers in a sample (such as blood, urine, or another specimen) or examines a part of the body to give your doctor objective information about your health.",
+   "what_bn": "এটি একটি সাধারণ ডায়াগনস্টিক পরীক্ষা, যা কোনো নমুনায় (যেমন রক্ত, প্রস্রাব বা অন্য কোনো নমুনা) নির্দিষ্ট উপাদান পরিমাপ করে অথবা শরীরের কোনো অংশ পরীক্ষা করে আপনার স্বাস্থ্য সম্পর্কে চিকিৎসককে নির্ভরযোগ্য তথ্য দেয়।",
+   "why_en": "Doctors order tests like this to screen for possible health problems, confirm a diagnosis, or monitor an existing condition and how well treatment is working. The results help guide the right next steps in your care.",
+   "why_bn": "সম্ভাব্য স্বাস্থ্য সমস্যা শনাক্ত করতে, রোগ নির্ণয় নিশ্চিত করতে, অথবা কোনো বিদ্যমান রোগ ও চিকিৎসা কতটা কাজ করছে তা পর্যবেক্ষণ করতে চিকিৎসকরা এই ধরনের পরীক্ষা দেন। ফলাফল আপনার পরবর্তী চিকিৎসার সঠিক দিকনির্দেশনা দিতে সাহায্য করে।",
+   "improve_en": "Follow any instructions the lab gives you, such as fasting or timing, and mention any ongoing medicines or health conditions before the test. Once you have the report, review it together with your doctor rather than interpreting the numbers on your own.",
+   "improve_bn": "ল্যাব থেকে দেওয়া নির্দেশনা মেনে চলুন, যেমন খালি পেটে থাকা বা নির্দিষ্ট সময়ে পরীক্ষা করানো, এবং পরীক্ষার আগে আপনার চলমান কোনো ওষুধ বা স্বাস্থ্য সমস্যার কথা জানান। রিপোর্ট হাতে পাওয়ার পর নিজে নিজে ব্যাখ্যা না করে চিকিৎসকের সঙ্গে একসঙ্গে দেখে নিন।",
+   "more_en": "Depending on the results, your doctor may suggest repeating the test after some time or ordering additional blood tests, imaging, or a specialist consultation. Any follow-up is decided based on your overall symptoms and history, not the report alone.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক কিছু সময় পর পরীক্ষাটি আবার করাতে বলতে পারেন অথবা অতিরিক্ত রক্ত পরীক্ষা, ইমেজিং বা বিশেষজ্ঞের পরামর্শ নিতে বলতে পারেন। পরবর্তী পদক্ষেপ শুধু রিপোর্ট দেখে নয়, আপনার সামগ্রিক লক্ষণ ও ইতিহাস বিবেচনা করে ঠিক করা হয়।"
   }
  },
  "tests": [
@@ -196,7 +197,7 @@
    "what_en": "This test measures blood glucose 2 hours after a meal to see how well your body clears sugar.",
    "what_bn": "এই পরীক্ষায় খাবারের ২ ঘণ্টা পর রক্তে গ্লুকোজ মেপে দেখা হয় শরীর কতটা ভালোভাবে শর্করা সামলাচ্ছে।",
    "why_en": "It helps detect diabetes and pre-diabetes and check how meals affect your sugar control.",
-   "why_bn": "এটি ডায়াবেটিস ও প্রি-ডায়াবেটিস শনাক্ত করতে এবং খাবারে শর্করা নিয়ন্ত্রণ বুঝতে সাহায্য করে।",
+   "why_bn": "এটি ডায়াবেটিস ও প্রি-ডায়াবেটিস শনাক্ত করতে এবং খাবার শর্করা নিয়ন্ত্রণে কেমন প্রভাব ফেলছে তা বুঝতে সাহায্য করে।",
    "improve_en": "Choose smaller portions, whole grains and fibre-rich foods, limit sweets, and walk after meals; review results with your doctor.",
    "improve_bn": "ছোট পরিমাণে খাবার, গোটা শস্য ও আঁশযুক্ত খাবার নিন, মিষ্টি কমান, খাওয়ার পর হাঁটুন; ফল নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
    "more_en": "Your doctor may add a fasting glucose and HbA1c to complete the picture.",
@@ -217,8 +218,8 @@
    "what_bn": "এটি একটি জোড়া পরীক্ষা, যেখানে খালি পেটে ও খাবারের ২ ঘণ্টা পর—দুটি শর্করার মান জানানো হয়।",
    "why_en": "Seeing both values together gives a fuller view of your daily sugar control for diabetes screening and monitoring.",
    "why_bn": "দুটি মান একসঙ্গে দেখলে ডায়াবেটিস শনাক্ত ও নিয়ন্ত্রণে দৈনিক শর্করার সম্পূর্ণ চিত্র পাওয়া যায়।",
-   "improve_en": "A consistent healthy diet, regular activity, weight control and medication adherence help both numbers; discuss your pattern with your doctor.",
-   "improve_bn": "সুষম খাবার, নিয়মিত চলাফেরা, ওজন নিয়ন্ত্রণ ও ওষুধ ঠিকমতো নিলে দুটি মানই ভালো হয়; ধরন নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "improve_en": "A consistent healthy diet, regular activity, weight control and taking prescribed treatment as advised help both numbers; discuss your pattern with your doctor.",
+   "improve_bn": "সুষম খাবার, নিয়মিত চলাফেরা, ওজন নিয়ন্ত্রণ ও নির্ধারিত চিকিৎসা ঠিকমতো নিলে দুটি মানই ভালো হয়; ধরন নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
    "more_en": "Your doctor may add HbA1c for an average of the last 2-3 months.",
    "more_bn": "চিকিৎসক গত ২-৩ মাসের গড় বুঝতে HbA1c যোগ করতে পারেন।"
   },
@@ -367,7 +368,6 @@
    "what_bn": "সি-পেপটাইড ইনসুলিনের সঙ্গে নিঃসৃত হয়, তাই এটি দেখায় আপনার অগ্ন্যাশয় নিজে কতটা ইনসুলিন তৈরি করছে।",
    "why_en": "It helps tell apart types of diabetes and judge how much insulin your body still produces.",
    "why_bn": "এটি ডায়াবেটিসের ধরন আলাদা করতে এবং শরীর কতটা ইনসুলিন তৈরি করছে বুঝতে সাহায্য করে।",
-   "why_bn_note": "",
    "improve_en": "Lifestyle steps like healthy eating, exercise and weight control support sugar control; management depends on the cause, so follow your doctor's advice.",
    "improve_bn": "সুষম খাবার, ব্যায়াম ও ওজন নিয়ন্ত্রণ শর্করা নিয়ন্ত্রণে সাহায্য করে; কারণ অনুযায়ী চিকিৎসা লাগে, তাই চিকিৎসকের পরামর্শ মেনে চলুন।",
    "more_en": "Your doctor may add fasting glucose, HbA1c, insulin or diabetes antibody tests.",
@@ -2385,6 +2385,2076 @@
    "improve_bn": "দ্রুত খাদ্যে ঠিক করা যায় না; মূল কারণের চিকিৎসা করুন, জ্বরে জল পান করুন, সংখ্যা কম হলে আঘাত এড়ান এবং ডাক্তারের পর্যবেক্ষণ পরামর্শ মেনে চলুন।",
    "more_en": "A doctor may add a CBC, peripheral smear, or dengue/infection tests depending on the situation.",
    "more_bn": "পরিস্থিতি অনুযায়ী ডাক্তার সিবিসি, পেরিফেরাল স্মিয়ার বা ডেঙ্গু/সংক্রমণের পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "RBC COUNT",
+   "category": "Pathology",
+   "aka_en": "Red Blood Cell Count",
+   "aka_bn": "লোহিত রক্তকণিকার সংখ্যা",
+   "numeric": true,
+   "unit": "10^6/µL",
+   "gaugeMin": 2,
+   "gaugeMax": 7,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 4.5,
+     "high": 5.5,
+     "note_en": "Adult men",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষ"
+    },
+    {
+     "sex": "female",
+     "low": 4,
+     "high": 5,
+     "note_en": "Adult women",
+     "note_bn": "প্রাপ্তবয়স্ক নারী"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low count may point to anaemia from blood loss, poor nutrition or bone-marrow issues.",
+     "explainer_bn": "কম সংখ্যা রক্তক্ষরণ, পুষ্টির অভাব বা অস্থিমজ্জার সমস্যায় রক্তাল্পতার ইঙ্গিত দিতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your red cell number is within the healthy adult range.",
+     "explainer_bn": "আপনার লোহিত রক্তকণিকার সংখ্যা স্বাভাবিক সীমার মধ্যে রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high count can occur with dehydration, smoking, low oxygen or certain marrow conditions.",
+     "explainer_bn": "বেশি সংখ্যা জলশূন্যতা, ধূমপান, কম অক্সিজেন বা কিছু অস্থিমজ্জার সমস্যায় হতে পারে।"
+    }
+   ],
+   "what_en": "This test counts the number of red blood cells, which carry oxygen, in a fixed volume of blood.",
+   "what_bn": "এই পরীক্ষা নির্দিষ্ট পরিমাণ রক্তে অক্সিজেন বহনকারী লোহিত রক্তকণিকার সংখ্যা গণনা করে।",
+   "why_en": "Doctors use it to help detect anaemia or an excess of red cells and to assess overall blood health.",
+   "why_bn": "চিকিৎসকরা রক্তাল্পতা বা লোহিত কণিকার আধিক্য শনাক্ত করতে এবং রক্তের সার্বিক অবস্থা বুঝতে এটি ব্যবহার করেন।",
+   "improve_en": "Eat iron- and vitamin-rich foods, stay well hydrated, and discuss any abnormal result with your doctor.",
+   "improve_bn": "আয়রন ও ভিটামিন সমৃদ্ধ খাবার খান, পর্যাপ্ত জল পান করুন এবং যেকোনো অস্বাভাবিক ফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add haemoglobin, PCV, MCV and a peripheral smear for a fuller picture.",
+   "more_bn": "চিকিৎসক আরও স্পষ্ট চিত্রের জন্য হিমোগ্লোবিন, পিসিভি, এমসিভি ও পেরিফেরাল স্মিয়ার যোগ করতে পারেন।"
+  },
+  {
+   "key": "Hb%",
+   "category": "Pathology",
+   "aka_en": "Haemoglobin",
+   "aka_bn": "হিমোগ্লোবিন",
+   "numeric": true,
+   "unit": "g/dL",
+   "gaugeMin": 5,
+   "gaugeMax": 20,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 13,
+     "high": 17,
+     "note_en": "Adult men",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষ"
+    },
+    {
+     "sex": "female",
+     "low": 12,
+     "high": 15,
+     "note_en": "Adult women",
+     "note_bn": "প্রাপ্তবয়স্ক নারী"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low haemoglobin means anaemia, often causing tiredness, weakness or breathlessness.",
+     "explainer_bn": "কম হিমোগ্লোবিন রক্তাল্পতা বোঝায়, যা ক্লান্তি, দুর্বলতা বা শ্বাসকষ্টের কারণ হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your blood carries oxygen well; haemoglobin is in the healthy range.",
+     "explainer_bn": "আপনার রক্ত ভালোভাবে অক্সিজেন বহন করছে; হিমোগ্লোবিন স্বাভাবিক সীমায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High values can come from dehydration, smoking, high altitude or marrow disorders.",
+     "explainer_bn": "বেশি মান জলশূন্যতা, ধূমপান, উঁচু স্থান বা অস্থিমজ্জার সমস্যায় হতে পারে।"
+    }
+   ],
+   "what_en": "Haemoglobin is the protein in red cells that carries oxygen; this test measures its concentration in blood.",
+   "what_bn": "হিমোগ্লোবিন লোহিত কণিকার অক্সিজেন বহনকারী প্রোটিন; এই পরীক্ষা রক্তে এর ঘনত্ব মাপে।",
+   "why_en": "It is the main test for detecting and grading anaemia and for monitoring blood loss or treatment.",
+   "why_bn": "রক্তাল্পতা শনাক্ত ও তার মাত্রা নির্ণয় এবং রক্তক্ষরণ বা চিকিৎসা পর্যবেক্ষণে এটি প্রধান পরীক্ষা।",
+   "improve_en": "Include iron-rich foods (green leafy vegetables, pulses), vitamin C and folate; seek follow-up if levels are low.",
+   "improve_bn": "আয়রন সমৃদ্ধ খাবার (সবুজ শাক, ডাল), ভিটামিন সি ও ফোলেট খান; মান কম হলে চিকিৎসকের পরামর্শ নিন।",
+   "more_en": "A doctor may add iron studies, ferritin, vitamin B12 and a peripheral smear if anaemia is found.",
+   "more_bn": "রক্তাল্পতা পেলে চিকিৎসক আয়রন স্টাডি, ফেরিটিন, ভিটামিন বি১২ ও পেরিফেরাল স্মিয়ার যোগ করতে পারেন।"
+  },
+  {
+   "key": "PCV",
+   "category": "Pathology",
+   "aka_en": "Haematocrit (Hct)",
+   "aka_bn": "হেমাটোক্রিট",
+   "numeric": true,
+   "unit": "%",
+   "gaugeMin": 20,
+   "gaugeMax": 60,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 40,
+     "high": 50,
+     "note_en": "Adult men",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষ"
+    },
+    {
+     "sex": "female",
+     "low": 36,
+     "high": 46,
+     "note_en": "Adult women",
+     "note_bn": "প্রাপ্তবয়স্ক নারী"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low value usually reflects anaemia or overhydration of the blood.",
+     "explainer_bn": "কম মান সাধারণত রক্তাল্পতা বা রক্তে অতিরিক্ত জলের ইঙ্গিত দেয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "The proportion of red cells in your blood is healthy.",
+     "explainer_bn": "আপনার রক্তে লোহিত কণিকার অনুপাত স্বাভাবিক রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high value often means dehydration or excess red-cell production.",
+     "explainer_bn": "বেশি মান প্রায়ই জলশূন্যতা বা অতিরিক্ত লোহিত কণিকা তৈরির ইঙ্গিত দেয়।"
+    }
+   ],
+   "what_en": "PCV (haematocrit) is the percentage of your blood volume that is made up of red blood cells.",
+   "what_bn": "পিসিভি (হেমাটোক্রিট) হল আপনার রক্তের আয়তনের যত শতাংশ লোহিত কণিকা দিয়ে তৈরি।",
+   "why_en": "It helps assess anaemia, dehydration or an excess of red cells alongside haemoglobin.",
+   "why_bn": "হিমোগ্লোবিনের সঙ্গে এটি রক্তাল্পতা, জলশূন্যতা বা লোহিত কণিকার আধিক্য মূল্যায়নে সাহায্য করে।",
+   "improve_en": "Stay hydrated, eat a balanced iron-rich diet, and review low or high results with your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান করুন, সুষম আয়রন সমৃদ্ধ খাবার খান এবং কম বা বেশি ফল চিকিৎসকের সঙ্গে পর্যালোচনা করুন।",
+   "more_en": "Related tests include haemoglobin, RBC count, MCV and iron studies.",
+   "more_bn": "সম্পর্কিত পরীক্ষার মধ্যে রয়েছে হিমোগ্লোবিন, আরবিসি কাউন্ট, এমসিভি ও আয়রন স্টাডি।"
+  },
+  {
+   "key": "MCV",
+   "category": "Pathology",
+   "aka_en": "Mean Corpuscular Volume",
+   "aka_bn": "লোহিত কণিকার গড় আয়তন",
+   "numeric": true,
+   "unit": "fL",
+   "gaugeMin": 50,
+   "gaugeMax": 130,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 80,
+     "high": 100,
+     "note_en": "Adults",
+     "note_bn": "প্রাপ্তবয়স্ক"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Small red cells (low MCV) often suggest iron-deficiency or thalassaemia.",
+     "explainer_bn": "ছোট লোহিত কণিকা (কম এমসিভি) প্রায়ই আয়রনের অভাব বা থ্যালাসেমিয়ার ইঙ্গিত দেয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your red cells are of average size, within the normal range.",
+     "explainer_bn": "আপনার লোহিত কণিকার আকার স্বাভাবিক সীমার মধ্যে রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Large red cells (high MCV) can point to vitamin B12 or folate deficiency.",
+     "explainer_bn": "বড় লোহিত কণিকা (বেশি এমসিভি) ভিটামিন বি১২ বা ফোলেটের অভাবের ইঙ্গিত দিতে পারে।"
+    }
+   ],
+   "what_en": "MCV is the average size (volume) of your red blood cells, calculated from the blood count.",
+   "what_bn": "এমসিভি হল আপনার লোহিত রক্তকণিকার গড় আকার (আয়তন), যা রক্ত গণনা থেকে হিসাব করা হয়।",
+   "why_en": "It helps classify the type of anaemia so the doctor can find its likely cause.",
+   "why_bn": "এটি রক্তাল্পতার ধরন নির্ণয়ে সাহায্য করে, যাতে চিকিৎসক সম্ভাব্য কারণ খুঁজে পান।",
+   "improve_en": "Eat a balanced diet with iron, folate and vitamin B12, and follow up on any abnormal value.",
+   "improve_bn": "আয়রন, ফোলেট ও ভিটামিন বি১২ সমৃদ্ধ সুষম খাবার খান এবং যেকোনো অস্বাভাবিক মানের জন্য চিকিৎসকের পরামর্শ নিন।",
+   "more_en": "A doctor may add iron studies, ferritin, vitamin B12, folate or haemoglobin electrophoresis.",
+   "more_bn": "চিকিৎসক আয়রন স্টাডি, ফেরিটিন, ভিটামিন বি১২, ফোলেট বা হিমোগ্লোবিন ইলেক্ট্রোফোরেসিস যোগ করতে পারেন।"
+  },
+  {
+   "key": "RETICULOCYTE COUNT (Including Corrected RC & RPMI)",
+   "category": "Pathology",
+   "aka_en": "Retic Count",
+   "aka_bn": "রেটিকুলোসাইট কাউন্ট",
+   "numeric": true,
+   "unit": "%",
+   "gaugeMin": 0,
+   "gaugeMax": 6,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0.5,
+     "high": 2.5,
+     "note_en": "Adults",
+     "note_bn": "প্রাপ্তবয়স্ক"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low count suggests the bone marrow is making too few new red cells.",
+     "explainer_bn": "কম সংখ্যা বোঝায় অস্থিমজ্জা খুব কম নতুন লোহিত কণিকা তৈরি করছে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "New red-cell production is at a normal, steady level.",
+     "explainer_bn": "নতুন লোহিত কণিকা তৈরির হার স্বাভাবিক ও স্থিতিশীল রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high count means the marrow is working hard, often after blood loss or in haemolysis.",
+     "explainer_bn": "বেশি সংখ্যা বোঝায় অস্থিমজ্জা বেশি কাজ করছে, প্রায়ই রক্তক্ষরণ বা রক্তকণিকা ভাঙার পরে।"
+    }
+   ],
+   "what_en": "This test measures young, newly made red blood cells (reticulocytes) as a percentage, with corrected values.",
+   "what_bn": "এই পরীক্ষা সদ্য তৈরি তরুণ লোহিত কণিকা (রেটিকুলোসাইট) শতাংশে মাপে, সংশোধিত মানসহ।",
+   "why_en": "It shows how well the bone marrow is responding to anaemia and helps find its cause.",
+   "why_bn": "এটি দেখায় অস্থিমজ্জা রক্তাল্পতায় কতটা সাড়া দিচ্ছে এবং কারণ খুঁজতে সাহায্য করে।",
+   "improve_en": "Follow your doctor's advice for the underlying cause; nutrition supporting red-cell production may help.",
+   "improve_bn": "অন্তর্নিহিত কারণের জন্য চিকিৎসকের পরামর্শ মানুন; লোহিত কণিকা তৈরিতে সহায়ক পুষ্টি উপকারী হতে পারে।",
+   "more_en": "Related tests include haemoglobin, peripheral smear, iron studies and vitamin B12/folate.",
+   "more_bn": "সম্পর্কিত পরীক্ষার মধ্যে রয়েছে হিমোগ্লোবিন, পেরিফেরাল স্মিয়ার, আয়রন স্টাডি ও ভিটামিন বি১২/ফোলেট।"
+  },
+  {
+   "key": "PROTHROMBIN TIME WITH INR",
+   "category": "Pathology",
+   "aka_en": "PT/INR",
+   "aka_bn": "পিটি/আইএনআর",
+   "numeric": true,
+   "unit": "INR",
+   "gaugeMin": 0.5,
+   "gaugeMax": 5,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0.8,
+     "high": 1.2,
+     "note_en": "INR in a person not on blood thinners",
+     "note_bn": "রক্ত পাতলা করার ওষুধ না নেওয়া ব্যক্তির আইএনআর"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low INR means blood clots faster than average; rarely a concern on its own.",
+     "explainer_bn": "কম আইএনআর বোঝায় রক্ত স্বাভাবিকের চেয়ে দ্রুত জমাট বাঁধছে; একা এটি সাধারণত উদ্বেগের নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Blood clotting time is within the expected range.",
+     "explainer_bn": "রক্ত জমাট বাঁধার সময় প্রত্যাশিত সীমার মধ্যে রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high INR means blood clots slowly, raising bleeding risk; common on blood thinners or with liver problems.",
+     "explainer_bn": "বেশি আইএনআর বোঝায় রক্ত ধীরে জমাট বাঁধছে, রক্তক্ষরণের ঝুঁকি বাড়ে; রক্ত পাতলা করার ওষুধ বা যকৃতের সমস্যায় সাধারণ।"
+    }
+   ],
+   "what_en": "This test measures how long your blood takes to clot, reported as PT (seconds) and a standardised INR.",
+   "what_bn": "এই পরীক্ষা রক্ত জমাট বাঁধতে কত সময় লাগে তা মাপে, পিটি (সেকেন্ড) ও প্রমিত আইএনআর হিসেবে দেখানো হয়।",
+   "why_en": "It checks the blood-clotting pathway, monitors blood-thinner treatment, and assesses liver function.",
+   "why_bn": "এটি রক্ত জমাট বাঁধার প্রক্রিয়া পরীক্ষা করে, রক্ত পাতলা করার চিকিৎসা পর্যবেক্ষণ করে এবং যকৃতের কার্যকারিতা মূল্যায়ন করে।",
+   "improve_en": "If you take blood thinners, keep diet and medicines consistent and attend monitoring; never adjust doses yourself.",
+   "improve_bn": "রক্ত পাতলা করার ওষুধ নিলে খাদ্য ও ওষুধ নিয়মিত রাখুন এবং পর্যবেক্ষণে থাকুন; নিজে থেকে ডোজ বদলাবেন না।",
+   "more_en": "A doctor may add APTT, liver function tests or other clotting studies.",
+   "more_bn": "চিকিৎসক এপিটিটি, যকৃতের কার্যকারিতা পরীক্ষা বা অন্যান্য জমাট বাঁধার পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "APTT",
+   "category": "Pathology",
+   "aka_en": "Activated Partial Thromboplastin Time",
+   "aka_bn": "অ্যাক্টিভেটেড পার্শিয়াল থ্রম্বোপ্লাস্টিন টাইম",
+   "numeric": true,
+   "unit": "seconds",
+   "gaugeMin": 0,
+   "gaugeMax": 70,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 25,
+     "high": 35,
+     "note_en": "Typical adult range (varies by lab)",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক সীমা (ল্যাব অনুযায়ী পরিবর্তিত)"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A shorter time is usually not a concern and may reflect faster clotting.",
+     "explainer_bn": "কম সময় সাধারণত উদ্বেগের নয় এবং দ্রুত জমাট বাঁধার ইঙ্গিত দিতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "This part of the clotting system is working normally.",
+     "explainer_bn": "জমাট বাঁধার এই অংশটি স্বাভাবিকভাবে কাজ করছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A prolonged time can mean a clotting-factor deficiency or effect of certain blood thinners.",
+     "explainer_bn": "বেশি সময় জমাট বাঁধার উপাদানের ঘাটতি বা কিছু রক্ত পাতলা করার ওষুধের প্রভাব বোঝাতে পারে।"
+    }
+   ],
+   "what_en": "APTT measures how long blood takes to clot through one of the main clotting pathways.",
+   "what_bn": "এপিটিটি রক্ত জমাট বাঁধার একটি প্রধান প্রক্রিয়ার মাধ্যমে জমাট বাঁধতে কত সময় লাগে তা মাপে।",
+   "why_en": "It helps investigate bleeding disorders and monitors treatment with certain blood-thinning medicines.",
+   "why_bn": "এটি রক্তক্ষরণজনিত সমস্যা অনুসন্ধানে এবং কিছু রক্ত পাতলা করার ওষুধের চিকিৎসা পর্যবেক্ষণে সাহায্য করে।",
+   "improve_en": "No lifestyle change fixes APTT directly; discuss abnormal results and any bleeding tendency with your doctor.",
+   "improve_bn": "কোনো জীবনযাত্রার পরিবর্তন সরাসরি এপিটিটি ঠিক করে না; অস্বাভাবিক ফল ও রক্তক্ষরণের প্রবণতা চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add PT/INR, fibrinogen, or specific clotting-factor assays.",
+   "more_bn": "চিকিৎসক পিটি/আইএনআর, ফাইব্রিনোজেন বা নির্দিষ্ট জমাট বাঁধার উপাদানের পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "D-DIMER",
+   "category": "Pathology",
+   "aka_en": "",
+   "aka_bn": "",
+   "numeric": true,
+   "unit": "ng/mL FEU",
+   "gaugeMin": 0,
+   "gaugeMax": 2000,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 500,
+     "note_en": "Below 500 is generally considered normal",
+     "note_bn": "৫০০-এর নিচে সাধারণত স্বাভাবিক ধরা হয়"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low or normal result makes an active clot in the body unlikely.",
+     "explainer_bn": "কম বা স্বাভাবিক ফল শরীরে সক্রিয় রক্ত জমাট থাকার সম্ভাবনা কমিয়ে দেয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Values within range suggest no significant clot breakdown is occurring.",
+     "explainer_bn": "সীমার মধ্যে মান বোঝায় উল্লেখযোগ্য রক্ত জমাট ভাঙছে না।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level can occur with clots, infection, inflammation, surgery or pregnancy and needs interpretation.",
+     "explainer_bn": "বেশি মান রক্ত জমাট, সংক্রমণ, প্রদাহ, অস্ত্রোপচার বা গর্ভাবস্থায় হতে পারে এবং ব্যাখ্যা প্রয়োজন।"
+    }
+   ],
+   "what_en": "D-dimer measures a fragment released when a blood clot breaks down in the body.",
+   "what_bn": "ডি-ডাইমার শরীরে রক্ত জমাট ভাঙার সময় নিঃসৃত একটি অংশ মাপে।",
+   "why_en": "Doctors use it mainly to help rule out clots in the legs (DVT) or lungs (pulmonary embolism).",
+   "why_bn": "চিকিৎসকরা মূলত পায়ের (ডিভিটি) বা ফুসফুসের (পালমোনারি এম্বলিজম) রক্ত জমাট বাদ দিতে এটি ব্যবহার করেন।",
+   "improve_en": "A raised result is not a diagnosis; follow your doctor's advice for any further scans or tests.",
+   "improve_bn": "বেশি ফল কোনো রোগনির্ণয় নয়; আরও স্ক্যান বা পরীক্ষার জন্য চিকিৎসকের পরামর্শ মানুন।",
+   "more_en": "A doctor may add Doppler ultrasound, CT scan or other clotting tests based on symptoms.",
+   "more_bn": "উপসর্গ অনুযায়ী চিকিৎসক ডপলার আল্ট্রাসাউন্ড, সিটি স্ক্যান বা অন্যান্য জমাট বাঁধার পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "FIBRINOGEN",
+   "category": "Pathology",
+   "aka_en": "Factor I",
+   "aka_bn": "ফ্যাক্টর ওয়ান",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 800,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 200,
+     "high": 400,
+     "note_en": "Typical adult range",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক সীমা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low level can impair clotting and may occur in liver disease or heavy consumption of clotting factors.",
+     "explainer_bn": "কম মান জমাট বাঁধায় ব্যাঘাত ঘটাতে পারে এবং যকৃতের রোগ বা জমাট বাঁধার উপাদান বেশি খরচে হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "You have an adequate amount of this clotting protein.",
+     "explainer_bn": "আপনার এই জমাট বাঁধার প্রোটিন পর্যাপ্ত পরিমাণে রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level often reflects inflammation, infection or pregnancy, as it rises with body stress.",
+     "explainer_bn": "বেশি মান প্রায়ই প্রদাহ, সংক্রমণ বা গর্ভাবস্থার ইঙ্গিত দেয়, কারণ শারীরিক চাপে এটি বাড়ে।"
+    }
+   ],
+   "what_en": "Fibrinogen is a protein made by the liver that helps form blood clots.",
+   "what_bn": "ফাইব্রিনোজেন যকৃতে তৈরি একটি প্রোটিন যা রক্ত জমাট বাঁধতে সাহায্য করে।",
+   "why_en": "It is checked to assess bleeding or clotting problems and as a marker of inflammation.",
+   "why_bn": "রক্তক্ষরণ বা জমাট বাঁধার সমস্যা মূল্যায়নে এবং প্রদাহের চিহ্ন হিসেবে এটি পরীক্ষা করা হয়।",
+   "improve_en": "Manage underlying inflammation or liver health as advised; discuss abnormal results with your doctor.",
+   "improve_bn": "পরামর্শ অনুযায়ী অন্তর্নিহিত প্রদাহ বা যকৃতের স্বাস্থ্য নিয়ন্ত্রণ করুন; অস্বাভাবিক ফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add PT/INR, APTT, D-dimer or liver function tests.",
+   "more_bn": "চিকিৎসক পিটি/আইএনআর, এপিটিটি, ডি-ডাইমার বা যকৃতের কার্যকারিতা পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "hs-CRP (high sensitive CRP)",
+   "category": "Pathology",
+   "aka_en": "High-sensitivity C-Reactive Protein",
+   "aka_bn": "হাই-সেনসিটিভ সি-রিয়্যাকটিভ প্রোটিন",
+   "numeric": true,
+   "unit": "mg/L",
+   "gaugeMin": 0,
+   "gaugeMax": 10,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 3,
+     "note_en": "Below 1 = lower risk, 1-3 = average, above 3 = higher cardiovascular risk",
+     "note_bn": "১-এর নিচে = কম ঝুঁকি, ১-৩ = গড়, ৩-এর উপরে = বেশি হৃদরোগের ঝুঁকি"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low level (below 1) is linked with lower cardiovascular risk.",
+     "explainer_bn": "কম মান (১-এর নিচে) কম হৃদরোগের ঝুঁকির সঙ্গে সম্পর্কিত।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "A mid-range value (1-3) reflects average cardiovascular risk.",
+     "explainer_bn": "মাঝারি মান (১-৩) গড় হৃদরোগের ঝুঁকির ইঙ্গিত দেয়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level (above 3) suggests more inflammation and higher cardiovascular risk.",
+     "explainer_bn": "বেশি মান (৩-এর উপরে) বেশি প্রদাহ ও বেশি হৃদরোগের ঝুঁকির ইঙ্গিত দেয়।"
+    }
+   ],
+   "what_en": "hs-CRP measures very low levels of C-reactive protein, a marker of low-grade inflammation in the body.",
+   "what_bn": "এইচএস-সিআরপি শরীরে মৃদু প্রদাহের চিহ্ন সি-রিয়্যাকটিভ প্রোটিনের খুব কম মাত্রা মাপে।",
+   "why_en": "It is used mainly to help estimate the risk of heart disease and stroke.",
+   "why_bn": "এটি মূলত হৃদরোগ ও স্ট্রোকের ঝুঁকি অনুমানে সাহায্য করতে ব্যবহৃত হয়।",
+   "improve_en": "A heart-healthy diet, regular exercise, not smoking and weight control can lower inflammation over time.",
+   "improve_bn": "হৃদরোগ-বান্ধব খাদ্য, নিয়মিত ব্যায়াম, ধূমপান না করা ও ওজন নিয়ন্ত্রণ সময়ের সঙ্গে প্রদাহ কমাতে পারে।",
+   "more_en": "A doctor may add a lipid profile, blood sugar and blood pressure check for full heart-risk assessment.",
+   "more_bn": "সম্পূর্ণ হৃদঝুঁকি মূল্যায়নে চিকিৎসক লিপিড প্রোফাইল, রক্তে শর্করা ও রক্তচাপ পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "CRP: NEPHELOMETRY",
+   "category": "Pathology",
+   "aka_en": "C-Reactive Protein",
+   "aka_bn": "সি-রিয়্যাকটিভ প্রোটিন",
+   "numeric": true,
+   "unit": "mg/L",
+   "gaugeMin": 0,
+   "gaugeMax": 50,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 6,
+     "note_en": "Below about 6 is generally normal (varies by lab)",
+     "note_bn": "প্রায় ৬-এর নিচে সাধারণত স্বাভাবিক (ল্যাব অনুযায়ী পরিবর্তিত)"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low or normal result suggests little active inflammation or infection.",
+     "explainer_bn": "কম বা স্বাভাবিক ফল সামান্য সক্রিয় প্রদাহ বা সংক্রমণের ইঙ্গিত দেয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Levels within range indicate no significant inflammation is detected.",
+     "explainer_bn": "সীমার মধ্যে মান বোঝায় উল্লেখযোগ্য প্রদাহ পাওয়া যায়নি।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level signals inflammation or infection somewhere in the body and needs interpretation.",
+     "explainer_bn": "বেশি মান শরীরের কোথাও প্রদাহ বা সংক্রমণের ইঙ্গিত দেয় এবং ব্যাখ্যা প্রয়োজন।"
+    }
+   ],
+   "what_en": "This test measures C-reactive protein, which rises when there is inflammation or infection in the body.",
+   "what_bn": "এই পরীক্ষা সি-রিয়্যাকটিভ প্রোটিন মাপে, যা শরীরে প্রদাহ বা সংক্রমণ হলে বাড়ে।",
+   "why_en": "Doctors order it to detect and monitor infection, inflammation or the response to treatment.",
+   "why_bn": "সংক্রমণ, প্রদাহ বা চিকিৎসার সাড়া শনাক্ত ও পর্যবেক্ষণে চিকিৎসকরা এটি নির্দেশ করেন।",
+   "improve_en": "CRP falls as the underlying cause settles; follow treatment advice and repeat the test if asked.",
+   "improve_bn": "অন্তর্নিহিত কারণ ঠিক হলে সিআরপি কমে; চিকিৎসার পরামর্শ মানুন এবং বলা হলে পরীক্ষা পুনরায় করান।",
+   "more_en": "A doctor may add a complete blood count, ESR or specific infection tests depending on symptoms.",
+   "more_bn": "উপসর্গ অনুযায়ী চিকিৎসক সম্পূর্ণ রক্ত গণনা, ইএসআর বা নির্দিষ্ট সংক্রমণ পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "AMYLASE",
+   "category": "Pathology",
+   "aka_en": "Serum Amylase",
+   "aka_bn": "সিরাম অ্যামাইলেজ",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 250,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 30,
+     "high": 110,
+     "note_en": "Typical adult range (varies by lab)",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক সীমা (ল্যাব অনুযায়ী পরিবর্তিত)"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low level is usually not a concern but can occur with long-standing pancreas damage.",
+     "explainer_bn": "কম মান সাধারণত উদ্বেগের নয়, তবে দীর্ঘস্থায়ী অগ্ন্যাশয়ের ক্ষতিতে হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your amylase level is within the expected range.",
+     "explainer_bn": "আপনার অ্যামাইলেজের মাত্রা প্রত্যাশিত সীমার মধ্যে রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level often points to pancreas inflammation (pancreatitis) or salivary-gland problems.",
+     "explainer_bn": "বেশি মান প্রায়ই অগ্ন্যাশয়ের প্রদাহ (প্যানক্রিয়াটাইটিস) বা লালাগ্রন্থির সমস্যার ইঙ্গিত দেয়।"
+    }
+   ],
+   "what_en": "Amylase is an enzyme, mainly from the pancreas and salivary glands, that helps digest carbohydrates.",
+   "what_bn": "অ্যামাইলেজ মূলত অগ্ন্যাশয় ও লালাগ্রন্থি থেকে আসা একটি এনজাইম যা শর্করা হজমে সাহায্য করে।",
+   "why_en": "It is measured mainly to help diagnose or monitor pancreatitis and related abdominal conditions.",
+   "why_bn": "মূলত প্যানক্রিয়াটাইটিস ও সম্পর্কিত পেটের সমস্যা নির্ণয় বা পর্যবেক্ষণে এটি মাপা হয়।",
+   "improve_en": "Avoid alcohol and heavy fatty meals; if pancreatitis is suspected, seek prompt medical care.",
+   "improve_bn": "অ্যালকোহল ও অতিরিক্ত তৈলাক্ত খাবার এড়িয়ে চলুন; প্যানক্রিয়াটাইটিস সন্দেহ হলে দ্রুত চিকিৎসা নিন।",
+   "more_en": "A doctor may add serum lipase, an abdominal ultrasound or CT scan.",
+   "more_bn": "চিকিৎসক সিরাম লাইপেজ, পেটের আল্ট্রাসাউন্ড বা সিটি স্ক্যান যোগ করতে পারেন।"
+  },
+  {
+   "key": "LIPASE",
+   "category": "Pathology",
+   "aka_en": "Serum Lipase",
+   "aka_bn": "সিরাম লাইপেজ",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 120,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 13,
+     "high": 60,
+     "note_en": "Typical adult range; may vary slightly by lab method.",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক পরিসর; ল্যাব পদ্ধতিভেদে সামান্য বদলাতে পারে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low lipase is uncommon and rarely a concern on its own.",
+     "explainer_bn": "লাইপেজ কম হওয়া বিরল এবং সাধারণত একা উদ্বেগের কারণ নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your pancreatic enzyme level is in the expected range.",
+     "explainer_bn": "আপনার অগ্ন্যাশয়ের এনজাইমের মাত্রা প্রত্যাশিত পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High lipase can point to pancreas inflammation and needs a doctor's review.",
+     "explainer_bn": "লাইপেজ বেশি হলে অগ্ন্যাশয়ে প্রদাহের ইঙ্গিত দিতে পারে, চিকিৎসকের পরামর্শ দরকার।"
+    }
+   ],
+   "what_en": "Lipase is an enzyme made by the pancreas to help digest fats; the test measures its level in blood.",
+   "what_bn": "লাইপেজ অগ্ন্যাশয় থেকে তৈরি একটি এনজাইম যা চর্বি হজমে সাহায্য করে; এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors order it mainly to check for pancreatitis when there is abdominal pain, nausea or vomiting.",
+   "why_bn": "পেটে ব্যথা, বমিভাব বা বমি হলে অগ্ন্যাশয়ের প্রদাহ (প্যানক্রিয়াটাইটিস) যাচাই করতে চিকিৎসক এটি করান।",
+   "improve_en": "Avoid alcohol and very fatty meals, stay hydrated, and follow up on any persistent abdominal pain with your doctor.",
+   "improve_bn": "মদ্যপান ও অতিরিক্ত চর্বিযুক্ত খাবার এড়িয়ে চলুন, পর্যাপ্ত জল পান করুন এবং পেটের ব্যথা থাকলে চিকিৎসকের সঙ্গে পরামর্শ করুন।",
+   "more_en": "A doctor may add serum amylase and an abdominal ultrasound.",
+   "more_bn": "চিকিৎসক সিরাম অ্যামাইলেজ ও পেটের আল্ট্রাসাউন্ড যোগ করতে পারেন।"
+  },
+  {
+   "key": "CPK",
+   "category": "Pathology",
+   "aka_en": "CK / Creatine Kinase (Total)",
+   "aka_bn": "সিকে / ক্রিয়েটিন কাইনেজ (মোট)",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 350,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 38,
+     "high": 174,
+     "note_en": "Higher in men and after strenuous exercise.",
+     "note_bn": "পুরুষদের ও কঠোর ব্যায়ামের পর মাত্রা বেশি থাকে।"
+    },
+    {
+     "sex": "female",
+     "low": 26,
+     "high": 140,
+     "note_en": "Typical adult female range.",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক মহিলাদের পরিসর।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low CPK is usually harmless and not clinically important.",
+     "explainer_bn": "সিপিকে কম হওয়া সাধারণত ক্ষতিকর নয় এবং তেমন গুরুত্বপূর্ণ নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your muscle enzyme level is in the expected range.",
+     "explainer_bn": "আপনার পেশির এনজাইমের মাত্রা প্রত্যাশিত পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High CPK suggests muscle strain or injury; heavy exercise can raise it temporarily.",
+     "explainer_bn": "সিপিকে বেশি হলে পেশির চাপ বা আঘাতের ইঙ্গিত; ভারী ব্যায়ামে সাময়িক বাড়তে পারে।"
+    }
+   ],
+   "what_en": "CPK (creatine kinase) is an enzyme found mainly in muscles; the test measures the total level released into blood.",
+   "what_bn": "সিপিকে (ক্রিয়েটিন কাইনেজ) মূলত পেশিতে থাকা একটি এনজাইম; এই পরীক্ষায় রক্তে নিঃসৃত মোট মাত্রা মাপা হয়।",
+   "why_en": "It helps assess muscle damage, muscle pain, or weakness, and sometimes heart or muscle disorders.",
+   "why_bn": "পেশির ক্ষতি, পেশিব্যথা বা দুর্বলতা এবং কখনও হৃদপিণ্ড বা পেশির রোগ যাচাই করতে এটি সাহায্য করে।",
+   "improve_en": "Avoid unusually intense exercise before testing, stay hydrated, and discuss persistent muscle pain with your doctor.",
+   "improve_bn": "পরীক্ষার আগে অস্বাভাবিক কঠোর ব্যায়াম এড়িয়ে চলুন, পর্যাপ্ত জল পান করুন এবং দীর্ঘস্থায়ী পেশিব্যথা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add CPK-MB, LDH, or electrolytes depending on the cause.",
+   "more_bn": "কারণ অনুযায়ী চিকিৎসক সিপিকে-এমবি, এলডিএইচ বা ইলেক্ট্রোলাইট যোগ করতে পারেন।"
+  },
+  {
+   "key": "CPK - MB",
+   "category": "Pathology",
+   "aka_en": "CK-MB",
+   "aka_bn": "সিকে-এমবি",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 50,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 25,
+     "note_en": "Also read as a fraction of total CPK; method-dependent.",
+     "note_bn": "মোট সিপিকে-এর অনুপাত হিসেবেও দেখা হয়; পদ্ধতিভেদে ভিন্ন।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values are normal for this heart-muscle enzyme fraction.",
+     "explainer_bn": "এই হৃদপেশির এনজাইম অংশে কম মাত্রা স্বাভাবিক।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "No significant heart-muscle enzyme release is seen.",
+     "explainer_bn": "হৃদপেশি থেকে উল্লেখযোগ্য এনজাইম নিঃসরণ দেখা যাচ্ছে না।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High CK-MB may indicate heart-muscle injury and needs prompt medical review.",
+     "explainer_bn": "সিকে-এমবি বেশি হলে হৃদপেশির আঘাতের ইঙ্গিত দিতে পারে, দ্রুত চিকিৎসকের পরামর্শ দরকার।"
+    }
+   ],
+   "what_en": "CK-MB is the heart-muscle form of creatine kinase; the test measures how much is in the blood.",
+   "what_bn": "সিকে-এমবি হলো ক্রিয়েটিন কাইনেজের হৃদপেশি সংক্রান্ত রূপ; এই পরীক্ষায় রক্তে এর পরিমাণ মাপা হয়।",
+   "why_en": "It is used to help detect or monitor damage to the heart muscle, such as after a suspected heart attack.",
+   "why_bn": "সন্দেহভাজন হার্ট অ্যাটাকের মতো ক্ষেত্রে হৃদপেশির ক্ষতি শনাক্ত বা পর্যবেক্ষণে এটি ব্যবহৃত হয়।",
+   "improve_en": "This is a diagnostic marker, not lifestyle-controlled; if raised, follow your doctor's cardiac advice closely.",
+   "improve_bn": "এটি একটি রোগনির্ণয়ী সূচক, জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; বেশি হলে চিকিৎসকের হৃদরোগ সংক্রান্ত পরামর্শ মেনে চলুন।",
+   "more_en": "A doctor usually adds Troponin I/T and an ECG.",
+   "more_bn": "চিকিৎসক সাধারণত ট্রপোনিন আই/টি ও ইসিজি যোগ করেন।"
+  },
+  {
+   "key": "HIGH SENSITIVE (HS) TROPONIN I - QUANTITATIVE",
+   "category": "Pathology",
+   "aka_en": "hs-Troponin I",
+   "aka_bn": "এইচএস-ট্রপোনিন আই",
+   "numeric": true,
+   "unit": "ng/L",
+   "gaugeMin": 0,
+   "gaugeMax": 60,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0,
+     "high": 34,
+     "note_en": "Below the 99th-percentile cutoff; cutoff varies by assay.",
+     "note_bn": "৯৯তম পার্সেন্টাইল সীমার নিচে; অ্যাসে অনুযায়ী সীমা বদলায়।"
+    },
+    {
+     "sex": "female",
+     "low": 0,
+     "high": 16,
+     "note_en": "Women have a lower cutoff; assay-dependent.",
+     "note_bn": "মহিলাদের সীমা কম; অ্যাসে অনুযায়ী ভিন্ন।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Very low or undetectable levels are reassuring for the heart.",
+     "explainer_bn": "অত্যন্ত কম বা অশনাক্তযোগ্য মাত্রা হৃদপিণ্ডের জন্য আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Below the cutoff; no clear evidence of heart-muscle injury.",
+     "explainer_bn": "সীমার নিচে; হৃদপেশির আঘাতের স্পষ্ট প্রমাণ নেই।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels may indicate heart-muscle strain or injury and need urgent evaluation.",
+     "explainer_bn": "বেশি মাত্রা হৃদপেশির চাপ বা আঘাতের ইঙ্গিত দিতে পারে, জরুরি মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "This is a very sensitive blood test measuring troponin I, a protein released when heart muscle is injured.",
+   "what_bn": "এটি একটি অত্যন্ত সংবেদনশীল রক্ত পরীক্ষা যা ট্রপোনিন আই মাপে, হৃদপেশি আঘাত পেলে এই প্রোটিন নিঃসৃত হয়।",
+   "why_en": "It is a key test to diagnose or rule out a heart attack and to assess chest pain.",
+   "why_bn": "হার্ট অ্যাটাক নির্ণয় বা বাদ দিতে এবং বুকে ব্যথা মূল্যায়নে এটি একটি প্রধান পরীক্ষা।",
+   "improve_en": "Not controlled by lifestyle at the time of testing; if elevated, treat it as urgent and follow cardiac guidance.",
+   "improve_bn": "পরীক্ষার সময়ে জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; বেশি হলে জরুরি হিসেবে নিন এবং হৃদরোগের পরামর্শ মেনে চলুন।",
+   "more_en": "Usually paired with serial troponin, ECG, and sometimes NT-proBNP.",
+   "more_bn": "সাধারণত ধারাবাহিক ট্রপোনিন, ইসিজি এবং কখনও এনটি-প্রো-বিএনপি-র সঙ্গে করা হয়।"
+  },
+  {
+   "key": "NT PRO BNP",
+   "category": "Pathology",
+   "aka_en": "NT-proBNP",
+   "aka_bn": "এনটি-প্রো-বিএনপি",
+   "numeric": true,
+   "unit": "pg/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 400,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 125,
+     "note_en": "Cutoff rises with age; higher thresholds apply in older adults.",
+     "note_bn": "বয়সের সঙ্গে সীমা বাড়ে; বয়স্কদের ক্ষেত্রে বেশি সীমা প্রযোজ্য।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values make significant heart failure unlikely.",
+     "explainer_bn": "কম মাত্রা উল্লেখযোগ্য হৃদযন্ত্রের দুর্বলতা অসম্ভব করে তোলে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the expected range for heart-strain hormone.",
+     "explainer_bn": "হৃদযন্ত্রের চাপ সংক্রান্ত হরমোনের প্রত্যাশিত পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels suggest the heart is under strain and warrant a cardiac review.",
+     "explainer_bn": "বেশি মাত্রা হৃদপিণ্ডের ওপর চাপের ইঙ্গিত দেয়, হৃদরোগ পরীক্ষা দরকার।"
+    }
+   ],
+   "what_en": "NT-proBNP is a hormone fragment released when the heart is stretched or under pressure; this test measures it in blood.",
+   "what_bn": "এনটি-প্রো-বিএনপি একটি হরমোন খণ্ড যা হৃদপিণ্ড টান বা চাপে পড়লে নিঃসৃত হয়; এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors order it to help diagnose and monitor heart failure, especially with breathlessness or swelling.",
+   "why_bn": "শ্বাসকষ্ট বা ফোলাভাব থাকলে হৃদযন্ত্রের দুর্বলতা নির্ণয় ও পর্যবেক্ষণে চিকিৎসক এটি করান।",
+   "improve_en": "Manage blood pressure, limit excess salt and fluids as advised, stay active within limits, and keep cardiac follow-ups.",
+   "improve_bn": "রক্তচাপ নিয়ন্ত্রণে রাখুন, পরামর্শ অনুযায়ী অতিরিক্ত লবণ ও জল সীমিত করুন, সীমার মধ্যে সক্রিয় থাকুন এবং হৃদরোগের ফলোআপ বজায় রাখুন।",
+   "more_en": "A doctor may add an echocardiogram, ECG, and kidney function tests.",
+   "more_bn": "চিকিৎসক ইকোকার্ডিওগ্রাম, ইসিজি ও কিডনির কার্যকারিতার পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "HOMOCYSTEINE",
+   "category": "Pathology",
+   "aka_en": "Serum Homocysteine",
+   "aka_bn": "সিরাম হোমোসিস্টেইন",
+   "numeric": true,
+   "unit": "µmol/L",
+   "gaugeMin": 0,
+   "gaugeMax": 30,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 5,
+     "high": 15,
+     "note_en": "Levels above 15 are generally considered elevated.",
+     "note_bn": "১৫-এর বেশি মাত্রা সাধারণত বাড়তি ধরা হয়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low homocysteine is generally not a concern.",
+     "explainer_bn": "হোমোসিস্টেইন কম হওয়া সাধারণত উদ্বেগের কারণ নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your level is in the healthy range.",
+     "explainer_bn": "আপনার মাত্রা স্বাস্থ্যকর পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High levels are linked to B-vitamin deficiency and higher cardiovascular risk.",
+     "explainer_bn": "বেশি মাত্রা বি-ভিটামিনের ঘাটতি ও বাড়তি হৃদরোগ ঝুঁকির সঙ্গে জড়িত।"
+    }
+   ],
+   "what_en": "Homocysteine is an amino acid in blood; high levels can relate to vitamin B deficiency and blood vessel health.",
+   "what_bn": "হোমোসিস্টেইন রক্তে থাকা একটি অ্যামিনো অ্যাসিড; এর বেশি মাত্রা বি-ভিটামিনের ঘাটতি ও রক্তনালীর স্বাস্থ্যের সঙ্গে সম্পর্কিত।",
+   "why_en": "It is checked to assess cardiovascular risk and to look for B12/folate deficiency.",
+   "why_bn": "হৃদরোগের ঝুঁকি মূল্যায়ন এবং বি১২/ফোলেটের ঘাটতি খুঁজতে এটি পরীক্ষা করা হয়।",
+   "improve_en": "Eat folate-rich greens, legumes and B12 sources, avoid excess alcohol and smoking, and discuss vitamin levels with your doctor.",
+   "improve_bn": "ফোলেটসমৃদ্ধ শাকসবজি, ডাল ও বি১২ যুক্ত খাবার খান, অতিরিক্ত মদ্যপান ও ধূমপান এড়ান এবং ভিটামিনের মাত্রা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add vitamin B12, folate, and a lipid profile.",
+   "more_bn": "চিকিৎসক ভিটামিন বি১২, ফোলেট ও লিপিড প্রোফাইল যোগ করতে পারেন।"
+  },
+  {
+   "key": "PSA (Prostate Specific Antigen)",
+   "category": "Pathology",
+   "aka_en": "Total PSA",
+   "aka_bn": "টোটাল পিএসএ",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 10,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0,
+     "high": 4,
+     "note_en": "Cutoff rises with age; test applies to men.",
+     "note_bn": "বয়সের সঙ্গে সীমা বাড়ে; পরীক্ষাটি পুরুষদের জন্য।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low PSA is reassuring for prostate health.",
+     "explainer_bn": "পিএসএ কম থাকা প্রস্টেটের জন্য আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the usual range for adult men.",
+     "explainer_bn": "প্রাপ্তবয়স্ক পুরুষদের স্বাভাবিক পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised PSA can occur with enlargement, infection or cancer and needs evaluation.",
+     "explainer_bn": "পিএসএ বেশি হলে প্রস্টেট বড় হওয়া, সংক্রমণ বা ক্যান্সারে হতে পারে, মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "PSA is a protein made by the prostate gland; the test measures its total level in blood.",
+   "what_bn": "পিএসএ প্রস্টেট গ্রন্থি থেকে তৈরি একটি প্রোটিন; এই পরীক্ষায় রক্তে এর মোট মাত্রা মাপা হয়।",
+   "why_en": "It is used to screen for and monitor prostate conditions, including enlargement and cancer, in men.",
+   "why_bn": "পুরুষদের প্রস্টেট বড় হওয়া ও ক্যান্সারসহ প্রস্টেট সমস্যা স্ক্রিনিং ও পর্যবেক্ষণে এটি ব্যবহৃত হয়।",
+   "improve_en": "Avoid ejaculation, cycling and vigorous exercise for a day or two before testing, and discuss any raised value with your doctor.",
+   "improve_bn": "পরীক্ষার এক-দুদিন আগে বীর্যপাত, সাইক্লিং ও কঠোর ব্যায়াম এড়িয়ে চলুন এবং মাত্রা বেশি হলে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add Free PSA, a digital rectal exam, or prostate imaging.",
+   "more_bn": "চিকিৎসক ফ্রি পিএসএ, ডিজিটাল রেক্টাল পরীক্ষা বা প্রস্টেট ইমেজিং যোগ করতে পারেন।"
+  },
+  {
+   "key": "FREE PSA",
+   "category": "Pathology",
+   "aka_en": "Free PSA / Free-to-Total PSA ratio",
+   "aka_bn": "ফ্রি পিএসএ / ফ্রি-টু-টোটাল অনুপাত",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "Free PSA measures the portion of PSA not bound to proteins; it is interpreted as a percentage of total PSA, not alone.",
+   "what_bn": "ফ্রি পিএসএ হলো প্রোটিনের সঙ্গে যুক্ত না থাকা পিএসএ-র অংশ; এটি একা নয়, টোটাল পিএসএ-র শতাংশ হিসেবে বিচার করা হয়।",
+   "why_en": "It helps decide whether a mildly raised total PSA is more likely from a benign cause or needs further work-up.",
+   "why_bn": "সামান্য বেশি টোটাল পিএসএ সাধারণ কারণে নাকি আরও পরীক্ষা দরকার তা ঠিক করতে এটি সাহায্য করে।",
+   "improve_en": "This is an interpretive test; follow the same pre-test precautions as PSA and discuss the ratio with your doctor.",
+   "improve_bn": "এটি ব্যাখ্যামূলক পরীক্ষা; পিএসএ-র মতোই সতর্কতা মেনে চলুন এবং অনুপাত নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "It is always read together with total PSA and may lead to prostate imaging or biopsy.",
+   "more_bn": "এটি সবসময় টোটাল পিএসএ-র সঙ্গে দেখা হয় এবং প্রয়োজনে প্রস্টেট ইমেজিং বা বায়োপসি হতে পারে।"
+  },
+  {
+   "key": "CA 125",
+   "category": "Pathology",
+   "aka_en": "Cancer Antigen 125",
+   "aka_bn": "ক্যান্সার অ্যান্টিজেন ১২৫",
+   "numeric": true,
+   "unit": "U/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 70,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 35,
+     "note_en": "Can rise with menstruation, pregnancy, and benign conditions.",
+     "note_bn": "ঋতুস্রাব, গর্ভাবস্থা ও সাধারণ সমস্যাতেও বাড়তে পারে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values are normal and reassuring.",
+     "explainer_bn": "কম মাত্রা স্বাভাবিক ও আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the usual reference range.",
+     "explainer_bn": "স্বাভাবিক রেফারেন্স পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels may occur in ovarian and other conditions and need a doctor's review.",
+     "explainer_bn": "বেশি মাত্রা ডিম্বাশয় ও অন্যান্য সমস্যায় হতে পারে, চিকিৎসকের পরামর্শ দরকার।"
+    }
+   ],
+   "what_en": "CA 125 is a protein marker measured in blood, often linked to ovarian tissue.",
+   "what_bn": "সিএ ১২৫ রক্তে মাপা একটি প্রোটিন সূচক, যা প্রায়ই ডিম্বাশয়ের টিস্যুর সঙ্গে সম্পর্কিত।",
+   "why_en": "It is used mainly to monitor known ovarian cancer and to help assess certain pelvic conditions.",
+   "why_bn": "মূলত পরিচিত ডিম্বাশয় ক্যান্সারের পর্যবেক্ষণ এবং কিছু পেলভিক সমস্যা মূল্যায়নে এটি ব্যবহৃত হয়।",
+   "improve_en": "This is a marker, not lifestyle-controlled; because it can rise for benign reasons, interpret results only with your doctor.",
+   "improve_bn": "এটি একটি সূচক, জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; সাধারণ কারণেও বাড়তে পারে বলে ফল কেবল চিকিৎসকের সঙ্গে বিচার করুন।",
+   "more_en": "A doctor may add a pelvic ultrasound and other markers like HE4.",
+   "more_bn": "চিকিৎসক পেলভিক আল্ট্রাসাউন্ড ও এইচই৪-এর মতো অন্যান্য সূচক যোগ করতে পারেন।"
+  },
+  {
+   "key": "CA 19.9",
+   "category": "Pathology",
+   "aka_en": "Carbohydrate Antigen 19-9",
+   "aka_bn": "কার্বোহাইড্রেট অ্যান্টিজেন ১৯-৯",
+   "numeric": true,
+   "unit": "U/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 75,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 37,
+     "note_en": "May rise in benign biliary and pancreatic conditions too.",
+     "note_bn": "সাধারণ পিত্তনালী ও অগ্ন্যাশয়ের সমস্যাতেও বাড়তে পারে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values are normal and reassuring.",
+     "explainer_bn": "কম মাত্রা স্বাভাবিক ও আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the usual reference range.",
+     "explainer_bn": "স্বাভাবিক রেফারেন্স পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels may relate to pancreatic or biliary conditions and need review.",
+     "explainer_bn": "বেশি মাত্রা অগ্ন্যাশয় বা পিত্তনালীর সমস্যার সঙ্গে সম্পর্কিত হতে পারে, মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "CA 19.9 is a protein marker measured in blood, often associated with the pancreas and bile ducts.",
+   "what_bn": "সিএ ১৯.৯ রক্তে মাপা একটি প্রোটিন সূচক, যা প্রায়ই অগ্ন্যাশয় ও পিত্তনালীর সঙ্গে সম্পর্কিত।",
+   "why_en": "It is used mainly to monitor pancreatic and some other cancers, not for general screening.",
+   "why_bn": "মূলত অগ্ন্যাশয় ও কিছু অন্যান্য ক্যান্সারের পর্যবেক্ষণে এটি ব্যবহৃত হয়, সাধারণ স্ক্রিনিংয়ে নয়।",
+   "improve_en": "This is a marker, not lifestyle-controlled; since it can rise with benign blockages, review results with your doctor.",
+   "improve_bn": "এটি একটি সূচক, জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; সাধারণ প্রতিবন্ধকতাতেও বাড়তে পারে বলে ফল চিকিৎসকের সঙ্গে বিচার করুন।",
+   "more_en": "A doctor may add imaging such as ultrasound or CT and CEA.",
+   "more_bn": "চিকিৎসক আল্ট্রাসাউন্ড বা সিটি-র মতো ইমেজিং এবং সিইএ যোগ করতে পারেন।"
+  },
+  {
+   "key": "CEA (Carcino Embryonic Antigen)",
+   "category": "Pathology",
+   "aka_en": "CEA",
+   "aka_bn": "সিইএ",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 10,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 3,
+     "note_en": "Smokers can have higher levels, up to about 5.",
+     "note_bn": "ধূমপায়ীদের মাত্রা বেশি, প্রায় ৫ পর্যন্ত হতে পারে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values are normal and reassuring.",
+     "explainer_bn": "কম মাত্রা স্বাভাবিক ও আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the usual reference range.",
+     "explainer_bn": "স্বাভাবিক রেফারেন্স পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels may occur with certain cancers or smoking and need a doctor's review.",
+     "explainer_bn": "বেশি মাত্রা কিছু ক্যান্সার বা ধূমপানে হতে পারে, চিকিৎসকের পরামর্শ দরকার।"
+    }
+   ],
+   "what_en": "CEA is a protein marker in blood that can be raised in certain cancers, especially of the bowel.",
+   "what_bn": "সিইএ রক্তে থাকা একটি প্রোটিন সূচক যা কিছু ক্যান্সারে, বিশেষত অন্ত্রের ক্যান্সারে বাড়তে পারে।",
+   "why_en": "It is used mainly to monitor known cancers such as colorectal cancer and their response to treatment.",
+   "why_bn": "মূলত কোলোরেক্টাল ক্যান্সারের মতো পরিচিত ক্যান্সার ও চিকিৎসায় সাড়া পর্যবেক্ষণে এটি ব্যবহৃত হয়।",
+   "improve_en": "This is a marker, not lifestyle-controlled; stopping smoking can lower it, and results should be read by your doctor.",
+   "improve_bn": "এটি একটি সূচক, জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; ধূমপান ছাড়লে মাত্রা কমতে পারে এবং ফল চিকিৎসকের সঙ্গে বিচার করুন।",
+   "more_en": "A doctor may add colonoscopy or imaging depending on the situation.",
+   "more_bn": "পরিস্থিতি অনুযায়ী চিকিৎসক কোলোনোস্কোপি বা ইমেজিং যোগ করতে পারেন।"
+  },
+  {
+   "key": "AFP (Alfa Foeto Protein)",
+   "category": "Pathology",
+   "aka_en": "Alpha-Fetoprotein",
+   "aka_bn": "আলফা-ফিটোপ্রোটিন",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 20,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 10,
+     "note_en": "Levels are naturally high in pregnancy; this range is for non-pregnant adults.",
+     "note_bn": "গর্ভাবস্থায় মাত্রা স্বাভাবিকভাবেই বেশি; এই পরিসর গর্ভবতী নন এমন প্রাপ্তবয়স্কদের জন্য।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low values are normal and reassuring.",
+     "explainer_bn": "কম মাত্রা স্বাভাবিক ও আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the usual reference range for adults.",
+     "explainer_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক রেফারেন্স পরিসরে আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised levels may relate to liver or germ-cell conditions and need evaluation.",
+     "explainer_bn": "বেশি মাত্রা যকৃত বা জার্ম-সেল সমস্যার সঙ্গে সম্পর্কিত হতে পারে, মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "AFP is a protein normally made in the fetus; in adults, raised levels can signal certain liver or testicular conditions.",
+   "what_bn": "এএফপি একটি প্রোটিন যা সাধারণত ভ্রূণে তৈরি হয়; প্রাপ্তবয়স্কদের বেশি মাত্রা কিছু যকৃত বা অণ্ডকোষের সমস্যার ইঙ্গিত দিতে পারে।",
+   "why_en": "It is used to help detect and monitor liver cancer and certain germ-cell tumours.",
+   "why_bn": "যকৃতের ক্যান্সার ও কিছু জার্ম-সেল টিউমার শনাক্ত ও পর্যবেক্ষণে এটি সাহায্য করে।",
+   "improve_en": "This is a marker, not lifestyle-controlled; protecting liver health by avoiding alcohol helps, and results need your doctor's review.",
+   "improve_bn": "এটি একটি সূচক, জীবনযাপনে নিয়ন্ত্রণযোগ্য নয়; মদ্যপান এড়িয়ে যকৃতের যত্ন সহায়ক এবং ফল চিকিৎসকের সঙ্গে বিচার করুন।",
+   "more_en": "A doctor may add liver function tests and an abdominal ultrasound or CT.",
+   "more_bn": "চিকিৎসক যকৃতের কার্যকারিতার পরীক্ষা ও পেটের আল্ট্রাসাউন্ড বা সিটি যোগ করতে পারেন।"
+  },
+  {
+   "key": "ANA /ANF (ELISA)",
+   "category": "Pathology",
+   "aka_en": "Antinuclear Antibody / Antinuclear Factor",
+   "aka_bn": "অ্যান্টিনিউক্লিয়ার অ্যান্টিবডি",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This blood test looks for antinuclear antibodies, proteins made by the immune system that mistakenly target the body's own cell nuclei. The result is reported as positive or negative (often with a titre).",
+   "what_bn": "এই রক্ত পরীক্ষা অ্যান্টিনিউক্লিয়ার অ্যান্টিবডি খোঁজে, যা রোগ প্রতিরোধ ব্যবস্থা ভুল করে শরীরের নিজের কোষের নিউক্লিয়াসের বিরুদ্ধে তৈরি করে। ফলাফল পজিটিভ বা নেগেটিভ হিসেবে (প্রায়ই টাইটার সহ) জানানো হয়।",
+   "why_en": "Doctors order it to help investigate suspected autoimmune conditions such as lupus (SLE), rheumatoid arthritis or connective tissue disease, especially with joint pain, rashes or unexplained fatigue.",
+   "why_bn": "লুপাস (SLE), রিউমাটয়েড আর্থ্রাইটিস বা কানেকটিভ টিস্যু রোগের মতো অটোইমিউন সমস্যা সন্দেহ হলে, বিশেষত জয়েন্টে ব্যথা, র‍্যাশ বা অকারণ ক্লান্তি থাকলে চিকিৎসক এটি করান।",
+   "improve_en": "A positive ANA alone does not confirm any disease and can occur in healthy people; discuss the full picture with your doctor, who may repeat testing or add other tests.",
+   "improve_bn": "শুধু পজিটিভ ANA কোনো রোগ নিশ্চিত করে না এবং সুস্থ মানুষেরও হতে পারে; সম্পূর্ণ অবস্থা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন, যিনি পরীক্ষা পুনরায় করাতে বা অন্য পরীক্ষা যোগ করতে পারেন।",
+   "more_en": "If positive, a doctor may add anti-dsDNA, anti-Sm, ENA panel, complement levels (C3/C4), ESR and CRP.",
+   "more_bn": "পজিটিভ হলে চিকিৎসক anti-dsDNA, anti-Sm, ENA প্যানেল, কমপ্লিমেন্ট (C3/C4), ESR ও CRP যোগ করতে পারেন।"
+  },
+  {
+   "key": "WIDAL TEST",
+   "category": "Pathology",
+   "aka_en": "Typhoid antibody test",
+   "aka_bn": "টাইফয়েড অ্যান্টিবডি পরীক্ষা",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "The Widal test detects antibodies against Salmonella Typhi and Paratyphi (the O and H antigens) in the blood. Results are reported as titres for each antigen, not a single number.",
+   "what_bn": "ওয়াইডাল পরীক্ষা রক্তে স্যালমোনেলা টাইফি ও প্যারাটাইফি (O ও H অ্যান্টিজেন) এর বিরুদ্ধে অ্যান্টিবডি শনাক্ত করে। প্রতিটি অ্যান্টিজেনের জন্য টাইটার হিসেবে ফলাফল দেওয়া হয়, একটিমাত্র সংখ্যা নয়।",
+   "why_en": "It is used to support a diagnosis of typhoid or enteric fever in someone with prolonged fever, headache and abdominal discomfort.",
+   "why_bn": "দীর্ঘস্থায়ী জ্বর, মাথাব্যথা ও পেটের অস্বস্তি থাকা রোগীর টাইফয়েড বা এন্টেরিক জ্বর নির্ণয়ে সহায়তা করতে এটি ব্যবহৃত হয়।",
+   "improve_en": "Widal can give false positives and negatives, so results must be read with symptoms and timing; drink plenty of fluids, rest, and follow your doctor's advice on confirmatory testing and treatment.",
+   "improve_bn": "ওয়াইডালে ভুল পজিটিভ ও নেগেটিভ হতে পারে, তাই উপসর্গ ও সময়ের সঙ্গে মিলিয়ে দেখতে হয়; প্রচুর জল পান করুন, বিশ্রাম নিন এবং নিশ্চিতকরণ পরীক্ষা ও চিকিৎসার বিষয়ে চিকিৎসকের পরামর্শ মানুন।",
+   "more_en": "A doctor may add blood culture (the gold standard for typhoid), Typhidot/IgM test, and a complete blood count.",
+   "more_bn": "চিকিৎসক ব্লাড কালচার (টাইফয়েডের সবচেয়ে নির্ভরযোগ্য পরীক্ষা), Typhidot/IgM পরীক্ষা এবং সম্পূর্ণ রক্ত পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "DENGUE NS1",
+   "category": "Pathology",
+   "aka_en": "Dengue NS1 antigen",
+   "aka_bn": "ডেঙ্গু NS1 অ্যান্টিজেন",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This test detects the NS1 antigen of the dengue virus in blood, which appears early in infection. The result is reported as positive or negative.",
+   "what_bn": "এই পরীক্ষা রক্তে ডেঙ্গু ভাইরাসের NS1 অ্যান্টিজেন শনাক্ত করে, যা সংক্রমণের প্রথম দিকেই দেখা যায়। ফলাফল পজিটিভ বা নেগেটিভ হিসেবে দেওয়া হয়।",
+   "why_en": "Doctors order it in the first few days of a suspected dengue illness with high fever, body ache and headache to confirm early infection.",
+   "why_bn": "উচ্চ জ্বর, গায়ে ব্যথা ও মাথাব্যথা সহ সন্দেহজনক ডেঙ্গুর প্রথম কয়েক দিনে প্রাথমিক সংক্রমণ নিশ্চিত করতে চিকিৎসক এটি করান।",
+   "improve_en": "If positive, focus on plenty of fluids and rest, watch for warning signs like bleeding, severe abdominal pain or persistent vomiting, and stay in close touch with your doctor for platelet monitoring.",
+   "improve_bn": "পজিটিভ হলে প্রচুর জল ও বিশ্রাম নিন, রক্তপাত, তীব্র পেটব্যথা বা বারবার বমির মতো বিপদ চিহ্ন লক্ষ্য করুন এবং প্লেটলেট পর্যবেক্ষণের জন্য চিকিৎসকের সঙ্গে যোগাযোগ রাখুন।",
+   "more_en": "A doctor may add dengue IgM/IgG antibodies and a complete blood count with platelet count, repeated over several days.",
+   "more_bn": "চিকিৎসক ডেঙ্গু IgM/IgG অ্যান্টিবডি এবং প্লেটলেট সহ সম্পূর্ণ রক্ত পরীক্ষা যোগ করতে পারেন, যা কয়েক দিন ধরে পুনরায় করা হয়।"
+  },
+  {
+   "key": "HBsAg (Rapid)",
+   "category": "Pathology",
+   "aka_en": "Hepatitis B surface antigen",
+   "aka_bn": "হেপাটাইটিস বি সারফেস অ্যান্টিজেন",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This rapid test checks for the hepatitis B surface antigen in blood, a marker of hepatitis B virus infection. It is reported as reactive (positive) or non-reactive (negative).",
+   "what_bn": "এই দ্রুত পরীক্ষা রক্তে হেপাটাইটিস বি সারফেস অ্যান্টিজেন খোঁজে, যা হেপাটাইটিস বি ভাইরাস সংক্রমণের চিহ্ন। এটি রিঅ্যাকটিভ (পজিটিভ) বা নন-রিঅ্যাকটিভ (নেগেটিভ) হিসেবে দেওয়া হয়।",
+   "why_en": "It is used to screen for hepatitis B infection, before surgery or pregnancy, during blood donation, or when liver disease is suspected.",
+   "why_bn": "হেপাটাইটিস বি সংক্রমণ, অস্ত্রোপচার বা গর্ভাবস্থার আগে, রক্তদানের সময় বা লিভারের রোগ সন্দেহ হলে স্ক্রিনিং করতে এটি ব্যবহৃত হয়।",
+   "improve_en": "A reactive rapid result needs confirmation with a lab test; avoid alcohol, do not share razors or needles, and see your doctor to assess the liver and whether close contacts should be vaccinated.",
+   "improve_bn": "রিঅ্যাকটিভ দ্রুত ফলাফল ল্যাব পরীক্ষায় নিশ্চিত করতে হয়; মদ্যপান এড়িয়ে চলুন, রেজর বা সুচ ভাগ করবেন না এবং লিভার মূল্যায়ন ও পরিবারের সদস্যদের টিকা প্রয়োজন কিনা জানতে চিকিৎসকের সঙ্গে দেখা করুন।",
+   "more_en": "A doctor may add confirmatory HBsAg (ELISA), HBV DNA viral load, HBeAg, and liver function tests.",
+   "more_bn": "চিকিৎসক নিশ্চিতকরণ HBsAg (ELISA), HBV DNA ভাইরাল লোড, HBeAg এবং লিভার ফাংশন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "ANTI HCV (RAPID)",
+   "category": "Pathology",
+   "aka_en": "Hepatitis C antibody",
+   "aka_bn": "হেপাটাইটিস সি অ্যান্টিবডি",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This rapid test detects antibodies to the hepatitis C virus in blood. It is reported as reactive (positive) or non-reactive (negative).",
+   "what_bn": "এই দ্রুত পরীক্ষা রক্তে হেপাটাইটিস সি ভাইরাসের অ্যান্টিবডি শনাক্ত করে। এটি রিঅ্যাকটিভ (পজিটিভ) বা নন-রিঅ্যাকটিভ (নেগেটিভ) হিসেবে দেওয়া হয়।",
+   "why_en": "It is used to screen for past or current hepatitis C infection, before surgery or blood donation, or when liver disease is suspected.",
+   "why_bn": "অতীত বা বর্তমান হেপাটাইটিস সি সংক্রমণ, অস্ত্রোপচার বা রক্তদানের আগে, বা লিভারের রোগ সন্দেহ হলে স্ক্রিনিং করতে এটি ব্যবহৃত হয়।",
+   "improve_en": "A reactive result means exposure but not necessarily active infection, and needs a confirmatory test; avoid alcohol, do not share razors or needles, and see your doctor as hepatitis C is now highly curable.",
+   "improve_bn": "রিঅ্যাকটিভ ফলাফল সংস্পর্শের ইঙ্গিত দেয় তবে সবসময় সক্রিয় সংক্রমণ নয়, এবং নিশ্চিতকরণ পরীক্ষা প্রয়োজন; মদ্যপান এড়িয়ে চলুন, রেজর বা সুচ ভাগ করবেন না এবং চিকিৎসকের সঙ্গে দেখা করুন কারণ হেপাটাইটিস সি এখন অনেকাংশে নিরাময়যোগ্য।",
+   "more_en": "A doctor may add HCV RNA (viral load) to confirm active infection, HCV genotype, and liver function tests.",
+   "more_bn": "চিকিৎসক সক্রিয় সংক্রমণ নিশ্চিত করতে HCV RNA (ভাইরাল লোড), HCV জেনোটাইপ এবং লিভার ফাংশন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "HIV I & II ANTIBODY (RAPID)",
+   "category": "Pathology",
+   "aka_en": "HIV antibody screening",
+   "aka_bn": "এইচআইভি অ্যান্টিবডি স্ক্রিনিং",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This rapid test screens for antibodies to HIV types 1 and 2 in blood. It is reported as reactive (positive) or non-reactive (negative).",
+   "what_bn": "এই দ্রুত পরীক্ষা রক্তে এইচআইভি টাইপ ১ ও ২ এর অ্যান্টিবডি স্ক্রিন করে। এটি রিঅ্যাকটিভ (পজিটিভ) বা নন-রিঅ্যাকটিভ (নেগেটিভ) হিসেবে দেওয়া হয়।",
+   "why_en": "It is used to screen for HIV infection routinely, before surgery, during pregnancy, or after possible exposure. A window period after exposure can affect early results.",
+   "why_bn": "নিয়মিতভাবে, অস্ত্রোপচারের আগে, গর্ভাবস্থায় বা সম্ভাব্য সংস্পর্শের পর এইচআইভি সংক্রমণ স্ক্রিন করতে এটি ব্যবহৃত হয়। সংস্পর্শের পর উইন্ডো পিরিয়ড প্রাথমিক ফলাফলে প্রভাব ফেলতে পারে।",
+   "improve_en": "A reactive rapid result is a screen and must be confirmed with further testing before any conclusion; see your doctor confidentially, and remember effective treatment allows a long healthy life.",
+   "improve_bn": "রিঅ্যাকটিভ দ্রুত ফলাফল একটি স্ক্রিনিং এবং কোনো সিদ্ধান্তের আগে আরও পরীক্ষায় নিশ্চিত করতে হয়; গোপনীয়ভাবে চিকিৎসকের সঙ্গে দেখা করুন, এবং মনে রাখুন কার্যকর চিকিৎসায় দীর্ঘ সুস্থ জীবন সম্ভব।",
+   "more_en": "A doctor may add a confirmatory HIV test (antibody differentiation or fourth-generation ELISA), CD4 count, and HIV viral load.",
+   "more_bn": "চিকিৎসক নিশ্চিতকরণ এইচআইভি পরীক্ষা (অ্যান্টিবডি ডিফারেনশিয়েশন বা চতুর্থ প্রজন্মের ELISA), CD4 কাউন্ট এবং এইচআইভি ভাইরাল লোড যোগ করতে পারেন।"
+  },
+  {
+   "key": "G6PD",
+   "category": "Pathology",
+   "aka_en": "Glucose-6-phosphate dehydrogenase",
+   "aka_bn": "গ্লুকোজ-৬-ফসফেট ডিহাইড্রোজেনেজ",
+   "numeric": true,
+   "unit": "U/g Hb",
+   "gaugeMin": 0,
+   "gaugeMax": 25,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 6.75,
+     "high": 11.95,
+     "note_en": "Typical adult range; exact range varies by lab and method.",
+     "note_bn": "সাধারণ প্রাপ্তবয়স্ক পরিসর; ল্যাব ও পদ্ধতি অনুযায়ী সঠিক পরিসর ভিন্ন হয়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low G6PD means a deficiency, so certain drugs, infections or foods like fava beans can trigger red-cell breakdown.",
+     "explainer_bn": "কম G6PD মানে ঘাটতি, তাই কিছু ওষুধ, সংক্রমণ বা ফাভা বিনের মতো খাবার লোহিত কণিকা ভাঙন ঘটাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "A normal level means the enzyme activity is adequate and no G6PD deficiency is detected.",
+     "explainer_bn": "স্বাভাবিক মাত্রা মানে এনজাইমের কার্যকারিতা পর্যাপ্ত এবং G6PD ঘাটতি নেই।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high value is usually not a concern and can occur with young red cells after a recent haemolytic episode.",
+     "explainer_bn": "বেশি মান সাধারণত উদ্বেগের নয় এবং সাম্প্রতিক রক্তকণিকা ভাঙনের পর নতুন লোহিত কণিকার কারণে হতে পারে।"
+    }
+   ],
+   "what_en": "This test measures the activity of the G6PD enzyme in red blood cells, which protects them from damage. A low level indicates G6PD deficiency, an inherited condition.",
+   "what_bn": "এই পরীক্ষা লোহিত রক্তকণিকায় G6PD এনজাইমের কার্যকারিতা মাপে, যা কণিকাকে ক্ষতি থেকে রক্ষা করে। কম মাত্রা G6PD ঘাটতি নির্দেশ করে, যা একটি বংশগত সমস্যা।",
+   "why_en": "Doctors order it to explain episodes of jaundice or anaemia, before giving certain medicines, or to screen family members, since deficiency can cause red cells to break down.",
+   "why_bn": "জন্ডিস বা রক্তাল্পতার কারণ জানতে, কিছু ওষুধ দেওয়ার আগে বা পরিবারের সদস্যদের স্ক্রিন করতে চিকিৎসক এটি করান, কারণ ঘাটতিতে লোহিত কণিকা ভেঙে যেতে পারে।",
+   "improve_en": "If deficient, learn which drugs and foods (such as fava beans) to avoid, treat infections promptly, and always tell any doctor or dentist about your G6PD status before new medicines.",
+   "improve_bn": "ঘাটতি থাকলে কোন ওষুধ ও খাবার (যেমন ফাভা বিন) এড়াতে হবে তা জেনে নিন, সংক্রমণের দ্রুত চিকিৎসা করান এবং নতুন ওষুধের আগে সর্বদা চিকিৎসক বা দন্ত চিকিৎসককে আপনার G6PD অবস্থা জানান।",
+   "more_en": "A doctor may add a complete blood count, reticulocyte count, bilirubin and other haemolysis markers.",
+   "more_bn": "চিকিৎসক সম্পূর্ণ রক্ত পরীক্ষা, রেটিকুলোসাইট কাউন্ট, বিলিরুবিন এবং অন্যান্য রক্তভাঙন চিহ্ন যোগ করতে পারেন।"
+  },
+  {
+   "key": "SEMEN ANALYSIS",
+   "category": "Pathology",
+   "aka_en": "Seminogram / sperm test",
+   "aka_bn": "বীর্য পরীক্ষা",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "Semen analysis examines a semen sample for multiple factors including volume, sperm count, motility (movement) and morphology (shape). It reports several values, not a single number.",
+   "what_bn": "বীর্য পরীক্ষায় একটি বীর্য নমুনার আয়তন, শুক্রাণুর সংখ্যা, গতিশীলতা ও গঠন সহ একাধিক বিষয় দেখা হয়। এতে একাধিক মান জানানো হয়, একটিমাত্র সংখ্যা নয়।",
+   "why_en": "It is mainly ordered to evaluate male fertility when a couple has difficulty conceiving, or to check the result of a vasectomy.",
+   "why_bn": "দম্পতির সন্তান ধারণে সমস্যা হলে পুরুষের প্রজনন ক্ষমতা মূল্যায়নে, বা ভ্যাসেকটমির ফল যাচাই করতে এটি করানো হয়।",
+   "improve_en": "Results can vary, so testing is often repeated; a healthy weight, no smoking or excess alcohol, avoiding heat to the groin and managing stress may help, and discuss findings with your doctor.",
+   "improve_bn": "ফলাফল পরিবর্তনশীল হতে পারে, তাই প্রায়ই পুনরায় পরীক্ষা করা হয়; সুস্থ ওজন, ধূমপান ও অতিরিক্ত মদ্যপান বর্জন, তলপেটে অতিরিক্ত তাপ এড়ানো ও মানসিক চাপ নিয়ন্ত্রণ সাহায্য করতে পারে; ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add hormone tests (FSH, LH, testosterone), scrotal ultrasound, and a repeat semen analysis.",
+   "more_bn": "চিকিৎসক হরমোন পরীক্ষা (FSH, LH, টেস্টোস্টেরন), স্ক্রোটাল আল্ট্রাসাউন্ড এবং পুনরায় বীর্য পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "X-RAY CHEST PA VIEW",
+   "category": "X-Ray",
+   "aka_en": "Chest radiograph",
+   "aka_bn": "বুকের এক্স-রে",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "A chest X-ray in the PA (posteroanterior) view is an imaging test that produces a picture of the lungs, heart, ribs and major blood vessels. The result is a radiologist's descriptive report, not a number.",
+   "what_bn": "PA ভিউতে বুকের এক্স-রে একটি ইমেজিং পরীক্ষা যা ফুসফুস, হৃদয়, পাঁজর ও বড় রক্তনালীর ছবি তৈরি করে। ফলাফল রেডিওলজিস্টের বর্ণনামূলক রিপোর্ট, কোনো সংখ্যা নয়।",
+   "why_en": "Doctors order it for cough, breathlessness, chest pain, fever or before surgery, to look for infections like pneumonia or TB, fluid, or heart enlargement.",
+   "why_bn": "কাশি, শ্বাসকষ্ট, বুকে ব্যথা, জ্বর বা অস্ত্রোপচারের আগে চিকিৎসক এটি করান, নিউমোনিয়া বা যক্ষ্মার মতো সংক্রমণ, জল জমা বা হৃদয় বড় হওয়া দেখতে।",
+   "improve_en": "Follow your doctor's interpretation of the report; not smoking, treating infections and any advised follow-up imaging support lung and heart health.",
+   "improve_bn": "রিপোর্টের ব্যাখ্যার জন্য চিকিৎসকের পরামর্শ মানুন; ধূমপান না করা, সংক্রমণের চিকিৎসা এবং পরামর্শ অনুযায়ী পরবর্তী ইমেজিং ফুসফুস ও হৃদয়ের স্বাস্থ্যে সহায়ক।",
+   "more_en": "Depending on findings, a doctor may add a CT chest, sputum tests, or a complete blood count.",
+   "more_bn": "ফলাফল অনুযায়ী চিকিৎসক সিটি চেস্ট, কফ পরীক্ষা বা সম্পূর্ণ রক্ত পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "USG WHOLE ABDOMEN",
+   "category": "USG",
+   "aka_en": "Ultrasound whole abdomen",
+   "aka_bn": "সম্পূর্ণ পেটের আল্ট্রাসাউন্ড",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This ultrasound uses sound waves to image the abdominal organs, including the liver, gallbladder, pancreas, spleen, kidneys, urinary bladder and pelvic organs. The result is a descriptive report, not a number.",
+   "what_bn": "এই আল্ট্রাসাউন্ড শব্দ তরঙ্গ ব্যবহার করে পেটের অঙ্গ যেমন লিভার, পিত্তথলি, অগ্ন্যাশয়, প্লীহা, কিডনি, মূত্রথলি ও পেলভিক অঙ্গের ছবি তোলে। ফলাফল বর্ণনামূলক রিপোর্ট, কোনো সংখ্যা নয়।",
+   "why_en": "Doctors order it for abdominal pain, bloating, abnormal liver or kidney tests, suspected stones, or to check organ size and detect fluid or masses.",
+   "why_bn": "পেটে ব্যথা, ফোলাভাব, অস্বাভাবিক লিভার বা কিডনি পরীক্ষা, পাথর সন্দেহ, বা অঙ্গের আকার যাচাই এবং জল বা টিউমার শনাক্ত করতে চিকিৎসক এটি করান।",
+   "improve_en": "Fasting is usually needed for a clear scan; follow your doctor's reading of the report and any advised follow-up, and maintain a balanced diet and adequate hydration for organ health.",
+   "improve_bn": "পরিষ্কার স্ক্যানের জন্য সাধারণত খালি পেটে থাকতে হয়; রিপোর্টের ব্যাখ্যা ও পরামর্শ অনুযায়ী পরবর্তী পদক্ষেপে চিকিৎসকের নির্দেশ মানুন এবং অঙ্গের স্বাস্থ্যে সুষম খাদ্য ও পর্যাপ্ত জল পান বজায় রাখুন।",
+   "more_en": "Depending on findings, a doctor may add blood tests (liver or kidney function), a CT scan, or a targeted ultrasound.",
+   "more_bn": "ফলাফল অনুযায়ী চিকিৎসক রক্ত পরীক্ষা (লিভার বা কিডনি ফাংশন), সিটি স্ক্যান বা নির্দিষ্ট আল্ট্রাসাউন্ড যোগ করতে পারেন।"
+  },
+  {
+   "key": "CORTISOL (MORNING)",
+   "category": "Pathology",
+   "aka_en": "Serum Cortisol (AM)",
+   "aka_bn": "সকালের কর্টিসল",
+   "numeric": true,
+   "unit": "µg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 40,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 6,
+     "high": 23,
+     "note_en": "Morning sample (7-9 AM); levels vary through the day.",
+     "note_bn": "সকালের নমুনা (৭-৯টা); মাত্রা দিনভর পরিবর্তিত হয়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low morning cortisol may point to an underactive adrenal gland; needs medical review.",
+     "explainer_bn": "সকালে কম কর্টিসল অ্যাড্রিনাল গ্রন্থির দুর্বলতা বোঝাতে পারে; চিকিৎসকের পরামর্শ দরকার।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Cortisol is within the expected morning range for a healthy adult.",
+     "explainer_bn": "কর্টিসল সুস্থ প্রাপ্তবয়স্কের সকালের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High cortisol can reflect stress, illness or an overactive adrenal response; discuss with your doctor.",
+     "explainer_bn": "বেশি কর্টিসল মানসিক চাপ, অসুস্থতা বা অ্যাড্রিনালের অতিসক্রিয়তা বোঝাতে পারে; চিকিৎসকের সঙ্গে আলোচনা করুন।"
+    }
+   ],
+   "what_en": "Cortisol is a hormone from the adrenal glands that helps manage stress, blood sugar and metabolism. This test measures its level in a morning blood sample.",
+   "what_bn": "কর্টিসল অ্যাড্রিনাল গ্রন্থি থেকে নিঃসৃত একটি হরমোন যা মানসিক চাপ, রক্তে শর্করা ও বিপাক নিয়ন্ত্রণে সাহায্য করে। এই পরীক্ষায় সকালের রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors order it to check for adrenal gland problems such as Cushing's syndrome or Addison's disease, or when symptoms like unusual fatigue, weight change or blood pressure issues appear.",
+   "why_bn": "কুশিং সিনড্রোম বা অ্যাডিসন রোগের মতো অ্যাড্রিনাল সমস্যা যাচাই করতে, অথবা অস্বাভাবিক ক্লান্তি, ওজন পরিবর্তন বা রক্তচাপের সমস্যা থাকলে চিকিৎসক এটি করান।",
+   "improve_en": "Timing matters: give the sample in the early morning after rest. Managing stress and sleep helps overall hormone balance; discuss abnormal results with your doctor.",
+   "improve_bn": "সময় গুরুত্বপূর্ণ: বিশ্রামের পর ভোরবেলা নমুনা দিন। মানসিক চাপ ও ঘুম নিয়ন্ত্রণ হরমোন ভারসাম্যে সাহায্য করে; অস্বাভাবিক ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add an evening cortisol, ACTH, or a dexamethasone suppression test.",
+   "more_bn": "চিকিৎসক প্রয়োজনে সন্ধ্যার কর্টিসল, ACTH বা ডেক্সামেথাসোন সাপ্রেশন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "PROLACTIN (PRL)",
+   "category": "Pathology",
+   "aka_en": "PRL",
+   "aka_bn": "প্রোল্যাকটিন",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 50,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 4,
+     "high": 15,
+     "note_en": "Adult male range.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের মাত্রা।"
+    },
+    {
+     "sex": "female",
+     "low": 5,
+     "high": 25,
+     "note_en": "Non-pregnant adult female; rises in pregnancy and breastfeeding.",
+     "note_bn": "গর্ভবতী নন এমন নারী; গর্ভাবস্থা ও স্তন্যদানে বাড়ে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low prolactin is usually not a concern on its own.",
+     "explainer_bn": "কম প্রোল্যাকটিন সাধারণত একা কোনো সমস্যা নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Prolactin is within the expected range for a non-pregnant adult.",
+     "explainer_bn": "প্রোল্যাকটিন গর্ভবতী নন এমন প্রাপ্তবয়স্কের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High prolactin can affect periods, fertility and cause milk discharge; needs evaluation.",
+     "explainer_bn": "বেশি প্রোল্যাকটিন মাসিক, প্রজনন ক্ষমতায় প্রভাব ফেলতে ও দুধ নিঃসরণ ঘটাতে পারে; মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "Prolactin is a hormone made by the pituitary gland, mainly known for stimulating breast milk production. This test measures its level in blood.",
+   "what_bn": "প্রোল্যাকটিন পিটুইটারি গ্রন্থি থেকে নিঃসৃত হরমোন, যা মূলত স্তনদুগ্ধ তৈরিতে সাহায্য করে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "It is ordered for irregular periods, infertility, unexpected breast milk, or in men for low libido; high levels can suggest a pituitary problem.",
+   "why_bn": "অনিয়মিত মাসিক, বন্ধ্যাত্ব, অপ্রত্যাশিত স্তনদুগ্ধ, বা পুরুষে যৌন আগ্রহ কমে গেলে করানো হয়; বেশি মাত্রা পিটুইটারি সমস্যা বোঝাতে পারে।",
+   "improve_en": "Avoid stress, nipple stimulation and heavy exercise just before the test. Persistently high levels should be discussed with your doctor.",
+   "improve_bn": "পরীক্ষার ঠিক আগে মানসিক চাপ, স্তনবৃন্তে উদ্দীপনা ও কঠোর ব্যায়াম এড়িয়ে চলুন। বারবার বেশি মাত্রা চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add TSH, FSH/LH, or an MRI of the pituitary if levels stay high.",
+   "more_bn": "মাত্রা বেশি থাকলে চিকিৎসক TSH, FSH/LH বা পিটুইটারির MRI যোগ করতে পারেন।"
+  },
+  {
+   "key": "FSH",
+   "category": "Pathology",
+   "aka_en": "Follicle Stimulating Hormone",
+   "aka_bn": "ফলিকল স্টিমুলেটিং হরমোন",
+   "numeric": true,
+   "unit": "mIU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 40,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 1.5,
+     "high": 12.4,
+     "note_en": "Adult male range.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের মাত্রা।"
+    },
+    {
+     "sex": "female",
+     "low": 3.5,
+     "high": 12.5,
+     "note_en": "Follicular phase; varies by menstrual cycle and rises after menopause.",
+     "note_bn": "ফলিকুলার পর্যায়; মাসিক চক্র অনুসারে বদলায় ও মেনোপজের পর বাড়ে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low FSH may relate to a pituitary or hypothalamus issue affecting reproduction.",
+     "explainer_bn": "কম FSH পিটুইটারি বা হাইপোথ্যালামাসের সমস্যা বোঝাতে পারে যা প্রজননে প্রভাব ফেলে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "FSH is within the expected range for the given sex and cycle phase.",
+     "explainer_bn": "FSH নির্দিষ্ট লিঙ্গ ও চক্র পর্যায়ের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High FSH can indicate reduced ovarian or testicular reserve, or menopause in women.",
+     "explainer_bn": "বেশি FSH ডিম্বাশয় বা অণ্ডকোষের কমে যাওয়া ক্ষমতা, বা নারীতে মেনোপজ বোঝাতে পারে।"
+    }
+   ],
+   "what_en": "FSH is a pituitary hormone that helps control egg development in women and sperm production in men. This test measures its blood level.",
+   "what_bn": "FSH পিটুইটারি হরমোন যা নারীতে ডিম্বাণু বিকাশ ও পুরুষে শুক্রাণু উৎপাদন নিয়ন্ত্রণে সাহায্য করে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors use it to investigate infertility, irregular periods, menopause, or delayed/early puberty.",
+   "why_bn": "বন্ধ্যাত্ব, অনিয়মিত মাসিক, মেনোপজ, বা দেরি/অকালে বয়ঃসন্ধি যাচাই করতে চিকিৎসক এটি ব্যবহার করেন।",
+   "improve_en": "In women, note the day of your menstrual cycle when the sample is taken, as ranges depend on it. Discuss results with your doctor.",
+   "improve_bn": "নারীদের ক্ষেত্রে নমুনা নেওয়ার দিন মাসিক চক্রের কোন দিন তা জানান, কারণ মাত্রা এর উপর নির্ভর করে। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add LH, estradiol, prolactin or AMH.",
+   "more_bn": "চিকিৎসক LH, এস্ট্রাডিওল, প্রোল্যাকটিন বা AMH যোগ করতে পারেন।"
+  },
+  {
+   "key": "LH",
+   "category": "Pathology",
+   "aka_en": "Luteinizing Hormone",
+   "aka_bn": "লুটিনাইজিং হরমোন",
+   "numeric": true,
+   "unit": "mIU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 40,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 1.7,
+     "high": 8.6,
+     "note_en": "Adult male range.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের মাত্রা।"
+    },
+    {
+     "sex": "female",
+     "low": 2.4,
+     "high": 12.6,
+     "note_en": "Follicular phase; peaks at mid-cycle ovulation.",
+     "note_bn": "ফলিকুলার পর্যায়; চক্রের মাঝামাঝি ডিম্বপাতের সময় সর্বোচ্চ হয়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low LH may relate to a pituitary or hypothalamus problem affecting fertility.",
+     "explainer_bn": "কম LH পিটুইটারি বা হাইপোথ্যালামাসের সমস্যা বোঝাতে পারে যা প্রজননে প্রভাব ফেলে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "LH is within the expected range for the given sex and cycle phase.",
+     "explainer_bn": "LH নির্দিষ্ট লিঙ্গ ও চক্র পর্যায়ের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High LH can suggest ovarian/testicular failure, PCOS, or menopause.",
+     "explainer_bn": "বেশি LH ডিম্বাশয়/অণ্ডকোষের দুর্বলতা, PCOS বা মেনোপজ বোঝাতে পারে।"
+    }
+   ],
+   "what_en": "LH is a pituitary hormone that triggers ovulation in women and testosterone production in men. This test measures its blood level.",
+   "what_bn": "LH পিটুইটারি হরমোন যা নারীতে ডিম্বপাত ঘটায় ও পুরুষে টেস্টোস্টেরন উৎপাদনে সাহায্য করে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "It helps evaluate infertility, irregular periods, PCOS, ovulation problems and puberty disorders, often alongside FSH.",
+   "why_bn": "বন্ধ্যাত্ব, অনিয়মিত মাসিক, PCOS, ডিম্বপাতের সমস্যা ও বয়ঃসন্ধির সমস্যা মূল্যায়নে সাহায্য করে, প্রায়ই FSH-এর সঙ্গে।",
+   "improve_en": "For women, record the menstrual cycle day of the sample, since the range depends on it. Discuss results with your doctor.",
+   "improve_bn": "নারীদের ক্ষেত্রে নমুনার মাসিক চক্রের দিন লিখে রাখুন, কারণ মাত্রা এর উপর নির্ভর করে। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add FSH, estradiol, testosterone or prolactin.",
+   "more_bn": "চিকিৎসক FSH, এস্ট্রাডিওল, টেস্টোস্টেরন বা প্রোল্যাকটিন যোগ করতে পারেন।"
+  },
+  {
+   "key": "ESTRADIOL / E2",
+   "category": "Pathology",
+   "aka_en": "Estradiol, E2",
+   "aka_bn": "এস্ট্রাডিওল",
+   "numeric": true,
+   "unit": "pg/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 400,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 10,
+     "high": 40,
+     "note_en": "Adult male range.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের মাত্রা।"
+    },
+    {
+     "sex": "female",
+     "low": 30,
+     "high": 120,
+     "note_en": "Follicular phase; varies widely across the cycle and low after menopause.",
+     "note_bn": "ফলিকুলার পর্যায়; চক্রজুড়ে ব্যাপক বদলায় ও মেনোপজের পর কমে যায়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low estradiol may relate to menopause, ovarian issues or low body weight.",
+     "explainer_bn": "কম এস্ট্রাডিওল মেনোপজ, ডিম্বাশয়ের সমস্যা বা কম শরীরের ওজন বোঝাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Estradiol is within the expected range for the given sex and cycle phase.",
+     "explainer_bn": "এস্ট্রাডিওল নির্দিষ্ট লিঙ্গ ও চক্র পর্যায়ের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High estradiol can occur mid-cycle, in pregnancy, or with certain ovarian conditions.",
+     "explainer_bn": "বেশি এস্ট্রাডিওল চক্রের মাঝামাঝি, গর্ভাবস্থায়, বা কিছু ডিম্বাশয়ের অবস্থায় হতে পারে।"
+    }
+   ],
+   "what_en": "Estradiol (E2) is the main form of estrogen, the key female sex hormone, also present in small amounts in men. This test measures its blood level.",
+   "what_bn": "এস্ট্রাডিওল (E2) প্রধান ইস্ট্রোজেন, মূল নারী যৌন হরমোন, পুরুষেও অল্প পরিমাণে থাকে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors order it to assess menstrual and fertility problems, ovarian function, menopause, and to monitor fertility treatment.",
+   "why_bn": "মাসিক ও প্রজনন সমস্যা, ডিম্বাশয়ের কার্যকারিতা, মেনোপজ যাচাই করতে ও প্রজনন চিকিৎসা পর্যবেক্ষণে চিকিৎসক এটি করান।",
+   "improve_en": "Note your cycle day for accurate interpretation. A balanced diet and healthy body weight support hormone balance; discuss results with your doctor.",
+   "improve_bn": "সঠিক ব্যাখ্যার জন্য চক্রের দিন জানান। সুষম খাদ্য ও স্বাস্থ্যকর ওজন হরমোন ভারসাম্যে সাহায্য করে; ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add FSH, LH, progesterone or AMH.",
+   "more_bn": "চিকিৎসক FSH, LH, প্রোজেস্টেরন বা AMH যোগ করতে পারেন।"
+  },
+  {
+   "key": "PROGESTERONE",
+   "category": "Pathology",
+   "aka_en": "Serum Progesterone",
+   "aka_bn": "প্রোজেস্টেরন",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 30,
+   "ranges": [
+    {
+     "sex": "female",
+     "low": 5,
+     "high": 20,
+     "note_en": "Luteal (post-ovulation) phase; low in follicular phase, high in pregnancy.",
+     "note_bn": "লুটিয়াল (ডিম্বপাতের পর) পর্যায়; ফলিকুলার পর্যায়ে কম, গর্ভাবস্থায় বেশি।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low luteal progesterone may suggest that ovulation did not occur.",
+     "explainer_bn": "লুটিয়াল পর্যায়ে কম প্রোজেস্টেরন বোঝাতে পারে যে ডিম্বপাত হয়নি।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "A good luteal-phase level suggests ovulation has taken place.",
+     "explainer_bn": "লুটিয়াল পর্যায়ে ভালো মাত্রা বোঝায় ডিম্বপাত হয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High progesterone is normal in pregnancy or after ovulation.",
+     "explainer_bn": "গর্ভাবস্থায় বা ডিম্বপাতের পর বেশি প্রোজেস্টেরন স্বাভাবিক।"
+    }
+   ],
+   "what_en": "Progesterone is a hormone that prepares the womb for pregnancy and supports it. This test measures its blood level, usually to confirm ovulation.",
+   "what_bn": "প্রোজেস্টেরন একটি হরমোন যা গর্ভধারণের জন্য জরায়ুকে প্রস্তুত করে ও গর্ভাবস্থা বজায় রাখতে সাহায্য করে। এই পরীক্ষায় সাধারণত ডিম্বপাত নিশ্চিত করতে রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "It is ordered to check whether ovulation occurred, to investigate infertility, or to monitor early pregnancy.",
+   "why_bn": "ডিম্বপাত হয়েছে কিনা যাচাই করতে, বন্ধ্যাত্ব খতিয়ে দেখতে, বা প্রাথমিক গর্ভাবস্থা পর্যবেক্ষণে করানো হয়।",
+   "improve_en": "The sample is usually taken about 7 days before the expected period; timing is important. Discuss results with your doctor.",
+   "improve_bn": "সাধারণত প্রত্যাশিত মাসিকের প্রায় ৭ দিন আগে নমুনা নেওয়া হয়; সময় গুরুত্বপূর্ণ। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add estradiol, LH, FSH or a beta-hCG in pregnancy.",
+   "more_bn": "চিকিৎসক এস্ট্রাডিওল, LH, FSH বা গর্ভাবস্থায় বিটা-hCG যোগ করতে পারেন।"
+  },
+  {
+   "key": "TESTOSTERONE (TOTAL)",
+   "category": "Pathology",
+   "aka_en": "Total Testosterone",
+   "aka_bn": "টোটাল টেস্টোস্টেরন",
+   "numeric": true,
+   "unit": "ng/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 1200,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 280,
+     "high": 1100,
+     "note_en": "Adult male range; falls gradually with age.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের মাত্রা; বয়সের সঙ্গে ধীরে কমে।"
+    },
+    {
+     "sex": "female",
+     "low": 15,
+     "high": 70,
+     "note_en": "Adult female range; much lower than in men.",
+     "note_bn": "প্রাপ্তবয়স্ক নারীর মাত্রা; পুরুষের তুলনায় অনেক কম।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low testosterone in men may cause fatigue, low libido and reduced muscle.",
+     "explainer_bn": "পুরুষে কম টেস্টোস্টেরন ক্লান্তি, যৌন আগ্রহ কমা ও পেশি হ্রাস ঘটাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Testosterone is within the expected range for the given sex.",
+     "explainer_bn": "টেস্টোস্টেরন নির্দিষ্ট লিঙ্গের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High testosterone in women may relate to PCOS; in men it may need review.",
+     "explainer_bn": "নারীতে বেশি টেস্টোস্টেরন PCOS বোঝাতে পারে; পুরুষে মূল্যায়ন দরকার হতে পারে।"
+    }
+   ],
+   "what_en": "Testosterone is the main male sex hormone, also present in smaller amounts in women. This test measures the total amount in blood.",
+   "what_bn": "টেস্টোস্টেরন প্রধান পুরুষ যৌন হরমোন, নারীতেও অল্প পরিমাণে থাকে। এই পরীক্ষায় রক্তে এর মোট পরিমাণ মাপা হয়।",
+   "why_en": "In men it is checked for low libido, infertility or fatigue; in women for excess hair, acne or irregular periods (e.g. PCOS).",
+   "why_bn": "পুরুষে যৌন আগ্রহ কমা, বন্ধ্যাত্ব বা ক্লান্তির জন্য; নারীতে অতিরিক্ত লোম, ব্রণ বা অনিয়মিত মাসিকের (যেমন PCOS) জন্য করানো হয়।",
+   "improve_en": "Give the sample in the morning when levels are highest. Regular exercise, healthy weight and good sleep support levels; discuss results with your doctor.",
+   "improve_bn": "সকালে নমুনা দিন যখন মাত্রা সর্বোচ্চ থাকে। নিয়মিত ব্যায়াম, স্বাস্থ্যকর ওজন ও ভালো ঘুম মাত্রায় সাহায্য করে; ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add free testosterone, LH, FSH, prolactin or SHBG.",
+   "more_bn": "চিকিৎসক ফ্রি টেস্টোস্টেরন, LH, FSH, প্রোল্যাকটিন বা SHBG যোগ করতে পারেন।"
+  },
+  {
+   "key": "BETA - hCG ESTIMATION (SERUM)",
+   "category": "Pathology",
+   "aka_en": "Serum Beta-hCG",
+   "aka_bn": "বিটা-hCG",
+   "numeric": true,
+   "unit": "mIU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 25,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 5,
+     "note_en": "Non-pregnant adult; rises sharply in pregnancy.",
+     "note_bn": "গর্ভবতী নন এমন প্রাপ্তবয়স্ক; গর্ভাবস্থায় দ্রুত বাড়ে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A very low or undetectable level is normal when not pregnant.",
+     "explainer_bn": "গর্ভবতী না হলে খুব কম বা শনাক্তহীন মাত্রা স্বাভাবিক।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Not pregnant",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Below about 5 usually means not pregnant.",
+     "explainer_bn": "প্রায় ৫-এর নিচে সাধারণত গর্ভবতী নন বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "Raised",
+     "label_bn": "বেশি",
+     "explainer_en": "A raised level most often indicates pregnancy; the number helps gauge its stage.",
+     "explainer_bn": "বেশি মাত্রা প্রায়ই গর্ভাবস্থা বোঝায়; সংখ্যাটি এর পর্যায় বুঝতে সাহায্য করে।"
+    }
+   ],
+   "what_en": "Beta-hCG is a hormone produced during pregnancy. This blood test measures its exact amount, which is more sensitive than a urine pregnancy test.",
+   "what_bn": "বিটা-hCG গর্ভাবস্থায় তৈরি হওয়া একটি হরমোন। এই রক্ত পরীক্ষায় এর সঠিক পরিমাণ মাপা হয়, যা মূত্র পরীক্ষার চেয়ে বেশি সংবেদনশীল।",
+   "why_en": "It confirms and dates early pregnancy, monitors its progress, and helps detect problems like ectopic pregnancy or miscarriage.",
+   "why_bn": "এটি প্রাথমিক গর্ভাবস্থা নিশ্চিত ও এর সময় নির্ধারণ করে, অগ্রগতি পর্যবেক্ষণ করে, এবং একটোপিক গর্ভাবস্থা বা গর্ভপাতের মতো সমস্যা শনাক্তে সাহায্য করে।",
+   "improve_en": "In early pregnancy the level roughly doubles every 2-3 days, so a repeat test may be advised. Discuss results with your doctor.",
+   "improve_bn": "প্রাথমিক গর্ভাবস্থায় মাত্রা প্রতি ২-৩ দিনে প্রায় দ্বিগুণ হয়, তাই পুনরায় পরীক্ষা করার পরামর্শ দেওয়া হতে পারে। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add a repeat beta-hCG, progesterone or a pelvic ultrasound.",
+   "more_bn": "চিকিৎসক পুনরায় বিটা-hCG, প্রোজেস্টেরন বা পেলভিক আল্ট্রাসাউন্ড যোগ করতে পারেন।"
+  },
+  {
+   "key": "PTH",
+   "category": "Pathology",
+   "aka_en": "Parathyroid Hormone (Intact)",
+   "aka_bn": "প্যারাথাইরয়েড হরমোন",
+   "numeric": true,
+   "unit": "pg/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 120,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 15,
+     "high": 65,
+     "note_en": "Intact PTH; interpret together with blood calcium.",
+     "note_bn": "ইনট্যাক্ট PTH; রক্তের ক্যালসিয়ামের সঙ্গে মিলিয়ে ব্যাখ্যা করুন।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low PTH may relate to an underactive parathyroid or high blood calcium.",
+     "explainer_bn": "কম PTH দুর্বল প্যারাথাইরয়েড বা রক্তে বেশি ক্যালসিয়াম বোঝাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "PTH is within the expected range for a healthy adult.",
+     "explainer_bn": "PTH সুস্থ প্রাপ্তবয়স্কের প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High PTH may indicate overactive parathyroid glands or vitamin D deficiency.",
+     "explainer_bn": "বেশি PTH অতিসক্রিয় প্যারাথাইরয়েড বা ভিটামিন D-এর অভাব বোঝাতে পারে।"
+    }
+   ],
+   "what_en": "PTH is made by the parathyroid glands in the neck and controls calcium levels in blood and bone. This test measures its blood level.",
+   "what_bn": "PTH ঘাড়ের প্যারাথাইরয়েড গ্রন্থি থেকে নিঃসৃত হয় এবং রক্ত ও হাড়ের ক্যালসিয়াম নিয়ন্ত্রণ করে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "Doctors order it for abnormal blood calcium, bone disease, kidney disease, or suspected parathyroid problems.",
+   "why_bn": "রক্তে অস্বাভাবিক ক্যালসিয়াম, হাড়ের রোগ, কিডনির রোগ, বা প্যারাথাইরয়েড সমস্যার সন্দেহে চিকিৎসক এটি করান।",
+   "improve_en": "Results are read alongside calcium and vitamin D. Adequate vitamin D and calcium in diet support bone health; discuss results with your doctor.",
+   "improve_bn": "ফলাফল ক্যালসিয়াম ও ভিটামিন D-এর সঙ্গে মিলিয়ে দেখা হয়। পর্যাপ্ত ভিটামিন D ও ক্যালসিয়াম হাড়ের স্বাস্থ্যে সাহায্য করে; ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add serum calcium, phosphate, vitamin D and kidney function tests.",
+   "more_bn": "চিকিৎসক সিরাম ক্যালসিয়াম, ফসফেট, ভিটামিন D ও কিডনি কার্যকারিতার পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "ANTI MULLERIAN HORMONE (AMH)",
+   "category": "Pathology",
+   "aka_en": "AMH",
+   "aka_bn": "অ্যান্টি-মুলেরিয়ান হরমোন",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 8,
+   "ranges": [
+    {
+     "sex": "female",
+     "low": 1,
+     "high": 4,
+     "note_en": "Reflects ovarian reserve; declines with age, so interpret by age.",
+     "note_bn": "ডিম্বাশয়ের সঞ্চয় নির্দেশ করে; বয়সের সঙ্গে কমে, তাই বয়স অনুসারে ব্যাখ্যা করুন।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low AMH suggests a reduced egg reserve, which is also normal with age.",
+     "explainer_bn": "কম AMH ডিম্বাণুর কম সঞ্চয় বোঝায়, যা বয়সের সঙ্গে স্বাভাবিকও।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "AMH suggests a good ovarian reserve for the age group.",
+     "explainer_bn": "AMH বয়স অনুযায়ী ভালো ডিম্বাশয় সঞ্চয় বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High AMH can be seen in PCOS and may affect fertility treatment planning.",
+     "explainer_bn": "বেশি AMH PCOS-এ দেখা যায় এবং প্রজনন চিকিৎসা পরিকল্পনায় প্রভাব ফেলতে পারে।"
+    }
+   ],
+   "what_en": "AMH is a hormone produced by the ovaries that reflects a woman's remaining egg supply (ovarian reserve). This test measures its blood level.",
+   "what_bn": "AMH ডিম্বাশয় থেকে নিঃসৃত হরমোন যা নারীর অবশিষ্ট ডিম্বাণু সঞ্চয় (ডিম্বাশয় রিজার্ভ) নির্দেশ করে। এই পরীক্ষায় রক্তে এর মাত্রা মাপা হয়।",
+   "why_en": "It is used to assess fertility potential, plan IVF or other fertility treatment, and help evaluate PCOS.",
+   "why_bn": "প্রজনন সম্ভাবনা মূল্যায়ন, IVF বা অন্যান্য প্রজনন চিকিৎসা পরিকল্পনা, এবং PCOS মূল্যায়নে এটি ব্যবহৃত হয়।",
+   "improve_en": "AMH can be tested any day of the cycle. It reflects egg quantity, not quality; discuss what your result means for your plans with your doctor.",
+   "improve_bn": "AMH চক্রের যেকোনো দিন পরীক্ষা করা যায়। এটি ডিম্বাণুর সংখ্যা নির্দেশ করে, গুণমান নয়; আপনার ফলাফল পরিকল্পনার জন্য কী বোঝায় তা চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add FSH, LH, estradiol or an ovarian ultrasound (antral follicle count).",
+   "more_bn": "চিকিৎসক FSH, LH, এস্ট্রাডিওল বা ডিম্বাশয়ের আল্ট্রাসাউন্ড (অ্যান্ট্রাল ফলিকল কাউন্ট) যোগ করতে পারেন।"
+  },
+  {
+   "key": "RHEUMATOID - FACTOR WITH TITRE",
+   "category": "Pathology",
+   "aka_en": "RA Factor, RF",
+   "aka_bn": "আরএ ফ্যাক্টর",
+   "numeric": true,
+   "unit": "IU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 60,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 20,
+     "note_en": "Below about 20 is generally negative; higher values are positive.",
+     "note_bn": "প্রায় ২০-এর নিচে সাধারণত নেগেটিভ; বেশি মান পজিটিভ।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Negative",
+     "label_bn": "নেগেটিভ",
+     "explainer_en": "A low/negative result makes rheumatoid arthritis less likely but does not rule it out.",
+     "explainer_bn": "কম/নেগেটিভ ফল রিউমাটয়েড আর্থ্রাইটিসের সম্ভাবনা কমায়, তবে বাতিল করে না।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the normal (negative) range for a healthy adult.",
+     "explainer_bn": "সুস্থ প্রাপ্তবয়স্কের স্বাভাবিক (নেগেটিভ) মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high titre supports rheumatoid arthritis but can occur in other conditions too.",
+     "explainer_bn": "বেশি টাইটার রিউমাটয়েড আর্থ্রাইটিস সমর্থন করে, তবে অন্যান্য অবস্থাতেও হতে পারে।"
+    }
+   ],
+   "what_en": "Rheumatoid factor is an antibody often found in autoimmune joint disease. This test measures its level (titre) in blood.",
+   "what_bn": "রিউমাটয়েড ফ্যাক্টর একটি অ্যান্টিবডি যা প্রায়ই অটোইমিউন গাঁটের রোগে পাওয়া যায়। এই পরীক্ষায় রক্তে এর মাত্রা (টাইটার) মাপা হয়।",
+   "why_en": "It is ordered to help diagnose rheumatoid arthritis and other autoimmune diseases in people with joint pain, swelling or stiffness.",
+   "why_bn": "গাঁটে ব্যথা, ফোলা বা শক্ত হওয়া ব্যক্তিদের রিউমাটয়েড আর্থ্রাইটিস ও অন্যান্য অটোইমিউন রোগ নির্ণয়ে সাহায্য করতে করানো হয়।",
+   "improve_en": "This test alone does not confirm a diagnosis; it is read with symptoms and other tests. Discuss results with your doctor.",
+   "improve_bn": "এই পরীক্ষা একা রোগ নিশ্চিত করে না; উপসর্গ ও অন্যান্য পরীক্ষার সঙ্গে মিলিয়ে দেখা হয়। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add anti-CCP, CRP, ESR or joint X-rays.",
+   "more_bn": "চিকিৎসক anti-CCP, CRP, ESR বা গাঁটের এক্স-রে যোগ করতে পারেন।"
+  },
+  {
+   "key": "ASO TITER (QUANTITATIVE)",
+   "category": "Pathology",
+   "aka_en": "Anti-Streptolysin O",
+   "aka_bn": "অ্যান্টি-স্ট্রেপ্টোলাইসিন O",
+   "numeric": true,
+   "unit": "IU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 400,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 200,
+     "note_en": "Up to about 200 is generally normal in adults; slightly higher in children.",
+     "note_bn": "প্রাপ্তবয়স্কে প্রায় ২০০ পর্যন্ত সাধারণত স্বাভাবিক; শিশুদের কিছুটা বেশি।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "A low level suggests no recent significant streptococcal infection.",
+     "explainer_bn": "কম মাত্রা সম্প্রতি উল্লেখযোগ্য স্ট্রেপ্টোকক্কাস সংক্রমণ না হওয়া বোঝায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the normal range, making recent strep infection less likely.",
+     "explainer_bn": "স্বাভাবিক মাত্রায়, সম্প্রতি স্ট্রেপ সংক্রমণের সম্ভাবনা কম।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high titre suggests a recent streptococcal infection, relevant to rheumatic fever.",
+     "explainer_bn": "বেশি টাইটার সম্প্রতি স্ট্রেপ্টোকক্কাস সংক্রমণ বোঝায়, যা রিউমাটিক জ্বরের সঙ্গে সম্পর্কিত।"
+    }
+   ],
+   "what_en": "ASO titre measures antibodies against a toxin made by streptococcus bacteria. This test detects a recent strep infection.",
+   "what_bn": "ASO টাইটার স্ট্রেপ্টোকক্কাস ব্যাকটেরিয়ার তৈরি বিষের বিরুদ্ধে অ্যান্টিবডি মাপে। এই পরীক্ষা সম্প্রতি স্ট্রেপ সংক্রমণ শনাক্ত করে।",
+   "why_en": "It is ordered when rheumatic fever, post-strep kidney disease, or complications of a recent throat infection are suspected.",
+   "why_bn": "রিউমাটিক জ্বর, স্ট্রেপ-পরবর্তী কিডনি রোগ, বা সম্প্রতি গলা সংক্রমণের জটিলতার সন্দেহে করানো হয়।",
+   "improve_en": "A single raised value may be repeated after 1-2 weeks to see the trend. Discuss results with your doctor.",
+   "improve_bn": "একটি বেশি মান ১-২ সপ্তাহ পর পুনরায় করা হতে পারে প্রবণতা দেখতে। ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add CRP, ESR, throat swab culture or anti-DNase B.",
+   "more_bn": "চিকিৎসক CRP, ESR, গলার সোয়াব কালচার বা anti-DNase B যোগ করতে পারেন।"
   }
  ]
 }
