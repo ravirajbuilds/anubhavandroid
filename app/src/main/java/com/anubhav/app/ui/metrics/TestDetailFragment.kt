@@ -19,7 +19,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.anubhav.app.R
-import com.anubhav.app.data.model.TestInfoRange
 import com.anubhav.app.data.repository.TestInfoRepository
 import com.anubhav.app.utils.LanguageManager
 import com.anubhav.app.utils.TestInfoPdfSharer
