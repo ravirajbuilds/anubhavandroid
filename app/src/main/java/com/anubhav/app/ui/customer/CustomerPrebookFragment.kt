@@ -214,6 +214,17 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
         val root = view ?: return
         val phone = CustomerSessionManager.getPhone(requireContext()) ?: return
+        // If the fragment/activity was recreated during Razorpay checkout, the transient
+        // selection can be lost. Never submit a corrupt ₹0 booking with empty tests/slot —
+        // surface the payment id so the paid user can reconcile with support.
+        if (selectedTests.isEmpty() || selectedDate.isNullOrBlank() || selectedSlot.isNullOrBlank() || pendingAdvance <= 0.0) {
+            Toast.makeText(
+                requireContext(),
+                localized(R.string.payment_recorded_contact_support, paymentId),
+                Toast.LENGTH_LONG,
+            ).show()
+            return
+        }
         val etName = root.findViewById<TextInputEditText>(R.id.etPatientName)
         val etAge = root.findViewById<TextInputEditText>(R.id.etAgeYear)
         val spinnerSex = root.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
@@ -241,6 +252,14 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                         Toast.LENGTH_LONG,
                     ).show()
                     selectedTests.clear()
+                    // Reflect the cleared selection in the UI (totals + list) instead of
+                    // leaving the old amounts on screen after a successful booking.
+                    testAdapter.submit(testAdapterItems, emptyList())
+                    updateTotals(
+                        root.findViewById(R.id.tvSelectedTests),
+                        root.findViewById(R.id.tvTotalAmount),
+                        root.findViewById(R.id.tvAdvanceAmount),
+                    )
                 },
                 onFailure = { error ->
                     progress.visibility = View.GONE

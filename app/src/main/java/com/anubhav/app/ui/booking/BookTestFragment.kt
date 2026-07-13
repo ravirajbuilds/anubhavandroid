@@ -163,8 +163,11 @@ class BookTestFragment : Fragment() {
                     ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, names),
                 )
                 state.selectedCentre?.let { spinnerCentre.setText(it.collcentreName, false) }
-                spinnerCentre.setOnItemClickListener { _, _, position, _ ->
-                    viewModel.selectCentre(centres.getOrNull(position))
+                spinnerCentre.setOnItemClickListener { parent, _, position, _ ->
+                    // Resolve by the clicked label, not the filtered index: once the user
+                    // types to narrow the dropdown, `position` no longer maps to `centres`.
+                    val name = parent.getItemAtPosition(position) as? String
+                    viewModel.selectCentre(centres.firstOrNull { it.collcentreName == name })
                 }
             }
 

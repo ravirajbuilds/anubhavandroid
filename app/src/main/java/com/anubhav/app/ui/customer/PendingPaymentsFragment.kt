@@ -119,7 +119,18 @@ class PendingPaymentsFragment : Fragment(), PaymentResultListener {
             Toast.makeText(requireContext(), localized(R.string.payment_failed), Toast.LENGTH_LONG).show()
             return
         }
-        val bill = pendingBill ?: return
+        val bill = pendingBill
+        if (bill == null) {
+            // The fragment was recreated during checkout (rotation / low memory), so the
+            // in-flight bill was lost. Never drop a paid transaction silently — surface the
+            // payment id so the user can reconcile it with support.
+            Toast.makeText(
+                requireContext(),
+                localized(R.string.payment_recorded_contact_support, paymentId),
+                Toast.LENGTH_LONG,
+            ).show()
+            return
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             repo.payPendingCached(
                 requireContext(),

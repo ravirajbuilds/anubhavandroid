@@ -41,8 +41,16 @@ object ReportFetcher {
                 val body = resp.body ?: error("empty response")
                 val tmp = File(file.parentFile, "${file.name}.part")
                 tmp.outputStream().use { out -> body.byteStream().use { it.copyTo(out) } }
-                if (tmp.length() == 0L) { tmp.delete(); error("empty PDF") }
-                tmp.renameTo(file)
+                // Guard against caching a 200-but-not-a-PDF payload (e.g. a Cloudflare
+                // tunnel/origin HTML error page). Such a file would poison the cache
+                // permanently because isCached()/the early return key only on size.
+                val header = ByteArray(5)
+                tmp.inputStream().use { it.read(header) }
+                if (tmp.length() == 0L || !header.decodeToString().startsWith("%PDF-")) {
+                    tmp.delete(); error("not a PDF")
+                }
+                // renameTo can fail; fall back to a copy so the returned File always exists.
+                if (!tmp.renameTo(file)) { tmp.copyTo(file, overwrite = true); tmp.delete() }
             }
             file
         }

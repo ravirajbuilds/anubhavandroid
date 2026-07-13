@@ -228,7 +228,10 @@ loadCollectorData(collectorKey, progress, empty, syncState, forceRefresh = false
     }
 
     private fun openDialer(phone: String) {
-        startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone")))
+        runCatching { startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))) }
+            .onFailure {
+                Toast.makeText(requireContext(), localized(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun openWhatsApp(phone: String, patientName: String) {

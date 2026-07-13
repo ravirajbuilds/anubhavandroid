@@ -120,6 +120,7 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                 R.id.nav_book_test,
                 R.id.nav_my_bookings,
                 R.id.nav_my_reports,
+                R.id.nav_metrics,
                 R.id.nav_collector,
                 R.id.nav_pending_payments,
                 R.id.nav_settings,
@@ -229,6 +230,7 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         menu.findItem(R.id.nav_book_test)?.title = localized(R.string.menu_book_test)
         menu.findItem(R.id.nav_my_bookings)?.title = localized(R.string.menu_my_bookings)
         menu.findItem(R.id.nav_my_reports)?.title = localized(R.string.menu_my_reports)
+        menu.findItem(R.id.nav_metrics)?.title = localized(R.string.menu_metrics)
         menu.findItem(R.id.nav_collector)?.title = localized(R.string.menu_collector)
         menu.findItem(R.id.nav_pending_payments)?.title = localized(R.string.pending_payments_title)
         menu.findItem(R.id.nav_settings)?.title = localized(R.string.menu_settings)

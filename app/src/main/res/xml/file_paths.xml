@@ -6,4 +6,7 @@
     <files-path
         name="saved_reports"
         path="saved_reports/" />
+    <files-path
+        name="test_info"
+        path="test_info/" />
 </paths>

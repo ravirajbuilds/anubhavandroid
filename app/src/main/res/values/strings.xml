@@ -165,6 +165,25 @@
     <string name="network_error">Could not connect. Check your internet and try again.</string>
     <string name="something_went_wrong">Something went wrong. Please try again.</string>
 
+    <!-- Metrics / Health Library (test display screen) -->
+    <string name="menu_metrics">Metrics</string>
+    <string name="metrics_search_hint">Search tests</string>
+    <string name="metrics_count">%1$d tests</string>
+    <string name="test_detail_title">Test details</string>
+    <string name="share_pdf">Share PDF</string>
+    <string name="enter_your_value">Enter your value</string>
+    <string name="reference_range">Normal range: %1$s</string>
+    <string name="what_each_zone_means">What each zone means</string>
+    <string name="section_what">What is this test?</string>
+    <string name="section_why">Why it matters</string>
+    <string name="section_improve">How to improve</string>
+    <string name="section_more">Further tests to consider</string>
+    <string name="stage_low">Low</string>
+    <string name="stage_normal">Normal</string>
+    <string name="stage_high">High</string>
+    <string name="metrics_disclaimer">This information is for general education only and is not a diagnosis. Reference ranges can vary between laboratories — always read your own report\'s range and discuss results with your doctor.</string>
+    <string name="payment_recorded_contact_support">Payment received (ID %1$s) but the booking could not be completed automatically. Please contact support with this payment ID.</string>
+
     <string name="time_slot_morning">8 AM – 12 PM</string>
     <string name="time_slot_afternoon">12 PM – 4 PM</string>
     <string name="time_slot_evening">4 PM – 7 PM</string>
@@ -386,6 +405,25 @@
     <string name="ok_bn">ঠিক আছে</string>
     <string name="network_error_bn">সংযোগ হয়নি। ইন্টারনেট চেক করে আবার চেষ্টা করুন।</string>
     <string name="something_went_wrong_bn">কিছু ভুল হয়েছে। আবার চেষ্টা করুন।</string>
+
+    <!-- Metrics / Health Library (Bengali) -->
+    <string name="menu_metrics_bn">স্বাস্থ্য সূচক</string>
+    <string name="metrics_search_hint_bn">টেস্ট খুঁজুন</string>
+    <string name="metrics_count_bn">%1$d টি টেস্ট</string>
+    <string name="test_detail_title_bn">টেস্টের বিবরণ</string>
+    <string name="share_pdf_bn">PDF শেয়ার করুন</string>
+    <string name="enter_your_value_bn">আপনার ফলাফল লিখুন</string>
+    <string name="reference_range_bn">স্বাভাবিক মাত্রা: %1$s</string>
+    <string name="what_each_zone_means_bn">প্রতিটি স্তরের অর্থ</string>
+    <string name="section_what_bn">এই টেস্ট কী?</string>
+    <string name="section_why_bn">কেন গুরুত্বপূর্ণ</string>
+    <string name="section_improve_bn">কীভাবে উন্নত করা যায়</string>
+    <string name="section_more_bn">আরও যে টেস্ট করা যেতে পারে</string>
+    <string name="stage_low_bn">কম</string>
+    <string name="stage_normal_bn">স্বাভাবিক</string>
+    <string name="stage_high_bn">বেশি</string>
+    <string name="metrics_disclaimer_bn">এই তথ্য শুধুমাত্র সাধারণ জ্ঞানের জন্য, কোনো রোগ নির্ণয় নয়। রেফারেন্স মাত্রা ল্যাব ভেদে আলাদা হতে পারে — সবসময় নিজের রিপোর্টের মাত্রা দেখুন এবং ফলাফল নিয়ে ডাক্তারের সঙ্গে পরামর্শ করুন।</string>
+    <string name="payment_recorded_contact_support_bn">পেমেন্ট গৃহীত হয়েছে (আইডি %1$s), কিন্তু বুকিংটি স্বয়ংক্রিয়ভাবে সম্পন্ন করা যায়নি। এই পেমেন্ট আইডি সহ সাপোর্টে যোগাযোগ করুন।</string>
 
     <string name="prebook_date_hint_bn">তারিখ (শুধু ১০, ২০ বা ৩০ তারিখ)</string>
     <string name="prebook_policy_bn">৫০%% অগ্রিম ফেরতযোগ্য নয়। পুনঃনির্ধারণ শুধু %1$s এ কল করে।</string>

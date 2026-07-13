@@ -1,0 +1,2390 @@
+{
+ "version": 1,
+ "generic": {
+  "X-Ray": {
+   "category": "X-Ray",
+   "what_en": "An X-ray is a quick, painless imaging test that uses a small amount of radiation to create pictures of the bones and certain structures inside your body. It helps doctors see areas that cannot be examined from the outside.",
+   "what_bn": "এক্স-রে হল একটি দ্রুত ও ব্যথাহীন ইমেজিং পরীক্ষা, যেখানে খুব অল্প পরিমাণ রেডিয়েশন ব্যবহার করে শরীরের ভেতরের হাড় ও কিছু অংশের ছবি তোলা হয়। এটি চিকিৎসককে শরীরের ভেতরের এমন জায়গা দেখতে সাহায্য করে যা বাইরে থেকে পরীক্ষা করা যায় না।",
+   "why_en": "Doctors usually order an X-ray to check for fractures, infections, joint problems, lung conditions, or to look at the position of bones and organs. It is often used when you have pain, injury, swelling, or breathing difficulty.",
+   "why_bn": "চিকিৎসকেরা সাধারণত হাড় ভাঙা, সংক্রমণ, গাঁটের সমস্যা, ফুসফুসের অবস্থা দেখতে অথবা হাড় ও অঙ্গের অবস্থান বোঝার জন্য এক্স-রে করাতে বলেন। ব্যথা, আঘাত, ফোলাভাব বা শ্বাসকষ্ট থাকলে প্রায়ই এটি করা হয়।",
+   "improve_en": "Usually no special preparation is needed, but wear loose, comfortable clothing and remove any jewellery or metal objects from the area being scanned. Tell the staff if you are or may be pregnant before the scan.",
+   "improve_bn": "সাধারণত বিশেষ কোনো প্রস্তুতির দরকার হয় না, তবে ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং যে অংশের ছবি তোলা হবে সেখান থেকে গয়না বা ধাতব জিনিস খুলে রাখুন। আপনি গর্ভবতী হলে বা হওয়ার সম্ভাবনা থাকলে পরীক্ষার আগে কর্মীদের জানান।",
+   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an ultrasound, CT scan, or MRI, or blood tests for a clearer picture. Always discuss your X-ray report with your doctor for the right next steps.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক আরও পরিষ্কার ছবির জন্য আল্ট্রাসাউন্ড, সিটি স্ক্যান, এমআরআই বা রক্ত পরীক্ষার পরামর্শ দিতে পারেন। সঠিক পরবর্তী পদক্ষেপের জন্য সবসময় আপনার এক্স-রে রিপোর্ট চিকিৎসকের সঙ্গে আলোচনা করুন।"
+  },
+  "Pathology": {
+   "category": "Pathology",
+   "what_en": "A pathology test analyses a sample from your body such as blood, urine, stool or tissue in the laboratory to measure specific components and detect signs of disease. The results give your doctor objective information about how your organs and body systems are working.",
+   "what_bn": "প্যাথলজি পরীক্ষায় আপনার শরীরের নমুনা যেমন রক্ত, প্রস্রাব, মল বা টিস্যু ল্যাবরেটরিতে বিশ্লেষণ করে নির্দিষ্ট উপাদান পরিমাপ করা হয় এবং রোগের লক্ষণ শনাক্ত করা হয়। এর ফলাফল আপনার শরীরের বিভিন্ন অঙ্গ ও তন্ত্র কেমন কাজ করছে সে সম্পর্কে ডাক্তারকে সঠিক তথ্য দেয়।",
+   "why_en": "Doctors order pathology tests to screen for illness, confirm a diagnosis, find the cause of symptoms, and monitor an existing condition or the effect of ongoing treatment. They are also used in routine health check-ups even when you feel well.",
+   "why_bn": "রোগ আছে কিনা তা যাচাই করতে, রোগ নিশ্চিত করতে, উপসর্গের কারণ খুঁজে বের করতে এবং কোনো চলমান রোগ বা চিকিৎসার প্রভাব পর্যবেক্ষণ করতে ডাক্তার প্যাথলজি পরীক্ষা দেন। ভালো থাকলেও নিয়মিত স্বাস্থ্য পরীক্ষায় এগুলো ব্যবহার করা হয়।",
+   "improve_en": "Follow any instructions given for the test, such as fasting for a set number of hours or collecting the sample at a particular time, as this affects accuracy. Carry your prescription and previous reports, stay well hydrated unless told otherwise, and inform the lab about any medicines you take.",
+   "improve_bn": "পরীক্ষার জন্য দেওয়া নির্দেশনা মেনে চলুন, যেমন নির্দিষ্ট সময় খালি পেটে থাকা বা নির্দিষ্ট সময়ে নমুনা সংগ্রহ করা, কারণ এতে ফলাফলের নির্ভুলতা নির্ভর করে। আপনার প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন, অন্যথায় না বললে পর্যাপ্ত পানি পান করুন এবং আপনি যে ওষুধ খান তা ল্যাবকে জানান।",
+   "more_en": "Depending on the results, your doctor may repeat the test after some time or advise related blood, urine or imaging tests to look further into the finding. Always discuss your reports with your doctor, who will interpret them along with your symptoms and history.",
+   "more_bn": "ফলাফলের ওপর নির্ভর করে ডাক্তার কিছু সময় পর পরীক্ষাটি আবার করতে বা বিষয়টি আরও ভালোভাবে দেখতে সংশ্লিষ্ট রক্ত, প্রস্রাব বা ইমেজিং পরীক্ষা করাতে বলতে পারেন। রিপোর্ট সবসময় ডাক্তারের সঙ্গে আলোচনা করুন, যিনি আপনার উপসর্গ ও ইতিহাসের সঙ্গে মিলিয়ে তা ব্যাখ্যা করবেন।"
+  },
+  "USG": {
+   "category": "USG",
+   "what_en": "An ultrasound (USG) scan is a painless, radiation-free test that uses high-frequency sound waves to create live images of the organs, tissues, and blood flow inside your body. A trained technician moves a small probe over the skin (or, for some studies, internally) to view areas such as the abdomen, pelvis, or a pregnancy.",
+   "what_bn": "আল্ট্রাসাউন্ড (USG) হল একটি ব্যথাহীন ও বিকিরণমুক্ত পরীক্ষা, যা উচ্চ-কম্পাঙ্কের শব্দতরঙ্গ ব্যবহার করে শরীরের ভিতরের অঙ্গ, কলা ও রক্তপ্রবাহের সরাসরি ছবি তৈরি করে। একজন প্রশিক্ষিত টেকনিশিয়ান ত্বকের উপর (বা কিছু পরীক্ষার ক্ষেত্রে ভিতর দিয়ে) একটি ছোট প্রোব চালিয়ে পেট, তলপেট বা গর্ভাবস্থার মতো অংশ দেখেন।",
+   "why_en": "Doctors order an ultrasound to check the size, shape, and condition of internal organs and to look for causes of pain, swelling, cysts, stones, or other changes. It is also widely used to monitor pregnancy and to guide certain procedures safely.",
+   "why_bn": "ভিতরের অঙ্গের আকার, গঠন ও অবস্থা দেখতে এবং ব্যথা, ফোলাভাব, সিস্ট, পাথর বা অন্যান্য পরিবর্তনের কারণ খুঁজতে চিকিৎসক আল্ট্রাসাউন্ড করাতে বলেন। গর্ভাবস্থা পর্যবেক্ষণ এবং কিছু চিকিৎসা-পদ্ধতি নিরাপদে পরিচালনার জন্যও এটি ব্যাপকভাবে ব্যবহৃত হয়।",
+   "improve_en": "Follow the preparation for your specific scan: abdominal studies often need 6-8 hours of fasting, while pelvic or pregnancy scans may require a full bladder, so drink water and avoid urinating beforehand as advised. Wear loose, comfortable clothing and carry any previous scans or reports.",
+   "improve_bn": "আপনার নির্দিষ্ট স্ক্যানের নির্দেশনা মেনে চলুন: পেটের পরীক্ষার জন্য প্রায়ই ৬-৮ ঘণ্টা খালি পেটে থাকতে হয়, আবার তলপেট বা গর্ভাবস্থার স্ক্যানে মূত্রথলি ভরা থাকা প্রয়োজন হতে পারে, তাই পরামর্শ অনুযায়ী জল পান করুন ও আগে থেকে প্রস্রাব করবেন না। ঢিলেঢালা আরামদায়ক পোশাক পরুন এবং আগের কোনো স্ক্যান বা রিপোর্ট সঙ্গে আনুন।",
+   "more_en": "Depending on the findings, your doctor may suggest blood tests, a repeat or more detailed scan (such as Doppler, CT, or MRI), or a specialist referral. Always review the report with your doctor to decide the next step.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক রক্ত পরীক্ষা, পুনরায় বা আরও বিশদ স্ক্যান (যেমন ডপলার, সিটি বা এমআরআই), অথবা বিশেষজ্ঞের কাছে রেফারেল করতে বলতে পারেন। পরবর্তী পদক্ষেপ ঠিক করতে সবসময় চিকিৎসকের সঙ্গে রিপোর্ট নিয়ে আলোচনা করুন।"
+  },
+  "CT Scan": {
+   "category": "CT Scan",
+   "what_en": "A CT (Computed Tomography) scan uses X-rays taken from many angles to build detailed cross-sectional images of bones, organs, blood vessels and soft tissues inside the body. Sometimes a contrast dye is given by mouth or injection to make certain structures show up more clearly.",
+   "what_bn": "সিটি (কম্পিউটেড টোমোগ্রাফি) স্ক্যানে বিভিন্ন কোণ থেকে এক্স-রে নিয়ে শরীরের ভিতরের হাড়, অঙ্গ, রক্তনালী ও নরম টিস্যুর বিস্তারিত ক্রস-সেকশনাল ছবি তৈরি করা হয়। কখনও কখনও নির্দিষ্ট অংশ স্পষ্টভাবে দেখার জন্য মুখে খাওয়ানো বা ইনজেকশনের মাধ্যমে কনট্রাস্ট ডাই দেওয়া হয়।",
+   "why_en": "Doctors order a CT scan to look for problems that plain X-rays cannot show clearly, such as internal injuries, infections, bleeding, tumours, stones or blockages. The detailed images help pinpoint the exact location and extent of a suspected condition.",
+   "why_bn": "সাধারণ এক্স-রেতে স্পষ্টভাবে ধরা পড়ে না এমন সমস্যা—যেমন ভিতরের আঘাত, সংক্রমণ, রক্তক্ষরণ, টিউমার, পাথর বা বাধা—খুঁজে দেখতে ডাক্তার সিটি স্ক্যান করাতে বলেন। বিস্তারিত ছবি সন্দেহজনক সমস্যার সঠিক অবস্থান ও পরিমাণ নির্ণয়ে সাহায্য করে।",
+   "improve_en": "Follow the lab's instructions on fasting and drinking water beforehand, and inform the staff if you are pregnant, have kidney problems, diabetes or any allergy, especially to contrast dye. Wear loose clothing and remove metal objects such as jewellery, and share the report with your doctor for the next steps.",
+   "improve_bn": "স্ক্যানের আগে খালি পেটে থাকা ও জল খাওয়ার বিষয়ে ল্যাবের নির্দেশ মেনে চলুন, এবং গর্ভবতী হলে, কিডনির সমস্যা, ডায়াবেটিস বা কোনও অ্যালার্জি—বিশেষত কনট্রাস্ট ডাইয়ের—থাকলে কর্মীদের জানান। ঢিলেঢালা পোশাক পরুন, গয়নার মতো ধাতব জিনিস খুলে রাখুন এবং পরবর্তী পদক্ষেপের জন্য রিপোর্টটি আপনার ডাক্তারকে দেখান।",
+   "more_en": "Depending on the findings, your doctor may suggest blood tests, an ultrasound or MRI, or a contrast-enhanced scan for a closer look. In some cases a biopsy or specialist referral may be advised to confirm the diagnosis.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার রক্ত পরীক্ষা, আল্ট্রাসাউন্ড বা এমআরআই, অথবা আরও ভালোভাবে দেখার জন্য কনট্রাস্ট-সহ স্ক্যান করাতে বলতে পারেন। কিছু ক্ষেত্রে রোগ নিশ্চিত করতে বায়োপসি বা বিশেষজ্ঞের পরামর্শ নেওয়ার কথাও বলা হতে পারে।"
+  },
+  "Neurology": {
+   "category": "Neurology",
+   "what_en": "A neurology test or scan examines the brain, spinal cord, and nerves to check how well the nervous system is working. It may record the brain's electrical activity, measure nerve and muscle signals, or produce detailed images of nerve structures.",
+   "what_bn": "নিউরোলজি পরীক্ষা বা স্ক্যানের মাধ্যমে মস্তিষ্ক, সুষুম্নাকাণ্ড এবং স্নায়ু ঠিকভাবে কাজ করছে কিনা তা দেখা হয়। এতে মস্তিষ্কের বৈদ্যুতিক কার্যকলাপ, স্নায়ু ও পেশির সংকেত পরিমাপ করা হতে পারে অথবা স্নায়ুর বিস্তারিত ছবি তোলা হতে পারে।",
+   "why_en": "Doctors order these tests to find the cause of symptoms such as headaches, seizures, dizziness, numbness, weakness, or memory problems. They help detect and monitor conditions affecting the brain and nervous system.",
+   "why_bn": "মাথাব্যথা, খিঁচুনি, মাথা ঘোরা, অসাড়তা, দুর্বলতা বা স্মৃতি সমস্যার মতো উপসর্গের কারণ খুঁজে বের করতে চিকিৎসকরা এই পরীক্ষাগুলি করান। এগুলি মস্তিষ্ক ও স্নায়ুতন্ত্রের রোগ শনাক্ত ও পর্যবেক্ষণে সাহায্য করে।",
+   "improve_en": "Follow any instructions from the lab, such as washing your hair without oil or gel before certain scans and getting proper rest the night before. Carry previous reports and prescriptions, and tell the technician about any implants or metal in your body.",
+   "improve_bn": "ল্যাবের নির্দেশনা মেনে চলুন, যেমন কিছু স্ক্যানের আগে তেল বা জেল ছাড়া চুল ধুয়ে রাখা এবং আগের রাতে পর্যাপ্ত বিশ্রাম নেওয়া। আগের রিপোর্ট ও প্রেসক্রিপশন সঙ্গে আনুন এবং শরীরে কোনো ইমপ্ল্যান্ট বা ধাতু থাকলে টেকনিশিয়ানকে জানান।",
+   "more_en": "Depending on the findings, your doctor may suggest further imaging such as an MRI or CT scan, blood tests, or a referral to a neurologist. Repeat tests may be advised to monitor how your condition changes over time.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে চিকিৎসক এমআরআই বা সিটি স্ক্যানের মতো আরও ছবি পরীক্ষা, রক্ত পরীক্ষা অথবা স্নায়ুরোগ বিশেষজ্ঞের কাছে পাঠানোর পরামর্শ দিতে পারেন। অবস্থার পরিবর্তন পর্যবেক্ষণে পুনরায় পরীক্ষার পরামর্শও দেওয়া হতে পারে।"
+  },
+  "OtherRadio": {
+   "category": "OtherRadio",
+   "what_en": "This is a radiology or imaging test that uses methods such as X-rays, sound waves, or scanning equipment to create pictures of the inside of your body. It helps the doctor look at organs, bones, or tissues that cannot be seen from the outside.",
+   "what_bn": "এটি একটি রেডিওলজি বা ইমেজিং পরীক্ষা, যেখানে এক্স-রে, শব্দতরঙ্গ বা স্ক্যানিং যন্ত্রের সাহায্যে শরীরের ভেতরের ছবি তোলা হয়। এর মাধ্যমে ডাক্তার এমন অঙ্গ, হাড় বা কলা দেখতে পারেন যা বাইরে থেকে দেখা যায় না।",
+   "why_en": "A doctor usually orders this scan to find the cause of your symptoms, confirm a diagnosis, or check how well an organ or body part is working. It also helps monitor an existing condition or plan and review treatment.",
+   "why_bn": "সাধারণত ডাক্তার আপনার উপসর্গের কারণ খুঁজতে, রোগ নিশ্চিত করতে, বা কোনো অঙ্গ বা শরীরের অংশ কেমন কাজ করছে তা দেখতে এই স্ক্যান করাতে বলেন। এটি চলমান কোনো রোগ পর্যবেক্ষণ করতে এবং চিকিৎসার পরিকল্পনা ও পর্যালোচনা করতেও সাহায্য করে।",
+   "improve_en": "Follow any instructions the lab gives you, such as fasting, drinking water, or wearing loose clothing, and remove metal items like jewellery before the scan. Tell the staff if you are pregnant or may be pregnant, and carry your prescription and any earlier reports.",
+   "improve_bn": "ল্যাব থেকে দেওয়া নির্দেশনা মেনে চলুন, যেমন খালি পেটে থাকা, জল পান করা বা ঢিলেঢালা পোশাক পরা, এবং স্ক্যানের আগে গয়নার মতো ধাতব জিনিস খুলে রাখুন। আপনি গর্ভবতী হলে বা গর্ভবতী হওয়ার সম্ভাবনা থাকলে কর্মীদের জানান, এবং আপনার প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন।",
+   "more_en": "Depending on the findings, the doctor may suggest another imaging test such as an ultrasound, X-ray, or CT scan, or some blood tests for a clearer picture. Always discuss the report with your doctor, who will decide on the right follow-up for you.",
+   "more_bn": "রিপোর্টের ফলাফলের উপর নির্ভর করে ডাক্তার আরও পরিষ্কার ধারণা পেতে অন্য কোনো ইমেজিং পরীক্ষা যেমন আল্ট্রাসাউন্ড, এক্স-রে বা সিটি স্ক্যান, অথবা কিছু রক্ত পরীক্ষা করাতে বলতে পারেন। রিপোর্ট সবসময় আপনার ডাক্তারের সঙ্গে আলোচনা করুন, তিনিই আপনার জন্য সঠিক পরবর্তী পদক্ষেপ ঠিক করবেন।"
+  },
+  "Gastroenterology": {
+   "category": "Gastroenterology",
+   "what_en": "Gastroenterology tests examine your digestive system, including the stomach, intestines, liver, and related organs, using blood samples, stool tests, or scans. They help assess how well your digestive tract is working and detect signs of infection, inflammation, or other conditions.",
+   "what_bn": "গ্যাস্ট্রোএন্টেরোলজি পরীক্ষা আপনার পরিপাকতন্ত্র, অর্থাৎ পাকস্থলী, অন্ত্র, যকৃত ও সম্পর্কিত অঙ্গ পরীক্ষা করে, যার জন্য রক্ত, মল বা স্ক্যান ব্যবহার করা হয়। এই পরীক্ষা আপনার হজম প্রক্রিয়া কেমন কাজ করছে তা বোঝায় এবং সংক্রমণ, প্রদাহ বা অন্যান্য সমস্যার লক্ষণ শনাক্ত করতে সাহায্য করে।",
+   "why_en": "A doctor may order these tests when you have symptoms such as abdominal pain, indigestion, acidity, diarrhea, constipation, blood in stool, or unexplained weight loss. They also help monitor known digestive or liver conditions and check how well treatment is working.",
+   "why_bn": "পেটব্যথা, বদহজম, অম্বল, পাতলা পায়খানা, কোষ্ঠকাঠিন্য, মলে রক্ত বা অকারণে ওজন কমার মতো উপসর্গ থাকলে ডাক্তার এই পরীক্ষাগুলি করাতে বলতে পারেন। পরিচিত পরিপাক বা যকৃতের সমস্যার উপর নজর রাখতে এবং চিকিৎসা কতটা কাজ করছে তা যাচাই করতেও এগুলি সাহায্য করে।",
+   "improve_en": "Follow any fasting or dietary instructions given for your test, and mention any current medicines or supplements to the lab and your doctor. Drink adequate water unless told otherwise, and share the reports with your doctor to understand the results and next steps.",
+   "improve_bn": "পরীক্ষার জন্য দেওয়া উপবাস বা খাদ্য সংক্রান্ত নির্দেশ মেনে চলুন এবং আপনি যে ওষুধ বা সাপ্লিমেন্ট নিচ্ছেন তা ল্যাব ও ডাক্তারকে জানান। অন্য নির্দেশ না থাকলে পর্যাপ্ত জল পান করুন এবং ফলাফল ও পরবর্তী পদক্ষেপ বুঝতে রিপোর্ট ডাক্তারকে দেখান।",
+   "more_en": "Depending on the results, your doctor may suggest additional blood or stool tests, liver function tests, an abdominal ultrasound, or an endoscopy. Follow-up tests may be advised to confirm a diagnosis or to track your condition over time.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার আরও রক্ত বা মল পরীক্ষা, যকৃতের কার্যকারিতা পরীক্ষা, পেটের আলট্রাসাউন্ড বা এন্ডোস্কোপি করাতে বলতে পারেন। রোগ নিশ্চিত করতে বা সময়ের সাথে অবস্থার উপর নজর রাখতে ফলো-আপ পরীক্ষার পরামর্শ দেওয়া হতে পারে।"
+  },
+  "Urology/Nephrology": {
+   "category": "Urology/Nephrology",
+   "what_en": "Urology and nephrology tests check how well your kidneys, bladder, and urinary tract are working, usually through blood tests, urine samples, or imaging. They measure things like waste levels in the blood and signs of infection, protein, or blood in the urine.",
+   "what_bn": "ইউরোলজি ও নেফ্রোলজি পরীক্ষায় আপনার কিডনি, মূত্রথলি ও মূত্রনালী কতটা ভালোভাবে কাজ করছে তা দেখা হয়, সাধারণত রক্ত পরীক্ষা, প্রস্রাব পরীক্ষা বা ইমেজিংয়ের মাধ্যমে। এতে রক্তে বর্জ্যের মাত্রা এবং প্রস্রাবে সংক্রমণ, প্রোটিন বা রক্তের লক্ষণ পরিমাপ করা হয়।",
+   "why_en": "A doctor may order these tests to find the cause of symptoms like burning urination, back or side pain, swelling, or changes in how often or how much you urinate. They also help monitor kidney health in people with diabetes, high blood pressure, or a family history of kidney problems.",
+   "why_bn": "প্রস্রাবে জ্বালাপোড়া, পিঠ বা কোমরে ব্যথা, শরীর ফুলে যাওয়া, অথবা প্রস্রাবের পরিমাণ বা বারবার প্রস্রাবের পরিবর্তনের কারণ খুঁজে বের করতে ডাক্তার এই পরীক্ষাগুলো দিতে পারেন। ডায়াবেটিস, উচ্চ রক্তচাপ বা পরিবারে কিডনি রোগের ইতিহাস থাকলে কিডনির অবস্থা পর্যবেক্ষণেও এগুলো সাহায্য করে।",
+   "improve_en": "Follow any fasting or water-intake instructions given for your test, and for a urine test collect a clean mid-stream sample as advised. Stay well hydrated unless told otherwise, and share your full symptom and medication history with your doctor when reviewing the results.",
+   "improve_bn": "আপনার পরীক্ষার জন্য দেওয়া উপবাস বা পানি পানের নির্দেশনা মেনে চলুন, এবং প্রস্রাব পরীক্ষার জন্য পরামর্শ অনুযায়ী পরিষ্কার মিড-স্ট্রিম নমুনা সংগ্রহ করুন। বিশেষ নিষেধ না থাকলে পর্যাপ্ত পানি পান করুন, এবং রিপোর্ট দেখানোর সময় আপনার সব লক্ষণ ও ওষুধের তথ্য ডাক্তারকে জানান।",
+   "more_en": "Depending on the results, your doctor may suggest follow-up tests such as a urine culture, kidney function blood tests, or an ultrasound of the kidneys and bladder. In some cases a specialist referral or repeat testing after a few weeks may be recommended.",
+   "more_bn": "ফলাফলের উপর নির্ভর করে ডাক্তার প্রস্রাবের কালচার, কিডনির কার্যকারিতার রক্ত পরীক্ষা, অথবা কিডনি ও মূত্রথলির আল্ট্রাসাউন্ডের মতো অতিরিক্ত পরীক্ষার পরামর্শ দিতে পারেন। কিছু ক্ষেত্রে বিশেষজ্ঞের পরামর্শ নেওয়া বা কয়েক সপ্তাহ পর পুনরায় পরীক্ষার সুপারিশ করা হতে পারে।"
+  },
+  "default": {
+   "category": "default",
+   "what_en": "This is a medical test that examines a sample from your body (such as blood or urine) or produces images of your internal organs to give your doctor objective information about your health. It measures specific markers or structures that cannot be assessed by a physical examination alone.",
+   "what_bn": "এটি একটি মেডিকেল পরীক্ষা যা আপনার শরীর থেকে নেওয়া নমুনা (যেমন রক্ত বা মূত্র) পরীক্ষা করে অথবা আপনার ভেতরের অঙ্গের ছবি তৈরি করে ডাক্তারকে আপনার স্বাস্থ্য সম্পর্কে সঠিক তথ্য দেয়। এটি এমন কিছু নির্দিষ্ট বিষয় পরিমাপ করে যা শুধু শারীরিক পরীক্ষা দিয়ে জানা যায় না।",
+   "why_en": "Doctors order such tests to confirm or rule out a suspected condition, to find the cause of your symptoms, or to check how well your body is functioning. They are also used for routine health check-ups and to monitor an existing condition or ongoing treatment.",
+   "why_bn": "রোগ নির্ণয় নিশ্চিত করতে বা বাদ দিতে, আপনার উপসর্গের কারণ খুঁজে বের করতে, অথবা শরীরের অঙ্গগুলি কতটা ভালোভাবে কাজ করছে তা দেখতে ডাক্তার এই ধরনের পরীক্ষা দেন। এছাড়া নিয়মিত স্বাস্থ্য পরীক্ষা এবং কোনো রোগ বা চলমান চিকিৎসার অগ্রগতি পর্যবেক্ষণেও এগুলি ব্যবহৃত হয়।",
+   "improve_en": "Follow any instructions given by the lab, such as whether fasting is required or what to bring, and carry your prescription and previous reports. Wear comfortable clothing, stay hydrated unless told otherwise, and inform the staff about any current medicines or health conditions before the test.",
+   "improve_bn": "ল্যাব থেকে দেওয়া নির্দেশ মেনে চলুন, যেমন খালি পেটে আসতে হবে কিনা বা কী সঙ্গে আনতে হবে, এবং প্রেসক্রিপশন ও আগের রিপোর্ট সঙ্গে রাখুন। আরামদায়ক পোশাক পরুন, নিষেধ না থাকলে পর্যাপ্ত পানি পান করুন, এবং পরীক্ষার আগে আপনার চলতি ওষুধ বা শারীরিক অবস্থার কথা কর্মীদের জানান।",
+   "more_en": "Depending on the result, your doctor may suggest repeating the test, additional blood tests, or an imaging scan to look further into the cause. Always discuss your report with your doctor, who will decide the right next step for your situation.",
+   "more_bn": "ফলাফলের উপর ভিত্তি করে ডাক্তার পরীক্ষাটি আবার করতে, অতিরিক্ত রক্ত পরীক্ষা করতে, অথবা কারণ আরও ভালোভাবে বুঝতে কোনো ইমেজিং স্ক্যান করতে বলতে পারেন। রিপোর্ট নিয়ে সবসময় ডাক্তারের সঙ্গে আলোচনা করুন, তিনিই আপনার অবস্থার জন্য সঠিক পরবর্তী পদক্ষেপ ঠিক করবেন।"
+  }
+ },
+ "tests": [
+  {
+   "key": "GLUCOSE (F)",
+   "category": "Pathology",
+   "aka_en": "Fasting Blood Sugar (FBS)",
+   "aka_bn": "খালি পেটে রক্তে শর্করা",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 40,
+   "gaugeMax": 250,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 70,
+     "high": 100,
+     "note_en": "Fasting (8-12 hours); 100-125 is pre-diabetes, 126 or above suggests diabetes.",
+     "note_bn": "৮-১২ ঘণ্টা খালি পেটে; ১০০-১২৫ প্রি-ডায়াবেটিস, ১২৬ বা বেশি হলে ডায়াবেটিস।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Blood sugar below normal fasting; may cause shakiness, sweating or dizziness (hypoglycaemia).",
+     "explainer_bn": "খালি পেটে শর্করা স্বাভাবিকের নিচে; কাঁপুনি, ঘাম বা মাথা ঘোরা হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Fasting sugar is in the healthy range.",
+     "explainer_bn": "খালি পেটে শর্করা স্বাস্থ্যকর মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised fasting sugar; may indicate pre-diabetes or diabetes and needs review.",
+     "explainer_bn": "খালি পেটে শর্করা বেশি; প্রি-ডায়াবেটিস বা ডায়াবেটিস হতে পারে, পরীক্ষা করানো দরকার।"
+    }
+   ],
+   "what_en": "This test measures the amount of glucose (sugar) in your blood after fasting for 8-12 hours.",
+   "what_bn": "এই পরীক্ষায় ৮-১২ ঘণ্টা খালি পেটে থাকার পর রক্তে গ্লুকোজ (শর্করা)-র পরিমাণ মাপা হয়।",
+   "why_en": "It is a key test to screen for and monitor diabetes and pre-diabetes.",
+   "why_bn": "ডায়াবেটিস ও প্রি-ডায়াবেটিস শনাক্ত ও নিয়ন্ত্রণে রাখার জন্য এটি একটি গুরুত্বপূর্ণ পরীক্ষা।",
+   "improve_en": "A balanced diet low in refined sugar, regular exercise, weight control and adequate sleep help; discuss results and any changes with your doctor.",
+   "improve_bn": "কম চিনিযুক্ত সুষম খাবার, নিয়মিত ব্যায়াম, ওজন নিয়ন্ত্রণ ও পর্যাপ্ত ঘুম সাহায্য করে; ফল ও পরিবর্তন নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor may add HbA1c, post-prandial glucose or a fasting insulin test.",
+   "more_bn": "চিকিৎসক HbA1c, খাবারের পরের শর্করা বা খালি পেটে ইনসুলিন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "GLUCOSE (PP)",
+   "category": "Pathology",
+   "aka_en": "Post-Prandial Blood Sugar (PPBS)",
+   "aka_bn": "খাবারের পরে রক্তে শর্করা",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 40,
+   "gaugeMax": 300,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 70,
+     "high": 140,
+     "note_en": "Measured 2 hours after a meal; 140-199 is pre-diabetes, 200 or above suggests diabetes.",
+     "note_bn": "খাবারের ২ ঘণ্টা পর মাপা; ১৪০-১৯৯ প্রি-ডায়াবেটিস, ২০০ বা বেশি হলে ডায়াবেটিস।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Sugar unusually low after a meal; may cause weakness or dizziness.",
+     "explainer_bn": "খাবারের পরও শর্করা অস্বাভাবিক কম; দুর্বলতা বা মাথা ঘোরা হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your body is handling the meal's sugar well.",
+     "explainer_bn": "খাবারের শর্করা শরীর ভালোভাবে সামলাচ্ছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Sugar stays high after eating; may point to pre-diabetes or diabetes.",
+     "explainer_bn": "খাবারের পর শর্করা বেশি থাকছে; প্রি-ডায়াবেটিস বা ডায়াবেটিসের ইঙ্গিত।"
+    }
+   ],
+   "what_en": "This test measures blood glucose 2 hours after a meal to see how well your body clears sugar.",
+   "what_bn": "এই পরীক্ষায় খাবারের ২ ঘণ্টা পর রক্তে গ্লুকোজ মেপে দেখা হয় শরীর কতটা ভালোভাবে শর্করা সামলাচ্ছে।",
+   "why_en": "It helps detect diabetes and pre-diabetes and check how meals affect your sugar control.",
+   "why_bn": "এটি ডায়াবেটিস ও প্রি-ডায়াবেটিস শনাক্ত করতে এবং খাবারে শর্করা নিয়ন্ত্রণ বুঝতে সাহায্য করে।",
+   "improve_en": "Choose smaller portions, whole grains and fibre-rich foods, limit sweets, and walk after meals; review results with your doctor.",
+   "improve_bn": "ছোট পরিমাণে খাবার, গোটা শস্য ও আঁশযুক্ত খাবার নিন, মিষ্টি কমান, খাওয়ার পর হাঁটুন; ফল নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor may add a fasting glucose and HbA1c to complete the picture.",
+   "more_bn": "চিকিৎসক খালি পেটে শর্করা ও HbA1c যোগ করতে পারেন।"
+  },
+  {
+   "key": "GLUCOSE (F) & (PP)",
+   "category": "Pathology",
+   "aka_en": "Fasting & Post-Prandial Sugar",
+   "aka_bn": "খালি পেটে ও খাবারের পরে শর্করা",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This is a paired test reporting both fasting and 2-hour post-meal blood glucose values.",
+   "what_bn": "এটি একটি জোড়া পরীক্ষা, যেখানে খালি পেটে ও খাবারের ২ ঘণ্টা পর—দুটি শর্করার মান জানানো হয়।",
+   "why_en": "Seeing both values together gives a fuller view of your daily sugar control for diabetes screening and monitoring.",
+   "why_bn": "দুটি মান একসঙ্গে দেখলে ডায়াবেটিস শনাক্ত ও নিয়ন্ত্রণে দৈনিক শর্করার সম্পূর্ণ চিত্র পাওয়া যায়।",
+   "improve_en": "A consistent healthy diet, regular activity, weight control and medication adherence help both numbers; discuss your pattern with your doctor.",
+   "improve_bn": "সুষম খাবার, নিয়মিত চলাফেরা, ওজন নিয়ন্ত্রণ ও ওষুধ ঠিকমতো নিলে দুটি মানই ভালো হয়; ধরন নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor may add HbA1c for an average of the last 2-3 months.",
+   "more_bn": "চিকিৎসক গত ২-৩ মাসের গড় বুঝতে HbA1c যোগ করতে পারেন।"
+  },
+  {
+   "key": "HbA1C (Glycosylated Haemoglobin)",
+   "category": "Pathology",
+   "aka_en": "HbA1c / Glycated Haemoglobin",
+   "aka_bn": "গ্লাইকেটেড হিমোগ্লোবিন",
+   "numeric": true,
+   "unit": "%",
+   "gaugeMin": 3,
+   "gaugeMax": 14,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 4,
+     "high": 5.6,
+     "note_en": "5.7-6.4% is pre-diabetes, 6.5% or above suggests diabetes.",
+     "note_bn": "৫.৭-৬.৪% প্রি-ডায়াবেটিস, ৬.৫% বা বেশি হলে ডায়াবেটিস।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low value is uncommon; it may follow anaemia or certain conditions and should be interpreted by your doctor.",
+     "explainer_bn": "কম মান বিরল; রক্তাল্পতা বা কিছু অবস্থায় হতে পারে, চিকিৎসকের ব্যাখ্যা প্রয়োজন।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Average blood sugar over the last 2-3 months is in the healthy range.",
+     "explainer_bn": "গত ২-৩ মাসের গড় রক্তশর্করা স্বাস্থ্যকর মাত্রায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Average sugar has been raised; suggests pre-diabetes or diabetes needing review.",
+     "explainer_bn": "গড় শর্করা বেশি ছিল; প্রি-ডায়াবেটিস বা ডায়াবেটিসের ইঙ্গিত, পরীক্ষা দরকার।"
+    }
+   ],
+   "what_en": "HbA1c reflects your average blood sugar over the past 2-3 months by measuring sugar attached to haemoglobin.",
+   "what_bn": "HbA1c হিমোগ্লোবিনের সঙ্গে যুক্ত শর্করা মেপে গত ২-৩ মাসের গড় রক্তশর্করা দেখায়।",
+   "why_en": "It is the standard test to diagnose diabetes and judge how well long-term sugar control is going.",
+   "why_bn": "ডায়াবেটিস নির্ণয় ও দীর্ঘমেয়াদি শর্করা নিয়ন্ত্রণ বোঝার জন্য এটি প্রধান পরীক্ষা।",
+   "improve_en": "Steady healthy eating, regular exercise, weight control and taking prescribed treatment consistently lower HbA1c over months; plan targets with your doctor.",
+   "improve_bn": "নিয়মিত সুষম খাবার, ব্যায়াম, ওজন নিয়ন্ত্রণ ও নির্ধারিত চিকিৎসা মেনে চললে কয়েক মাসে HbA1c কমে; লক্ষ্য চিকিৎসকের সঙ্গে ঠিক করুন।",
+   "more_en": "Your doctor may add fasting and post-prandial glucose, and kidney or lipid tests if needed.",
+   "more_bn": "চিকিৎসক খালি পেটে ও খাবারের পরের শর্করা, প্রয়োজনে কিডনি বা লিপিড পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "INSULIN (F)",
+   "category": "Pathology",
+   "aka_en": "Fasting Insulin",
+   "aka_bn": "খালি পেটে ইনসুলিন",
+   "numeric": true,
+   "unit": "µIU/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 50,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 2,
+     "high": 25,
+     "note_en": "Fasting sample; ranges vary slightly between labs.",
+     "note_bn": "খালি পেটে নমুনা; ল্যাব ভেদে সামান্য তারতম্য হতে পারে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low fasting insulin may occur when the pancreas makes little insulin; interpret with sugar levels.",
+     "explainer_bn": "অগ্ন্যাশয় কম ইনসুলিন তৈরি করলে মান কম হতে পারে; শর্করার সঙ্গে বিচার করুন।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Fasting insulin is in the expected range.",
+     "explainer_bn": "খালি পেটে ইনসুলিন প্রত্যাশিত মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised insulin can signal insulin resistance, often linked with weight and pre-diabetes.",
+     "explainer_bn": "বেশি ইনসুলিন ইনসুলিন রেজিস্ট্যান্সের ইঙ্গিত, প্রায়ই ওজন ও প্রি-ডায়াবেটিসের সঙ্গে যুক্ত।"
+    }
+   ],
+   "what_en": "This measures the level of insulin, the hormone that controls blood sugar, after fasting.",
+   "what_bn": "এই পরীক্ষায় খালি পেটে ইনসুলিনের মাত্রা মাপা হয়, যে হরমোন রক্তে শর্করা নিয়ন্ত্রণ করে।",
+   "why_en": "It helps assess insulin resistance and how your pancreas is producing insulin, often alongside sugar tests.",
+   "why_bn": "এটি ইনসুলিন রেজিস্ট্যান্স ও অগ্ন্যাশয়ের ইনসুলিন উৎপাদন বুঝতে সাহায্য করে, সাধারণত শর্করা পরীক্ষার সঙ্গে।",
+   "improve_en": "Weight loss, regular exercise, fibre-rich low-refined-carb eating and good sleep improve insulin sensitivity; review the result with your doctor.",
+   "improve_bn": "ওজন কমানো, নিয়মিত ব্যায়াম, আঁশযুক্ত ও কম পরিশোধিত খাবার এবং ভালো ঘুম ইনসুলিন সংবেদনশীলতা বাড়ায়; ফল চিকিৎসকের সঙ্গে দেখুন।",
+   "more_en": "Your doctor may calculate HOMA-IR using fasting glucose, and add HbA1c or C-peptide.",
+   "more_bn": "চিকিৎসক খালি পেটে শর্করা দিয়ে HOMA-IR হিসাব করতে এবং HbA1c বা C-পেপটাইড যোগ করতে পারেন।"
+  },
+  {
+   "key": "C-Peptide (Fasting)",
+   "category": "Pathology",
+   "aka_en": "Fasting C-Peptide",
+   "aka_bn": "খালি পেটে সি-পেপটাইড",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 8,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0.8,
+     "high": 3.1,
+     "note_en": "Fasting sample; reference ranges vary slightly between labs.",
+     "note_bn": "খালি পেটে নমুনা; ল্যাব ভেদে রেফারেন্স মানে সামান্য পার্থক্য হয়।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low C-peptide suggests the pancreas is making little insulin of its own.",
+     "explainer_bn": "কম সি-পেপটাইড বোঝায় অগ্ন্যাশয় নিজে কম ইনসুলিন তৈরি করছে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your pancreas is producing insulin in the expected range.",
+     "explainer_bn": "অগ্ন্যাশয় প্রত্যাশিত মাত্রায় ইনসুলিন তৈরি করছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Higher C-peptide often reflects insulin resistance or the body making extra insulin.",
+     "explainer_bn": "বেশি সি-পেপটাইড প্রায়ই ইনসুলিন রেজিস্ট্যান্স বা অতিরিক্ত ইনসুলিন তৈরির ইঙ্গিত।"
+    }
+   ],
+   "what_en": "C-peptide is released with insulin, so it shows how much insulin your own pancreas is making.",
+   "what_bn": "সি-পেপটাইড ইনসুলিনের সঙ্গে নিঃসৃত হয়, তাই এটি দেখায় আপনার অগ্ন্যাশয় নিজে কতটা ইনসুলিন তৈরি করছে।",
+   "why_en": "It helps tell apart types of diabetes and judge how much insulin your body still produces.",
+   "why_bn": "এটি ডায়াবেটিসের ধরন আলাদা করতে এবং শরীর কতটা ইনসুলিন তৈরি করছে বুঝতে সাহায্য করে।",
+   "why_bn_note": "",
+   "improve_en": "Lifestyle steps like healthy eating, exercise and weight control support sugar control; management depends on the cause, so follow your doctor's advice.",
+   "improve_bn": "সুষম খাবার, ব্যায়াম ও ওজন নিয়ন্ত্রণ শর্করা নিয়ন্ত্রণে সাহায্য করে; কারণ অনুযায়ী চিকিৎসা লাগে, তাই চিকিৎসকের পরামর্শ মেনে চলুন।",
+   "more_en": "Your doctor may add fasting glucose, HbA1c, insulin or diabetes antibody tests.",
+   "more_bn": "চিকিৎসক খালি পেটে শর্করা, HbA1c, ইনসুলিন বা ডায়াবেটিস অ্যান্টিবডি পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "LIPID PROFILE",
+   "category": "Pathology",
+   "aka_en": "Lipid Panel",
+   "aka_bn": "লিপিড প্রোফাইল / চর্বির পরীক্ষা",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "A panel that measures several blood fats together: total cholesterol, LDL, HDL, VLDL and triglycerides.",
+   "what_bn": "একটি প্যানেল যা রক্তের বিভিন্ন চর্বি একসঙ্গে মাপে: টোটাল কোলেস্টেরল, LDL, HDL, VLDL ও ট্রাইগ্লিসারাইড।",
+   "why_en": "It assesses your risk of heart disease and stroke and guides prevention.",
+   "why_bn": "এটি হৃদরোগ ও স্ট্রোকের ঝুঁকি বিচার করে এবং প্রতিরোধে পথ দেখায়।",
+   "improve_en": "A diet low in saturated and trans fat, more fibre and activity, no smoking and weight control improve the profile; review targets with your doctor.",
+   "improve_bn": "কম স্যাচুরেটেড ও ট্রান্স ফ্যাট, বেশি আঁশ ও চলাফেরা, ধূমপান বর্জন ও ওজন নিয়ন্ত্রণ প্রোফাইল ভালো করে; লক্ষ্য চিকিৎসকের সঙ্গে দেখুন।",
+   "more_en": "Your doctor may add blood sugar, thyroid or Apolipoprotein tests to refine heart risk.",
+   "more_bn": "চিকিৎসক হৃদঝুঁকি বুঝতে রক্তশর্করা, থাইরয়েড বা অ্যাপোলিপোপ্রোটিন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "CHOLESTEROL",
+   "category": "Pathology",
+   "aka_en": "Total Cholesterol",
+   "aka_bn": "টোটাল কোলেস্টেরল",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 350,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 125,
+     "high": 200,
+     "note_en": "Desirable below 200; 200-239 is borderline, 240 or above is high.",
+     "note_bn": "২০০-এর নিচে কাম্য; ২০০-২৩৯ সীমারেখা, ২৪০ বা বেশি হলে বেশি।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low total cholesterol is usually not a concern but very low levels are interpreted by your doctor.",
+     "explainer_bn": "কম টোটাল কোলেস্টেরল সাধারণত সমস্যা নয়, তবে খুব কম হলে চিকিৎসক বিচার করবেন।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Total cholesterol is in the desirable range.",
+     "explainer_bn": "টোটাল কোলেস্টেরল কাম্য মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised cholesterol can build up in arteries and increase heart risk.",
+     "explainer_bn": "বেশি কোলেস্টেরল ধমনীতে জমে হৃদরোগের ঝুঁকি বাড়ায়।"
+    }
+   ],
+   "what_en": "This measures the total amount of cholesterol, a fatty substance, in your blood.",
+   "what_bn": "এই পরীক্ষায় রক্তে মোট কোলেস্টেরল—একটি চর্বিজাতীয় পদার্থ—এর পরিমাণ মাপা হয়।",
+   "why_en": "High cholesterol raises the risk of heart attack and stroke, so it is checked for prevention.",
+   "why_bn": "বেশি কোলেস্টেরল হার্ট অ্যাটাক ও স্ট্রোকের ঝুঁকি বাড়ায়, তাই প্রতিরোধের জন্য পরীক্ষা করা হয়।",
+   "improve_en": "Eat less saturated and fried food, add fibre, fruit and vegetables, exercise, avoid smoking and control weight; discuss any treatment with your doctor.",
+   "improve_bn": "স্যাচুরেটেড ও ভাজা খাবার কমান, আঁশ, ফল ও সবজি বাড়ান, ব্যায়াম করুন, ধূমপান এড়ান ও ওজন নিয়ন্ত্রণ করুন; চিকিৎসা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor will usually look at the full lipid profile including LDL, HDL and triglycerides.",
+   "more_bn": "চিকিৎসক সাধারণত LDL, HDL ও ট্রাইগ্লিসারাইডসহ পূর্ণ লিপিড প্রোফাইল দেখবেন।"
+  },
+  {
+   "key": "TRIGLYCERIDES",
+   "category": "Pathology",
+   "aka_en": "TG",
+   "aka_bn": "ট্রাইগ্লিসারাইড",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 500,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 40,
+     "high": 150,
+     "note_en": "Normal below 150; 150-199 borderline, 200-499 high, measured fasting.",
+     "note_bn": "১৫০-এর নিচে স্বাভাবিক; ১৫০-১৯৯ সীমারেখা, ২০০-৪৯৯ বেশি, খালি পেটে মাপা।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low triglycerides are generally not a concern.",
+     "explainer_bn": "কম ট্রাইগ্লিসারাইড সাধারণত সমস্যার নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Triglyceride level is in the healthy range.",
+     "explainer_bn": "ট্রাইগ্লিসারাইড স্বাস্থ্যকর মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised triglycerides add to heart risk and, when very high, can affect the pancreas.",
+     "explainer_bn": "বেশি ট্রাইগ্লিসারাইড হৃদঝুঁকি বাড়ায় এবং খুব বেশি হলে অগ্ন্যাশয়ে প্রভাব ফেলতে পারে।"
+    }
+   ],
+   "what_en": "Triglycerides are a type of fat in the blood that stores unused calories from food.",
+   "what_bn": "ট্রাইগ্লিসারাইড রক্তের এক ধরনের চর্বি, যা খাবারের অব্যবহৃত ক্যালোরি জমা রাখে।",
+   "why_en": "High triglycerides are linked to heart disease, diabetes and, when very high, pancreatitis.",
+   "why_bn": "বেশি ট্রাইগ্লিসারাইড হৃদরোগ, ডায়াবেটিস এবং খুব বেশি হলে অগ্ন্যাশয়ের প্রদাহের সঙ্গে যুক্ত।",
+   "improve_en": "Cut sugary drinks, sweets, alcohol and refined carbs, add exercise and control weight; review results with your doctor.",
+   "improve_bn": "মিষ্টি পানীয়, মিষ্টি, মদ ও পরিশোধিত শর্করা কমান, ব্যায়াম করুন ও ওজন নিয়ন্ত্রণ করুন; ফল চিকিৎসকের সঙ্গে দেখুন।",
+   "more_en": "Your doctor may check the full lipid profile and blood sugar.",
+   "more_bn": "চিকিৎসক পূর্ণ লিপিড প্রোফাইল ও রক্তশর্করা দেখতে পারেন।"
+  },
+  {
+   "key": "HDL-Cholesterol",
+   "category": "Pathology",
+   "aka_en": "HDL (Good Cholesterol)",
+   "aka_bn": "HDL / ভালো কোলেস্টেরল",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 100,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 40,
+     "high": 60,
+     "note_en": "Higher is protective; below 40 is low for men.",
+     "note_bn": "বেশি থাকলে সুরক্ষা দেয়; পুরুষে ৪০-এর নিচে হলে কম।"
+    },
+    {
+     "sex": "female",
+     "low": 50,
+     "high": 60,
+     "note_en": "Higher is protective; below 50 is low for women.",
+     "note_bn": "বেশি থাকলে সুরক্ষা দেয়; মহিলায় ৫০-এর নিচে হলে কম।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low HDL offers less protection and raises heart risk.",
+     "explainer_bn": "কম HDL কম সুরক্ষা দেয় ও হৃদঝুঁকি বাড়ায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "HDL is at a healthy protective level.",
+     "explainer_bn": "HDL স্বাস্থ্যকর সুরক্ষামূলক মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Higher HDL is generally good and helps protect the heart.",
+     "explainer_bn": "বেশি HDL সাধারণত ভালো এবং হৃদযন্ত্রকে সুরক্ষা দেয়।"
+    }
+   ],
+   "what_en": "HDL is the 'good' cholesterol that helps remove excess cholesterol from the blood.",
+   "what_bn": "HDL হলো 'ভালো' কোলেস্টেরল, যা রক্ত থেকে অতিরিক্ত কোলেস্টেরল সরাতে সাহায্য করে।",
+   "why_en": "Higher HDL lowers heart disease risk, so it is an important part of assessing heart health.",
+   "why_bn": "বেশি HDL হৃদরোগের ঝুঁকি কমায়, তাই হৃদস্বাস্থ্য বিচারে এটি গুরুত্বপূর্ণ।",
+   "improve_en": "Regular exercise, healthy fats such as nuts and fish, avoiding smoking and weight control can raise HDL; discuss with your doctor.",
+   "improve_bn": "নিয়মিত ব্যায়াম, বাদাম ও মাছের মতো স্বাস্থ্যকর চর্বি, ধূমপান বর্জন ও ওজন নিয়ন্ত্রণ HDL বাড়াতে পারে; চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor reviews it with LDL, triglycerides and total cholesterol.",
+   "more_bn": "চিকিৎসক এটি LDL, ট্রাইগ্লিসারাইড ও টোটাল কোলেস্টেরলের সঙ্গে বিচার করেন।"
+  },
+  {
+   "key": "LDL CHOLESTEROL",
+   "category": "Pathology",
+   "aka_en": "LDL (Bad Cholesterol)",
+   "aka_bn": "LDL / ক্ষতিকর কোলেস্টেরল",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 250,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 50,
+     "high": 100,
+     "note_en": "Optimal below 100; 100-129 near-optimal, 130-159 borderline, 160+ high. Lower target if heart risk.",
+     "note_bn": "১০০-এর নিচে সর্বোত্তম; ১০০-১২৯ কাছাকাছি, ১৩০-১৫৯ সীমারেখা, ১৬০+ বেশি। হৃদঝুঁকি থাকলে লক্ষ্য আরও নিচে।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low LDL is usually desirable and good for the heart.",
+     "explainer_bn": "কম LDL সাধারণত কাম্য এবং হৃদযন্ত্রের জন্য ভালো।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "LDL is in the desirable range.",
+     "explainer_bn": "LDL কাম্য মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised LDL builds up in arteries and increases heart attack and stroke risk.",
+     "explainer_bn": "বেশি LDL ধমনীতে জমে হার্ট অ্যাটাক ও স্ট্রোকের ঝুঁকি বাড়ায়।"
+    }
+   ],
+   "what_en": "LDL is the 'bad' cholesterol that can build up in artery walls and narrow them.",
+   "what_bn": "LDL হলো 'ক্ষতিকর' কোলেস্টেরল, যা ধমনীর দেয়ালে জমে সেগুলো সংকুচিত করতে পারে।",
+   "why_en": "High LDL is a major driver of heart attack and stroke, so lowering it protects the heart.",
+   "why_bn": "বেশি LDL হার্ট অ্যাটাক ও স্ট্রোকের প্রধান কারণ, তাই এটি কমানো হৃদযন্ত্রকে রক্ষা করে।",
+   "improve_en": "Reduce saturated and fried foods, eat more fibre, fruit and vegetables, exercise, quit smoking and control weight; discuss treatment with your doctor.",
+   "improve_bn": "স্যাচুরেটেড ও ভাজা খাবার কমান, বেশি আঁশ, ফল ও সবজি খান, ব্যায়াম করুন, ধূমপান ছাড়ুন ও ওজন নিয়ন্ত্রণ করুন; চিকিৎসা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "Your doctor reviews it within the full lipid profile and may check blood sugar and heart-risk markers.",
+   "more_bn": "চিকিৎসক এটি পূর্ণ লিপিড প্রোফাইলে বিচার করেন এবং রক্তশর্করা ও হৃদঝুঁকির মার্কার দেখতে পারেন।"
+  },
+  {
+   "key": "Apolipoprotein A1 (APO-A1)",
+   "category": "Pathology",
+   "aka_en": "Apo A-1",
+   "aka_bn": "অ্যাপোলিপোপ্রোটিন A1",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 250,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 104,
+     "high": 202,
+     "note_en": "Main protein in HDL; higher levels are generally protective.",
+     "note_bn": "HDL-এর প্রধান প্রোটিন; বেশি মাত্রা সাধারণত সুরক্ষামূলক।"
+    },
+    {
+     "sex": "female",
+     "low": 108,
+     "high": 225,
+     "note_en": "Main protein in HDL; higher levels are generally protective.",
+     "note_bn": "HDL-এর প্রধান প্রোটিন; বেশি মাত্রা সাধারণত সুরক্ষামূলক।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low Apo A-1 means less protective HDL and higher heart risk.",
+     "explainer_bn": "কম Apo A-1 মানে সুরক্ষামূলক HDL কম ও হৃদঝুঁকি বেশি।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Apo A-1 is in the expected, protective range.",
+     "explainer_bn": "Apo A-1 প্রত্যাশিত, সুরক্ষামূলক মাত্রায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Higher Apo A-1 is generally favourable for heart health.",
+     "explainer_bn": "বেশি Apo A-1 সাধারণত হৃদস্বাস্থ্যের জন্য অনুকূল।"
+    }
+   ],
+   "what_en": "Apolipoprotein A1 is the main protein in HDL ('good') cholesterol particles.",
+   "what_bn": "অ্যাপোলিপোপ্রোটিন A1 হলো HDL ('ভালো') কোলেস্টেরল কণার প্রধান প্রোটিন।",
+   "why_en": "It gives a refined estimate of protective HDL and helps assess heart disease risk.",
+   "why_bn": "এটি সুরক্ষামূলক HDL-এর সূক্ষ্ম অনুমান দেয় এবং হৃদরোগের ঝুঁকি বিচারে সাহায্য করে।",
+   "improve_en": "Regular exercise, healthy fats, avoiding smoking and weight control support Apo A-1; review the result with your doctor.",
+   "improve_bn": "নিয়মিত ব্যায়াম, স্বাস্থ্যকর চর্বি, ধূমপান বর্জন ও ওজন নিয়ন্ত্রণ Apo A-1 বাড়াতে সাহায্য করে; ফল চিকিৎসকের সঙ্গে দেখুন।",
+   "more_en": "Your doctor may add Apolipoprotein B and the full lipid profile for a fuller heart-risk picture.",
+   "more_bn": "চিকিৎসক পূর্ণ হৃদঝুঁকির চিত্রের জন্য অ্যাপোলিপোপ্রোটিন B ও পূর্ণ লিপিড প্রোফাইল যোগ করতে পারেন।"
+  },
+  {
+   "key": "Apolipoprotein B",
+   "category": "Pathology",
+   "aka_en": "ApoB",
+   "aka_bn": "ApoB",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 200,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 55,
+     "high": 90,
+     "note_en": "Desirable is below ~90 mg/dL; for higher heart risk, doctors may aim lower.",
+     "note_bn": "কাঙ্ক্ষিত মাত্রা প্রায় ৯০-এর নিচে; বেশি ঝুঁকি থাকলে চিকিৎসক আরও কম লক্ষ্য রাখতে পারেন।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low level usually means fewer harmful cholesterol particles and lower heart-disease risk.",
+     "explainer_bn": "কম মাত্রা সাধারণত ক্ষতিকর কোলেস্টেরল কণা কম ও হৃদরোগের ঝুঁকি কম বোঝায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Within the desirable range, suggesting an acceptable number of cholesterol-carrying particles.",
+     "explainer_bn": "কাঙ্ক্ষিত সীমার মধ্যে, কোলেস্টেরল বহনকারী কণার সংখ্যা গ্রহণযোগ্য।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high level points to more harmful particles and a higher risk of heart and artery disease.",
+     "explainer_bn": "বেশি মাত্রা বেশি ক্ষতিকর কণা ও হৃদ্‌রোগ-ধমনী রোগের বেশি ঝুঁকি বোঝায়।"
+    }
+   ],
+   "what_en": "Apolipoprotein B (ApoB) is the main protein on LDL and other 'bad' cholesterol particles, so its level reflects the number of harmful cholesterol particles in your blood.",
+   "what_bn": "অ্যাপোলিপোপ্রোটিন বি (ApoB) হল এলডিএল ও অন্যান্য 'খারাপ' কোলেস্টেরল কণার প্রধান প্রোটিন, তাই এর মাত্রা রক্তে ক্ষতিকর কোলেস্টেরল কণার সংখ্যা বোঝায়।",
+   "why_en": "It helps a doctor judge your risk of heart disease and blocked arteries, often more precisely than LDL cholesterol alone.",
+   "why_bn": "এটি হৃদরোগ ও ধমনী বন্ধ হওয়ার ঝুঁকি নির্ণয়ে সাহায্য করে, অনেক সময় শুধু এলডিএল কোলেস্টেরলের চেয়ে বেশি নির্ভুলভাবে।",
+   "improve_en": "A diet low in saturated fat, regular exercise, weight control and avoiding smoking can lower ApoB; discuss your target and follow-up with your doctor.",
+   "improve_bn": "স্যাচুরেটেড ফ্যাট কম খাওয়া, নিয়মিত ব্যায়াম, ওজন নিয়ন্ত্রণ ও ধূমপান এড়ানো ApoB কমাতে সাহায্য করে; আপনার লক্ষ্য ও ফলো-আপ নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add a full lipid profile, Lipoprotein(a) or ApoA1 for a clearer picture.",
+   "more_bn": "চিকিৎসক সম্পূর্ণ লিপিড প্রোফাইল, লাইপোপ্রোটিন(এ) বা ApoA1 যোগ করতে পারেন।"
+  },
+  {
+   "key": "SGPT (ALAT)",
+   "category": "Pathology",
+   "aka_en": "ALT",
+   "aka_bn": "ALT (অ্যালানিন অ্যামিনোট্রান্সফারেজ)",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 100,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0,
+     "high": 41,
+     "note_en": "Up to ~41 U/L in adult men.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষে প্রায় ৪১ পর্যন্ত।"
+    },
+    {
+     "sex": "female",
+     "low": 0,
+     "high": 33,
+     "note_en": "Up to ~33 U/L in adult women.",
+     "note_bn": "প্রাপ্তবয়স্ক মহিলায় প্রায় ৩৩ পর্যন্ত।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low ALT is generally not a health concern.",
+     "explainer_bn": "কম ALT সাধারণত কোনো সমস্যার লক্ষণ নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests the liver cells are healthy and not leaking this enzyme.",
+     "explainer_bn": "লিভার কোষ সুস্থ ও এই এনজাইম বেরিয়ে আসছে না বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often means liver-cell injury, as in fatty liver, hepatitis, alcohol or certain medicines.",
+     "explainer_bn": "সাধারণত লিভার কোষের ক্ষতি বোঝায়, যেমন ফ্যাটি লিভার, হেপাটাইটিস, মদ্যপান বা কিছু ওষুধ।"
+    }
+   ],
+   "what_en": "SGPT (ALT) is an enzyme found mainly in liver cells that leaks into the blood when those cells are injured.",
+   "what_bn": "SGPT (ALT) হল মূলত লিভার কোষে থাকা একটি এনজাইম, যা কোষ ক্ষতিগ্রস্ত হলে রক্তে বেরিয়ে আসে।",
+   "why_en": "It is a key marker of liver health, used to detect and monitor liver inflammation or damage.",
+   "why_bn": "এটি লিভারের স্বাস্থ্যের একটি প্রধান নির্দেশক, লিভারের প্রদাহ বা ক্ষতি শনাক্ত ও পর্যবেক্ষণে ব্যবহৃত হয়।",
+   "improve_en": "Limiting alcohol, maintaining a healthy weight, a balanced diet and avoiding unnecessary painkillers help the liver; retest as your doctor advises.",
+   "improve_bn": "মদ্যপান কমানো, স্বাস্থ্যকর ওজন রাখা, সুষম খাদ্য ও অপ্রয়োজনীয় ব্যথার ওষুধ এড়ানো লিভারের জন্য ভালো; চিকিৎসকের পরামর্শে পুনরায় পরীক্ষা করান।",
+   "more_en": "A doctor may add SGOT (AST), bilirubin, GGT or a liver ultrasound.",
+   "more_bn": "চিকিৎসক SGOT (AST), বিলিরুবিন, GGT বা লিভার আল্ট্রাসাউন্ড যোগ করতে পারেন।"
+  },
+  {
+   "key": "SGOT (ASAT)",
+   "category": "Pathology",
+   "aka_en": "AST",
+   "aka_bn": "AST (অ্যাসপার্টেট অ্যামিনোট্রান্সফারেজ)",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 100,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0,
+     "high": 40,
+     "note_en": "Up to ~40 U/L in adult men.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষে প্রায় ৪০ পর্যন্ত।"
+    },
+    {
+     "sex": "female",
+     "low": 0,
+     "high": 32,
+     "note_en": "Up to ~32 U/L in adult women.",
+     "note_bn": "প্রাপ্তবয়স্ক মহিলায় প্রায় ৩২ পর্যন্ত।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low AST is generally not a health concern.",
+     "explainer_bn": "কম AST সাধারণত কোনো সমস্যার লক্ষণ নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests no significant injury to liver or muscle cells.",
+     "explainer_bn": "লিভার বা পেশি কোষে উল্লেখযোগ্য ক্ষতি নেই বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Can rise with liver injury, and also with heart or muscle problems.",
+     "explainer_bn": "লিভারের ক্ষতিতে বাড়ে, এছাড়া হৃদ্‌ বা পেশির সমস্যাতেও বাড়তে পারে।"
+    }
+   ],
+   "what_en": "SGOT (AST) is an enzyme present in the liver, heart and muscles that rises in the blood when these tissues are damaged.",
+   "what_bn": "SGOT (AST) হল লিভার, হৃদ্‌পিণ্ড ও পেশিতে থাকা একটি এনজাইম, যা এই টিস্যু ক্ষতিগ্রস্ত হলে রক্তে বেড়ে যায়।",
+   "why_en": "It is used, usually alongside ALT, to assess liver damage and sometimes heart or muscle injury.",
+   "why_bn": "এটি সাধারণত ALT-এর সঙ্গে লিভারের ক্ষতি এবং কখনও হৃদ্‌ বা পেশির ক্ষতি বোঝাতে ব্যবহৃত হয়।",
+   "improve_en": "Limiting alcohol, a balanced diet, regular activity and avoiding unnecessary medicines support liver and muscle health; follow your doctor's advice on retesting.",
+   "improve_bn": "মদ্যপান কমানো, সুষম খাদ্য, নিয়মিত চলাফেরা ও অপ্রয়োজনীয় ওষুধ এড়ানো লিভার ও পেশির জন্য ভালো; পুনঃপরীক্ষার বিষয়ে চিকিৎসকের পরামর্শ মানুন।",
+   "more_en": "A doctor may add SGPT (ALT), the AST/ALT ratio, bilirubin or GGT.",
+   "more_bn": "চিকিৎসক SGPT (ALT), AST/ALT অনুপাত, বিলিরুবিন বা GGT যোগ করতে পারেন।"
+  },
+  {
+   "key": "ALKALINE PHOSPHATASE",
+   "category": "Pathology",
+   "aka_en": "ALP",
+   "aka_bn": "ALP (অ্যালকালাইন ফসফেটেজ)",
+   "numeric": true,
+   "unit": "U/L",
+   "gaugeMin": 0,
+   "gaugeMax": 250,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 44,
+     "high": 147,
+     "note_en": "Typical adult range ~44–147 U/L; naturally higher in growing children and pregnancy.",
+     "note_bn": "প্রাপ্তবয়স্কে সাধারণত ~৪৪–১৪৭; বাড়ন্ত শিশু ও গর্ভাবস্থায় স্বাভাবিকভাবেই বেশি।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low ALP is uncommon and rarely a concern; can relate to nutrition or rare conditions.",
+     "explainer_bn": "কম ALP অস্বাভাবিক ও সাধারণত সমস্যা নয়; পুষ্টি বা বিরল অবস্থার সঙ্গে সম্পর্কিত হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests healthy liver bile flow and normal bone activity.",
+     "explainer_bn": "সুস্থ লিভারের পিত্তপ্রবাহ ও স্বাভাবিক হাড়ের কার্যকলাপ বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "May point to blocked bile ducts or a bone condition; growth and pregnancy also raise it.",
+     "explainer_bn": "পিত্তনালী বন্ধ বা হাড়ের সমস্যা বোঝাতে পারে; বৃদ্ধি ও গর্ভাবস্থাতেও বাড়ে।"
+    }
+   ],
+   "what_en": "Alkaline phosphatase is an enzyme found mainly in the liver, bile ducts and bones.",
+   "what_bn": "অ্যালকালাইন ফসফেটেজ হল মূলত লিভার, পিত্তনালী ও হাড়ে থাকা একটি এনজাইম।",
+   "why_en": "It helps a doctor investigate liver or bile-duct problems and certain bone disorders.",
+   "why_bn": "এটি লিভার বা পিত্তনালীর সমস্যা এবং কিছু হাড়ের রোগ নির্ণয়ে চিকিৎসককে সাহায্য করে।",
+   "improve_en": "There is no direct lifestyle fix; the cause guides care, so support liver and bone health with a balanced diet and adequate vitamin D, and follow up as advised.",
+   "improve_bn": "সরাসরি জীবনযাত্রার সমাধান নেই; কারণ অনুযায়ী চিকিৎসা হয়, তাই সুষম খাদ্য ও পর্যাপ্ত ভিটামিন ডি দিয়ে লিভার ও হাড়ের যত্ন নিন এবং পরামর্শমতো ফলো-আপ করুন।",
+   "more_en": "A doctor may add GGT, bilirubin, liver enzymes, calcium or vitamin D to find the source.",
+   "more_bn": "উৎস খুঁজতে চিকিৎসক GGT, বিলিরুবিন, লিভার এনজাইম, ক্যালসিয়াম বা ভিটামিন ডি যোগ করতে পারেন।"
+  },
+  {
+   "key": "BILIRUBIN (T+C)",
+   "category": "Pathology",
+   "aka_en": "Total & Conjugated (Direct) Bilirubin",
+   "aka_bn": "টোটাল ও কনজুগেটেড (ডাইরেক্ট) বিলিরুবিন",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This test reports two values — total bilirubin and conjugated (direct) bilirubin, yellow pigments made when red blood cells break down and processed by the liver.",
+   "what_bn": "এই পরীক্ষায় দুটি মান জানানো হয় — টোটাল বিলিরুবিন ও কনজুগেটেড (ডাইরেক্ট) বিলিরুবিন, যা লোহিত রক্তকণিকা ভাঙার সময় তৈরি হওয়া হলুদ রঞ্জক এবং লিভার একে প্রক্রিয়া করে।",
+   "why_en": "Comparing the two helps a doctor find the cause of jaundice and check liver and bile-duct function.",
+   "why_bn": "দুটির তুলনা জন্ডিসের কারণ খুঁজতে এবং লিভার ও পিত্তনালীর কার্যকারিতা যাচাই করতে চিকিৎসককে সাহায্য করে।",
+   "improve_en": "Staying well hydrated, limiting alcohol and eating a balanced diet support the liver; if levels are high or you notice yellowing of eyes or skin, see your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান, মদ্যপান কমানো ও সুষম খাদ্য লিভারের জন্য ভালো; মাত্রা বেশি হলে বা চোখ-ত্বক হলুদ দেখলে চিকিৎসকের সঙ্গে দেখা করুন।",
+   "more_en": "A doctor may add liver enzymes (ALT, AST, ALP, GGT) or an abdominal ultrasound.",
+   "more_bn": "চিকিৎসক লিভার এনজাইম (ALT, AST, ALP, GGT) বা পেটের আল্ট্রাসাউন্ড যোগ করতে পারেন।"
+  },
+  {
+   "key": "ALBUMIN",
+   "category": "Pathology",
+   "aka_en": "",
+   "aka_bn": "",
+   "numeric": true,
+   "unit": "g/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 6,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 3.5,
+     "high": 5.2,
+     "note_en": "Typical adult range ~3.5–5.2 g/dL.",
+     "note_bn": "প্রাপ্তবয়স্কে সাধারণত ~৩.৫–৫.২ g/dL।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "May occur with liver or kidney disease, poor nutrition or long-standing inflammation.",
+     "explainer_bn": "লিভার বা কিডনির রোগ, দুর্বল পুষ্টি বা দীর্ঘস্থায়ী প্রদাহে হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests the liver is making enough protein and nutrition is adequate.",
+     "explainer_bn": "লিভার পর্যাপ্ত প্রোটিন তৈরি করছে ও পুষ্টি ঠিক আছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Usually reflects dehydration rather than a disease.",
+     "explainer_bn": "সাধারণত রোগ নয়, শরীরে জলের ঘাটতি বোঝায়।"
+    }
+   ],
+   "what_en": "Albumin is the main protein made by the liver; it keeps fluid inside blood vessels and carries many substances in the blood.",
+   "what_bn": "অ্যালবুমিন হল লিভারে তৈরি প্রধান প্রোটিন; এটি রক্তনালীর ভিতরে তরল ধরে রাখে ও রক্তে নানা পদার্থ বহন করে।",
+   "why_en": "It reflects liver function and nutritional status and helps assess kidney disease and swelling.",
+   "why_bn": "এটি লিভারের কার্যকারিতা ও পুষ্টির অবস্থা বোঝায় এবং কিডনির রোগ ও ফোলাভাব মূল্যায়নে সাহায্য করে।",
+   "improve_en": "Adequate protein in the diet and treating the underlying cause help; if levels are low, discuss diet and further tests with your doctor.",
+   "improve_bn": "খাদ্যে পর্যাপ্ত প্রোটিন ও মূল কারণের চিকিৎসা সাহায্য করে; মাত্রা কম হলে খাদ্য ও পরবর্তী পরীক্ষা নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add total protein, globulin, liver enzymes or urine protein tests.",
+   "more_bn": "চিকিৎসক টোটাল প্রোটিন, গ্লোবিউলিন, লিভার এনজাইম বা মূত্রে প্রোটিন পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "TOTAL PROTEIN (ALB+GLB)",
+   "category": "Pathology",
+   "aka_en": "Serum Total Protein",
+   "aka_bn": "সিরাম টোটাল প্রোটিন",
+   "numeric": true,
+   "unit": "g/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 10,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 6.4,
+     "high": 8.3,
+     "note_en": "Typical adult range ~6.4–8.3 g/dL (albumin + globulin combined).",
+     "note_bn": "প্রাপ্তবয়স্কে সাধারণত ~৬.৪–৮.৩ g/dL (অ্যালবুমিন ও গ্লোবিউলিন মিলিয়ে)।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "May occur with liver or kidney disease, poor nutrition or malabsorption.",
+     "explainer_bn": "লিভার বা কিডনির রোগ, দুর্বল পুষ্টি বা খাদ্য শোষণের সমস্যায় হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests a healthy balance of blood proteins.",
+     "explainer_bn": "রক্তের প্রোটিনের ভারসাম্য ঠিক আছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Can reflect dehydration or chronic infection/inflammation and needs further checking.",
+     "explainer_bn": "শরীরে জলের ঘাটতি বা দীর্ঘস্থায়ী সংক্রমণ/প্রদাহ বোঝাতে পারে, আরও পরীক্ষা দরকার।"
+    }
+   ],
+   "what_en": "Total protein measures the combined amount of albumin and globulin, the two main groups of protein in your blood.",
+   "what_bn": "টোটাল প্রোটিন রক্তের দুই প্রধান প্রোটিন গোষ্ঠী — অ্যালবুমিন ও গ্লোবিউলিন — এর মোট পরিমাণ মাপে।",
+   "why_en": "It gives a broad picture of nutrition, liver and kidney health and immune activity.",
+   "why_bn": "এটি পুষ্টি, লিভার ও কিডনির স্বাস্থ্য এবং রোগ প্রতিরোধ কার্যকলাপের একটি সামগ্রিক ধারণা দেয়।",
+   "improve_en": "A balanced, protein-adequate diet and treating any underlying cause help; discuss abnormal results and next steps with your doctor.",
+   "improve_bn": "সুষম ও পর্যাপ্ত প্রোটিনযুক্ত খাদ্য এবং মূল কারণের চিকিৎসা সাহায্য করে; অস্বাভাবিক ফলাফল ও পরবর্তী পদক্ষেপ নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add albumin, globulin, the A/G ratio or protein electrophoresis.",
+   "more_bn": "চিকিৎসক অ্যালবুমিন, গ্লোবিউলিন, A/G অনুপাত বা প্রোটিন ইলেক্ট্রোফোরেসিস যোগ করতে পারেন।"
+  },
+  {
+   "key": "GLOBULIN",
+   "category": "Pathology",
+   "aka_en": "",
+   "aka_bn": "",
+   "numeric": true,
+   "unit": "g/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 6,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 2,
+     "high": 3.5,
+     "note_en": "Typical adult range ~2.0–3.5 g/dL.",
+     "note_bn": "প্রাপ্তবয়স্কে সাধারণত ~২.০–৩.৫ g/dL।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "May relate to liver or kidney problems or reduced immune proteins.",
+     "explainer_bn": "লিভার বা কিডনির সমস্যা অথবা রোগ প্রতিরোধী প্রোটিন কম হওয়ার সঙ্গে সম্পর্কিত হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests a normal balance of immune and transport proteins.",
+     "explainer_bn": "রোগ প্রতিরোধী ও বাহক প্রোটিনের স্বাভাবিক ভারসাম্য বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often seen with chronic infection, inflammation or, less commonly, some blood disorders.",
+     "explainer_bn": "সাধারণত দীর্ঘস্থায়ী সংক্রমণ, প্রদাহ বা কম ক্ষেত্রে কিছু রক্তের রোগে দেখা যায়।"
+    }
+   ],
+   "what_en": "Globulins are a group of blood proteins that include antibodies and carrier proteins, largely reflecting immune activity.",
+   "what_bn": "গ্লোবিউলিন হল রক্তের একদল প্রোটিন, যার মধ্যে অ্যান্টিবডি ও বাহক প্রোটিন থাকে এবং যা মূলত রোগ প্রতিরোধ কার্যকলাপ বোঝায়।",
+   "why_en": "It helps a doctor assess immune function, chronic infection or inflammation and some liver conditions.",
+   "why_bn": "এটি রোগ প্রতিরোধ ক্ষমতা, দীর্ঘস্থায়ী সংক্রমণ বা প্রদাহ এবং কিছু লিভারের অবস্থা মূল্যায়নে চিকিৎসককে সাহায্য করে।",
+   "improve_en": "There is no direct lifestyle fix; managing the underlying cause matters, so follow your doctor's advice on further evaluation.",
+   "improve_bn": "সরাসরি জীবনযাত্রার সমাধান নেই; মূল কারণ নিয়ন্ত্রণই গুরুত্বপূর্ণ, তাই আরও মূল্যায়নের জন্য চিকিৎসকের পরামর্শ মানুন।",
+   "more_en": "A doctor may add total protein, albumin, the A/G ratio or protein electrophoresis.",
+   "more_bn": "চিকিৎসক টোটাল প্রোটিন, অ্যালবুমিন, A/G অনুপাত বা প্রোটিন ইলেক্ট্রোফোরেসিস যোগ করতে পারেন।"
+  },
+  {
+   "key": "LFT (Liver Function Test) WITH GGT",
+   "category": "Pathology",
+   "aka_en": "Liver Function Panel with GGT",
+   "aka_bn": "লিভার ফাংশন প্যানেল (GGT সহ)",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This is a panel of several blood tests — including bilirubin, ALT, AST, ALP, GGT, albumin and total protein — that together show how well the liver is working.",
+   "what_bn": "এটি কয়েকটি রক্ত পরীক্ষার একটি প্যানেল — যেমন বিলিরুবিন, ALT, AST, ALP, GGT, অ্যালবুমিন ও টোটাল প্রোটিন — যা মিলিতভাবে লিভার কতটা ভালোভাবে কাজ করছে তা দেখায়।",
+   "why_en": "Doctors order it to detect, diagnose and monitor liver or bile-duct disease; GGT helps confirm liver or alcohol-related causes.",
+   "why_bn": "চিকিৎসকরা লিভার বা পিত্তনালীর রোগ শনাক্ত, নির্ণয় ও পর্যবেক্ষণে এটি করান; GGT লিভার বা মদ্যপান-সম্পর্কিত কারণ নিশ্চিত করতে সাহায্য করে।",
+   "improve_en": "Limiting alcohol, keeping a healthy weight, a balanced diet and avoiding unnecessary medicines protect the liver; discuss any abnormal values with your doctor.",
+   "improve_bn": "মদ্যপান কমানো, স্বাস্থ্যকর ওজন, সুষম খাদ্য ও অপ্রয়োজনীয় ওষুধ এড়ানো লিভারকে রক্ষা করে; কোনো অস্বাভাবিক মান নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add hepatitis screening, a liver ultrasound or FibroScan if results are abnormal.",
+   "more_bn": "ফলাফল অস্বাভাবিক হলে চিকিৎসক হেপাটাইটিস স্ক্রিনিং, লিভার আল্ট্রাসাউন্ড বা ফাইব্রোস্ক্যান যোগ করতে পারেন।"
+  },
+  {
+   "key": "CREATININE",
+   "category": "Pathology",
+   "aka_en": "Serum Creatinine",
+   "aka_bn": "সিরাম ক্রিয়েটিনিন",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 3,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0.7,
+     "high": 1.3,
+     "note_en": "Typical adult male range ~0.7–1.3 mg/dL.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষে সাধারণত ~০.৭–১.৩ mg/dL।"
+    },
+    {
+     "sex": "female",
+     "low": 0.6,
+     "high": 1.1,
+     "note_en": "Typical adult female range ~0.6–1.1 mg/dL.",
+     "note_bn": "প্রাপ্তবয়স্ক মহিলায় সাধারণত ~০.৬–১.১ mg/dL।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Often just reflects low muscle mass and is rarely a concern.",
+     "explainer_bn": "সাধারণত কম পেশি বোঝায় ও তেমন সমস্যা নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests the kidneys are clearing waste well.",
+     "explainer_bn": "কিডনি ভালোভাবে বর্জ্য পরিষ্কার করছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "May mean the kidneys are not filtering well, or dehydration; needs review.",
+     "explainer_bn": "কিডনি ঠিকভাবে ছাঁকছে না বা জলশূন্যতা বোঝাতে পারে; পর্যালোচনা দরকার।"
+    }
+   ],
+   "what_en": "Creatinine is a waste product from normal muscle activity that the kidneys filter out of the blood.",
+   "what_bn": "ক্রিয়েটিনিন হল স্বাভাবিক পেশি কার্যকলাপ থেকে তৈরি একটি বর্জ্য পদার্থ, যা কিডনি রক্ত থেকে ছেঁকে বের করে দেয়।",
+   "why_en": "It is a key measure of how well the kidneys are working.",
+   "why_bn": "এটি কিডনি কতটা ভালোভাবে কাজ করছে তার একটি প্রধান পরিমাপ।",
+   "improve_en": "Staying well hydrated, controlling blood pressure and blood sugar and avoiding unnecessary painkillers protect the kidneys; discuss results with your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান, রক্তচাপ ও রক্তে শর্করা নিয়ন্ত্রণ এবং অপ্রয়োজনীয় ব্যথার ওষুধ এড়ানো কিডনিকে রক্ষা করে; ফলাফল নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add eGFR, urea, electrolytes or a urine test.",
+   "more_bn": "চিকিৎসক eGFR, ইউরিয়া, ইলেক্ট্রোলাইট বা মূত্র পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "UREA",
+   "category": "Pathology",
+   "aka_en": "Blood Urea",
+   "aka_bn": "রক্তে ইউরিয়া",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 80,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 15,
+     "high": 40,
+     "note_en": "Typical adult range ~15–40 mg/dL.",
+     "note_bn": "প্রাপ্তবয়স্কে সাধারণত ~১৫–৪০ mg/dL।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Can occur with low protein intake or liver problems; usually minor.",
+     "explainer_bn": "কম প্রোটিন খাওয়া বা লিভারের সমস্যায় হতে পারে; সাধারণত সামান্য।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests the kidneys are removing this waste normally.",
+     "explainer_bn": "কিডনি স্বাভাবিকভাবে এই বর্জ্য বের করছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "May reflect reduced kidney function, dehydration or a high-protein diet.",
+     "explainer_bn": "কিডনির কার্যকারিতা কম, জলশূন্যতা বা বেশি প্রোটিন খাওয়া বোঝাতে পারে।"
+    }
+   ],
+   "what_en": "Urea is a waste product formed when the body breaks down protein; the kidneys remove it from the blood.",
+   "what_bn": "ইউরিয়া হল প্রোটিন ভাঙার সময় তৈরি একটি বর্জ্য পদার্থ; কিডনি একে রক্ত থেকে বের করে দেয়।",
+   "why_en": "It helps assess kidney function and hydration, usually together with creatinine.",
+   "why_bn": "এটি সাধারণত ক্রিয়েটিনিনের সঙ্গে কিডনির কার্যকারিতা ও শরীরে জলের অবস্থা মূল্যায়নে সাহায্য করে।",
+   "improve_en": "Drinking enough water, a balanced diet and managing blood pressure and diabetes support kidney health; discuss abnormal results with your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান, সুষম খাদ্য এবং রক্তচাপ ও ডায়াবেটিস নিয়ন্ত্রণ কিডনির জন্য ভালো; অস্বাভাবিক ফলাফল নিয়ে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add creatinine, eGFR, electrolytes or a urine test.",
+   "more_bn": "চিকিৎসক ক্রিয়েটিনিন, eGFR, ইলেক্ট্রোলাইট বা মূত্র পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "URIC ACID",
+   "category": "Pathology",
+   "aka_en": "Serum Uric Acid",
+   "aka_bn": "সিরাম ইউরিক অ্যাসিড",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 12,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 3.4,
+     "high": 7,
+     "note_en": "Typical adult male range ~3.4–7.0 mg/dL.",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষে সাধারণত ~৩.৪–৭.০ mg/dL।"
+    },
+    {
+     "sex": "female",
+     "low": 2.4,
+     "high": 6,
+     "note_en": "Typical adult female range ~2.4–6.0 mg/dL.",
+     "note_bn": "প্রাপ্তবয়স্ক মহিলায় সাধারণত ~২.৪–৬.০ mg/dL।"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low level is usually harmless.",
+     "explainer_bn": "কম মাত্রা সাধারণত ক্ষতিকর নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Suggests a balanced production and removal of uric acid.",
+     "explainer_bn": "ইউরিক অ্যাসিড তৈরি ও নিষ্কাশনের ভারসাম্য ঠিক আছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raises the risk of gout (joint pain) and kidney stones.",
+     "explainer_bn": "গাউট (গাঁটের ব্যথা) ও কিডনিতে পাথরের ঝুঁকি বাড়ায়।"
+    }
+   ],
+   "what_en": "Uric acid is a waste product made when the body breaks down purines from food and cells; it is removed by the kidneys.",
+   "what_bn": "ইউরিক অ্যাসিড হল খাবার ও কোষের পিউরিন ভাঙার সময় তৈরি একটি বর্জ্য পদার্থ; কিডনি একে বের করে দেয়।",
+   "why_en": "It is checked mainly to investigate gout, joint pain and some types of kidney stones.",
+   "why_bn": "এটি মূলত গাউট, গাঁটের ব্যথা ও কিছু ধরনের কিডনি পাথর নির্ণয়ে পরীক্ষা করা হয়।",
+   "improve_en": "Drinking plenty of water, limiting red meat, organ meat, seafood and alcohol, and keeping a healthy weight help; discuss persistent high levels with your doctor.",
+   "improve_bn": "প্রচুর জল পান, লাল মাংস, ভুঁড়ি-কলিজা, সামুদ্রিক খাবার ও মদ্যপান কমানো এবং স্বাস্থ্যকর ওজন রাখা সাহায্য করে; বারবার বেশি থাকলে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add kidney function tests, or joint fluid or imaging tests if gout is suspected.",
+   "more_bn": "চিকিৎসক কিডনি ফাংশন পরীক্ষা, অথবা গাউট সন্দেহ হলে গাঁটের তরল বা ইমেজিং পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "BUN (Blood Urea Nitrogen)",
+   "category": "Pathology",
+   "aka_en": "Blood Urea Nitrogen",
+   "aka_bn": "রক্তে ইউরিয়া নাইট্রোজেন",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 40,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 7,
+     "high": 20,
+     "note_en": "Standard adult range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Can occur with a very low-protein diet, over-hydration, or liver problems.",
+     "explainer_bn": "খুব কম প্রোটিনযুক্ত খাবার, বেশি জল বা যকৃতের সমস্যায় হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Kidneys are clearing urea waste as expected.",
+     "explainer_bn": "কিডনি ঠিকমতো ইউরিয়া বর্জ্য পরিষ্কার করছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "May point to reduced kidney function, dehydration, or a high-protein intake.",
+     "explainer_bn": "কিডনির কার্যক্ষমতা কমে যাওয়া, জলশূন্যতা বা বেশি প্রোটিন খাওয়ার ইঙ্গিত হতে পারে।"
+    }
+   ],
+   "what_en": "BUN measures the amount of nitrogen from urea, a waste product formed when the body breaks down protein, in your blood.",
+   "what_bn": "শরীরে প্রোটিন ভাঙার সময় তৈরি হওয়া বর্জ্য ইউরিয়ার নাইট্রোজেনের পরিমাণ রক্তে কতটা আছে, BUN তা পরিমাপ করে।",
+   "why_en": "Doctors use it to check how well the kidneys are removing waste and to assess hydration and protein balance.",
+   "why_bn": "কিডনি কতটা ভালোভাবে বর্জ্য সরাচ্ছে এবং জল ও প্রোটিনের ভারসাম্য বুঝতে চিকিৎসক এটি করান।",
+   "improve_en": "Drink enough water, keep protein intake balanced, and manage blood pressure and diabetes; discuss any abnormal result with your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান করুন, প্রোটিন খাওয়ায় ভারসাম্য রাখুন এবং রক্তচাপ ও ডায়াবেটিস নিয়ন্ত্রণে রাখুন; অস্বাভাবিক ফল হলে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add serum creatinine, eGFR, and a urine routine test to complete the kidney assessment.",
+   "more_bn": "কিডনির অবস্থা পুরোপুরি বুঝতে চিকিৎসক ক্রিয়েটিনিন, eGFR এবং প্রস্রাব পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "eGFR",
+   "category": "Pathology",
+   "aka_en": "Estimated Glomerular Filtration Rate",
+   "aka_bn": "আনুমানিক গ্লোমেরুলার ফিল্ট্রেশন রেট",
+   "numeric": true,
+   "unit": "mL/min/1.73m²",
+   "gaugeMin": 0,
+   "gaugeMax": 150,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 90,
+     "high": 120,
+     "note_en": "90 or above suggests normal kidney function",
+     "note_bn": "৯০ বা তার বেশি হলে কিডনি স্বাভাবিক ধরা হয়"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A lower value suggests reduced kidney filtering ability and needs review.",
+     "explainer_bn": "কম মান কিডনির ছাঁকনক্ষমতা কমার ইঙ্গিত দেয় এবং পর্যালোচনা দরকার।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Kidneys are filtering blood at a healthy rate.",
+     "explainer_bn": "কিডনি সুস্থভাবে রক্ত ছাঁকছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Values are reported up to a normal ceiling; very high figures are usually just healthy filtration.",
+     "explainer_bn": "সাধারণত একটি সীমা পর্যন্ত জানানো হয়; খুব বেশি মান সাধারণত সুস্থ ছাঁকনকেই বোঝায়।"
+    }
+   ],
+   "what_en": "eGFR is a calculated estimate of how much blood your kidneys filter each minute, based on your creatinine, age, and sex.",
+   "what_bn": "ক্রিয়েটিনিন, বয়স ও লিঙ্গ থেকে হিসাব করে কিডনি প্রতি মিনিটে কতটা রক্ত ছাঁকছে তার আনুমানিক মাত্রা হল eGFR।",
+   "why_en": "It is a key marker for detecting and staging chronic kidney disease before symptoms appear.",
+   "why_bn": "উপসর্গ দেখা দেওয়ার আগেই দীর্ঘমেয়াদি কিডনি রোগ ধরা ও তার পর্যায় বোঝার প্রধান সূচক এটি।",
+   "improve_en": "Control blood pressure and blood sugar, stay hydrated, limit salt and painkiller overuse, and follow up regularly with your doctor.",
+   "improve_bn": "রক্তচাপ ও রক্তে শর্করা নিয়ন্ত্রণে রাখুন, পর্যাপ্ত জল পান করুন, নুন ও ব্যথার ওষুধের অতিরিক্ত ব্যবহার কমান এবং নিয়মিত চিকিৎসকের পরামর্শ নিন।",
+   "more_en": "A doctor may add serum creatinine, urea, urine microalbumin, and electrolytes for a fuller kidney picture.",
+   "more_bn": "কিডনির পূর্ণ চিত্র পেতে চিকিৎসক ক্রিয়েটিনিন, ইউরিয়া, ইউরিন মাইক্রোঅ্যালবুমিন ও ইলেক্ট্রোলাইট যোগ করতে পারেন।"
+  },
+  {
+   "key": "URINARY MICROALBUMIN",
+   "category": "Pathology",
+   "aka_en": "Urine Microalbumin",
+   "aka_bn": "প্রস্রাবে মাইক্রোঅ্যালবুমিন",
+   "numeric": true,
+   "unit": "mg/L",
+   "gaugeMin": 0,
+   "gaugeMax": 100,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0,
+     "high": 30,
+     "note_en": "Below 30 mg/L (spot urine) is considered normal",
+     "note_bn": "স্পট প্রস্রাবে ৩০ mg/L-এর কম হলে স্বাভাবিক ধরা হয়"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Little or no albumin leaking into urine, which is normal and reassuring.",
+     "explainer_bn": "প্রস্রাবে অ্যালবুমিন প্রায় নেই, যা স্বাভাবিক ও আশ্বস্তকর।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Albumin is within the normal range, suggesting healthy kidney filters.",
+     "explainer_bn": "অ্যালবুমিন স্বাভাবিক সীমায়, কিডনির ছাঁকনি সুস্থ থাকার ইঙ্গিত।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Raised albumin can be an early sign of kidney damage, often from diabetes or high blood pressure.",
+     "explainer_bn": "বেশি অ্যালবুমিন কিডনি ক্ষতির প্রাথমিক লক্ষণ হতে পারে, প্রায়ই ডায়াবেটিস বা উচ্চ রক্তচাপের কারণে।"
+    }
+   ],
+   "what_en": "This test detects small amounts of the protein albumin leaking into your urine.",
+   "what_bn": "এই পরীক্ষায় প্রস্রাবে অল্প পরিমাণ অ্যালবুমিন নামের প্রোটিন বেরিয়ে যাচ্ছে কিনা তা ধরা পড়ে।",
+   "why_en": "It is used to catch early kidney damage in people with diabetes or high blood pressure, often before other tests change.",
+   "why_bn": "ডায়াবেটিস বা উচ্চ রক্তচাপের রোগীদের কিডনির প্রাথমিক ক্ষতি অন্য পরীক্ষায় বদল আসার আগেই ধরতে এটি ব্যবহৃত হয়।",
+   "improve_en": "Keep blood sugar and blood pressure well controlled, reduce salt, stay active, and review results with your doctor.",
+   "improve_bn": "রক্তে শর্করা ও রক্তচাপ ভালোভাবে নিয়ন্ত্রণে রাখুন, নুন কমান, সক্রিয় থাকুন এবং ফলাফল চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add an albumin-to-creatinine ratio, eGFR, and blood sugar tests to confirm findings.",
+   "more_bn": "নিশ্চিত হতে চিকিৎসক অ্যালবুমিন-ক্রিয়েটিনিন অনুপাত, eGFR ও রক্তে শর্করা পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "TSH",
+   "category": "Pathology",
+   "aka_en": "Thyroid Stimulating Hormone",
+   "aka_bn": "থাইরয়েড স্টিমুলেটিং হরমোন",
+   "numeric": true,
+   "unit": "mIU/L",
+   "gaugeMin": 0,
+   "gaugeMax": 10,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0.4,
+     "high": 4,
+     "note_en": "Typical adult range; pregnancy ranges differ",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ মাত্রা; গর্ভাবস্থায় আলাদা হয়"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low TSH often suggests an overactive thyroid (hyperthyroidism).",
+     "explainer_bn": "কম TSH প্রায়ই অতিসক্রিয় থাইরয়েড (হাইপারথাইরয়েডিজম) বোঝায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Thyroid regulation appears balanced.",
+     "explainer_bn": "থাইরয়েড নিয়ন্ত্রণ ভারসাম্যপূর্ণ বলে মনে হচ্ছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high TSH often suggests an underactive thyroid (hypothyroidism).",
+     "explainer_bn": "বেশি TSH প্রায়ই কমসক্রিয় থাইরয়েড (হাইপোথাইরয়েডিজম) বোঝায়।"
+    }
+   ],
+   "what_en": "TSH is a pituitary hormone that tells the thyroid gland how much thyroid hormone to make.",
+   "what_bn": "TSH হল পিটুইটারি গ্রন্থির একটি হরমোন যা থাইরয়েড গ্রন্থিকে কতটা থাইরয়েড হরমোন বানাতে হবে তা নির্দেশ করে।",
+   "why_en": "It is the main screening test for thyroid disorders and for monitoring thyroid treatment.",
+   "why_bn": "থাইরয়েডের সমস্যা শনাক্ত করা ও চিকিৎসা পর্যবেক্ষণের প্রধান পরীক্ষা এটি।",
+   "improve_en": "Take thyroid medication and tests as advised, ensure adequate iodine through a balanced diet, and keep regular follow-ups with your doctor.",
+   "improve_bn": "পরামর্শ অনুযায়ী থাইরয়েডের ওষুধ ও পরীক্ষা করান, সুষম খাবারে পর্যাপ্ত আয়োডিন নিশ্চিত করুন এবং নিয়মিত চিকিৎসকের পরামর্শ নিন।",
+   "more_en": "A doctor may add Free T4, Free T3, and thyroid antibody tests if TSH is abnormal.",
+   "more_bn": "TSH অস্বাভাবিক হলে চিকিৎসক Free T4, Free T3 ও থাইরয়েড অ্যান্টিবডি পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "T3",
+   "category": "Pathology",
+   "aka_en": "Total Triiodothyronine",
+   "aka_bn": "টোটাল ট্রাইআয়োডোথাইরোনিন",
+   "numeric": true,
+   "unit": "ng/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 300,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 80,
+     "high": 200,
+     "note_en": "Typical adult total T3 range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ টোটাল T3 মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "May be seen in an underactive thyroid or during other illnesses.",
+     "explainer_bn": "কমসক্রিয় থাইরয়েড বা অন্য অসুস্থতায় দেখা যেতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "T3 level is within the expected range.",
+     "explainer_bn": "T3 মাত্রা প্রত্যাশিত সীমায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often raised in an overactive thyroid (hyperthyroidism).",
+     "explainer_bn": "অতিসক্রিয় থাইরয়েডে (হাইপারথাইরয়েডিজম) প্রায়ই বেড়ে যায়।"
+    }
+   ],
+   "what_en": "T3 measures the total amount of triiodothyronine, an active thyroid hormone, in your blood.",
+   "what_bn": "T3 রক্তে সক্রিয় থাইরয়েড হরমোন ট্রাইআয়োডোথাইরোনিনের মোট পরিমাণ পরিমাপ করে।",
+   "why_en": "It helps assess thyroid activity, especially to confirm and gauge the severity of an overactive thyroid.",
+   "why_bn": "থাইরয়েডের সক্রিয়তা, বিশেষত অতিসক্রিয় থাইরয়েড নিশ্চিত ও তার তীব্রতা বুঝতে এটি সাহায্য করে।",
+   "improve_en": "Follow your doctor's advice on thyroid care, avoid self-adjusting medication, and attend scheduled retests.",
+   "improve_bn": "থাইরয়েড যত্নে চিকিৎসকের পরামর্শ মেনে চলুন, নিজে থেকে ওষুধ বদলাবেন না এবং নির্ধারিত পুনঃপরীক্ষা করান।",
+   "more_en": "A doctor may pair it with TSH and Free T4 for a complete thyroid profile.",
+   "more_bn": "সম্পূর্ণ থাইরয়েড প্রোফাইলের জন্য চিকিৎসক এর সঙ্গে TSH ও Free T4 যোগ করতে পারেন।"
+  },
+  {
+   "key": "T4",
+   "category": "Pathology",
+   "aka_en": "Total Thyroxine",
+   "aka_bn": "টোটাল থাইরক্সিন",
+   "numeric": true,
+   "unit": "µg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 20,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 4.5,
+     "high": 12.5,
+     "note_en": "Typical adult total T4 range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ টোটাল T4 মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Often seen in an underactive thyroid (hypothyroidism).",
+     "explainer_bn": "কমসক্রিয় থাইরয়েডে (হাইপোথাইরয়েডিজম) প্রায়ই দেখা যায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "T4 level is within the expected range.",
+     "explainer_bn": "T4 মাত্রা প্রত্যাশিত সীমায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often raised in an overactive thyroid (hyperthyroidism).",
+     "explainer_bn": "অতিসক্রিয় থাইরয়েডে (হাইপারথাইরয়েডিজম) প্রায়ই বেড়ে যায়।"
+    }
+   ],
+   "what_en": "T4 measures the total amount of thyroxine, the main hormone made by the thyroid gland, in your blood.",
+   "what_bn": "T4 রক্তে থাইরয়েড গ্রন্থির তৈরি প্রধান হরমোন থাইরক্সিনের মোট পরিমাণ পরিমাপ করে।",
+   "why_en": "It helps evaluate thyroid function and monitor treatment of thyroid disorders.",
+   "why_bn": "থাইরয়েডের কার্যকারিতা মূল্যায়ন ও থাইরয়েড রোগের চিকিৎসা পর্যবেক্ষণে এটি সাহায্য করে।",
+   "improve_en": "Take thyroid care as advised, maintain a balanced diet, and keep regular follow-up tests with your doctor.",
+   "improve_bn": "পরামর্শ অনুযায়ী থাইরয়েডের যত্ন নিন, সুষম খাবার খান এবং চিকিৎসকের সঙ্গে নিয়মিত পুনঃপরীক্ষা করান।",
+   "more_en": "A doctor may add TSH and Free T4 to interpret the thyroid picture fully.",
+   "more_bn": "থাইরয়েডের সম্পূর্ণ চিত্র বুঝতে চিকিৎসক TSH ও Free T4 যোগ করতে পারেন।"
+  },
+  {
+   "key": "F T3",
+   "category": "Pathology",
+   "aka_en": "Free T3 (Free Triiodothyronine)",
+   "aka_bn": "ফ্রি T3 (মুক্ত ট্রাইআয়োডোথাইরোনিন)",
+   "numeric": true,
+   "unit": "pg/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 8,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 2.3,
+     "high": 4.2,
+     "note_en": "Typical adult free T3 range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ ফ্রি T3 মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "May be seen in an underactive thyroid or during other illnesses.",
+     "explainer_bn": "কমসক্রিয় থাইরয়েড বা অন্য অসুস্থতায় দেখা যেতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "The active, unbound T3 is within the expected range.",
+     "explainer_bn": "সক্রিয় মুক্ত T3 প্রত্যাশিত সীমায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often raised in an overactive thyroid (hyperthyroidism).",
+     "explainer_bn": "অতিসক্রিয় থাইরয়েডে (হাইপারথাইরয়েডিজম) প্রায়ই বেড়ে যায়।"
+    }
+   ],
+   "what_en": "Free T3 measures the active, unbound form of the thyroid hormone triiodothyronine available to your body.",
+   "what_bn": "ফ্রি T3 শরীরে ব্যবহারযোগ্য সক্রিয় ও মুক্ত থাইরয়েড হরমোন ট্রাইআয়োডোথাইরোনিনের পরিমাণ পরিমাপ করে।",
+   "why_en": "It gives a more precise view of thyroid activity than total T3 and helps assess an overactive thyroid.",
+   "why_bn": "টোটাল T3-এর চেয়ে থাইরয়েডের সক্রিয়তার আরও সঠিক ছবি দেয় এবং অতিসক্রিয় থাইরয়েড মূল্যায়নে সাহায্য করে।",
+   "improve_en": "Follow prescribed thyroid care, avoid changing medication on your own, and complete follow-up testing with your doctor.",
+   "improve_bn": "নির্ধারিত থাইরয়েড যত্ন মেনে চলুন, নিজে থেকে ওষুধ বদলাবেন না এবং চিকিৎসকের সঙ্গে পুনঃপরীক্ষা সম্পূর্ণ করুন।",
+   "more_en": "A doctor usually reads it alongside TSH and Free T4.",
+   "more_bn": "চিকিৎসক সাধারণত এটি TSH ও Free T4-এর সঙ্গে মিলিয়ে দেখেন।"
+  },
+  {
+   "key": "F T4",
+   "category": "Pathology",
+   "aka_en": "Free T4 (Free Thyroxine)",
+   "aka_bn": "ফ্রি T4 (মুক্ত থাইরক্সিন)",
+   "numeric": true,
+   "unit": "ng/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 3,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 0.8,
+     "high": 1.8,
+     "note_en": "Typical adult free T4 range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ ফ্রি T4 মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Often seen in an underactive thyroid (hypothyroidism).",
+     "explainer_bn": "কমসক্রিয় থাইরয়েডে (হাইপোথাইরয়েডিজম) প্রায়ই দেখা যায়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "The active, unbound T4 is within the expected range.",
+     "explainer_bn": "সক্রিয় মুক্ত T4 প্রত্যাশিত সীমায় রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Often raised in an overactive thyroid (hyperthyroidism).",
+     "explainer_bn": "অতিসক্রিয় থাইরয়েডে (হাইপারথাইরয়েডিজম) প্রায়ই বেড়ে যায়।"
+    }
+   ],
+   "what_en": "Free T4 measures the active, unbound form of the thyroid hormone thyroxine available to your body.",
+   "what_bn": "ফ্রি T4 শরীরে ব্যবহারযোগ্য সক্রিয় ও মুক্ত থাইরয়েড হরমোন থাইরক্সিনের পরিমাণ পরিমাপ করে।",
+   "why_en": "Combined with TSH, it gives a clear picture of thyroid function and guides treatment adjustments.",
+   "why_bn": "TSH-এর সঙ্গে মিলিয়ে এটি থাইরয়েডের কার্যকারিতার স্পষ্ট ছবি দেয় এবং চিকিৎসা সমন্বয়ে পথ দেখায়।",
+   "improve_en": "Take thyroid medication and tests exactly as advised and keep regular follow-ups with your doctor.",
+   "improve_bn": "ঠিক পরামর্শ অনুযায়ী থাইরয়েডের ওষুধ ও পরীক্ষা করান এবং নিয়মিত চিকিৎসকের পরামর্শ নিন।",
+   "more_en": "A doctor typically reads it with TSH and, if needed, Free T3 and thyroid antibodies.",
+   "more_bn": "চিকিৎসক সাধারণত এটি TSH এবং প্রয়োজনে Free T3 ও থাইরয়েড অ্যান্টিবডির সঙ্গে দেখেন।"
+  },
+  {
+   "key": "VITAMIN D3 (25-OH Vitamin D)",
+   "category": "Pathology",
+   "aka_en": "25-Hydroxy Vitamin D",
+   "aka_bn": "২৫-হাইড্রক্সি ভিটামিন ডি",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 100,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 30,
+     "high": 100,
+     "note_en": "30–100 sufficient; 20–30 insufficient; below 20 deficient",
+     "note_bn": "৩০–১০০ পর্যাপ্ত; ২০–৩০ অপর্যাপ্ত; ২০-এর কম ঘাটতি"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Deficiency is common and can affect bones, muscles, and immunity.",
+     "explainer_bn": "ঘাটতি খুব সাধারণ এবং হাড়, পেশি ও রোগপ্রতিরোধ ক্ষমতায় প্রভাব ফেলতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Vitamin D level is sufficient for healthy bones and muscles.",
+     "explainer_bn": "সুস্থ হাড় ও পেশির জন্য ভিটামিন ডি পর্যাপ্ত রয়েছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Very high levels, usually from excess supplements, can raise blood calcium.",
+     "explainer_bn": "সাধারণত অতিরিক্ত সাপ্লিমেন্ট থেকে খুব বেশি মাত্রা রক্তে ক্যালসিয়াম বাড়াতে পারে।"
+    }
+   ],
+   "what_en": "This test measures 25-hydroxy vitamin D, the main storage form that reflects your body's overall vitamin D status.",
+   "what_bn": "এই পরীক্ষা ২৫-হাইড্রক্সি ভিটামিন ডি পরিমাপ করে, যা শরীরে ভিটামিন ডি-এর সামগ্রিক অবস্থার প্রধান নির্দেশক।",
+   "why_en": "Doctors order it to check for deficiency, which is very common and affects bone strength, muscle function, and immunity.",
+   "why_bn": "ভিটামিন ডি-এর ঘাটতি পরীক্ষা করতে এটি করানো হয়, যা খুব সাধারণ এবং হাড়ের শক্তি, পেশি ও রোগপ্রতিরোধে প্রভাব ফেলে।",
+   "improve_en": "Get safe sunlight, eat vitamin D-rich foods like fish, egg yolk, and fortified milk, and discuss supplements with your doctor.",
+   "improve_bn": "নিরাপদ রোদ নিন, মাছ, ডিমের কুসুম ও ফর্টিফায়েড দুধের মতো ভিটামিন ডি-সমৃদ্ধ খাবার খান এবং সাপ্লিমেন্ট নিয়ে চিকিৎসকের সঙ্গে কথা বলুন।",
+   "more_en": "A doctor may add serum calcium, phosphorus, and PTH if deficiency is significant.",
+   "more_bn": "ঘাটতি বেশি হলে চিকিৎসক ক্যালসিয়াম, ফসফরাস ও PTH পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "VITAMIN  B12",
+   "category": "Pathology",
+   "aka_en": "Cobalamin",
+   "aka_bn": "কোবালামিন",
+   "numeric": true,
+   "unit": "pg/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 1000,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 200,
+     "high": 900,
+     "note_en": "Typical adult range; values below 200 suggest deficiency",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ মাত্রা; ২০০-এর নিচে ঘাটতির ইঙ্গিত"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Deficiency can cause anaemia, tiredness, tingling, and nerve problems.",
+     "explainer_bn": "ঘাটতিতে রক্তাল্পতা, ক্লান্তি, ঝিনঝিন ও স্নায়ুর সমস্যা হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "B12 level supports healthy blood and nerve function.",
+     "explainer_bn": "B12 মাত্রা সুস্থ রক্ত ও স্নায়ু কার্যকারিতা বজায় রাখছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Usually from supplements; rarely needs concern but very high values may be reviewed.",
+     "explainer_bn": "সাধারণত সাপ্লিমেন্ট থেকে; সাধারণত উদ্বেগের কারণ নয়, তবে খুব বেশি হলে পর্যালোচনা হতে পারে।"
+    }
+   ],
+   "what_en": "Vitamin B12 measures the level of cobalamin in your blood, a vitamin needed for red blood cells and nerve health.",
+   "what_bn": "ভিটামিন B12 রক্তে কোবালামিনের মাত্রা পরিমাপ করে, যা লোহিত রক্তকণিকা ও স্নায়ুর সুস্থতার জন্য দরকারি।",
+   "why_en": "It is checked for unexplained anaemia, fatigue, tingling, or memory issues, and is common in vegetarians.",
+   "why_bn": "অজানা রক্তাল্পতা, ক্লান্তি, ঝিনঝিন বা স্মৃতির সমস্যায় এটি পরীক্ষা করা হয় এবং নিরামিষভোজীদের মধ্যে ঘাটতি সাধারণ।",
+   "improve_en": "Eat B12-rich foods like dairy, eggs, and meat or fortified foods for vegetarians, and discuss supplements with your doctor.",
+   "improve_bn": "দুধ, ডিম, মাংস বা নিরামিষাশীদের জন্য ফর্টিফায়েড খাবারের মতো B12-সমৃদ্ধ খাবার খান এবং সাপ্লিমেন্ট নিয়ে চিকিৎসকের সঙ্গে কথা বলুন।",
+   "more_en": "A doctor may add a complete blood count, peripheral smear, and folic acid test.",
+   "more_bn": "চিকিৎসক সম্পূর্ণ রক্ত পরীক্ষা, পেরিফেরাল স্মিয়ার ও ফলিক অ্যাসিড পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "FOLIC ACID",
+   "category": "Pathology",
+   "aka_en": "Folate (Vitamin B9)",
+   "aka_bn": "ফোলেট (ভিটামিন B9)",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 25,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 3,
+     "high": 17,
+     "note_en": "Typical adult serum folate range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ সিরাম ফোলেট মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Deficiency can cause anaemia and, in pregnancy, birth defect risks.",
+     "explainer_bn": "ঘাটতিতে রক্তাল্পতা এবং গর্ভাবস্থায় জন্মগত ত্রুটির ঝুঁকি হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Folate level supports healthy blood cell formation.",
+     "explainer_bn": "ফোলেট মাত্রা সুস্থ রক্তকণিকা তৈরিতে সহায়তা করছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "Usually from supplements and generally not harmful.",
+     "explainer_bn": "সাধারণত সাপ্লিমেন্ট থেকে এবং সাধারণত ক্ষতিকর নয়।"
+    }
+   ],
+   "what_en": "This test measures folate (vitamin B9) in your blood, a vitamin needed to make healthy red blood cells and DNA.",
+   "what_bn": "এই পরীক্ষা রক্তে ফোলেট (ভিটামিন B9) পরিমাপ করে, যা সুস্থ লোহিত রক্তকণিকা ও DNA তৈরিতে দরকারি।",
+   "why_en": "It is used to investigate anaemia and is especially important before and during pregnancy.",
+   "why_bn": "রক্তাল্পতার কারণ খুঁজতে এটি ব্যবহৃত হয় এবং গর্ভধারণের আগে ও গর্ভাবস্থায় বিশেষভাবে গুরুত্বপূর্ণ।",
+   "improve_en": "Eat folate-rich foods like leafy greens, legumes, and citrus fruits, and discuss supplements with your doctor, especially in pregnancy.",
+   "improve_bn": "সবুজ শাক, ডাল ও লেবুজাতীয় ফলের মতো ফোলেট-সমৃদ্ধ খাবার খান এবং বিশেষত গর্ভাবস্থায় সাপ্লিমেন্ট নিয়ে চিকিৎসকের সঙ্গে কথা বলুন।",
+   "more_en": "A doctor may add vitamin B12 and a complete blood count to fully assess anaemia.",
+   "more_bn": "রক্তাল্পতা পুরোপুরি বুঝতে চিকিৎসক ভিটামিন B12 ও সম্পূর্ণ রক্ত পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "CALCIUM (Ca++)",
+   "category": "Pathology",
+   "aka_en": "Serum Calcium",
+   "aka_bn": "সিরাম ক্যালসিয়াম",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 15,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 8.5,
+     "high": 10.5,
+     "note_en": "Typical adult total serum calcium range",
+     "note_bn": "প্রাপ্তবয়স্কদের সাধারণ টোটাল সিরাম ক্যালসিয়াম মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Can cause muscle cramps or tingling and may relate to vitamin D or parathyroid issues.",
+     "explainer_bn": "পেশিতে টান বা ঝিনঝিন হতে পারে এবং ভিটামিন ডি বা প্যারাথাইরয়েডের সমস্যা সম্পর্কিত হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Calcium supports healthy bones, muscles, and nerve function.",
+     "explainer_bn": "ক্যালসিয়াম সুস্থ হাড়, পেশি ও স্নায়ু কার্যকারিতা বজায় রাখছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "May relate to parathyroid overactivity or other conditions and needs evaluation.",
+     "explainer_bn": "প্যারাথাইরয়েডের অতিসক্রিয়তা বা অন্য সমস্যার সঙ্গে সম্পর্কিত হতে পারে এবং মূল্যায়ন দরকার।"
+    }
+   ],
+   "what_en": "This test measures the total calcium in your blood, a mineral vital for bones, muscles, nerves, and clotting.",
+   "what_bn": "এই পরীক্ষা রক্তে মোট ক্যালসিয়াম পরিমাপ করে, যা হাড়, পেশি, স্নায়ু ও রক্ত জমাট বাঁধায় অপরিহার্য একটি খনিজ।",
+   "why_en": "Doctors order it to assess bone health and to investigate parathyroid, kidney, and vitamin D problems.",
+   "why_bn": "হাড়ের স্বাস্থ্য মূল্যায়ন এবং প্যারাথাইরয়েড, কিডনি ও ভিটামিন ডি সমস্যার কারণ খুঁজতে চিকিৎসক এটি করান।",
+   "improve_en": "Eat calcium-rich foods like dairy and greens, maintain adequate vitamin D, and discuss any abnormal result with your doctor.",
+   "improve_bn": "দুধজাত ও সবুজ শাকের মতো ক্যালসিয়াম-সমৃদ্ধ খাবার খান, পর্যাপ্ত ভিটামিন ডি বজায় রাখুন এবং অস্বাভাবিক ফল হলে চিকিৎসকের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add vitamin D, phosphorus, albumin, and PTH tests to interpret the result.",
+   "more_bn": "ফলাফল বুঝতে চিকিৎসক ভিটামিন ডি, ফসফরাস, অ্যালবুমিন ও PTH পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "SODIUM (Na+)",
+   "category": "Pathology",
+   "aka_en": "Na+",
+   "aka_bn": "সোডিয়াম",
+   "numeric": true,
+   "unit": "mmol/L",
+   "gaugeMin": 110,
+   "gaugeMax": 165,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 135,
+     "high": 145,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low sodium (hyponatraemia) can come from over-hydration, vomiting, diarrhoea or certain medicines.",
+     "explainer_bn": "কম সোডিয়াম বেশি জল পান, বমি, পাতলা পায়খানা বা কিছু ওষুধের কারণে হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your blood sodium and fluid balance are within the normal range.",
+     "explainer_bn": "রক্তে সোডিয়াম ও জলের ভারসাম্য স্বাভাবিক আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High sodium (hypernatraemia) usually means dehydration or too little water intake.",
+     "explainer_bn": "বেশি সোডিয়াম সাধারণত শরীরে জলের অভাব বা কম জল পানের ইঙ্গিত দেয়।"
+    }
+   ],
+   "what_en": "Sodium is a key electrolyte in your blood that helps control the balance of water and fluids in the body.",
+   "what_bn": "সোডিয়াম রক্তের একটি গুরুত্বপূর্ণ ইলেকট্রোলাইট, যা শরীরে জল ও তরলের ভারসাম্য নিয়ন্ত্রণে সাহায্য করে।",
+   "why_en": "Doctors check sodium to assess hydration, kidney function and the effect of medicines, and to explain symptoms like confusion, weakness or swelling.",
+   "why_bn": "শরীরের জলের ভারসাম্য, কিডনির কাজ ও ওষুধের প্রভাব বুঝতে এবং দুর্বলতা, বিভ্রান্তি বা ফোলার কারণ জানতে ডাক্তার সোডিয়াম পরীক্ষা করান।",
+   "improve_en": "Drink fluids sensibly (not excessively), eat a balanced diet, and manage vomiting or diarrhoea promptly; discuss abnormal results with your doctor.",
+   "improve_bn": "পরিমিত জল পান করুন, সুষম খাবার খান এবং বমি বা পাতলা পায়খানা দ্রুত সামলান; ফলাফল অস্বাভাবিক হলে ডাক্তারের সঙ্গে পরামর্শ করুন।",
+   "more_en": "Your doctor may add potassium, chloride, bicarbonate, urea, creatinine or urine tests.",
+   "more_bn": "ডাক্তার প্রয়োজনে পটাশিয়াম, ক্লোরাইড, বাইকার্বোনেট, ইউরিয়া, ক্রিয়েটিনিন বা প্রস্রাব পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "POTASSIUM (K+)",
+   "category": "Pathology",
+   "aka_en": "K+",
+   "aka_bn": "পটাশিয়াম",
+   "numeric": true,
+   "unit": "mmol/L",
+   "gaugeMin": 2,
+   "gaugeMax": 7.5,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 3.5,
+     "high": 5.1,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low potassium (hypokalaemia) can follow vomiting, diarrhoea or water pills and may cause weakness or cramps.",
+     "explainer_bn": "কম পটাশিয়াম বমি, পাতলা পায়খানা বা কিছু ওষুধের পর হতে পারে এবং দুর্বলতা বা খিঁচুনি ঘটাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your potassium level is normal, supporting healthy nerve and muscle function.",
+     "explainer_bn": "পটাশিয়াম স্বাভাবিক আছে, যা স্নায়ু ও পেশির সুস্থ কার্যকারিতায় সাহায্য করে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High potassium (hyperkalaemia) may relate to kidney problems or certain medicines and can affect the heart.",
+     "explainer_bn": "বেশি পটাশিয়াম কিডনির সমস্যা বা কিছু ওষুধের সঙ্গে যুক্ত হতে পারে এবং হৃদপিণ্ডে প্রভাব ফেলতে পারে।"
+    }
+   ],
+   "what_en": "Potassium is an electrolyte essential for normal nerve signals, muscle contraction and a steady heartbeat.",
+   "what_bn": "পটাশিয়াম একটি ইলেকট্রোলাইট, যা স্নায়ুর সংকেত, পেশির সংকোচন ও হৃদস্পন্দন স্বাভাবিক রাখতে অপরিহার্য।",
+   "why_en": "It is checked to assess kidney function, monitor medicines (like diuretics), and explain muscle weakness or irregular heartbeat.",
+   "why_bn": "কিডনির কাজ বুঝতে, কিছু ওষুধ পর্যবেক্ষণ করতে এবং পেশির দুর্বলতা বা অনিয়মিত হৃদস্পন্দনের কারণ জানতে এটি পরীক্ষা করা হয়।",
+   "improve_en": "Eat a balanced diet, stay hydrated, and take any prescribed medicines as directed; never adjust potassium supplements on your own and follow up with your doctor.",
+   "improve_bn": "সুষম খাবার খান, পর্যাপ্ত জল পান করুন এবং নির্ধারিত ওষুধ নিয়ম মেনে নিন; নিজে থেকে পটাশিয়াম সাপ্লিমেন্ট বদলাবেন না, ডাক্তারের পরামর্শ নিন।",
+   "more_en": "A doctor may add sodium, chloride, bicarbonate, urea, creatinine or an ECG.",
+   "more_bn": "ডাক্তার প্রয়োজনে সোডিয়াম, ক্লোরাইড, বাইকার্বোনেট, ইউরিয়া, ক্রিয়েটিনিন বা ইসিজি যোগ করতে পারেন।"
+  },
+  {
+   "key": "MAGNESIUM (Mg++)",
+   "category": "Pathology",
+   "aka_en": "Mg++",
+   "aka_bn": "ম্যাগনেশিয়াম",
+   "numeric": true,
+   "unit": "mg/dL",
+   "gaugeMin": 0.5,
+   "gaugeMax": 4,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 1.7,
+     "high": 2.2,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low magnesium can follow poor intake, alcohol use or gut problems and may cause cramps or tiredness.",
+     "explainer_bn": "কম ম্যাগনেশিয়াম কম খাবার, মদ্যপান বা অন্ত্রের সমস্যায় হতে পারে এবং খিঁচুনি বা ক্লান্তি ঘটাতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your magnesium level is normal, supporting muscles, nerves and bone health.",
+     "explainer_bn": "ম্যাগনেশিয়াম স্বাভাবিক আছে, যা পেশি, স্নায়ু ও হাড়ের সুস্থতায় সাহায্য করে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High magnesium is uncommon and usually relates to kidney problems or supplements.",
+     "explainer_bn": "বেশি ম্যাগনেশিয়াম কম দেখা যায় এবং সাধারণত কিডনির সমস্যা বা সাপ্লিমেন্টের সঙ্গে যুক্ত।"
+    }
+   ],
+   "what_en": "Magnesium is a mineral and electrolyte needed for muscle and nerve function, energy production and bone strength.",
+   "what_bn": "ম্যাগনেশিয়াম একটি খনিজ ও ইলেকট্রোলাইট, যা পেশি ও স্নায়ুর কাজ, শক্তি উৎপাদন এবং হাড়ের দৃঢ়তায় প্রয়োজন।",
+   "why_en": "It is checked when there are muscle cramps, weakness, irregular heartbeat, or alongside calcium and potassium problems.",
+   "why_bn": "পেশির খিঁচুনি, দুর্বলতা, অনিয়মিত হৃদস্পন্দন হলে বা ক্যালসিয়াম-পটাশিয়ামের সমস্যার সঙ্গে এটি পরীক্ষা করা হয়।",
+   "improve_en": "Include green leafy vegetables, nuts, whole grains and legumes in your diet; discuss persistent abnormal results and any supplements with your doctor.",
+   "improve_bn": "খাদ্যতালিকায় সবুজ শাক, বাদাম, গোটা শস্য ও ডাল রাখুন; বারবার অস্বাভাবিক ফল বা সাপ্লিমেন্ট নিয়ে ডাক্তারের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add calcium, potassium, phosphorus or kidney function tests.",
+   "more_bn": "ডাক্তার প্রয়োজনে ক্যালসিয়াম, পটাশিয়াম, ফসফরাস বা কিডনির পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "CHLORIDE",
+   "category": "Pathology",
+   "aka_en": "Cl-",
+   "aka_bn": "ক্লোরাইড",
+   "numeric": true,
+   "unit": "mmol/L",
+   "gaugeMin": 80,
+   "gaugeMax": 125,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 98,
+     "high": 107,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low chloride can follow vomiting, fluid loss or certain acid-base imbalances.",
+     "explainer_bn": "কম ক্লোরাইড বমি, তরল হারানো বা কিছু অ্যাসিড-ক্ষার ভারসাম্যহীনতায় হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your chloride level is normal, reflecting balanced body fluids and acid-base status.",
+     "explainer_bn": "ক্লোরাইড স্বাভাবিক আছে, যা শরীরের তরল ও অ্যাসিড-ক্ষার ভারসাম্য ঠিক আছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High chloride can relate to dehydration, kidney issues or certain acid-base imbalances.",
+     "explainer_bn": "বেশি ক্লোরাইড জলের অভাব, কিডনির সমস্যা বা অ্যাসিড-ক্ষার ভারসাম্যহীনতায় হতে পারে।"
+    }
+   ],
+   "what_en": "Chloride is an electrolyte that works with sodium to maintain fluid balance and the body's acid-base (pH) balance.",
+   "what_bn": "ক্লোরাইড একটি ইলেকট্রোলাইট, যা সোডিয়ামের সঙ্গে মিলে শরীরের তরল ও অ্যাসিড-ক্ষার (পিএইচ) ভারসাম্য রক্ষা করে।",
+   "why_en": "It is usually part of an electrolyte panel to assess hydration, kidney function and acid-base disorders.",
+   "why_bn": "সাধারণত ইলেকট্রোলাইট প্যানেলের অংশ হিসেবে জলের ভারসাম্য, কিডনির কাজ ও অ্যাসিড-ক্ষার সমস্যা বুঝতে এটি করা হয়।",
+   "improve_en": "Stay well hydrated and manage vomiting or diarrhoea early; abnormal results are best interpreted with the other electrolytes by your doctor.",
+   "improve_bn": "পর্যাপ্ত জল পান করুন এবং বমি বা পাতলা পায়খানা দ্রুত সামলান; অস্বাভাবিক ফল অন্য ইলেকট্রোলাইটের সঙ্গে ডাক্তার বিচার করবেন।",
+   "more_en": "A doctor may add sodium, potassium, bicarbonate and kidney function tests.",
+   "more_bn": "ডাক্তার প্রয়োজনে সোডিয়াম, পটাশিয়াম, বাইকার্বোনেট ও কিডনির পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "BICARBONATE (HCO3-)",
+   "category": "Pathology",
+   "aka_en": "HCO3-, CO2",
+   "aka_bn": "বাইকার্বোনেট",
+   "numeric": true,
+   "unit": "mmol/L",
+   "gaugeMin": 10,
+   "gaugeMax": 45,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 22,
+     "high": 29,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low bicarbonate can indicate excess acid in the body (metabolic acidosis) from various causes.",
+     "explainer_bn": "কম বাইকার্বোনেট শরীরে বেশি অ্যাসিড (মেটাবলিক অ্যাসিডোসিস) থাকার ইঙ্গিত দিতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your bicarbonate level is normal, reflecting balanced acid-base status.",
+     "explainer_bn": "বাইকার্বোনেট স্বাভাবিক আছে, যা অ্যাসিড-ক্ষার ভারসাম্য ঠিক আছে বোঝায়।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High bicarbonate can indicate too little acid (metabolic alkalosis), often after vomiting or fluid loss.",
+     "explainer_bn": "বেশি বাইকার্বোনেট শরীরে কম অ্যাসিড (মেটাবলিক অ্যালকালোসিস), প্রায়ই বমি বা তরল হারানোর পর হতে পারে।"
+    }
+   ],
+   "what_en": "Bicarbonate reflects the acid-base (pH) balance of your blood and how well your body neutralises acid.",
+   "what_bn": "বাইকার্বোনেট রক্তের অ্যাসিড-ক্ষার (পিএইচ) ভারসাম্য এবং শরীর কতটা অ্যাসিড নিরপেক্ষ করে তা দেখায়।",
+   "why_en": "It is checked to detect acid-base imbalances linked to kidney, lung, or metabolic problems and to monitor severe illness.",
+   "why_bn": "কিডনি, ফুসফুস বা বিপাকজনিত অ্যাসিড-ক্ষার সমস্যা শনাক্ত করতে এবং গুরুতর অসুস্থতা পর্যবেক্ষণে এটি পরীক্ষা করা হয়।",
+   "improve_en": "There is no direct diet fix; treatment targets the underlying cause, so discuss abnormal results and any breathing or kidney symptoms with your doctor.",
+   "improve_bn": "সরাসরি খাদ্যে ঠিক করা যায় না; মূল কারণের চিকিৎসা দরকার, তাই অস্বাভাবিক ফল ও শ্বাস বা কিডনির উপসর্গ নিয়ে ডাক্তারের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add electrolytes, kidney function tests, or an arterial blood gas (ABG).",
+   "more_bn": "ডাক্তার প্রয়োজনে ইলেকট্রোলাইট, কিডনির পরীক্ষা বা আর্টেরিয়াল ব্লাড গ্যাস (এবিজি) যোগ করতে পারেন।"
+  },
+  {
+   "key": "IRON",
+   "category": "Pathology",
+   "aka_en": "Serum Iron",
+   "aka_bn": "সিরাম আয়রন",
+   "numeric": true,
+   "unit": "µg/dL",
+   "gaugeMin": 0,
+   "gaugeMax": 300,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 65,
+     "high": 175,
+     "note_en": "Adult male reference range",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের স্বাভাবিক মাত্রা"
+    },
+    {
+     "sex": "female",
+     "low": 50,
+     "high": 170,
+     "note_en": "Adult female reference range",
+     "note_bn": "প্রাপ্তবয়স্ক নারীর স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low iron can point to iron-deficiency anaemia from blood loss, poor diet or absorption problems.",
+     "explainer_bn": "কম আয়রন রক্তক্ষরণ, কম খাবার বা শোষণজনিত আয়রনের অভাবজনিত রক্তাল্পতার ইঙ্গিত দিতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your serum iron is in the normal range.",
+     "explainer_bn": "সিরাম আয়রন স্বাভাবিক মাত্রায় আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High iron can relate to supplements, repeated transfusions or iron-overload conditions.",
+     "explainer_bn": "বেশি আয়রন সাপ্লিমেন্ট, বারবার রক্ত নেওয়া বা আয়রন জমার সমস্যায় হতে পারে।"
+    }
+   ],
+   "what_en": "This measures the amount of iron circulating in your blood, which your body uses to make haemoglobin and carry oxygen.",
+   "what_bn": "এটি রক্তে ঘুরতে থাকা আয়রনের পরিমাণ মাপে, যা শরীর হিমোগ্লোবিন তৈরি ও অক্সিজেন বহনে ব্যবহার করে।",
+   "why_en": "It is used to investigate anaemia, tiredness, or suspected iron deficiency or iron overload.",
+   "why_bn": "রক্তাল্পতা, ক্লান্তি অথবা আয়রনের অভাব বা আয়রন জমার সন্দেহ হলে এটি পরীক্ষা করা হয়।",
+   "improve_en": "For low iron, include iron-rich foods (green leafy vegetables, pulses, jaggery, lean meat) with vitamin-C sources; discuss supplements and the cause with your doctor.",
+   "improve_bn": "কম আয়রনে সবুজ শাক, ডাল, গুড়, মাছ-মাংসের মতো আয়রনসমৃদ্ধ খাবার ভিটামিন-সি'র সঙ্গে খান; সাপ্লিমেন্ট ও কারণ নিয়ে ডাক্তারের সঙ্গে আলোচনা করুন।",
+   "more_en": "A doctor may add ferritin, TIBC, transferrin saturation, CBC and peripheral smear.",
+   "more_bn": "ডাক্তার প্রয়োজনে ফেরিটিন, টিআইবিসি, ট্রান্সফেরিন স্যাচুরেশন, সিবিসি ও পেরিফেরাল স্মিয়ার যোগ করতে পারেন।"
+  },
+  {
+   "key": "FERRITIN",
+   "category": "Pathology",
+   "aka_en": "Serum Ferritin",
+   "aka_bn": "সিরাম ফেরিটিন",
+   "numeric": true,
+   "unit": "ng/mL",
+   "gaugeMin": 0,
+   "gaugeMax": 500,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 30,
+     "high": 400,
+     "note_en": "Adult male reference range",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষের স্বাভাবিক মাত্রা"
+    },
+    {
+     "sex": "female",
+     "low": 15,
+     "high": 150,
+     "note_en": "Adult female reference range",
+     "note_bn": "প্রাপ্তবয়স্ক নারীর স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low ferritin means low iron stores, an early and reliable sign of iron deficiency.",
+     "explainer_bn": "কম ফেরিটিন শরীরে আয়রনের ভাণ্ডার কম বোঝায়, যা আয়রনের অভাবের প্রাথমিক ও নির্ভরযোগ্য লক্ষণ।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your iron stores appear adequate.",
+     "explainer_bn": "শরীরে আয়রনের ভাণ্ডার পর্যাপ্ত বলে মনে হচ্ছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High ferritin can mean iron overload, but also rises with infection, inflammation or liver problems.",
+     "explainer_bn": "বেশি ফেরিটিন আয়রন জমা বোঝাতে পারে, তবে সংক্রমণ, প্রদাহ বা লিভারের সমস্যাতেও বাড়ে।"
+    }
+   ],
+   "what_en": "Ferritin is a protein that stores iron and reflects how much iron your body has in reserve.",
+   "what_bn": "ফেরিটিন একটি প্রোটিন যা আয়রন সঞ্চয় করে এবং শরীরে কতটা আয়রন জমা আছে তা দেখায়।",
+   "why_en": "It is the best single test to confirm iron deficiency or iron overload and to investigate anaemia or fatigue.",
+   "why_bn": "আয়রনের অভাব বা আয়রন জমা নিশ্চিত করতে এবং রক্তাল্পতা বা ক্লান্তির কারণ বুঝতে এটি সবচেয়ে ভালো একক পরীক্ষা।",
+   "improve_en": "For low ferritin, eat iron-rich foods with vitamin-C and follow your doctor's advice on supplements; for high ferritin, avoid self-prescribed iron and get the cause reviewed.",
+   "improve_bn": "কম ফেরিটিনে ভিটামিন-সি'র সঙ্গে আয়রনসমৃদ্ধ খাবার খান ও ডাক্তারের পরামর্শে সাপ্লিমেন্ট নিন; বেশি হলে নিজে থেকে আয়রন এড়িয়ে কারণ পরীক্ষা করান।",
+   "more_en": "A doctor may add serum iron, TIBC, transferrin saturation, CBC or CRP.",
+   "more_bn": "ডাক্তার প্রয়োজনে সিরাম আয়রন, টিআইবিসি, ট্রান্সফেরিন স্যাচুরেশন, সিবিসি বা সিআরপি যোগ করতে পারেন।"
+  },
+  {
+   "key": "IRON & TIBC",
+   "category": "Pathology",
+   "aka_en": "Iron Studies (Iron + TIBC)",
+   "aka_bn": "আয়রন ও টিআইবিসি (আয়রন স্টাডি)",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "This panel measures serum iron together with total iron-binding capacity (TIBC) and is used to calculate transferrin saturation.",
+   "what_bn": "এই প্যানেলে সিরাম আয়রনের সঙ্গে টোটাল আয়রন-বাইন্ডিং ক্যাপাসিটি (টিআইবিসি) মাপা হয় এবং ট্রান্সফেরিন স্যাচুরেশন হিসাব করা হয়।",
+   "why_en": "Together these values help distinguish iron-deficiency anaemia from other causes of anaemia and assess iron overload.",
+   "why_bn": "এই মানগুলি একসঙ্গে আয়রনের অভাবজনিত রক্তাল্পতাকে অন্য কারণ থেকে আলাদা করতে এবং আয়রন জমা বুঝতে সাহায্য করে।",
+   "improve_en": "Follow your doctor's advice based on the full pattern; for iron deficiency, iron-rich foods with vitamin-C help, but confirm the cause first.",
+   "improve_bn": "সম্পূর্ণ ফলাফল দেখে ডাক্তারের পরামর্শ মেনে চলুন; আয়রনের অভাবে ভিটামিন-সি'র সঙ্গে আয়রনসমৃদ্ধ খাবার সাহায্য করে, তবে আগে কারণ নিশ্চিত করুন।",
+   "more_en": "A doctor may add ferritin, transferrin saturation, CBC and peripheral smear.",
+   "more_bn": "ডাক্তার প্রয়োজনে ফেরিটিন, ট্রান্সফেরিন স্যাচুরেশন, সিবিসি ও পেরিফেরাল স্মিয়ার যোগ করতে পারেন।"
+  },
+  {
+   "key": "TRANSFERRIN SATURATION",
+   "category": "Pathology",
+   "aka_en": "TSAT",
+   "aka_bn": "ট্রান্সফেরিন স্যাচুরেশন (TSAT)",
+   "numeric": true,
+   "unit": "%",
+   "gaugeMin": 0,
+   "gaugeMax": 80,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 20,
+     "high": 50,
+     "note_en": "Adult reference range",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low saturation suggests iron deficiency, where too little iron is available for the body.",
+     "explainer_bn": "কম স্যাচুরেশন আয়রনের অভাব বোঝায়, যেখানে শরীরের জন্য যথেষ্ট আয়রন পাওয়া যায় না।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "The proportion of iron carried in your blood is normal.",
+     "explainer_bn": "রক্তে বাহিত আয়রনের অনুপাত স্বাভাবিক আছে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High saturation can indicate iron overload conditions such as haemochromatosis.",
+     "explainer_bn": "বেশি স্যাচুরেশন হিমোক্রোমাটোসিসের মতো আয়রন জমার সমস্যার ইঙ্গিত দিতে পারে।"
+    }
+   ],
+   "what_en": "Transferrin saturation is the percentage of iron-carrying protein (transferrin) that is actually loaded with iron.",
+   "what_bn": "ট্রান্সফেরিন স্যাচুরেশন হলো আয়রন বহনকারী প্রোটিন (ট্রান্সফেরিন)-এর কত শতাংশ আসলে আয়রনে ভরা তা।",
+   "why_en": "It helps confirm iron deficiency (low values) or iron overload (high values) as part of iron studies.",
+   "why_bn": "আয়রন স্টাডির অংশ হিসেবে আয়রনের অভাব (কম মান) বা আয়রন জমা (বেশি মান) নিশ্চিত করতে এটি সাহায্য করে।",
+   "improve_en": "Act on the underlying iron status: iron-rich diet with vitamin-C for deficiency, or avoiding self-prescribed iron for overload; confirm the plan with your doctor.",
+   "improve_bn": "মূল আয়রন অবস্থার উপর ব্যবস্থা নিন: অভাবে ভিটামিন-সি'র সঙ্গে আয়রনসমৃদ্ধ খাবার, জমায় নিজে থেকে আয়রন এড়ানো; পরিকল্পনা ডাক্তারের সঙ্গে নিশ্চিত করুন।",
+   "more_en": "A doctor may add ferritin, serum iron, TIBC and CBC.",
+   "more_bn": "ডাক্তার প্রয়োজনে ফেরিটিন, সিরাম আয়রন, টিআইবিসি ও সিবিসি যোগ করতে পারেন।"
+  },
+  {
+   "key": "CBC (Complete Blood Count)",
+   "category": "Pathology",
+   "aka_en": "Complete Blood Count, Haemogram",
+   "aka_bn": "সম্পূর্ণ রক্ত পরীক্ষা (হিমোগ্রাম)",
+   "numeric": false,
+   "unit": "",
+   "gaugeMin": 0,
+   "gaugeMax": 0,
+   "ranges": [],
+   "stages": [],
+   "what_en": "A CBC measures several parts of your blood, including red cells, white cells, haemoglobin, and platelets.",
+   "what_bn": "সিবিসি রক্তের বিভিন্ন অংশ—লোহিত কণিকা, শ্বেত কণিকা, হিমোগ্লোবিন ও প্লেটলেট—একসঙ্গে মাপে।",
+   "why_en": "It is a common screening test to detect anaemia, infection, inflammation, clotting problems and many other conditions.",
+   "why_bn": "রক্তাল্পতা, সংক্রমণ, প্রদাহ, রক্ত জমাটের সমস্যা ও আরও নানা রোগ শনাক্ত করতে এটি একটি প্রচলিত স্ক্রিনিং পরীক্ষা।",
+   "improve_en": "Eat a balanced, nutrient-rich diet, stay hydrated and rest well; interpret individual values with your doctor, as each component has its own meaning.",
+   "improve_bn": "সুষম ও পুষ্টিকর খাবার খান, পর্যাপ্ত জল পান করুন ও পর্যাপ্ত বিশ্রাম নিন; প্রতিটি উপাদানের আলাদা অর্থ থাকায় ফল ডাক্তারের সঙ্গে বিচার করুন।",
+   "more_en": "A doctor may add a peripheral smear, reticulocyte count, iron studies, CRP or ESR depending on findings.",
+   "more_bn": "ফলাফল অনুযায়ী ডাক্তার পেরিফেরাল স্মিয়ার, রেটিকুলোসাইট কাউন্ট, আয়রন স্টাডি, সিআরপি বা ইএসআর যোগ করতে পারেন।"
+  },
+  {
+   "key": "ESR",
+   "category": "Pathology",
+   "aka_en": "Erythrocyte Sedimentation Rate",
+   "aka_bn": "ইএসআর (রক্তকণিকা তলানি হার)",
+   "numeric": true,
+   "unit": "mm/hr",
+   "gaugeMin": 0,
+   "gaugeMax": 60,
+   "ranges": [
+    {
+     "sex": "male",
+     "low": 0,
+     "high": 15,
+     "note_en": "Adult male (Westergren); rises with age",
+     "note_bn": "প্রাপ্তবয়স্ক পুরুষ (ওয়েস্টারগ্রেন); বয়সের সঙ্গে বাড়ে"
+    },
+    {
+     "sex": "female",
+     "low": 0,
+     "high": 20,
+     "note_en": "Adult female (Westergren); rises with age",
+     "note_bn": "প্রাপ্তবয়স্ক নারী (ওয়েস্টারগ্রেন); বয়সের সঙ্গে বাড়ে"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "A low ESR is normal and generally not a concern.",
+     "explainer_bn": "কম ইএসআর স্বাভাবিক এবং সাধারণত চিন্তার কিছু নয়।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your ESR is within the expected range, with no strong sign of active inflammation.",
+     "explainer_bn": "ইএসআর স্বাভাবিক আছে, সক্রিয় প্রদাহের জোরালো লক্ষণ নেই।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "A high ESR is a non-specific sign of inflammation, infection or other conditions and needs context.",
+     "explainer_bn": "বেশি ইএসআর প্রদাহ, সংক্রমণ বা অন্য সমস্যার সাধারণ (অনির্দিষ্ট) লক্ষণ, প্রসঙ্গ অনুযায়ী বিচার দরকার।"
+    }
+   ],
+   "what_en": "ESR measures how quickly red blood cells settle in a tube, which rises when there is inflammation in the body.",
+   "what_bn": "ইএসআর মাপে একটি নলে লোহিত রক্তকণিকা কত দ্রুত তলিয়ে যায়, যা শরীরে প্রদাহ থাকলে বাড়ে।",
+   "why_en": "It is a non-specific marker used to detect and monitor inflammation, infection, or certain chronic diseases.",
+   "why_bn": "প্রদাহ, সংক্রমণ বা কিছু দীর্ঘস্থায়ী রোগ শনাক্ত ও পর্যবেক্ষণে ব্যবহৃত একটি অনির্দিষ্ট মার্কার।",
+   "improve_en": "ESR reflects an underlying cause rather than something to fix directly; follow up on any symptoms and let your doctor interpret it alongside other tests.",
+   "improve_bn": "ইএসআর মূল কারণের প্রতিফলন, সরাসরি ঠিক করার কিছু নয়; উপসর্গ থাকলে ফলো-আপ করুন ও অন্য পরীক্ষার সঙ্গে ডাক্তারকে বিচার করতে দিন।",
+   "more_en": "A doctor may add CRP, CBC, or condition-specific tests based on your symptoms.",
+   "more_bn": "উপসর্গ অনুযায়ী ডাক্তার সিআরপি, সিবিসি বা নির্দিষ্ট রোগের পরীক্ষা যোগ করতে পারেন।"
+  },
+  {
+   "key": "PLATELET COUNT",
+   "category": "Pathology",
+   "aka_en": "Thrombocyte Count",
+   "aka_bn": "প্লেটলেট সংখ্যা",
+   "numeric": true,
+   "unit": "10^3/µL",
+   "gaugeMin": 0,
+   "gaugeMax": 600,
+   "ranges": [
+    {
+     "sex": "any",
+     "low": 150,
+     "high": 450,
+     "note_en": "Adult reference range (150,000–450,000/µL)",
+     "note_bn": "প্রাপ্তবয়স্কদের স্বাভাবিক মাত্রা (১,৫০,০০০–৪,৫০,০০০/µL)"
+    }
+   ],
+   "stages": [
+    {
+     "id": "low",
+     "label_en": "Low",
+     "label_bn": "কম",
+     "explainer_en": "Low platelets (thrombocytopenia) can raise bleeding risk and may follow infections like dengue or other conditions.",
+     "explainer_bn": "কম প্লেটলেট (থ্রম্বোসাইটোপেনিয়া) রক্তক্ষরণের ঝুঁকি বাড়াতে পারে এবং ডেঙ্গুর মতো সংক্রমণ বা অন্য কারণে হতে পারে।"
+    },
+    {
+     "id": "normal",
+     "label_en": "Normal",
+     "label_bn": "স্বাভাবিক",
+     "explainer_en": "Your platelet count is normal, supporting healthy blood clotting.",
+     "explainer_bn": "প্লেটলেট সংখ্যা স্বাভাবিক আছে, যা রক্ত জমাট বাঁধায় সাহায্য করে।"
+    },
+    {
+     "id": "high",
+     "label_en": "High",
+     "label_bn": "বেশি",
+     "explainer_en": "High platelets can follow infection or inflammation, or less commonly a bone-marrow condition.",
+     "explainer_bn": "বেশি প্লেটলেট সংক্রমণ, প্রদাহ বা কম ক্ষেত্রে অস্থিমজ্জার সমস্যায় হতে পারে।"
+    }
+   ],
+   "what_en": "Platelets are tiny blood cells that help your blood clot and stop bleeding; this test counts how many you have.",
+   "what_bn": "প্লেটলেট হলো ছোট রক্তকণিকা যা রক্ত জমাট বাঁধতে ও রক্তক্ষরণ থামাতে সাহায্য করে; এই পরীক্ষা তাদের সংখ্যা গোনে।",
+   "why_en": "It is checked to assess bleeding or clotting risk and to monitor infections (like dengue) and blood disorders.",
+   "why_bn": "রক্তক্ষরণ বা জমাটের ঝুঁকি বুঝতে এবং ডেঙ্গুর মতো সংক্রমণ ও রক্তের রোগ পর্যবেক্ষণে এটি পরীক্ষা করা হয়।",
+   "improve_en": "There is no quick diet fix; treat the underlying cause, stay hydrated during fevers, avoid injury if counts are low, and follow your doctor's monitoring advice.",
+   "improve_bn": "দ্রুত খাদ্যে ঠিক করা যায় না; মূল কারণের চিকিৎসা করুন, জ্বরে জল পান করুন, সংখ্যা কম হলে আঘাত এড়ান এবং ডাক্তারের পর্যবেক্ষণ পরামর্শ মেনে চলুন।",
+   "more_en": "A doctor may add a CBC, peripheral smear, or dengue/infection tests depending on the situation.",
+   "more_bn": "পরিস্থিতি অনুযায়ী ডাক্তার সিবিসি, পেরিফেরাল স্মিয়ার বা ডেঙ্গু/সংক্রমণের পরীক্ষা যোগ করতে পারেন।"
+  }
+ ]
+}

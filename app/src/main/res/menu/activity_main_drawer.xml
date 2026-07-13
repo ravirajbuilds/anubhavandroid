@@ -21,6 +21,10 @@
             android:icon="@drawable/ic_reports"
             android:title="@string/menu_my_reports" />
         <item
+            android:id="@+id/nav_metrics"
+            android:icon="@drawable/ic_metrics"
+            android:title="@string/menu_metrics" />
+        <item
             android:id="@+id/nav_collector"
             android:icon="@drawable/ic_collector"
             android:title="@string/menu_collector" />
