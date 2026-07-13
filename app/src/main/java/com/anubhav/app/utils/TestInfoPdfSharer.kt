@@ -18,8 +18,8 @@ import java.io.FileOutputStream
  */
 object TestInfoPdfSharer {
 
-    fun share(context: Context, resolved: TestInfoRepository.Resolved, isBengali: Boolean, value: Double?) {
-        val file = build(context, resolved, isBengali, value)
+    fun share(context: Context, resolved: TestInfoRepository.Resolved, isBengali: Boolean, value: Double?, sex: String?) {
+        val file = build(context, resolved, isBengali, value, sex)
         val uri = FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "application/pdf"
@@ -32,7 +32,7 @@ object TestInfoPdfSharer {
 
     private fun pick(isBn: Boolean, en: String, bn: String) = if (isBn && bn.isNotBlank()) bn else en
 
-    private fun build(context: Context, resolved: TestInfoRepository.Resolved, isBn: Boolean, value: Double?): File {
+    private fun build(context: Context, resolved: TestInfoRepository.Resolved, isBn: Boolean, value: Double?, sex: String?): File {
         val dir = File(context.filesDir, "test_info").apply { mkdirs() }
         val safe = resolved.testName.replace(Regex("[^A-Za-z0-9_-]"), "_").take(48)
         val file = File(dir, "test_${safe}.pdf")
@@ -48,7 +48,7 @@ object TestInfoPdfSharer {
 
             val spec = resolved.specific
             if (spec != null && spec.numeric && spec.ranges.isNotEmpty()) {
-                val range = resolved.rangeFor(null)
+                val range = resolved.rangeFor(sex)
                 if (range != null) {
                     w.label(context.localized(R.string.reference_range, "${fmt(range.low)}–${fmt(range.high)} ${spec.unit}".trim()))
                     if (value != null) {

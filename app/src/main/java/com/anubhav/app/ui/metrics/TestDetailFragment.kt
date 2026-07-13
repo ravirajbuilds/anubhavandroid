@@ -317,7 +317,7 @@ class TestDetailFragment : Fragment() {
 
     private fun onSharePdf() {
         runCatching {
-            TestInfoPdfSharer.share(requireContext(), resolved, isBengali, currentValue)
+            TestInfoPdfSharer.share(requireContext(), resolved, isBengali, currentValue, currentSex)
         }.onFailure {
             Toast.makeText(requireContext(), localized(R.string.something_went_wrong), Toast.LENGTH_LONG).show()
         }
