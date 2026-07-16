@@ -268,6 +268,30 @@
     <string name="login_subtitle">Sign in to book tests, view reports, and pay bills</string>
     <string name="sign_up_subtitle">Create an account with your email</string>
 
+    <!-- Home collection address / GPS autofill -->
+    <string name="use_my_location">Use my current location</string>
+    <string name="address_hint">Home collection address</string>
+    <string name="locating">Getting your location…</string>
+    <string name="location_permission_needed">Location permission is needed to autofill your address.</string>
+    <string name="location_unavailable">Couldn\'t get your location. Please type your address.</string>
+
+    <!-- 2-of-3 report verification dialog (login + My Reports) -->
+    <string name="verify_dialog_title_login">View your reports</string>
+    <string name="verify_dialog_title_fetch">Fetch another report</string>
+    <string name="verify_dialog_message">Enter any two of: name, bill number/date, phone.</string>
+    <string name="verify_patient_name_hint">Patient name</string>
+    <string name="verify_phone_hint">Phone number</string>
+    <string name="verify_bill_no_hint">Bill number (after YYMM/ALC/)</string>
+    <string name="verify_bill_no_label">Bill number</string>
+    <string name="verify_or_divider">— OR —</string>
+    <string name="verify_pick_bill_date">Pick bill date</string>
+    <string name="verify_bill_date_value">Bill date: %1$s</string>
+    <string name="verify_positive_view">View reports</string>
+    <string name="verify_positive_find">Find reports</string>
+    <string name="verify_fill_two_fields">Please fill at least two fields.</string>
+    <string name="verify_no_match">Details didn\'t match. Check your name, bill number/date and phone.</string>
+    <string name="verify_showing_reports_for">Showing reports for %1$s</string>
+
     <!-- Time Slots (legacy) -->
     <string name="time_slot_7_10">7 AM - 10 AM</string>
     <string name="time_slot_10_1">10 AM - 1 PM</string>
@@ -502,4 +526,28 @@
     <string name="login_welcome_bn">আবার স্বাগতম</string>
     <string name="login_subtitle_bn">টেস্ট বুক, রিপোর্ট দেখা ও বিল পরিশোধের জন্য সাইন ইন করুন</string>
     <string name="sign_up_subtitle_bn">ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন</string>
+
+    <!-- Home collection address / GPS autofill (Bengali) -->
+    <string name="use_my_location_bn">আমার বর্তমান অবস্থান ব্যবহার করুন</string>
+    <string name="address_hint_bn">হোম কালেকশনের ঠিকানা</string>
+    <string name="locating_bn">আপনার অবস্থান জানা হচ্ছে…</string>
+    <string name="location_permission_needed_bn">ঠিকানা স্বয়ংক্রিয়ভাবে পূরণ করতে লোকেশনের অনুমতি প্রয়োজন।</string>
+    <string name="location_unavailable_bn">আপনার অবস্থান পাওয়া যায়নি। অনুগ্রহ করে ঠিকানা লিখুন।</string>
+
+    <!-- 2-of-3 report verification dialog (Bengali) -->
+    <string name="verify_dialog_title_login_bn">আপনার রিপোর্ট দেখুন</string>
+    <string name="verify_dialog_title_fetch_bn">অন্য রিপোর্ট আনুন</string>
+    <string name="verify_dialog_message_bn">নাম, বিল নম্বর/তারিখ, ফোন — যেকোনো দুটি লিখুন।</string>
+    <string name="verify_patient_name_hint_bn">রোগীর নাম</string>
+    <string name="verify_phone_hint_bn">মোবাইল নম্বর</string>
+    <string name="verify_bill_no_hint_bn">বিল নম্বর (YYMM/ALC/ এর পরের অংশ)</string>
+    <string name="verify_bill_no_label_bn">বিল নম্বর</string>
+    <string name="verify_or_divider_bn">— অথবা —</string>
+    <string name="verify_pick_bill_date_bn">বিলের তারিখ বেছে নিন</string>
+    <string name="verify_bill_date_value_bn">বিলের তারিখ: %1$s</string>
+    <string name="verify_positive_view_bn">রিপোর্ট দেখুন</string>
+    <string name="verify_positive_find_bn">রিপোর্ট খুঁজুন</string>
+    <string name="verify_fill_two_fields_bn">অন্তত দুটি ঘর পূরণ করুন।</string>
+    <string name="verify_no_match_bn">তথ্য মেলেনি। নাম, বিল নম্বর/তারিখ ও ফোন আবার দেখুন।</string>
+    <string name="verify_showing_reports_for_bn">%1$s-এর রিপোর্ট দেখানো হচ্ছে</string>
 </resources>

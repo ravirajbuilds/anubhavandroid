@@ -170,7 +170,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:hint="Referred By (Doctor)"
-            style="@style/Widget.Anubhav.Dropdown">
+            style="@style/Widget.Anubhav.Dropdown"
+            app:endIconMode="dropdown_menu">
 
             <AutoCompleteTextView
                 android:id="@+id/spinnerDoctor"
@@ -184,7 +185,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:hint="Collection Centre"
-            style="@style/Widget.Anubhav.Dropdown">
+            style="@style/Widget.Anubhav.Dropdown"
+            app:endIconMode="dropdown_menu">
 
             <AutoCompleteTextView
                 android:id="@+id/spinnerCollectionCentre"

@@ -255,38 +255,41 @@ class LoginActivity : AppCompatActivity() {
             setPadding(px(20), px(8), px(20), 0)
         }
         val etName = EditText(this).apply {
-            hint = "Patient name"
+            hint = localized(R.string.verify_patient_name_hint)
             inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS or InputType.TYPE_CLASS_TEXT
         }
         val etPhone = EditText(this).apply {
-            hint = "Phone number"; inputType = InputType.TYPE_CLASS_PHONE; setText(prefillPhone)
+            hint = localized(R.string.verify_phone_hint); inputType = InputType.TYPE_CLASS_PHONE; setText(prefillPhone)
         }
         val etBill = EditText(this).apply {
-            hint = "Bill number (the part after YYMM/ALC/)"; inputType = InputType.TYPE_CLASS_NUMBER
+            hint = localized(R.string.verify_bill_no_hint); inputType = InputType.TYPE_CLASS_NUMBER
         }
         var billDateIso: String? = null
         val dateBtn = com.google.android.material.button.MaterialButton(this).apply {
-            text = "Pick bill date"
+            text = localized(R.string.verify_pick_bill_date)
             setOnClickListener {
                 val c = Calendar.getInstance()
                 DatePickerDialog(this@LoginActivity, { _, y, m, day ->
                     billDateIso = String.format(Locale.US, "%04d-%02d-%02d", y, m + 1, day)
-                    text = String.format(Locale.US, "Bill date: %02d/%02d/%04d", day, m + 1, y)
+                    text = localized(
+                        R.string.verify_bill_date_value,
+                        String.format(Locale.US, "%02d/%02d/%04d", day, m + 1, y),
+                    )
                 }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
             }
         }
         container.addView(etName)
         container.addView(etPhone)
-        container.addView(TextView(this).apply { text = "Bill number"; setPadding(0, px(8), 0, 0) })
+        container.addView(TextView(this).apply { text = localized(R.string.verify_bill_no_label); setPadding(0, px(8), 0, 0) })
         container.addView(etBill)
-        container.addView(TextView(this).apply { text = "— OR —"; gravity = Gravity.CENTER; setPadding(0, px(6), 0, px(6)) })
+        container.addView(TextView(this).apply { text = localized(R.string.verify_or_divider); gravity = Gravity.CENTER; setPadding(0, px(6), 0, px(6)) })
         container.addView(dateBtn)
 
         val dialog = AlertDialog.Builder(this)
-            .setTitle("View your reports")
-            .setMessage("Enter any two of: name, bill number/date, phone.")
+            .setTitle(localized(R.string.verify_dialog_title_login))
+            .setMessage(localized(R.string.verify_dialog_message))
             .setView(container)
-            .setPositiveButton("View reports", null)
+            .setPositiveButton(localized(R.string.verify_positive_view), null)
             .setNegativeButton(localized(R.string.cancel), null)
             .create()
         dialog.setOnShowListener {
@@ -296,7 +299,7 @@ class LoginActivity : AppCompatActivity() {
                 val bill = etBill.text.toString().trim()
                 val provided = listOf(name.isNotEmpty(), bill.isNotEmpty() || billDateIso != null, phone.isNotEmpty()).count { it }
                 if (provided < 2) {
-                    Toast.makeText(this, "Please fill at least two fields.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, localized(R.string.verify_fill_two_fields), Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
                 setLoading(true)
@@ -317,7 +320,7 @@ class LoginActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(
                                     this@LoginActivity,
-                                    "Details didn't match. Check your name, bill number/date and phone.",
+                                    localized(R.string.verify_no_match),
                                     Toast.LENGTH_LONG,
                                 ).show()
                             }
