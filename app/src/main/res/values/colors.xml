@@ -34,7 +34,9 @@
     <!-- Text Colors -->
     <color name="text_primary">#17272F</color>
     <color name="text_secondary">#5C6E78</color>
-    <color name="text_hint">#BDBDBD</color>
+    <!-- text_hint darkened from #BDBDBD (1.8:1 on white, failed WCAG AA)
+         to match text_secondary (>=4.9:1 on all light surfaces in this palette) -->
+    <color name="text_hint">#5C6E78</color>
     <color name="text_white">#FFFFFF</color>
 
     <!-- Status Colors - Updated with brand red -->

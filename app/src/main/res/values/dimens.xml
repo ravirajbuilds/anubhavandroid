@@ -8,4 +8,11 @@
     <dimen name="list_item_radius">10dp</dimen>
     <dimen name="list_item_stroke">1dp</dimen>
     <dimen name="list_item_gap">8dp</dimen>
+
+    <!-- Shared component tokens for visual consistency -->
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="button_corner_radius">10dp</dimen>
+    <!-- Minimum touch target size (accessibility) -->
+    <dimen name="touch_target_min">48dp</dimen>
 </resources>

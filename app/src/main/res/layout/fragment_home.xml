@@ -21,7 +21,8 @@
         <!-- Hero Section -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="156dp"
+            android:layout_height="wrap_content"
+            android:minHeight="156dp"
             android:background="@drawable/hero_health_gradient"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -38,6 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/app_name"
+                    android:importantForAccessibility="no"
                     android:scaleType="fitCenter"
                     android:src="@drawable/anubhav_shell_logo" />
             </FrameLayout>
@@ -100,7 +102,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     app:backgroundTint="@color/brand_blue"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:elevation="2dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -116,7 +118,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     app:backgroundTint="@color/medical_green"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:elevation="2dp" />
 
             </LinearLayout>
@@ -140,7 +142,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     app:backgroundTint="@color/brand_dark_blue"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:elevation="2dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -156,7 +158,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     app:backgroundTint="@color/medical_teal"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:elevation="2dp" />
 
             </LinearLayout>
@@ -186,6 +188,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/chip_accent_bg"
                 android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/touch_target_min"
+                android:minHeight="@dimen/touch_target_min"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 android:text="View All"
@@ -215,9 +220,9 @@
                     android:layout_marginEnd="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardBackgroundColor="@color/card_background"
-                    app:cardElevation="2dp"
+                    app:cardElevation="@dimen/card_elevation"
                     app:strokeWidth="1dp"
                     app:strokeColor="@color/stroke_soft">
 
@@ -284,9 +289,9 @@
                     android:layout_marginEnd="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardBackgroundColor="@color/card_background"
-                    app:cardElevation="2dp"
+                    app:cardElevation="@dimen/card_elevation"
                     app:strokeWidth="1dp"
                     app:strokeColor="@color/stroke_soft">
 
@@ -352,9 +357,9 @@
                     android:layout_height="140dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardBackgroundColor="@color/card_background"
-                    app:cardElevation="2dp"
+                    app:cardElevation="@dimen/card_elevation"
                     app:strokeWidth="1dp"
                     app:strokeColor="@color/stroke_soft">
 
@@ -435,8 +440,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:strokeWidth="1dp"
             app:strokeColor="@color/stroke_soft">
 
@@ -554,8 +559,8 @@
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:rippleColor="@color/stroke_soft"
             app:strokeWidth="1dp"
             app:strokeColor="@color/stroke_soft">

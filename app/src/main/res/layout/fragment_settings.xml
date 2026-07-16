@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
 
@@ -82,8 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
 
@@ -129,7 +129,7 @@
                     android:visibility="gone" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.Anubhav.TextInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -153,7 +153,7 @@
                     android:maxLines="1" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.Anubhav.TextInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -176,7 +176,7 @@
                     android:text="@string/save_collector_key"
                     android:maxLines="1"
                     android:ellipsize="end"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/button_corner_radius"
                     app:strokeColor="@color/stroke_soft" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -191,7 +191,7 @@
             android:textColor="@color/brand_dark_blue"
             android:maxLines="1"
             android:ellipsize="end"
-            app:cornerRadius="10dp"
+            app:cornerRadius="@dimen/button_corner_radius"
             app:strokeColor="@color/stroke_soft" />
 
         <com.google.android.material.button.MaterialButton
@@ -204,7 +204,7 @@
             android:textColor="@color/brand_dark_blue"
             android:maxLines="1"
             android:ellipsize="end"
-            app:cornerRadius="10dp"
+            app:cornerRadius="@dimen/button_corner_radius"
             app:strokeColor="@color/stroke_soft" />
     </LinearLayout>
 </ScrollView>
