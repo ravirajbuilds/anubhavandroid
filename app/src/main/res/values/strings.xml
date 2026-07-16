@@ -298,14 +298,14 @@
     <string name="time_slot_1_4">1 PM - 4 PM</string>
     <string name="time_slot_2_5">2 PM - 5 PM</string>
 
-    <string name="cbc_preparation_bn">১২ ঘন্টা উপবাস প্রয়োজন</string>
-    <string name="lipid_preparation_bn">১২-১৪ ঘন্টা উপবাস প্রয়োজন</string>
-    <string name="thyroid_preparation_bn">কোন বিশেষ প্রস্তুতি নেই</string>
+    <string name="cbc_preparation_bn">১২ ঘণ্টা খালি পেটে থাকতে হবে</string>
+    <string name="lipid_preparation_bn">১২-১৪ ঘণ্টা খালি পেটে থাকতে হবে</string>
+    <string name="thyroid_preparation_bn">কোনো বিশেষ প্রস্তুতির দরকার নেই</string>
 
     <!-- Bengali translations -->
     <string name="app_name_bn">অনুভব লাইফ কেয়ার</string>
-    <string name="navigation_drawer_open_bn">নেভিগেশন ড্রয়ার খুলুন</string>
-    <string name="navigation_drawer_close_bn">নেভিগেশন ড্রয়ার বন্ধ করুন</string>
+    <string name="navigation_drawer_open_bn">নেভিগেশন মেনু খুলুন</string>
+    <string name="navigation_drawer_close_bn">নেভিগেশন মেনু বন্ধ করুন</string>
     <string name="nav_header_title_bn">অনুভব লাইফ কেয়ার</string>
     <string name="nav_header_subtitle_bn">টেস্ট বুক করুন, রিপোর্ট দেখুন ও অনলাইনে পেমেন্ট করুন</string>
     <string name="action_settings_bn">সেটিংস</string>
@@ -318,22 +318,22 @@
     <string name="menu_collector_bn">কলেক্টর</string>
     <string name="menu_profile_bn">প্রোফাইল</string>
     <string name="menu_contact_bn">যোগাযোগ</string>
-    <string name="menu_about_bn">সম্পর্কে</string>
+    <string name="menu_about_bn">আমাদের সম্পর্কে</string>
     <string name="menu_settings_bn">সেটিংস</string>
 
     <string name="logout_bn">লগ আউট</string>
-    <string name="logged_in_as_bn">লগ ইন: %1$s</string>
+    <string name="logged_in_as_bn">লগ ইন করা আছে: %1$s</string>
 
     <string name="login_bn">সাইন ইন</string>
     <string name="sign_up_bn">সাইন আপ</string>
-    <string name="email_bn">ইমেইল</string>
+    <string name="email_bn">ইমেল</string>
     <string name="password_bn">পাসওয়ার্ড</string>
     <string name="phone_bn">মোবাইল নম্বর</string>
     <string name="name_bn">নাম</string>
     <string name="login_with_google_bn">Google দিয়ে চালিয়ে যান</string>
     <string name="login_with_facebook_bn">Facebook দিয়ে চালিয়ে যান</string>
-    <string name="login_with_email_bn">ইমেইল দিয়ে সাইন ইন</string>
-    <string name="continue_with_phone_bn">ক্লিনিক মোবাইল দিয়ে চালিয়ে যান</string>
+    <string name="login_with_email_bn">ইমেল দিয়ে সাইন ইন</string>
+    <string name="continue_with_phone_bn">ক্লিনিকের মোবাইল নম্বর দিয়ে চালিয়ে যান</string>
     <string name="sign_up_with_email_bn">ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন</string>
     <string name="or_continue_with_bn">অথবা ইমেইল দিয়ে চালিয়ে যান</string>
     <string name="forgot_password_bn">পাসওয়ার্ড ভুলে গেছেন?</string>
