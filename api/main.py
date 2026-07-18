@@ -224,6 +224,10 @@ class CustomerPrebookRequest(BaseModel):
     payment_id: str = Field(..., min_length=1)
     amount_paid: float = Field(..., gt=0)
     email: Optional[str] = None
+    # Home-collection address (optionally geotagged by the app's GPS autofill).
+    address: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
 
 
 class CustomerPaymentRequest(BaseModel):
@@ -378,6 +382,9 @@ def api_customer_prebook(body: CustomerPrebookRequest):
             payment_id=body.payment_id,
             amount_paid=body.amount_paid,
             email=body.email,
+            address=body.address,
+            latitude=body.latitude,
+            longitude=body.longitude,
         )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

@@ -98,6 +98,43 @@ def _bill_serial(bill_no: Optional[str]) -> str:
     return (bill_no or "").split("/")[-1].strip().lstrip("0")
 
 
+def _bill_month(bill_no: Optional[str]) -> str:
+    """The YYYY/MM the bill belongs to, from a 'YYYY/MM/ALC/NNN' bill number.
+
+    ALC serials reset to 001 on the 1st of every month, so a serial only
+    identifies a bill *within* its month — the month prefix must be kept.
+    """
+    parts = [p.strip() for p in (bill_no or "").split("/")]
+    if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():
+        return f"{parts[0]}/{parts[1]}"
+    return ""
+
+
+def _score_row(
+    r: dict,
+    name: str,
+    phone_n: str,
+    phone_valid: bool,
+    serial: str,
+    bdate: Optional[date],
+    month_prefix: Optional[str],
+) -> int:
+    """2-of-3 factor count for one candidate bill row.
+
+    A bill-serial match only counts when it is in the right month: ALC numbering
+    restarts every month, so serial 3 exists in Jan, Feb, … — without pinning the
+    month a serial+name pair could resolve to the wrong patient.
+    """
+    f_phone = 1 if (phone_valid and _norm_phone(r["phone"]) == phone_n) else 0
+    serial_ok = bool(serial) and _bill_serial(r["bill_no"]) == serial
+    if serial_ok and month_prefix and _bill_month(r["bill_no"]) != month_prefix:
+        serial_ok = False
+    date_ok = bool(bdate) and r["billdate"] == bdate.strftime("%d/%m/%Y")
+    f_bill = 1 if (serial_ok or date_ok) else 0
+    f_name = 1 if (name and name_score(name, r["patientname"]) >= NAME_MATCH_THRESHOLD) else 0
+    return f_phone + f_bill + f_name
+
+
 def _parse_date(s: Optional[str]) -> Optional[date]:
     if not s:
         return None
@@ -152,6 +189,8 @@ def verify_customer(
     phone_valid = bool(phone_n) and not _is_junk_phone(phone_n)
     serial = _bill_serial(bill_no)
     bdate = _parse_date(bill_date)
+    # The month the ALC serial belongs to, when the patient also gives the bill date.
+    month_prefix = f"{bdate.year:04d}/{bdate.month:02d}" if bdate else None
 
     clauses, params = [], []
     if phone_valid:
@@ -161,8 +200,19 @@ def verify_customer(
         clauses.append("CAST(BILLDATE AS date) = %s")
         params.append(bdate)
     if serial:
-        clauses.append("BILL_NO LIKE %s")
-        params.append("%/" + serial)
+        # ALC serials reset to 001 each month, so scope the serial to its month when the
+        # bill date is known; match both the raw and zero-padded (NNN) serial forms.
+        variants = [serial]
+        if serial.isdigit():
+            padded = f"{int(serial):03d}"
+            if padded != serial:
+                variants.append(padded)
+        like_prefix = f"{month_prefix}/%" if month_prefix else "%"
+        serial_ors = []
+        for v in variants:
+            serial_ors.append("BILL_NO LIKE %s")
+            params.append(f"{like_prefix}/{v}")
+        clauses.append("(" + " OR ".join(serial_ors) + ")")
     if not clauses:
         return {"matched": False, "reason": "insufficient_input", "patient_name": "", "phone": phone_n, "bills": []}
 
@@ -178,13 +228,7 @@ def verify_customer(
     matched, seen = [], set()
     canonical_phone = phone_n
     for r in rows:
-        f_phone = 1 if (phone_valid and _norm_phone(r["phone"]) == phone_n) else 0
-        f_bill = 1 if (
-            (serial and _bill_serial(r["bill_no"]) == serial)
-            or (bdate and r["billdate"] == bdate.strftime("%d/%m/%Y"))
-        ) else 0
-        f_name = 1 if (name and name_score(name, r["patientname"]) >= NAME_MATCH_THRESHOLD) else 0
-        if (f_phone + f_bill + f_name) >= 2 and r["bill_key"] not in seen:
+        if _score_row(r, name, phone_n, phone_valid, serial, bdate, month_prefix) >= 2 and r["bill_key"] not in seen:
             seen.add(r["bill_key"])
             if not _is_junk_phone(r["phone"]):
                 canonical_phone = _norm_phone(r["phone"]) or canonical_phone

@@ -1,5 +1,6 @@
 package com.anubhav.app.ui.customer
 
+import android.Manifest
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +12,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +26,7 @@ import com.anubhav.app.data.repository.AktivRepository
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.ui.booking.AktivTestAdapter
 import com.anubhav.app.utils.CustomerSessionManager
+import com.anubhav.app.utils.LocationHelper
 import com.anubhav.app.utils.PaymentManager
 import com.anubhav.app.utils.localized
 import com.google.android.material.button.MaterialButton
@@ -43,6 +46,20 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     private var selectedSlot: String? = null
     private lateinit var testAdapter: AktivTestAdapter
     private var testAdapterItems: List<AktivTest> = emptyList()
+    private var currentLatitude: Double? = null
+    private var currentLongitude: Double? = null
+
+    // Registered as a field so the launcher exists before the fragment is STARTED.
+    private val locationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { granted ->
+        val ctx = context ?: return@registerForActivityResult
+        if (granted) {
+            fetchLocationIntoAddress()
+        } else {
+            Toast.makeText(ctx, localized(R.string.location_permission_needed), Toast.LENGTH_LONG).show()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,6 +75,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         val spinnerSex = view.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
         val spinnerDate = view.findViewById<AutoCompleteTextView>(R.id.spinnerDate)
         val spinnerSlot = view.findViewById<AutoCompleteTextView>(R.id.spinnerSlot)
+        val btnUseLocation = view.findViewById<MaterialButton>(R.id.btnUseLocation)
         val etSearch = view.findViewById<TextInputEditText>(R.id.etTestSearch)
         val rvTests = view.findViewById<RecyclerView>(R.id.rvTests)
         val tvSelected = view.findViewById<TextView>(R.id.tvSelectedTests)
@@ -78,6 +96,21 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
             ),
         )
         spinnerSex.setText(localized(R.string.sex_male), false)
+
+        // These fields are read-only pickers (inputType="none"); make a single tap
+        // reliably open the dropdown instead of just focusing the field.
+        spinnerSex.setOnClickListener { spinnerSex.showDropDown() }
+        spinnerDate.setOnClickListener { spinnerDate.showDropDown() }
+        spinnerSlot.setOnClickListener { spinnerSlot.showDropDown() }
+
+        btnUseLocation.text = localized(R.string.use_my_location)
+        btnUseLocation.setOnClickListener {
+            if (LocationHelper.hasLocationPermission(requireContext())) {
+                fetchLocationIntoAddress()
+            } else {
+                locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+            }
+        }
 
         testAdapter = AktivTestAdapter { test ->
             if (selectedTests.containsKey(test.testKey)) {
@@ -131,6 +164,44 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 description = localized(R.string.payment_description_prebook),
                 orderNote = "PREBOOK $selectedDate $selectedSlot",
             )
+        }
+    }
+
+    /** Shows a "locating…" state, then fills etAddress and keeps lat/lng for the booking. */
+    private fun fetchLocationIntoAddress() {
+        val root = view ?: return
+        val btnUseLocation = root.findViewById<MaterialButton>(R.id.btnUseLocation)
+        val etAddress = root.findViewById<TextInputEditText>(R.id.etAddress)
+        btnUseLocation.isEnabled = false
+        btnUseLocation.text = localized(R.string.locating)
+        LocationHelper.fetchCurrentAddress(requireContext()) { outcome ->
+            if (!isAdded || view == null) return@fetchCurrentAddress
+            btnUseLocation.isEnabled = true
+            btnUseLocation.text = localized(R.string.use_my_location)
+            when (outcome) {
+                is LocationHelper.Outcome.Success -> {
+                    currentLatitude = outcome.latitude
+                    currentLongitude = outcome.longitude
+                    etAddress.setText(outcome.address)
+                }
+                is LocationHelper.Outcome.NoAddress -> {
+                    // Keep the coordinates for the booking even without a readable address.
+                    currentLatitude = outcome.latitude
+                    currentLongitude = outcome.longitude
+                    Toast.makeText(
+                        requireContext(),
+                        localized(R.string.location_unavailable),
+                        Toast.LENGTH_LONG,
+                    ).show()
+                }
+                is LocationHelper.Outcome.Failure -> {
+                    val messageRes = when (outcome.error) {
+                        LocationHelper.Error.NO_PERMISSION -> R.string.location_permission_needed
+                        else -> R.string.location_unavailable
+                    }
+                    Toast.makeText(requireContext(), localized(messageRes), Toast.LENGTH_LONG).show()
+                }
+            }
         }
     }
 
@@ -214,9 +285,21 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
         val root = view ?: return
         val phone = CustomerSessionManager.getPhone(requireContext()) ?: return
+        // If the fragment/activity was recreated during Razorpay checkout, the transient
+        // selection can be lost. Never submit a corrupt ₹0 booking with empty tests/slot —
+        // surface the payment id so the paid user can reconcile with support.
+        if (selectedTests.isEmpty() || selectedDate.isNullOrBlank() || selectedSlot.isNullOrBlank() || pendingAdvance <= 0.0) {
+            Toast.makeText(
+                requireContext(),
+                localized(R.string.payment_recorded_contact_support, paymentId),
+                Toast.LENGTH_LONG,
+            ).show()
+            return
+        }
         val etName = root.findViewById<TextInputEditText>(R.id.etPatientName)
         val etAge = root.findViewById<TextInputEditText>(R.id.etAgeYear)
         val spinnerSex = root.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
+        val etAddress = root.findViewById<TextInputEditText>(R.id.etAddress)
         val progress = root.findViewById<ProgressBar>(R.id.progressBar)
         viewLifecycleOwner.lifecycleScope.launch {
             progress.visibility = View.VISIBLE
@@ -231,6 +314,9 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 paymentId = paymentId,
                 amountPaid = pendingAdvance,
                 email = CustomerSessionManager.getEmail(requireContext()),
+                address = etAddress.text?.toString()?.trim()?.takeIf { it.isNotBlank() },
+                latitude = currentLatitude,
+                longitude = currentLongitude,
             )
             customerRepo.createPrebook(request).fold(
                 onSuccess = { response ->
@@ -241,6 +327,14 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                         Toast.LENGTH_LONG,
                     ).show()
                     selectedTests.clear()
+                    // Reflect the cleared selection in the UI (totals + list) instead of
+                    // leaving the old amounts on screen after a successful booking.
+                    testAdapter.submit(testAdapterItems, emptyList())
+                    updateTotals(
+                        root.findViewById(R.id.tvSelectedTests),
+                        root.findViewById(R.id.tvTotalAmount),
+                        root.findViewById(R.id.tvAdvanceAmount),
+                    )
                 },
                 onFailure = { error ->
                     progress.visibility = View.GONE

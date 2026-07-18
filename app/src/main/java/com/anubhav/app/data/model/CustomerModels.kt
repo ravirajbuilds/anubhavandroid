@@ -159,6 +159,10 @@ data class CustomerPrebookRequest(
     @SerializedName("payment_id") val paymentId: String,
     @SerializedName("amount_paid") val amountPaid: Double,
     val email: String? = null,
+    // Home-collection address, optionally geotagged via "Use my current location".
+    @SerializedName("address") val address: String? = null,
+    @SerializedName("latitude") val latitude: Double? = null,
+    @SerializedName("longitude") val longitude: Double? = null,
 )
 
 data class CustomerPrebookResponse(

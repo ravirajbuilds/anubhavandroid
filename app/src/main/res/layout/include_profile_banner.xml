@@ -7,7 +7,7 @@
     android:layout_margin="12dp"
     android:visibility="gone"
     app:cardBackgroundColor="@color/card_background_alt"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="0dp"
     app:strokeColor="@color/stroke_soft"
     app:strokeWidth="1dp">

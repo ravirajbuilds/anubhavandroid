@@ -35,6 +35,7 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/language_toggle_bg"
+                android:contentDescription="@string/a11y_change_language"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/language_bengali"
                 android:textColor="@color/brand_dark_blue"
@@ -81,6 +82,6 @@
         app:tint="@color/text_white"
         app:elevation="8dp"
         app:borderWidth="0dp"
-        android:contentDescription="WhatsApp Support" />
+        android:contentDescription="@string/whatsapp_support" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

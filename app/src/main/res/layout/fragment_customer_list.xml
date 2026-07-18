@@ -22,7 +22,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutListSearch"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.Anubhav.TextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -64,8 +64,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:lineSpacingExtra="2dp"
         android:padding="20dp"
         android:textColor="@color/text_secondary"
+        android:textSize="15sp"
         android:text="@string/no_data"
         android:visibility="gone" />
 
@@ -81,7 +83,8 @@
         android:visibility="gone"
         android:maxLines="1"
         android:ellipsize="end"
-        app:cornerRadius="10dp"
+        android:minHeight="@dimen/touch_target_min"
+        app:cornerRadius="@dimen/button_corner_radius"
         app:strokeColor="@color/stroke_soft" />
 
     <ProgressBar

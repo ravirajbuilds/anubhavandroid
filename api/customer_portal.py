@@ -294,6 +294,9 @@ def create_customer_prebooking(
     payment_id: str,
     amount_paid: float,
     email: str | None = None,
+    address: str | None = None,
+    latitude: float | None = None,
+    longitude: float | None = None,
 ) -> dict[str, Any]:
     phone_norm = _normalize_phone(phone)
     if len(phone_norm) < 10:
@@ -327,6 +330,13 @@ def create_customer_prebooking(
     )
     if email:
         remarks += f" | email:{email}"
+    # Home-collection address (optionally geotagged by the app's GPS autofill).
+    if address:
+        remarks += f" | addr:{address}"
+        if latitude is not None and longitude is not None:
+            remarks += f" ({latitude},{longitude})"
+    elif latitude is not None and longitude is not None:
+        remarks += f" | addr: ({latitude},{longitude})"
 
     settings = aktiv_settings()
     is_live = settings["allow_live_bookings"]

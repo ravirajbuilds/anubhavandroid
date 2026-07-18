@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Accessibility strings (contentDescription etc.).
+     Kept in a separate values file so it merges with strings.xml without conflicts.
+     Follows the app convention of <key> (English) + <key>_bn (Bengali),
+     resolved at runtime via LocaleExtensions.localized(). -->
+<resources>
+    <!-- Announced for the check mark shown next to the currently selected language -->
+    <string name="a11y_language_selected">Selected</string>
+    <string name="a11y_language_selected_bn">বেছে নেওয়া হয়েছে</string>
+
+    <!-- Toolbar language toggle button (shows "EN"/"বাং") -->
+    <string name="a11y_change_language">Change language</string>
+    <string name="a11y_change_language_bn">ভাষা বদলান</string>
+</resources>

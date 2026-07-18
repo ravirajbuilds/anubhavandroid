@@ -5,6 +5,7 @@ import com.anubhav.app.data.model.CollectorPatient
 import com.anubhav.app.data.model.CollectorPatientRequest
 import com.anubhav.app.data.model.CustomerBill
 import com.anubhav.app.data.model.CustomerReport
+import com.anubhav.app.data.model.CustomerVisit
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -17,9 +18,18 @@ object ReportCache {
     private val collectorPatientListType = object : TypeToken<List<CollectorPatient>>() {}.type
     private val collectorPatientRequestListType = object : TypeToken<List<CollectorPatientRequest>>() {}.type
     private val reportListType = object : TypeToken<List<CustomerReport>>() {}.type
+    private val visitListType = object : TypeToken<List<CustomerVisit>>() {}.type
 
     fun read(context: Context, key: String): List<CustomerReport>? =
         readJson(context, key, reportListType)
+
+    /** The patient's retrieved visit/report history, kept on-device (never our cloud). */
+    fun readVisits(context: Context, key: String): List<CustomerVisit>? =
+        readJson(context, key, visitListType)
+
+    fun writeVisits(context: Context, key: String, visits: List<CustomerVisit>) {
+        writeJson(context, key, visits)
+    }
 
     fun write(context: Context, key: String, reports: List<CustomerReport>) {
         writeJson(context, key, reports)

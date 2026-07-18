@@ -30,6 +30,29 @@
         tools:layout="@layout/fragment_customer_list" />
 
     <fragment
+        android:id="@+id/nav_metrics"
+        android:name="com.anubhav.app.ui.metrics.MetricsFragment"
+        android:label="@string/menu_metrics">
+        <action
+            android:id="@+id/action_metrics_to_test_detail"
+            app:destination="@id/nav_test_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_test_detail"
+        android:name="com.anubhav.app.ui.metrics.TestDetailFragment"
+        android:label="@string/test_detail_title">
+        <argument
+            android:name="testName"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="category"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_collector"
         android:name="com.anubhav.app.ui.customer.CollectorDashboardFragment"
         android:label="@string/menu_collector"

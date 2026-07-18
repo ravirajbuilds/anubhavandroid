@@ -18,10 +18,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.anubhav.app.R
 import com.anubhav.app.data.model.CustomerVisit
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.utils.CustomerSessionManager
 import com.anubhav.app.utils.ReportFetcher
+import com.anubhav.app.utils.localized
 import kotlinx.coroutines.launch
 import java.util.Calendar
 import java.util.Locale
@@ -76,7 +78,7 @@ class MyReportsFragment : Fragment() {
         statusView.text = "Loading your reports…"
         listContainer.removeAllViews()
         viewLifecycleOwner.lifecycleScope.launch {
-            repo.getHistory(phone).fold(
+            repo.getHistoryCached(requireContext(), phone).fold(
                 onSuccess = { res ->
                     listContainer.removeAllViews()
                     if (res.visits.isEmpty()) {
@@ -171,7 +173,7 @@ class MyReportsFragment : Fragment() {
 
     private fun addFetchOtherButton() {
         listContainer.addView(Button(requireContext()).apply {
-            text = "Fetch another report"; isAllCaps = false
+            text = localized(R.string.verify_dialog_title_fetch); isAllCaps = false
             layoutParams = LinearLayout.LayoutParams(MATCH, WRAP).apply { topMargin = dp(18) }
             setOnClickListener { showFetchOtherDialog() }
         })
@@ -181,32 +183,35 @@ class MyReportsFragment : Fragment() {
     private fun showFetchOtherDialog() {
         val ctx = requireContext()
         val box = LinearLayout(ctx).apply { orientation = LinearLayout.VERTICAL; setPadding(dp(20), dp(8), dp(20), 0) }
-        val etName = EditText(ctx).apply { hint = "Patient name"; inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS or InputType.TYPE_CLASS_TEXT }
-        val etPhone = EditText(ctx).apply { hint = "Phone number"; inputType = InputType.TYPE_CLASS_PHONE }
-        val etBill = EditText(ctx).apply { hint = "Bill number (after YYMM/ALC/)"; inputType = InputType.TYPE_CLASS_NUMBER }
+        val etName = EditText(ctx).apply { hint = localized(R.string.verify_patient_name_hint); inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS or InputType.TYPE_CLASS_TEXT }
+        val etPhone = EditText(ctx).apply { hint = localized(R.string.verify_phone_hint); inputType = InputType.TYPE_CLASS_PHONE }
+        val etBill = EditText(ctx).apply { hint = localized(R.string.verify_bill_no_hint); inputType = InputType.TYPE_CLASS_NUMBER }
         var billDateIso: String? = null
         val dateBtn = Button(ctx).apply {
-            text = "Pick bill date"; isAllCaps = false
+            text = localized(R.string.verify_pick_bill_date); isAllCaps = false
             setOnClickListener {
                 val c = Calendar.getInstance()
                 DatePickerDialog(ctx, { _, y, m, d ->
                     billDateIso = String.format(Locale.US, "%04d-%02d-%02d", y, m + 1, d)
-                    text = String.format(Locale.US, "Bill date: %02d/%02d/%04d", d, m + 1, y)
+                    text = localized(
+                        R.string.verify_bill_date_value,
+                        String.format(Locale.US, "%02d/%02d/%04d", d, m + 1, y),
+                    )
                 }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
             }
         }
         box.addView(etName); box.addView(etPhone)
-        box.addView(TextView(ctx).apply { text = "Bill number"; setPadding(0, dp(8), 0, 0) })
+        box.addView(TextView(ctx).apply { text = localized(R.string.verify_bill_no_label); setPadding(0, dp(8), 0, 0) })
         box.addView(etBill)
-        box.addView(TextView(ctx).apply { text = "— OR —"; gravity = Gravity.CENTER; setPadding(0, dp(6), 0, dp(6)) })
+        box.addView(TextView(ctx).apply { text = localized(R.string.verify_or_divider); gravity = Gravity.CENTER; setPadding(0, dp(6), 0, dp(6)) })
         box.addView(dateBtn)
 
         val dialog = AlertDialog.Builder(ctx)
-            .setTitle("Fetch another report")
-            .setMessage("Enter any two of: name, bill number/date, phone.")
+            .setTitle(localized(R.string.verify_dialog_title_fetch))
+            .setMessage(localized(R.string.verify_dialog_message))
             .setView(box)
-            .setPositiveButton("Find reports", null)
-            .setNegativeButton("Cancel", null)
+            .setPositiveButton(localized(R.string.verify_positive_find), null)
+            .setNegativeButton(localized(R.string.cancel), null)
             .create()
         dialog.setOnShowListener {
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
@@ -214,19 +219,19 @@ class MyReportsFragment : Fragment() {
                 val phone = etPhone.text.toString().trim()
                 val bill = etBill.text.toString().trim()
                 val provided = listOf(name.isNotEmpty(), bill.isNotEmpty() || billDateIso != null, phone.isNotEmpty()).count { it }
-                if (provided < 2) { Toast.makeText(ctx, "Fill at least two fields.", Toast.LENGTH_SHORT).show(); return@setOnClickListener }
+                if (provided < 2) { Toast.makeText(ctx, localized(R.string.verify_fill_two_fields), Toast.LENGTH_SHORT).show(); return@setOnClickListener }
                 viewLifecycleOwner.lifecycleScope.launch {
                     repo.verify(name, phone, bill, billDateIso).fold(
                         onSuccess = { r ->
                             if (r.matched && r.phone.isNotBlank()) {
                                 dialog.dismiss()
-                                Toast.makeText(ctx, "Showing reports for ${r.patientName}", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(ctx, localized(R.string.verify_showing_reports_for, r.patientName), Toast.LENGTH_SHORT).show()
                                 loadHistory(r.phone)   // show that person's full history
                             } else {
-                                Toast.makeText(ctx, "Details didn't match. Check name, bill no/date and phone.", Toast.LENGTH_LONG).show()
+                                Toast.makeText(ctx, localized(R.string.verify_no_match), Toast.LENGTH_LONG).show()
                             }
                         },
-                        onFailure = { Toast.makeText(ctx, "Service unavailable, try again.", Toast.LENGTH_LONG).show() },
+                        onFailure = { Toast.makeText(ctx, localized(R.string.network_error), Toast.LENGTH_LONG).show() },
                     )
                 }
             }

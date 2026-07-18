@@ -87,6 +87,13 @@ class BookTestFragment : Fragment() {
         }
         updateChequeVisibility("CASH")
 
+        // Make a single tap reliably open each picker's dropdown (the read-only
+        // AutoCompleteTextViews otherwise only take focus on the first tap).
+        spinnerSex.setOnClickListener { spinnerSex.showDropDown() }
+        spinnerReceipt.setOnClickListener { spinnerReceipt.showDropDown() }
+        spinnerCentre.setOnClickListener { spinnerCentre.showDropDown() }
+        spinnerDoctor.setOnClickListener { spinnerDoctor.showDropDown() }
+
         testAdapter = AktivTestAdapter { test -> viewModel.toggleTest(test) }
         rvTests.layoutManager = LinearLayoutManager(requireContext())
         rvTests.adapter = testAdapter
@@ -163,8 +170,11 @@ class BookTestFragment : Fragment() {
                     ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, names),
                 )
                 state.selectedCentre?.let { spinnerCentre.setText(it.collcentreName, false) }
-                spinnerCentre.setOnItemClickListener { _, _, position, _ ->
-                    viewModel.selectCentre(centres.getOrNull(position))
+                spinnerCentre.setOnItemClickListener { parent, _, position, _ ->
+                    // Resolve by the clicked label, not the filtered index: once the user
+                    // types to narrow the dropdown, `position` no longer maps to `centres`.
+                    val name = parent.getItemAtPosition(position) as? String
+                    viewModel.selectCentre(centres.firstOrNull { it.collcentreName == name })
                 }
             }
 
@@ -175,8 +185,11 @@ class BookTestFragment : Fragment() {
                     ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, names),
                 )
             }
-            spinnerDoctor.setOnItemClickListener { _, _, position, _ ->
-                viewModel.selectDoctor(doctors.getOrNull(position))
+            spinnerDoctor.setOnItemClickListener { parent, _, position, _ ->
+                // Resolve by the clicked label, not the filtered index: once the user
+                // types to narrow the dropdown, `position` no longer maps to `doctors`.
+                val name = parent.getItemAtPosition(position) as? String
+                viewModel.selectDoctor(doctors.firstOrNull { it.displayName == name })
             }
 
             state.error?.let { msg ->

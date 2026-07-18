@@ -210,12 +210,16 @@ class SettingsFragment : Fragment() {
     private fun setupSupportButton(view: View) {
         view.findViewById<MaterialButton>(R.id.btnContactSupport).setOnClickListener {
             val msg = requireContext().localized(R.string.whatsapp_booking_message)
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("https://wa.me/919230755876?text=${Uri.encode(msg)}"),
-                ),
-            )
+            runCatching {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://wa.me/919230755876?text=${Uri.encode(msg)}"),
+                    ),
+                )
+            }.onFailure {
+                Toast.makeText(requireContext(), localized(R.string.whatsapp_not_available), Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

@@ -61,8 +61,8 @@
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="1dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
 
@@ -86,7 +86,7 @@
                     android:id="@+id/ivEnglishCheck"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:contentDescription="@null"
+                    android:contentDescription="@string/a11y_language_selected"
                     android:src="@android:drawable/checkbox_on_background"
                     android:visibility="gone" />
             </LinearLayout>
@@ -100,8 +100,8 @@
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="1dp"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
             app:strokeColor="@color/stroke_soft"
             app:strokeWidth="1dp">
 
@@ -125,7 +125,7 @@
                     android:id="@+id/ivBengaliCheck"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:contentDescription="@null"
+                    android:contentDescription="@string/a11y_language_selected"
                     android:src="@android:drawable/checkbox_on_background"
                     android:visibility="gone" />
             </LinearLayout>
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:text="@string/continue_btn"
-            app:cornerRadius="10dp" />
+            app:cornerRadius="@dimen/button_corner_radius" />
     </LinearLayout>
 
     <!-- Login -->
@@ -206,8 +206,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/card_background"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="1dp"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
                 app:strokeColor="@color/stroke_soft"
                 app:strokeWidth="1dp">
 
@@ -226,7 +226,7 @@
                         android:text="@string/login_with_google"
                         android:textColor="@color/brand_dark_blue"
                         app:strokeColor="@color/stroke_soft"
-                        app:cornerRadius="10dp" />
+                        app:cornerRadius="@dimen/button_corner_radius" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnFacebook"
@@ -237,7 +237,7 @@
                         android:text="@string/login_with_facebook"
                         android:textColor="@color/brand_dark_blue"
                         app:strokeColor="@color/stroke_soft"
-                        app:cornerRadius="10dp" />
+                        app:cornerRadius="@dimen/button_corner_radius" />
 
                     <TextView
                         android:id="@+id/tvOrContinue"
@@ -285,7 +285,7 @@
                         android:maxLines="2"
                         android:text="@string/continue_with_phone"
                         android:textColor="@color/brand_dark_blue"
-                        app:cornerRadius="10dp"
+                        app:cornerRadius="@dimen/button_corner_radius"
                         app:strokeColor="@color/stroke_soft" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -327,6 +327,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginBottom="12dp"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/touch_target_min"
                         android:text="@string/forgot_password"
                         android:textColor="@color/brand_dark_blue"
                         android:textSize="13sp" />
@@ -347,7 +349,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/login_with_email"
-                        app:cornerRadius="10dp" />
+                        app:cornerRadius="@dimen/button_corner_radius" />
 
                     <ProgressBar
                         android:id="@+id/progressLogin"
@@ -365,6 +367,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
+                android:minHeight="@dimen/touch_target_min"
                 android:padding="8dp"
                 android:text="@string/dont_have_account"
                 android:textColor="@color/brand_dark_blue"
@@ -375,6 +378,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/touch_target_min"
                 android:padding="8dp"
                 android:text="@string/action_settings"
                 android:textColor="@color/text_secondary"

@@ -43,7 +43,9 @@ class PaymentManager(
         options.put("name", "Anubhav Life Care")
         options.put("description", description)
         options.put("currency", "INR")
-        options.put("amount", (amount * 100).toInt())
+        // Round to the nearest paise — truncating (toInt) can undercharge by a paise
+        // because of floating-point representation (e.g. 99.90 -> 9989 instead of 9990).
+        options.put("amount", Math.round(amount * 100).toInt())
         options.put("theme.color", "#1A3A6B")
 
         val prefill = JSONObject()
