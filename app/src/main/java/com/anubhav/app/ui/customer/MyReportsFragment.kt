@@ -78,7 +78,7 @@ class MyReportsFragment : Fragment() {
         statusView.text = "Loading your reports…"
         listContainer.removeAllViews()
         viewLifecycleOwner.lifecycleScope.launch {
-            repo.getHistory(phone).fold(
+            repo.getHistoryCached(requireContext(), phone).fold(
                 onSuccess = { res ->
                     listContainer.removeAllViews()
                     if (res.visits.isEmpty()) {

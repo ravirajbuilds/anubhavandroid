@@ -33,6 +33,29 @@ class CustomerRepository(
     suspend fun getHistory(phone: String): Result<com.anubhav.app.data.model.CustomerHistoryResponse> =
         runCatching { api.getHistory(phone.trim()) }
 
+    /**
+     * Same history, but the retrieved PII is cached on the device (files dir, excluded
+     * from cloud backup via allowBackup=false) so it stays local and works offline.
+     */
+    suspend fun getHistoryCached(
+        context: Context,
+        phone: String,
+        forceRefresh: Boolean = false,
+    ): Result<com.anubhav.app.data.model.CustomerHistoryResponse> = runCatching {
+        val cacheKey = "history_$phone"
+        if (!forceRefresh) {
+            ReportCache.readVisits(context, cacheKey)?.let {
+                return@runCatching com.anubhav.app.data.model.CustomerHistoryResponse(phone, it.size, it)
+            }
+        }
+        runCatching { api.getHistory(phone.trim()) }
+            .onSuccess { ReportCache.writeVisits(context, cacheKey, it.visits) }
+            .getOrElse { error ->
+                val cached = ReportCache.readVisits(context, cacheKey) ?: throw error
+                com.anubhav.app.data.model.CustomerHistoryResponse(phone, cached.size, cached)
+            }
+    }
+
     suspend fun getProfile(phone: String?, email: String?): Result<CustomerProfile> =
         runCatching { api.getProfile(phone = phone, email = email) }
 
