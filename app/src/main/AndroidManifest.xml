@@ -9,6 +9,12 @@
     <uses-permission
         android:name="com.google.android.gms.permission.AD_ID"
         tools:node="remove" />
+
+    <!-- Location is only used to autofill the home-collection address on demand; it is
+         optional, so do not let Google Play exclude devices without GPS/location hardware. -->
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,8 +24,11 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AnubhavLifeCare"
-        android:usesCleartextTraffic="true">
+        android:theme="@style/Theme.AnubhavLifeCare">
+        <!-- Cleartext is NOT permitted globally; network_security_config.xml allows it only
+             for local dev hosts (192.168.x / 10.0.2.2 / localhost). All production traffic
+             (api./report.anubhavlifecare.in) is HTTPS. -->
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

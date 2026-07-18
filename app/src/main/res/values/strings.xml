@@ -278,7 +278,7 @@
     <!-- 2-of-3 report verification dialog (login + My Reports) -->
     <string name="verify_dialog_title_login">View your reports</string>
     <string name="verify_dialog_title_fetch">Fetch another report</string>
-    <string name="verify_dialog_message">Enter any two of: name, bill number/date, phone.</string>
+    <string name="verify_dialog_message">Enter any two of: name, bill number/date, phone. If you use the bill number, also pick the bill date — the number restarts from 1 each month.</string>
     <string name="verify_patient_name_hint">Patient name</string>
     <string name="verify_phone_hint">Phone number</string>
     <string name="verify_bill_no_hint">Bill number (after YYMM/ALC/)</string>
@@ -537,7 +537,7 @@
     <!-- 2-of-3 report verification dialog (Bengali) -->
     <string name="verify_dialog_title_login_bn">আপনার রিপোর্ট দেখুন</string>
     <string name="verify_dialog_title_fetch_bn">আরেকটি রিপোর্ট আনুন</string>
-    <string name="verify_dialog_message_bn">নাম, বিল নম্বর/তারিখ, ফোন — যেকোনো দুটি লিখুন।</string>
+    <string name="verify_dialog_message_bn">নাম, বিল নম্বর/তারিখ, ফোন — যেকোনো দুটি দিন। বিল নম্বর দিলে সঙ্গে বিলের তারিখটাও বেছে নিন, কারণ নম্বর প্রতি মাসে ১ থেকে নতুন করে শুরু হয়।</string>
     <string name="verify_patient_name_hint_bn">রোগীর নাম</string>
     <string name="verify_phone_hint_bn">মোবাইল নম্বর</string>
     <string name="verify_bill_no_hint_bn">বিল নম্বর (YYMM/ALC/ এর পরের অংশ)</string>
