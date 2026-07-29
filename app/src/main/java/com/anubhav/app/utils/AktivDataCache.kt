@@ -8,12 +8,26 @@ import java.io.File
 
 object AktivDataCache {
     private const val DIR = "aktiv_cache"
+
+    /**
+     * Test rates change at the clinic, and the customer pays a 50% advance computed from
+     * whatever this cache holds. An entry older than this is refused for pricing so the
+     * app never charges against a price the server has since moved away from — the
+     * booking would be rejected *after* the money was taken.
+     */
+    const val PRICE_MAX_AGE_MS = 12L * 60L * 60L * 1000L
+
     private val gson = Gson()
     private val testListType = object : TypeToken<List<AktivTest>>() {}.type
 
-    fun readTests(context: Context, key: String): List<AktivTest>? {
+    /**
+     * @param maxAgeMs when positive, entries older than this are treated as absent.
+     *   Pass 0 to accept any age (the offline fallback: stale beats nothing).
+     */
+    fun readTests(context: Context, key: String, maxAgeMs: Long = 0L): List<AktivTest>? {
         val file = cacheFile(context, key)
         if (!file.exists()) return null
+        if (maxAgeMs > 0L && System.currentTimeMillis() - file.lastModified() > maxAgeMs) return null
         return runCatching {
             gson.fromJson<List<AktivTest>>(file.readText(), testListType)
         }.getOrNull()

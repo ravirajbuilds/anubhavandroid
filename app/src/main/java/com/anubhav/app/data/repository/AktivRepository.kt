@@ -31,7 +31,8 @@ class AktivRepository(
         runCatching {
             val trimmed = query.trim()
             val cacheKey = "tests_$trimmed"
-            AktivDataCache.readTests(context, cacheKey)?.let { return@runCatching it }
+            AktivDataCache.readTests(context, cacheKey, AktivDataCache.PRICE_MAX_AGE_MS)
+                ?.let { return@runCatching it }
             runCatching { api.searchTests(query = trimmed, limit = 50) }
                 .onSuccess {
                     AktivDataCache.writeTests(context, cacheKey, it)

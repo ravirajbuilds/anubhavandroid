@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Pick location</title>
+<link rel="stylesheet" href="leaflet.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden;
+               background: #e9eef1; -webkit-tap-highlight-color: transparent; }
+  #map { position: absolute; inset: 0; background: #e9eef1; }
+
+  /* The pin is a fixed overlay at the exact centre of the map container, so whatever
+     is under it is always map.getCenter(). Dragging the map moves the ground under a
+     stationary pin — the interaction people already know from ride/delivery apps. */
+  #pin { position: absolute; left: 50%; top: 50%; width: 34px; height: 46px;
+         margin-left: -17px; margin-top: -46px; pointer-events: none; z-index: 500;
+         transition: transform 140ms ease-out; will-change: transform; }
+  #pin.lifted { transform: translateY(-12px); }
+  #pin svg { display: block; width: 100%; height: 100%;
+             filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }
+
+  /* Ground shadow stays at the centre point and shrinks while the pin is "lifted",
+     which is what makes the drag read as picking a spot rather than dragging a pin. */
+  #shadow { position: absolute; left: 50%; top: 50%; width: 14px; height: 6px;
+            margin-left: -7px; margin-top: -3px; border-radius: 50%;
+            background: rgba(0,0,0,.32); pointer-events: none; z-index: 499;
+            transition: transform 140ms ease-out, opacity 140ms ease-out; }
+  #pin.lifted ~ #shadow { transform: scale(.6); opacity: .5; }
+
+  #hint { position: absolute; left: 50%; top: 50%; transform: translate(-50%, 14px);
+          z-index: 500; pointer-events: none; background: rgba(11,47,68,.88);
+          color: #fff; font: 500 12px/1.35 sans-serif; padding: 6px 10px;
+          border-radius: 8px; white-space: nowrap; max-width: 84vw; overflow: hidden;
+          text-overflow: ellipsis; transition: opacity 200ms ease-out; }
+  #hint.hidden { opacity: 0; }
+
+  /* Inset past the zoom control (34px + 10px margin) so the two never overlap. */
+  #offline { position: absolute; left: 56px; right: 10px; top: 10px; z-index: 600;
+             display: none; background: rgba(122,91,19,.96); color: #fff;
+             font: 500 12px/1.4 sans-serif; padding: 8px 12px; border-radius: 8px; }
+  #offline.show { display: block; }
+
+  /* OpenStreetMap's licence requires the credit to stay readable, so let it wrap
+     instead of being clipped by a narrow phone screen. */
+  .leaflet-control-attribution { font-size: 10px; max-width: 100%; white-space: normal;
+                                 background: rgba(255,255,255,.85) !important; }
+  .leaflet-control-zoom a { width: 34px; height: 34px; line-height: 34px; font-size: 20px; }
+
+  /* Dark theme: tint the tile pane only, so controls and the pin keep their colours. */
+  body.dark { background: #10181d; }
+  body.dark #map { background: #10181d; }
+  body.dark .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.92); }
+
+  .me-dot { border-radius: 50%; background: #146C94; border: 2px solid #fff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="pin">
+  <svg viewBox="0 0 34 46" aria-hidden="true">
+    <path d="M17 45.5C17 45.5 32.5 27.7 32.5 16.6 32.5 8 25.6 1 17 1S1.5 8 1.5 16.6C1.5 27.7 17 45.5 17 45.5Z"
+          fill="#A33A2C" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="17" cy="16.6" r="5.4" fill="#ffffff"/>
+  </svg>
+</div>
+<div id="shadow"></div>
+<!-- Starts empty and hidden: the host fills it via setHint() in the user's own
+     language, so a Bengali user never sees an English hint flash first. -->
+<div id="hint" class="hidden"></div>
+<div id="offline"></div>
+
+<script src="leaflet.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var DEFAULT_LAT = 22.5726, DEFAULT_LNG = 88.3639, DEFAULT_ZOOM = 15;
+  var MIN_ZOOM = 4, MAX_ZOOM = 19;
+
+  function bridge(name, args) {
+    try {
+      if (window.AndroidMap && typeof window.AndroidMap[name] === 'function') {
+        return window.AndroidMap[name].apply(window.AndroidMap, args || []);
+      }
+    } catch (e) { /* the host went away mid-callback; nothing useful to do here */ }
+    return null;
+  }
+
+  function finite(value, fallback) {
+    var n = typeof value === 'number' ? value : parseFloat(value);
+    return (isFinite(n) && !isNaN(n)) ? n : fallback;
+  }
+
+  function clampLat(lat) { return Math.max(-85, Math.min(85, finite(lat, DEFAULT_LAT))); }
+
+  function clampLng(lng) {
+    var n = finite(lng, DEFAULT_LNG);
+    // Leaflet happily reports longitudes outside [-180,180] after a world wrap; fold
+    // them back so the coordinates we hand to the server are always canonical.
+    n = ((n + 180) % 360 + 360) % 360 - 180;
+    return n;
+  }
+
+  var map = L.map('map', {
+    center: [DEFAULT_LAT, DEFAULT_LNG],
+    zoom: DEFAULT_ZOOM,
+    minZoom: MIN_ZOOM,
+    maxZoom: MAX_ZOOM,
+    zoomControl: true,
+    attributionControl: true,
+    worldCopyJump: false,
+    maxBounds: L.latLngBounds(L.latLng(-85, -180), L.latLng(85, 180)),
+    maxBoundsViscosity: 1.0,
+    tap: true,
+    bounceAtZoomLimits: false
+  });
+
+  // Drop the "Leaflet" prefix: on a narrow phone it pushes the OpenStreetMap credit —
+  // the one the ODbL actually requires — off the edge of the screen.
+  if (map.attributionControl) map.attributionControl.setPrefix('');
+
+  var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: MAX_ZOOM,
+    maxNativeZoom: MAX_ZOOM,
+    detectRetina: false,
+    crossOrigin: false,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var pin = document.getElementById('pin');
+  var hint = document.getElementById('hint');
+  var offline = document.getElementById('offline');
+
+  var hintTimer = null;
+  function dismissHint() {
+    if (hintTimer) { clearTimeout(hintTimer); hintTimer = null; }
+    hint.className = 'hidden';
+  }
+
+  // --- tile failures ------------------------------------------------------
+  // One dead tile is normal (ocean/edge); a burst of them means no connectivity.
+  var tileErrors = 0, tileErrorNotified = false;
+  tiles.on('tileerror', function () {
+    tileErrors += 1;
+    if (!tileErrorNotified && tileErrors >= 3) {
+      tileErrorNotified = true;
+      bridge('onTilesUnavailable');
+    }
+  });
+  tiles.on('tileload', function () {
+    tileErrors = 0;
+    if (tileErrorNotified) {
+      tileErrorNotified = false;
+      bridge('onTilesRecovered');
+    }
+  });
+
+  // --- centre reporting ---------------------------------------------------
+  var reportTimer = null;
+  // A programmatic setView must not echo back as a user move. This is a deadline
+  // rather than a counter on purpose: a counter only balances if every setView is
+  // followed by a moveend, and an animated pan that never completes (the WebView is
+  // paused mid-flight when the app is backgrounded) would leave it raised for good,
+  // swallowing the user's next real drag. A deadline heals itself.
+  var programmaticUntil = 0;
+
+  function isProgrammatic() { return Date.now() < programmaticUntil; }
+
+  function reportCentre(userInitiated) {
+    var c = map.getCenter();
+    bridge('onCentreChanged', [clampLat(c.lat), clampLng(c.lng), map.getZoom(), !!userInitiated]);
+  }
+
+  function scheduleReport(userInitiated, delay) {
+    if (reportTimer) clearTimeout(reportTimer);
+    reportTimer = setTimeout(function () {
+      reportTimer = null;
+      reportCentre(userInitiated);
+    }, delay);
+  }
+
+  map.on('movestart', function () {
+    pin.className = 'lifted';
+    dismissHint();
+    if (!isProgrammatic()) bridge('onMoveStart');
+  });
+
+  map.on('moveend', function () {
+    pin.className = '';
+    // Coalesce the burst of moveend events a fling produces into one lookup.
+    scheduleReport(!isProgrammatic(), 220);
+  });
+
+  // A drag can only come from the user, so it ends programmatic mode early — otherwise
+  // a drag started inside the deadline would be reported as a programmatic move.
+  map.on('dragstart', function () { programmaticUntil = 0; });
+
+  // Tapping a spot re-centres onto it: the second obvious way to place a pin.
+  map.on('click', function (e) {
+    dismissHint();
+    map.panTo(e.latlng, { animate: true });
+  });
+
+  // --- "you are here" marker ---------------------------------------------
+  var meMarker = null, meCircle = null;
+
+  function clearMe() {
+    if (meMarker) { map.removeLayer(meMarker); meMarker = null; }
+    if (meCircle) { map.removeLayer(meCircle); meCircle = null; }
+  }
+
+  // --- API called from Kotlin --------------------------------------------
+  window.mapApi = {
+    setView: function (lat, lng, zoom, animate) {
+      var target = L.latLng(clampLat(lat), clampLng(lng));
+      var z = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, finite(zoom, map.getZoom())));
+      dismissHint();
+      // A pan animation runs well under a second; the deadline only has to outlive it.
+      programmaticUntil = Date.now() + (animate ? 1200 : 250);
+      map.setView(target, z, { animate: !!animate });
+      // setView can settle without firing moveend at all (no-op move, or animate:false
+      // on some WebViews); report directly so the host always learns the new centre.
+      scheduleReport(false, animate ? 1000 : 60);
+    },
+
+    showMe: function (lat, lng, accuracy) {
+      clearMe();
+      var at = L.latLng(clampLat(lat), clampLng(lng));
+      var radius = finite(accuracy, 0);
+      if (radius > 0) {
+        meCircle = L.circle(at, {
+          radius: Math.min(radius, 2000),
+          color: '#146C94', weight: 1, fillColor: '#146C94', fillOpacity: .12,
+          interactive: false
+        }).addTo(map);
+      }
+      meMarker = L.marker(at, {
+        interactive: false,
+        keyboard: false,
+        icon: L.divIcon({
+          className: '',
+          html: '<div class="me-dot" style="width:14px;height:14px"></div>',
+          iconSize: [14, 14], iconAnchor: [7, 7]
+        })
+      }).addTo(map);
+    },
+
+    clearMe: clearMe,
+
+    setDark: function (dark) {
+      document.body.className = dark ? 'dark' : '';
+    },
+
+    setBanner: function (text) {
+      if (text) { offline.textContent = text; offline.className = 'show'; }
+      else { offline.textContent = ''; offline.className = ''; }
+    },
+
+    setHint: function (text) {
+      if (!text) { dismissHint(); return; }
+      hint.textContent = text;
+      hint.className = '';
+      if (hintTimer) clearTimeout(hintTimer);
+      hintTimer = setTimeout(function () { hint.className = 'hidden'; hintTimer = null; }, 4000);
+    },
+
+    invalidate: function () {
+      map.invalidateSize({ animate: false });
+    }
+  };
+
+  window.addEventListener('resize', function () {
+    map.invalidateSize({ animate: false });
+  });
+
+  // Leaflet needs a laid-out container; on some WebViews the first frame is 0-height.
+  setTimeout(function () { map.invalidateSize({ animate: false }); }, 60);
+
+  bridge('onReady');
+})();
+</script>
+</body>
+</html>

@@ -25,13 +25,15 @@ object ReportPdfSharer {
         return file.exists() && file.length() > 0L
     }
 
-    fun shareToWhatsApp(context: Context, report: CustomerReport) {
-        val file = ensureSaved(context, report)
-        val uri = FileProvider.getUriForFile(
-            context,
-            "${context.packageName}.fileprovider",
-            file,
-        )
+    /**
+     * @return false when nothing could be shared (no disk space to write the PDF, or no
+     *   app on the device that accepts it) so the caller can say so instead of crashing.
+     */
+    fun shareToWhatsApp(context: Context, report: CustomerReport): Boolean {
+        val file = runCatching { ensureSaved(context, report) }.getOrNull() ?: return false
+        val uri = runCatching {
+            FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
+        }.getOrNull() ?: return false
         val message = "Anubhav Life Care report ${report.billNo.orEmpty()} ${report.testName.orEmpty()}".trim()
         val baseIntent = shareIntent(uri, message)
         val shared = listOf("com.whatsapp", "com.whatsapp.w4b").any { packageName ->
@@ -39,9 +41,12 @@ object ReportPdfSharer {
                 context.startActivity(Intent(baseIntent).setPackage(packageName))
             }.isSuccess
         }
-        if (!shared) {
+        if (shared) return true
+        // No WhatsApp: fall back to the system chooser, which can itself be missing on
+        // stripped-down builds.
+        return runCatching {
             context.startActivity(Intent.createChooser(baseIntent, "Share report"))
-        }
+        }.isSuccess
     }
 
     private fun shareIntent(uri: Uri, message: String): Intent =

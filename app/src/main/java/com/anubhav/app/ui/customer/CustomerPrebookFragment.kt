@@ -1,6 +1,5 @@
 package com.anubhav.app.ui.customer
 
-import android.Manifest
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,21 +22,41 @@ import com.anubhav.app.R
 import com.anubhav.app.data.model.AktivTest
 import com.anubhav.app.data.model.CustomerPrebookRequest
 import com.anubhav.app.data.model.PrebookCalendar
+import com.anubhav.app.data.model.PrebookDateInfo
 import com.anubhav.app.data.repository.AktivRepository
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.ui.booking.AktivTestAdapter
+import com.anubhav.app.ui.location.MapPickerFragment
 import com.anubhav.app.utils.CustomerSessionManager
 import com.anubhav.app.utils.LocationHelper
 import com.anubhav.app.utils.PaymentManager
 import com.anubhav.app.utils.localized
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.razorpay.PaymentResultListener
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CustomerPrebookFragment : Fragment(), PaymentResultListener {
+    private companion object {
+        const val SEX_MALE = "MALE"
+        const val SEX_FEMALE = "FEMALE"
+
+        const val STATE_SEX = "state_sex"
+        const val STATE_DATE = "state_date"
+        const val STATE_SLOT = "state_slot"
+        const val STATE_LATITUDE = "state_latitude"
+        const val STATE_LONGITUDE = "state_longitude"
+        const val STATE_ADVANCE = "state_advance"
+        const val STATE_TESTS = "state_tests"
+        const val STATE_AWAITING_PERMISSION = "state_awaiting_permission"
+
+        const val MAP_PICKER_TAG = "map_picker"
+    }
+
     private val aktivRepo = AktivRepository()
     private val customerRepo = CustomerRepository()
     private val selectedTests = linkedMapOf<Int, AktivTest>()
@@ -44,18 +64,30 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
     private var pendingAdvance = 0.0
     private var selectedDate: String? = null
     private var selectedSlot: String? = null
+    /** Canonical AKTIV code — never the localized label shown in the dropdown. */
+    private var selectedSex = SEX_MALE
     private lateinit var testAdapter: AktivTestAdapter
     private var testAdapterItems: List<AktivTest> = emptyList()
     private var currentLatitude: Double? = null
     private var currentLongitude: Double? = null
+    /**
+     * Whether a grant coming back should autofill the address. Saved in instance state
+     * rather than held as a lambda: the system permission dialog can outlive this
+     * fragment (rotation), and the grant would otherwise arrive with nothing to run.
+     */
+    private var awaitingLocationPermission = false
 
     // Registered as a field so the launcher exists before the fragment is STARTED.
+    // Both fine and coarse are requested: on Android 12+ the user can grant only the
+    // approximate one, which returns granted=false for ACCESS_FINE_LOCATION alone.
     private val locationPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission(),
-    ) { granted ->
+        ActivityResultContracts.RequestMultiplePermissions(),
+    ) { grants ->
         val ctx = context ?: return@registerForActivityResult
-        if (granted) {
-            fetchLocationIntoAddress()
+        val wanted = awaitingLocationPermission
+        awaitingLocationPermission = false
+        if (grants.values.any { it }) {
+            if (wanted) fetchLocationIntoAddress()
         } else {
             Toast.makeText(ctx, localized(R.string.location_permission_needed), Toast.LENGTH_LONG).show()
         }
@@ -76,6 +108,7 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         val spinnerDate = view.findViewById<AutoCompleteTextView>(R.id.spinnerDate)
         val spinnerSlot = view.findViewById<AutoCompleteTextView>(R.id.spinnerSlot)
         val btnUseLocation = view.findViewById<MaterialButton>(R.id.btnUseLocation)
+        val btnPickOnMap = view.findViewById<MaterialButton>(R.id.btnPickOnMap)
         val etSearch = view.findViewById<TextInputEditText>(R.id.etTestSearch)
         val rvTests = view.findViewById<RecyclerView>(R.id.rvTests)
         val tvSelected = view.findViewById<TextView>(R.id.tvSelectedTests)
@@ -88,14 +121,19 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         view.findViewById<TextView>(R.id.tvPrebookTitle).text = localized(R.string.prebook_time_slot)
         tvPolicy.text = localized(R.string.prebook_policy, getString(R.string.reschedule_phone))
         btnPay.text = localized(R.string.pay_advance)
+        restoreState(savedInstanceState)
+
+        // The dropdown shows localized labels, but AKTIV only understands MALE/FEMALE —
+        // sending the Bengali label silently registered every patient as MALE.
+        val sexLabels = listOf(localized(R.string.sex_male), localized(R.string.sex_female))
         spinnerSex.setAdapter(
-            ArrayAdapter(
-                requireContext(),
-                android.R.layout.simple_dropdown_item_1line,
-                listOf(localized(R.string.sex_male), localized(R.string.sex_female)),
-            ),
+            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, sexLabels),
         )
-        spinnerSex.setText(localized(R.string.sex_male), false)
+        spinnerSex.setText(sexLabels[if (selectedSex == SEX_FEMALE) 1 else 0], false)
+        spinnerSex.setOnItemClickListener { parent, _, position, _ ->
+            val label = parent.getItemAtPosition(position) as? String
+            selectedSex = if (label == sexLabels[1]) SEX_FEMALE else SEX_MALE
+        }
 
         // These fields are read-only pickers (inputType="none"); make a single tap
         // reliably open the dropdown instead of just focusing the field.
@@ -104,13 +142,24 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         spinnerSlot.setOnClickListener { spinnerSlot.showDropDown() }
 
         btnUseLocation.text = localized(R.string.use_my_location)
-        btnUseLocation.setOnClickListener {
-            if (LocationHelper.hasLocationPermission(requireContext())) {
-                fetchLocationIntoAddress()
-            } else {
-                locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-            }
+        btnUseLocation.setOnClickListener { requestAddressFromLocation() }
+
+        btnPickOnMap.text = localized(R.string.pick_on_map)
+        btnPickOnMap.setOnClickListener { openMapPicker() }
+        view.findViewById<TextView>(R.id.tvPinnedLocation).setOnClickListener { openMapPicker() }
+
+        setFragmentResultListener(MapPickerFragment.REQUEST_KEY) { _, bundle ->
+            val latitude = bundle.getDouble(MapPickerFragment.RESULT_LATITUDE)
+            val longitude = bundle.getDouble(MapPickerFragment.RESULT_LONGITUDE)
+            if (!LocationHelper.isValidCoordinate(latitude, longitude)) return@setFragmentResultListener
+            currentLatitude = latitude
+            currentLongitude = longitude
+            bundle.getString(MapPickerFragment.RESULT_ADDRESS)
+                ?.takeIf { it.isNotBlank() }
+                ?.let { this.view?.findViewById<TextInputEditText>(R.id.etAddress)?.setText(it) }
+            renderPinnedLocation()
         }
+        renderPinnedLocation()
 
         testAdapter = AktivTestAdapter { test ->
             if (selectedTests.containsKey(test.testKey)) {
@@ -167,27 +216,104 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Razorpay checkout (and a plain rotation) can recreate this fragment. Without
+        // this the slot, sex and pinned coordinates silently reset to their defaults.
+        outState.putString(STATE_SEX, selectedSex)
+        outState.putString(STATE_DATE, selectedDate)
+        outState.putString(STATE_SLOT, selectedSlot)
+        outState.putDouble(STATE_ADVANCE, pendingAdvance)
+        currentLatitude?.let { outState.putDouble(STATE_LATITUDE, it) }
+        currentLongitude?.let { outState.putDouble(STATE_LONGITUDE, it) }
+        outState.putString(STATE_TESTS, Gson().toJson(selectedTests.values.toList()))
+        outState.putBoolean(STATE_AWAITING_PERMISSION, awaitingLocationPermission)
+    }
+
+    private fun restoreState(savedInstanceState: Bundle?) {
+        val state = savedInstanceState ?: return
+        selectedSex = state.getString(STATE_SEX) ?: SEX_MALE
+        selectedDate = state.getString(STATE_DATE)
+        selectedSlot = state.getString(STATE_SLOT)
+        pendingAdvance = state.getDouble(STATE_ADVANCE, 0.0)
+        awaitingLocationPermission = state.getBoolean(STATE_AWAITING_PERMISSION, false)
+        if (state.containsKey(STATE_LATITUDE) && state.containsKey(STATE_LONGITUDE)) {
+            currentLatitude = state.getDouble(STATE_LATITUDE)
+            currentLongitude = state.getDouble(STATE_LONGITUDE)
+        }
+        state.getString(STATE_TESTS)?.let { json ->
+            runCatching {
+                Gson().fromJson<List<AktivTest>>(
+                    json,
+                    object : TypeToken<List<AktivTest>>() {}.type,
+                )
+            }.getOrNull()?.forEach { selectedTests[it.testKey] = it }
+        }
+    }
+
+    private fun requestAddressFromLocation() {
+        if (LocationHelper.hasLocationPermission(requireContext())) {
+            fetchLocationIntoAddress()
+        } else {
+            awaitingLocationPermission = true
+            locationPermissionLauncher.launch(LocationHelper.LOCATION_PERMISSIONS)
+        }
+    }
+
+    /** Opens the Leaflet/OpenStreetMap picker on the current pin, if there is one. */
+    private fun openMapPicker() {
+        if (parentFragmentManager.isStateSaved) return
+        if (parentFragmentManager.findFragmentByTag(MAP_PICKER_TAG) != null) return
+        MapPickerFragment.newInstance(
+            latitude = currentLatitude,
+            longitude = currentLongitude,
+            address = view?.findViewById<TextInputEditText>(R.id.etAddress)?.text?.toString(),
+        ).show(parentFragmentManager, MAP_PICKER_TAG)
+    }
+
+    private fun renderPinnedLocation() {
+        val pinned = view?.findViewById<TextView>(R.id.tvPinnedLocation) ?: return
+        val latitude = currentLatitude
+        val longitude = currentLongitude
+        if (LocationHelper.isValidCoordinate(latitude, longitude)) {
+            pinned.text = localized(
+                R.string.location_pinned_value,
+                LocationHelper.formatCoordinates(latitude!!, longitude!!),
+            )
+            pinned.visibility = View.VISIBLE
+        } else {
+            pinned.visibility = View.GONE
+        }
+    }
+
     /** Shows a "locating…" state, then fills etAddress and keeps lat/lng for the booking. */
     private fun fetchLocationIntoAddress() {
         val root = view ?: return
-        val btnUseLocation = root.findViewById<MaterialButton>(R.id.btnUseLocation)
-        val etAddress = root.findViewById<TextInputEditText>(R.id.etAddress)
-        btnUseLocation.isEnabled = false
-        btnUseLocation.text = localized(R.string.locating)
+        root.findViewById<MaterialButton>(R.id.btnUseLocation).apply {
+            isEnabled = false
+            text = localized(R.string.locating)
+        }
         LocationHelper.fetchCurrentAddress(requireContext()) { outcome ->
-            if (!isAdded || view == null) return@fetchCurrentAddress
-            btnUseLocation.isEnabled = true
-            btnUseLocation.text = localized(R.string.use_my_location)
+            // Re-resolve the views: the fragment's view can be rebuilt while the fix is
+            // in flight, which would leave the captured references pointing at dead views.
+            val current = view ?: return@fetchCurrentAddress
+            if (!isAdded) return@fetchCurrentAddress
+            current.findViewById<MaterialButton>(R.id.btnUseLocation).apply {
+                isEnabled = true
+                text = localized(R.string.use_my_location)
+            }
             when (outcome) {
                 is LocationHelper.Outcome.Success -> {
                     currentLatitude = outcome.latitude
                     currentLongitude = outcome.longitude
-                    etAddress.setText(outcome.address)
+                    current.findViewById<TextInputEditText>(R.id.etAddress).setText(outcome.address)
+                    renderPinnedLocation()
                 }
                 is LocationHelper.Outcome.NoAddress -> {
                     // Keep the coordinates for the booking even without a readable address.
                     currentLatitude = outcome.latitude
                     currentLongitude = outcome.longitude
+                    renderPinnedLocation()
                     Toast.makeText(
                         requireContext(),
                         localized(R.string.location_unavailable),
@@ -197,7 +323,8 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 is LocationHelper.Outcome.Failure -> {
                     val messageRes = when (outcome.error) {
                         LocationHelper.Error.NO_PERMISSION -> R.string.location_permission_needed
-                        else -> R.string.location_unavailable
+                        LocationHelper.Error.LOCATION_DISABLED -> R.string.location_turn_on_gps
+                        LocationHelper.Error.LOCATION_UNAVAILABLE -> R.string.location_unavailable
                     }
                     Toast.makeText(requireContext(), localized(messageRes), Toast.LENGTH_LONG).show()
                 }
@@ -236,18 +363,56 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         spinnerDate.setAdapter(
             ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, dateLabels),
         )
-        spinnerDate.setOnItemClickListener { _, _, pos, _ ->
-            val date = calendar.dates[pos]
-            selectedDate = date.date
+        spinnerDate.setOnItemClickListener { parent, _, position, _ ->
+            // Resolve by the clicked label rather than the index: the adapter filters as
+            // soon as text is set, after which `position` no longer indexes calendar.dates.
+            val label = parent.getItemAtPosition(position) as? String
+            val date = calendar.dates.firstOrNull { it.date == label } ?: return@setOnItemClickListener
             selectedSlot = null
             spinnerSlot.setText("", false)
-            val available = date.slots.filter { it.available }
-            val labels = available.map { localized(R.string.slots_remaining, it.label, it.remaining) }
+            bindSlotsFor(date, spinnerSlot)
+        }
+
+        // A restored selection (rotation, or coming back from Razorpay) needs its slot
+        // list rebuilt, otherwise the date shows but the slot dropdown is empty.
+        calendar.dates.firstOrNull { it.date == selectedDate }?.let { date ->
+            spinnerDate.setText(date.date, false)
+            bindSlotsFor(date, spinnerSlot, keepSelection = true)
+        }
+    }
+
+    private fun bindSlotsFor(
+        date: PrebookDateInfo,
+        spinnerSlot: AutoCompleteTextView,
+        keepSelection: Boolean = false,
+    ) {
+        selectedDate = date.date
+        val available = date.slots.filter { it.available && it.remaining > 0 }
+        if (available.isEmpty()) {
             spinnerSlot.setAdapter(
-                ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, labels),
+                ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, emptyList<String>()),
             )
-            spinnerSlot.setOnItemClickListener { _, _, slotPos, _ ->
-                selectedSlot = available[slotPos].timeSlot
+            selectedSlot = null
+            spinnerSlot.setText("", false)
+            Toast.makeText(requireContext(), localized(R.string.prebook_no_slots), Toast.LENGTH_LONG).show()
+            return
+        }
+        val labels = available.map { localized(R.string.slots_remaining, it.label, it.remaining) }
+        spinnerSlot.setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, labels),
+        )
+        spinnerSlot.setOnItemClickListener { parent, _, position, _ ->
+            val label = parent.getItemAtPosition(position) as? String
+            val index = labels.indexOf(label)
+            selectedSlot = available.getOrNull(index)?.timeSlot
+        }
+        if (keepSelection) {
+            val restored = available.indexOfFirst { it.timeSlot == selectedSlot }
+            if (restored >= 0) {
+                spinnerSlot.setText(labels[restored], false)
+            } else {
+                selectedSlot = null
+                spinnerSlot.setText("", false)
             }
         }
     }
@@ -298,15 +463,15 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
         }
         val etName = root.findViewById<TextInputEditText>(R.id.etPatientName)
         val etAge = root.findViewById<TextInputEditText>(R.id.etAgeYear)
-        val spinnerSex = root.findViewById<AutoCompleteTextView>(R.id.spinnerSex)
         val etAddress = root.findViewById<TextInputEditText>(R.id.etAddress)
         val progress = root.findViewById<ProgressBar>(R.id.progressBar)
+        val hasPin = LocationHelper.isValidCoordinate(currentLatitude, currentLongitude)
         viewLifecycleOwner.lifecycleScope.launch {
             progress.visibility = View.VISIBLE
             val request = CustomerPrebookRequest(
                 patientName = etName.text?.toString()?.trim().orEmpty(),
                 phone = phone,
-                sex = spinnerSex.text?.toString() ?: getString(R.string.sex_male),
+                sex = selectedSex,
                 ageYear = etAge.text?.toString()?.toIntOrNull(),
                 testKeys = selectedTests.keys.toList(),
                 slotDate = selectedDate.orEmpty(),
@@ -315,8 +480,10 @@ class CustomerPrebookFragment : Fragment(), PaymentResultListener {
                 amountPaid = pendingAdvance,
                 email = CustomerSessionManager.getEmail(requireContext()),
                 address = etAddress.text?.toString()?.trim()?.takeIf { it.isNotBlank() },
-                latitude = currentLatitude,
-                longitude = currentLongitude,
+                // Never post a half-pair or a NaN — the server writes these straight into
+                // the collector's remark line.
+                latitude = currentLatitude.takeIf { hasPin },
+                longitude = currentLongitude.takeIf { hasPin },
             )
             customerRepo.createPrebook(request).fold(
                 onSuccess = { response ->

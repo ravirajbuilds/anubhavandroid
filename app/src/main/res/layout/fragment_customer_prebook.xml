@@ -92,6 +92,35 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPickOnMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/pick_on_map"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_map_pin"
+            app:iconGravity="textStart"
+            app:iconTint="@color/text_white" />
+
+        <TextView
+            android:id="@+id/tvPinnedLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/chip_success_soft_bg"
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnUseLocation"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"

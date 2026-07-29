@@ -36,21 +36,39 @@ object ReportFetcher {
             val file = cachedFile(context, billKey)
             if (file.exists() && file.length() > 0L) return@withContext file
             val req = Request.Builder().url(viewUrl).header("Accept", "application/pdf").build()
-            client.newCall(req).execute().use { resp ->
-                if (!resp.isSuccessful) error("HTTP ${resp.code}")
-                val body = resp.body ?: error("empty response")
-                val tmp = File(file.parentFile, "${file.name}.part")
-                tmp.outputStream().use { out -> body.byteStream().use { it.copyTo(out) } }
-                // Guard against caching a 200-but-not-a-PDF payload (e.g. a Cloudflare
-                // tunnel/origin HTML error page). Such a file would poison the cache
-                // permanently because isCached()/the early return key only on size.
-                val header = ByteArray(5)
-                tmp.inputStream().use { it.read(header) }
-                if (tmp.length() == 0L || !header.decodeToString().startsWith("%PDF-")) {
-                    tmp.delete(); error("not a PDF")
+            // Unique per download: two taps on the same bill would otherwise write the
+            // same .part file and corrupt each other.
+            val tmp = File(file.parentFile, "${file.name}.${System.nanoTime()}.part")
+            try {
+                client.newCall(req).execute().use { resp ->
+                    if (!resp.isSuccessful) error("HTTP ${resp.code}")
+                    val body = resp.body ?: error("empty response")
+                    tmp.outputStream().use { out -> body.byteStream().use { it.copyTo(out) } }
+                    // Guard against caching a 200-but-not-a-PDF payload (e.g. a Cloudflare
+                    // tunnel/origin HTML error page). Such a file would poison the cache
+                    // permanently because isCached()/the early return key only on size.
+                    val header = ByteArray(5)
+                    val read = tmp.inputStream().use { stream ->
+                        // A single read() may return fewer bytes than asked for, which
+                        // would reject a perfectly good PDF.
+                        var total = 0
+                        while (total < header.size) {
+                            val n = stream.read(header, total, header.size - total)
+                            if (n <= 0) break
+                            total += n
+                        }
+                        total
+                    }
+                    if (read < header.size || !header.decodeToString().startsWith("%PDF-")) {
+                        error("not a PDF")
+                    }
+                    // renameTo can fail across filesystems; fall back to a copy so the
+                    // returned File always exists.
+                    if (!tmp.renameTo(file)) tmp.copyTo(file, overwrite = true)
                 }
-                // renameTo can fail; fall back to a copy so the returned File always exists.
-                if (!tmp.renameTo(file)) { tmp.copyTo(file, overwrite = true); tmp.delete() }
+            } finally {
+                // Never leave a half-written .part behind, on success or failure.
+                if (tmp.exists()) tmp.delete()
             }
             file
         }

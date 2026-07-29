@@ -75,7 +75,15 @@ val notes = view.findViewById<TextInputEditText>(R.id.etCollectorNotes)
             onWhatsApp = { openWhatsApp(it.phone, it.patientName) },
         )
         reportAdapter = CollectorReportAdapter(
-            onShare = { ReportPdfSharer.shareToWhatsApp(requireContext(), it) },
+            onShare = {
+                if (!ReportPdfSharer.shareToWhatsApp(requireContext(), it)) {
+                    Toast.makeText(
+                        requireContext(),
+                        localized(R.string.whatsapp_not_available),
+                        Toast.LENGTH_LONG,
+                    ).show()
+                }
+            },
             onPayDue = { openPendingPayments() },
             onSupport = { openReportSupport(it) },
             onVisibleChanged = { reports -> bindCollectorReportSummary(reportStatus, reports) },

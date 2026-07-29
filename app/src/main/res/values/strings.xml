@@ -274,6 +274,25 @@
     <string name="locating">Getting your location…</string>
     <string name="location_permission_needed">Location permission is needed to autofill your address.</string>
     <string name="location_unavailable">Couldn\'t get your location. Please type your address.</string>
+    <string name="location_turn_on_gps">Turn on location (GPS) and try again.</string>
+    <string name="prebook_no_slots">All slots on that date are full. Please pick another date.</string>
+
+    <!-- Leaflet + OpenStreetMap pin picker for the home-collection address -->
+    <string name="pick_on_map">Pin my house on the map</string>
+    <string name="location_pinned_value">Pinned at %1$s</string>
+    <string name="map_picker_title">Pick your collection point</string>
+    <string name="map_search_hint">Search area, street or landmark</string>
+    <string name="map_landmark_hint">House / flat / floor, landmark</string>
+    <string name="map_confirm">Confirm this location</string>
+    <string name="map_move_to_pick">Drag the map to place the pin</string>
+    <string name="map_drag_hint">Drag the map to place the pin</string>
+    <string name="map_reading_address">Reading the address…</string>
+    <string name="map_no_address">No street address here — the pinned point will be sent</string>
+    <string name="map_tiles_offline">You are offline, so the map can\'t draw. You can still place the pin.</string>
+    <string name="map_search_no_results">No place found. Try a nearby landmark.</string>
+    <string name="map_unavailable">The map isn\'t available on this device. Please type your address.</string>
+    <string name="map_locate_me">Go to my location</string>
+    <string name="map_back">Back</string>
 
     <!-- 2-of-3 report verification dialog (login + My Reports) -->
     <string name="verify_dialog_title_login">View your reports</string>
@@ -533,6 +552,25 @@
     <string name="locating_bn">আপনার লোকেশন খোঁজা হচ্ছে…</string>
     <string name="location_permission_needed_bn">ঠিকানা আপনা-আপনি পূরণ করতে লোকেশনের অনুমতি লাগবে।</string>
     <string name="location_unavailable_bn">আপনার লোকেশন পাওয়া গেল না। অনুগ্রহ করে ঠিকানাটা লিখে দিন।</string>
+    <string name="location_turn_on_gps_bn">লোকেশন (GPS) চালু করে আবার চেষ্টা করুন।</string>
+    <string name="prebook_no_slots_bn">ওই তারিখে সব স্লট ভর্তি। অন্য একটা তারিখ বেছে নিন।</string>
+
+    <!-- Leaflet + OpenStreetMap pin picker (Bengali) -->
+    <string name="pick_on_map_bn">ম্যাপে বাড়িটা দেখিয়ে দিন</string>
+    <string name="location_pinned_value_bn">পিন বসানো হয়েছে %1$s-এ</string>
+    <string name="map_picker_title_bn">কোথা থেকে স্যাম্পেল নেব, দেখিয়ে দিন</string>
+    <string name="map_search_hint_bn">এলাকা, রাস্তা বা ল্যান্ডমার্ক লিখে খুঁজুন</string>
+    <string name="map_landmark_hint_bn">বাড়ি / ফ্ল্যাট / তলা, ল্যান্ডমার্ক</string>
+    <string name="map_confirm_bn">এই জায়গাটাই ঠিক আছে</string>
+    <string name="map_move_to_pick_bn">ম্যাপ সরিয়ে পিনটা ঠিক জায়গায় আনুন</string>
+    <string name="map_drag_hint_bn">ম্যাপ সরিয়ে পিনটা ঠিক জায়গায় আনুন</string>
+    <string name="map_reading_address_bn">ঠিকানা দেখা হচ্ছে…</string>
+    <string name="map_no_address_bn">এখানে রাস্তার ঠিকানা নেই — পিনের জায়গাটাই পাঠানো হবে</string>
+    <string name="map_tiles_offline_bn">ইন্টারনেট নেই, তাই ম্যাপ আসছে না। তবু পিন বসাতে পারেন।</string>
+    <string name="map_search_no_results_bn">জায়গাটা পাওয়া গেল না। কাছাকাছি কোনো ল্যান্ডমার্ক দিয়ে দেখুন।</string>
+    <string name="map_unavailable_bn">এই ফোনে ম্যাপ খোলা যাচ্ছে না। ঠিকানাটা লিখে দিন।</string>
+    <string name="map_locate_me_bn">আমার লোকেশনে যান</string>
+    <string name="map_back_bn">পিছনে</string>
 
     <!-- 2-of-3 report verification dialog (Bengali) -->
     <string name="verify_dialog_title_login_bn">আপনার রিপোর্ট দেখুন</string>
