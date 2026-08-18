@@ -35,21 +35,26 @@ object AktivApiClient {
     }
 
     val api: AktivApi by lazy {
-        buildRetrofit().create(AktivApi::class.java)
+        retrofit.create(AktivApi::class.java)
     }
 
     val customerApi: CustomerApi by lazy {
-        buildRetrofit().create(CustomerApi::class.java)
+        retrofit.create(CustomerApi::class.java)
     }
 
+    val catalogApi: CatalogApi by lazy {
+        retrofit.create(CatalogApi::class.java)
+    }
+
+    // One Retrofit for every interface: three separate instances each built their
+    // own converter and call adapters for no benefit.
+    private val retrofit: Retrofit by lazy { buildRetrofit() }
+
     private fun buildRetrofit(): Retrofit {
-        val baseUrl = try {
-            val field = Class.forName("com.anubhav.app.BuildConfig")
-                .getField("AKTIV_API_URL")
-            field.get(null) as String
-        } catch (_: Exception) {
-            DEFAULT_BASE_URL
-        }
+        // Read BuildConfig directly. Reaching for it via Class.forName/getField
+        // silently falls back to DEFAULT_BASE_URL once R8 shrinks or renames the
+        // field, which would point release builds at the wrong host.
+        val baseUrl = BuildConfig.AKTIV_API_URL.ifBlank { DEFAULT_BASE_URL }
 
         return Retrofit.Builder()
             .baseUrl(baseUrl.ensureTrailingSlash())

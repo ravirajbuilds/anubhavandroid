@@ -64,11 +64,6 @@
         android:label="@string/pending_payments_title"
         tools:layout="@layout/fragment_pending_payments" />
 
-    <fragment
-        android:id="@+id/nav_profile"
-        android:name="com.anubhav.app.ui.home.HomeFragment"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_settings"

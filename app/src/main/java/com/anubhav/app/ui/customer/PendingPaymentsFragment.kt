@@ -205,11 +205,16 @@ private class PendingAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+        // setMargins takes pixels, not dp — on a 3x-density phone the old literals were
+        // a third of the gap they looked like in a preview.
+        val density = parent.resources.displayMetrics.density
+        val h = (16 * density).toInt()
+        val v = (8 * density).toInt()
         val btn = MaterialButton(parent.context).apply {
             layoutParams = ViewGroup.MarginLayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
-            ).apply { setMargins(16, 8, 16, 8) }
+            ).apply { setMargins(h, v, h, v) }
             maxLines = 2
         }
         return VH(btn)

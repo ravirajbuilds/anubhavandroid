@@ -20,6 +20,7 @@ from aktiv_booking import (
     search_doctors,
     search_tests,
 )
+from catalog import get_catalog
 from config import aktiv_settings
 from customer_portal import (
     create_customer_prebooking,
@@ -126,6 +127,23 @@ def api_tests(q: str = "", limit: int = 50):
         return search_tests(q, limit=min(limit, 100))
     except Exception as exc:
         raise internal_error(exc) from exc
+
+
+@app.get("/api/catalog")
+def api_catalog(known_version: Optional[str] = None):
+    """Whole catalog for the app's on-device cache.
+
+    Pass the version the phone already holds as `known_version`; when it matches
+    we skip the payload entirely so a routine check costs a few hundred bytes.
+    """
+    try:
+        data = get_catalog()
+    except Exception as exc:
+        raise internal_error(exc) from exc
+
+    if known_version and known_version == data["version"]:
+        return {"version": data["version"], "count": data["count"], "unchanged": True, "tests": []}
+    return {**data, "unchanged": False}
 
 
 @app.get("/api/doctors")

@@ -55,7 +55,7 @@ class MyReportsFragment : Fragment() {
     override fun onViewCreated(view: View, s: Bundle?) {
         super.onViewCreated(view, s)
         root.addView(TextView(requireContext()).apply {
-            text = "My Reports"; textSize = 20f; setTextColor(0xFF0D9488.toInt())
+            text = localized(R.string.menu_my_reports); textSize = 20f; setTextColor(0xFF0D9488.toInt())
             setTypeface(typeface, Typeface.BOLD)
         })
         statusView = TextView(requireContext()).apply {
@@ -67,7 +67,7 @@ class MyReportsFragment : Fragment() {
 
         val phone = CustomerSessionManager.getPhone(requireContext()).orEmpty()
         if (phone.isBlank()) {
-            statusView.text = "Please log in to see your reports."
+            statusView.text = localized(R.string.reports_login_prompt)
             addFetchOtherButton()
         } else {
             loadHistory(phone)
@@ -75,22 +75,22 @@ class MyReportsFragment : Fragment() {
     }
 
     private fun loadHistory(phone: String) {
-        statusView.text = "Loading your reports…"
+        statusView.text = localized(R.string.reports_loading)
         listContainer.removeAllViews()
         viewLifecycleOwner.lifecycleScope.launch {
             repo.getHistoryCached(requireContext(), phone).fold(
                 onSuccess = { res ->
                     listContainer.removeAllViews()
                     if (res.visits.isEmpty()) {
-                        statusView.text = "No reports found for this number."
+                        statusView.text = localized(R.string.reports_none_for_number)
                     } else {
-                        statusView.text = "${res.visits.size} visit(s) linked to your number"
+                        statusView.text = localized(R.string.reports_visit_count, res.visits.size)
                         res.visits.forEach { listContainer.addView(visitCard(it)) }
                     }
                     addFetchOtherButton()
                 },
                 onFailure = {
-                    statusView.text = "Reports are temporarily unavailable (offline 1–6 AM). Please try again."
+                    statusView.text = localized(R.string.reports_unavailable)
                     addFetchOtherButton()
                 },
             )
@@ -108,7 +108,7 @@ class MyReportsFragment : Fragment() {
         // top row: name (left) + date (right)
         val topRow = LinearLayout(requireContext()).apply { orientation = LinearLayout.HORIZONTAL }
         topRow.addView(TextView(requireContext()).apply {
-            text = (v.patientName ?: "").trim().ifBlank { "Patient" }
+            text = (v.patientName ?: "").trim().ifBlank { localized(R.string.reports_patient_fallback) }
             setTextColor(0xFF111111.toInt()); textSize = 15f; setTypeface(typeface, Typeface.BOLD)
             layoutParams = LinearLayout.LayoutParams(0, WRAP, 1f)
         })
@@ -132,7 +132,7 @@ class MyReportsFragment : Fragment() {
         botRow.addView(info)
 
         val viewBtn = Button(requireContext()).apply {
-            text = "View Report"; isAllCaps = false
+            text = localized(R.string.reports_view_report); isAllCaps = false
             setOnClickListener { onViewReport(v, this) }
             isEnabled = v.hasViewLink
             alpha = if (v.hasViewLink) 1f else 0.5f
@@ -141,7 +141,7 @@ class MyReportsFragment : Fragment() {
         card.addView(botRow)
         if (!v.hasViewLink) {
             card.addView(TextView(requireContext()).apply {
-                text = "Report not ready / awaiting authorisation"
+                text = localized(R.string.reports_awaiting_authorisation)
                 setTextColor(0xFFB45309.toInt()); textSize = 11f; setPadding(0, dp(4), 0, 0)
             })
         }
@@ -151,22 +151,26 @@ class MyReportsFragment : Fragment() {
     private fun onViewReport(v: CustomerVisit, btn: Button) {
         val link = v.viewLink
         if (link.isNullOrBlank()) {
-            Toast.makeText(requireContext(), "This report isn't ready yet.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), localized(R.string.reports_not_ready_toast), Toast.LENGTH_SHORT).show()
             return
         }
         btn.isEnabled = false
         val original = btn.text
-        btn.text = if (ReportFetcher.isCached(requireContext(), v.billKey)) "Opening…" else "Fetching…"
+        btn.text = if (ReportFetcher.isCached(requireContext(), v.billKey)) {
+            localized(R.string.reports_opening)
+        } else {
+            localized(R.string.reports_fetching)
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             runCatching { ReportFetcher.download(requireContext(), v.billKey, link) }
                 .onSuccess { file ->
                     btn.isEnabled = true; btn.text = original
                     runCatching { ReportFetcher.open(requireContext(), file) }
-                        .onFailure { Toast.makeText(requireContext(), "No PDF viewer found.", Toast.LENGTH_LONG).show() }
+                        .onFailure { Toast.makeText(requireContext(), localized(R.string.reports_no_pdf_viewer), Toast.LENGTH_LONG).show() }
                 }
                 .onFailure {
                     btn.isEnabled = true; btn.text = original
-                    Toast.makeText(requireContext(), "Couldn't fetch the report. Try again (server is offline 1–6 AM).", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), localized(R.string.reports_fetch_failed), Toast.LENGTH_LONG).show()
                 }
         }
     }

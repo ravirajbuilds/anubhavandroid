@@ -22,11 +22,9 @@ import com.anubhav.app.R
 import com.anubhav.app.data.repository.CatalogRepository
 import com.anubhav.app.data.repository.CatalogRepository.CatalogItem
 import com.anubhav.app.utils.localized
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * Metrics / Health Library — a searchable list of every catalog test. Tapping a
@@ -44,6 +42,7 @@ class MetricsFragment : Fragment() {
         )
     }
     private var searchJob: Job? = null
+    private var lastQuery: String = ""
     private lateinit var statusView: TextView
 
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
@@ -93,17 +92,34 @@ class MetricsFragment : Fragment() {
         })
 
         runSearch("")
+        syncCatalog()
         return root
     }
 
     private fun runSearch(query: String) {
+        // Resolve the context on the main thread and hand the application context to
+        // the repository: requireContext() from a background thread throws the moment
+        // the fragment is detached, which a search in flight during navigation would hit.
+        val ctx = requireContext().applicationContext
+        lastQuery = query
         statusView.text = localized(R.string.loading)
         viewLifecycleOwner.lifecycleScope.launch {
-            val results = withContext(Dispatchers.IO) {
-                CatalogRepository.search(requireContext(), query)
-            }
+            val results = CatalogRepository.search(ctx, query)
+            val total = CatalogRepository.matchCount(ctx, query)
             adapter.submit(results)
-            statusView.text = localized(R.string.metrics_count, results.size)
+            statusView.text = if (total > results.size) {
+                localized(R.string.metrics_count_capped, results.size, total)
+            } else {
+                localized(R.string.metrics_count, total)
+            }
+        }
+    }
+
+    /** Refresh the cached catalog in the background; redraw only if it actually changed. */
+    private fun syncCatalog() {
+        val ctx = requireContext().applicationContext
+        viewLifecycleOwner.lifecycleScope.launch {
+            if (CatalogRepository.sync(ctx)) runSearch(lastQuery)
         }
     }
 

@@ -54,7 +54,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Welcome to Anubhav"
+                    android:id="@+id/tvWelcomeTitle"
+                    android:text="@string/welcome_title"
                     android:textColor="@color/text_white"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -65,7 +66,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Diagnostics, home collection, reports"
+                    android:id="@+id/tvWelcomeSubtitle"
+                    android:text="@string/welcome_tagline"
                     android:textColor="@color/text_white"
                     android:textSize="14sp"
                     android:maxLines="2"
@@ -178,7 +180,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
-                android:text="Popular Tests"
+                android:id="@+id/tvPopularTests"
+                android:text="@string/popular_tests"
                 android:textColor="@color/text_primary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -193,7 +196,8 @@
                 android:minHeight="@dimen/touch_target_min"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
-                android:text="View All"
+                android:id="@+id/btnViewAll"
+                android:text="@string/view_all"
                 android:textColor="@color/brand_dark_blue"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -215,6 +219,7 @@
                 android:paddingEnd="20dp">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTest1"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginEnd="16dp"
@@ -236,6 +241,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
+                            android:id="@+id/tvTest1Name"
                             android:text="CBC Test"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
@@ -246,6 +252,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginTop="4dp"
+                            android:id="@+id/tvTest1Desc"
                             android:text="Complete Blood Count"
                             android:textColor="@color/text_secondary"
                             android:textSize="15sp" />
@@ -261,6 +268,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:fontFamily="sans-serif-medium"
+                                android:id="@+id/tvTest1Price"
                                 android:text="₹300"
                                 android:textColor="@color/medical_green"
                                 android:textSize="20sp"
@@ -284,6 +292,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTest2"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginEnd="16dp"
@@ -305,6 +314,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
+                            android:id="@+id/tvTest2Name"
                             android:text="Lipid Profile"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
@@ -315,6 +325,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginTop="4dp"
+                            android:id="@+id/tvTest2Desc"
                             android:text="Cholesterol Test"
                             android:textColor="@color/text_secondary"
                             android:textSize="15sp" />
@@ -330,6 +341,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:fontFamily="sans-serif-medium"
+                                android:id="@+id/tvTest2Price"
                                 android:text="₹800"
                                 android:textColor="@color/medical_green"
                                 android:textSize="20sp"
@@ -353,6 +365,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTest3"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:clickable="true"
@@ -373,6 +386,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
+                            android:id="@+id/tvTest3Name"
                             android:text="Thyroid Test"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
@@ -383,6 +397,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginTop="4dp"
+                            android:id="@+id/tvTest3Desc"
                             android:text="T3, T4, TSH"
                             android:textColor="@color/text_secondary"
                             android:textSize="15sp" />
@@ -398,6 +413,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:fontFamily="sans-serif-medium"
+                                android:id="@+id/tvTest3Price"
                                 android:text="₹600"
                                 android:textColor="@color/medical_green"
                                 android:textSize="20sp"
@@ -430,7 +446,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Why Choose Us"
+            android:id="@+id/tvWhyChooseUs"
+            android:text="@string/why_choose_us"
             android:textColor="@color/text_primary"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -469,7 +486,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:text="Home sample collection available"
+                        android:id="@+id/tvFeature1"
+                        android:text="@string/feature_home_collection"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" />
 
@@ -493,7 +511,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:text="Same day reports for most tests"
+                        android:id="@+id/tvFeature2"
+                        android:text="@string/feature_same_day"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" />
 
@@ -517,7 +536,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:text="Secure online payments with Razorpay"
+                        android:id="@+id/tvFeature3"
+                        android:text="@string/feature_secure_payment"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" />
 
@@ -540,7 +560,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif"
-                        android:text="Email notifications and WhatsApp support"
+                        android:id="@+id/tvFeature4"
+                        android:text="@string/feature_notifications"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" />
 
@@ -577,7 +598,8 @@
                     android:layout_marginBottom="20dp"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center"
-                    android:text="Need Help? Contact Us"
+                    android:id="@+id/tvContactTitle"
+                    android:text="@string/contact_us_title"
                     android:textColor="@color/medical_blue"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -593,7 +615,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Call: +91-9230755875"
+                        android:id="@+id/tvCallLabel"
+                        android:text="@string/call_label"
                         android:textColor="@color/text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -603,7 +626,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:fontFamily="sans-serif-medium"
-                        android:text="WhatsApp: +91-9230755876"
+                        android:id="@+id/tvWhatsappLabel"
+                        android:text="@string/whatsapp_label"
                         android:textColor="@color/medical_green"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -612,7 +636,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="Email: contact.anubhavlife@gmail.com"
+                        android:id="@+id/tvEmailLabel"
+                        android:text="@string/email_label"
                         android:textColor="@color/text_secondary"
                         android:textSize="16sp"
                         android:maxLines="1"

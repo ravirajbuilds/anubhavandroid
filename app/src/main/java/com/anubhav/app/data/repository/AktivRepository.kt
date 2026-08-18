@@ -13,11 +13,17 @@ import com.anubhav.app.data.model.AktivTest
 import com.anubhav.app.data.remote.AktivApiClient
 import com.anubhav.app.utils.AktivDataCache
 import java.time.LocalDate
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.time.format.DateTimeFormatter
 
 class AktivRepository(
     private val api: com.anubhav.app.data.remote.AktivApi = AktivApiClient.api,
 ) {
+    /** Cached calls read and write JSON files, which must not happen on the main thread. */
+    private suspend fun <T> io(block: suspend () -> T): Result<T> =
+        withContext(Dispatchers.IO) { runCatching { block() } }
+
     suspend fun login(userid: String, password: String): Result<AktivLoginResponse> =
         runCatching { api.login(AktivLoginRequest(userid, password)) }
 
@@ -28,15 +34,21 @@ class AktivRepository(
         runCatching { api.searchTests(query = query, limit = 50) }
 
     suspend fun searchTestsCached(context: Context, query: String): Result<List<AktivTest>> =
-        runCatching {
+        io {
             val trimmed = query.trim()
-            val cacheKey = "tests_$trimmed"
-            AktivDataCache.readTests(context, cacheKey, AktivDataCache.PRICE_MAX_AGE_MS)
-                ?.let { return@runCatching it }
+            // Only the whole catalog is cached. Keying the cache on the query text wrote a
+            // new file for every keystroke in the test search — unbounded files in filesDir
+            // that nothing ever cleaned up, and a disk write per character typed.
+            if (trimmed.isEmpty()) {
+                AktivDataCache.readTests(context, "tests_catalog", AktivDataCache.PRICE_MAX_AGE_MS)
+                    ?.let { return@io it }
+            }
             runCatching { api.searchTests(query = trimmed, limit = 50) }
                 .onSuccess {
-                    AktivDataCache.writeTests(context, cacheKey, it)
-                    if (trimmed.isEmpty()) AktivDataCache.writeTests(context, "tests_catalog", it)
+                    if (trimmed.isEmpty()) {
+                        AktivDataCache.writeTests(context, "tests_catalog", it)
+                        AktivDataCache.pruneLegacyQueryCaches(context)
+                    }
                 }
                 .getOrElse { error ->
                     filterCachedCatalog(context, trimmed).takeIf { it.isNotEmpty() } ?: throw error
@@ -44,10 +56,10 @@ class AktivRepository(
         }
 
     suspend fun refreshTests(context: Context): Result<List<AktivTest>> =
-        runCatching {
+        io {
             api.searchTests(query = "", limit = 500).also {
-                AktivDataCache.writeTests(context, "tests_", it)
                 AktivDataCache.writeTests(context, "tests_catalog", it)
+                AktivDataCache.pruneLegacyQueryCaches(context)
             }
         }
 
@@ -119,9 +131,7 @@ class AktivRepository(
         }
 
     private fun filterCachedCatalog(context: Context, query: String): List<AktivTest> {
-        val catalog = AktivDataCache.readTests(context, "tests_catalog")
-            ?: AktivDataCache.readTests(context, "tests_")
-            ?: emptyList()
+        val catalog = AktivDataCache.readTests(context, "tests_catalog") ?: emptyList()
         if (query.isBlank()) return catalog
         val needle = query.lowercase()
         return catalog.filter {

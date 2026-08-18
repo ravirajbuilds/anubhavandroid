@@ -18,11 +18,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.anubhav.app.R
 import com.anubhav.app.data.repository.TestInfoRepository
 import com.anubhav.app.utils.LanguageManager
 import com.anubhav.app.utils.TestInfoPdfSharer
 import com.anubhav.app.utils.localized
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * Test display screen: opened from the Metrics list. Shows a share-PDF action,
@@ -57,14 +61,33 @@ class TestDetailFragment : Fragment() {
         isBengali = LanguageManager(requireContext()).isBengali()
         val testName = arguments?.getString(ARG_TEST_NAME).orEmpty().ifBlank { "Test" }
         val category = arguments?.getString(ARG_CATEGORY).orEmpty()
-        resolved = TestInfoRepository.resolve(requireContext(), testName, category)
 
         (requireActivity() as? AppCompatActivity)?.supportActionBar?.title = testName
 
-        buildHeader(root, testName)
-        if (resolved.hasGauge) buildGaugeSection(root)
-        buildContentSections(root)
-        buildDisclaimer(root)
+        // The content file is a few hundred KB of JSON. Parsing it inline froze the
+        // screen for the first test opened after launch, which on a low-end phone is
+        // long enough to look like the app has hung — so resolve it off the main
+        // thread and build the sections once it lands.
+        val placeholder = TextView(requireContext()).apply {
+            text = localized(R.string.loading)
+            textSize = 14f
+            setTextColor(0xFF5C6E78.toInt())
+            setPadding(0, dp(24), 0, 0)
+        }
+        root.addView(placeholder)
+
+        val appContext = requireContext().applicationContext
+        viewLifecycleOwner.lifecycleScope.launch {
+            val loaded = withContext(Dispatchers.IO) {
+                TestInfoRepository.resolve(appContext, testName, category)
+            }
+            resolved = loaded
+            root.removeView(placeholder)
+            buildHeader(root, testName)
+            if (resolved.hasGauge) buildGaugeSection(root)
+            buildContentSections(root)
+            buildDisclaimer(root)
+        }
         return scroll
     }
 

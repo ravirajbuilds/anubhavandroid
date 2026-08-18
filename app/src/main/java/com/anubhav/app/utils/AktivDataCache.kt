@@ -39,6 +39,18 @@ object AktivDataCache {
         file.writeText(gson.toJson(tests))
     }
 
+    /**
+     * Delete the per-query files older builds wrote (`tests_cbc.json`, `tests_usg.json`, …).
+     * Installs that have been through a lot of searching are carrying hundreds of them.
+     */
+    fun pruneLegacyQueryCaches(context: Context) {
+        runCatching {
+            File(context.filesDir, DIR).listFiles()?.forEach { file ->
+                if (file.name != "tests_catalog.json") file.delete()
+            }
+        }
+    }
+
     private fun cacheFile(context: Context, key: String): File {
         val safeKey = key.lowercase().replace(Regex("[^a-z0-9_-]"), "_")
         return File(File(context.filesDir, DIR), "$safeKey.json")

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.anubhav.app.R
 import com.anubhav.app.data.repository.AktivRepository
+import com.anubhav.app.data.repository.CatalogRepository
 import com.anubhav.app.data.repository.CustomerRepository
 import com.anubhav.app.utils.CustomerSessionManager
 import com.anubhav.app.utils.LanguageManager
@@ -176,6 +177,9 @@ class SettingsFragment : Fragment() {
                         results += customerRepository.getCollectorReportsCached(context, it, forceRefresh = true)
                     }
                     results += aktivRepository.refreshTests(context)
+                    // The test catalog is cached on the phone now, so a manual sync has
+                    // to refresh it too or a price change never reaches this handset.
+                    CatalogRepository.sync(context)
                     val message = if (results.none { it.isFailure }) {
                         localized(R.string.sync_app_data_done)
                     } else {
